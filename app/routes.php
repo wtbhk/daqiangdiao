@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', array('before'=>'wechat.base', function()
+Route::get('/', array('before'=>'wechat.userinfo', function()
 {
-	return View::make('hello');
+	return View::make(Session::get('wechat_userinfo'));
 }));
