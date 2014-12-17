@@ -27,8 +27,7 @@ class Init extends Migration {
                 {
                         $table->increments("id");
                         $table->float("price");
-                        $table->integer("status");
-                        $table->integer("reservation");
+                        $table->integer("reservation_day");
                         $table->integer("inventory_per_day")
                         $table->boolean("ignore_inventory");
                         $table->string("title");
@@ -51,9 +50,11 @@ class Init extends Migration {
                 {
                         $table->increments("id");
                         $table->integer("user_id");
+                        $table->integer("status");
                         $table->string("addressee");
                         $table->string("phone");
-                        $table->string("address")
+                        $table->string("address");
+                        $table->dateTime("delivery");
                         $table->timestamps();
                 });
 

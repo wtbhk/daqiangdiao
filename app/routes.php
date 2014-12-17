@@ -11,7 +11,26 @@
 |
 */
 
-Route::get('/', array('before'=>'wechat.userinfo', function()
+Route::get('/', function()
 {
-	return View::make(Session::get('wechat_userinfo'));
-}));
+        return View::make('index');
+});
+
+Route::get('/profile', 'UserController@showProfile');
+
+Route::post('/profile', 'UserController@editProfile');
+
+Route::get('/phone', 'UserController@showPhone');
+
+Route::get('/address', 'UserController@showAddAddress');
+
+Route::post('/address', 'UserController@addAddress');
+
+Route::delete('/address/{id}', 'UserController@delAddress');
+
+Route::get('/orders', 'UserController@showOrders');
+
+Route::get('/order/{id}', 'OrderController@showOrder');
+
+Route::get('/product/{id}', 'ProductController@showProduct');
+
