@@ -29,12 +29,12 @@ class Init extends Migration {
                         $table->float("price");
                         $table->integer("status");
                         $table->integer("reservation");
-                        $table->integer("inventory")
+                        $table->integer("inventory_per_day")
                         $table->integer("inventory_id");
+                        $table->boolean("ignore_inventory");
                         $table->string("title");
                         $table->string("description");
                         $table->string("content");
-                        $table->integer("");
                         $table->timestamps();
                         $table->softDeletes();
                 });
@@ -75,6 +75,7 @@ class Init extends Migration {
                         $table->increments("id");
                         $table->string("file");
                         $table->string("description");
+                        $table->morphs("imageable");
                         $table->timestamps();
                         $table->softDeletes();
                 });
@@ -82,6 +83,7 @@ class Init extends Migration {
                 Schema::Create("Video", function($table)
                 {
                         $table->increments("id");
+                        $table->integer("product_id");
                         $table->string("file");
                         $table->string("description");
                         $table->timestamps();
@@ -108,7 +110,14 @@ class Init extends Migration {
 	 */
 	public function down()
 	{
-		//
+                Schema::dropIfExists("User");
+                Schema::dropIfExists("Product");
+                Schema::dropIfExists("Inventory");
+                Schema::dropIfExists("Order");
+                Schema::dropIfExists("OrderItem");
+                Schema::dropIfExists("Image");
+                Schema::dropIfExists("Video");
+                Schema::dropIfExists("Addressee");
 	}
 
 }
