@@ -12,7 +12,7 @@ class Init extends Migration {
 	 */
 	public function up()
 	{
-                Schema::Create("User", function($table)
+                Schema::Create("users", function($table)
                 {
                         $table->increments("id");
                         $table->string("phone");
@@ -23,14 +23,13 @@ class Init extends Migration {
                         $table->softDeletes();
                 });
 
-                Schema::Create("Product", function($table)
+                Schema::Create("products", function($table)
                 {
                         $table->increments("id");
                         $table->float("price");
                         $table->integer("status");
                         $table->integer("reservation");
                         $table->integer("inventory_per_day")
-                        $table->integer("inventory_id");
                         $table->boolean("ignore_inventory");
                         $table->string("title");
                         $table->string("description");
@@ -39,7 +38,7 @@ class Init extends Migration {
                         $table->softDeletes();
                 });
 
-                Schema::Create("Inventory", function($table)
+                Schema::Create("inventory", function($table)
                 {
                         $table->increments("id");
                         $table->integer("product_id");
@@ -48,7 +47,7 @@ class Init extends Migration {
                         $table->timestamps()
                 });
 
-                Schema::Create("Order", function($table)
+                Schema::Create("orders", function($table)
                 {
                         $table->increments("id");
                         $table->integer("user_id");
@@ -58,7 +57,7 @@ class Init extends Migration {
                         $table->timestamps();
                 });
 
-                Schema::Create("OrderItem", function($table)
+                Schema::Create("orderitems", function($table)
                 {
                         $table->increments("id");
                         $talbe->integer("product_id");
@@ -70,7 +69,7 @@ class Init extends Migration {
                         $table->softDeletes();
                 });
 
-                Schema::Create("Image", function($table)
+                Schema::Create("images", function($table)
                 {
                         $table->increments("id");
                         $table->string("file");
@@ -80,7 +79,7 @@ class Init extends Migration {
                         $table->softDeletes();
                 });
 
-                Schema::Create("Video", function($table)
+                Schema::Create("videos", function($table)
                 {
                         $table->increments("id");
                         $table->integer("product_id");
@@ -90,7 +89,7 @@ class Init extends Migration {
                         $table->softDeletes();
                 });
 
-                Schema::Create("Addressee", function($table)
+                Schema::Create("addressees", function($table)
                 {
                         $table->increments("id");
                         $table->integer("user_id");
