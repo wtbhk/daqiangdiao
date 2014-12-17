@@ -14,7 +14,8 @@
 App::before(function($request)
 {
         Config::set('wechat.appid', 'wxc2b448d7bf4f74a6');
-        Config::set('wechat.secret', 'ad4483be94fc0e204ca59a726c02a45a');
+        Config::set('wechat.secret', 'ad4483be94fc0e204ca59a726c02a45a'); 
+        Route::when('/*', 'wechat.base');
 });
 
 

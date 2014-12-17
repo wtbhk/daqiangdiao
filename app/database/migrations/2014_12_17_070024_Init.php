@@ -19,6 +19,7 @@ class Init extends Migration {
                         $table->string("password");
                         $table->string("wechat_id");
                         $table->float("balance");
+                        $table->string("headimgurl");
                         $table->timestamps();
                         $table->softDeletes();
                 });

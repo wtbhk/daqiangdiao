@@ -16,6 +16,11 @@ Route::get('/', function()
         return View::make('index');
 });
 
+Route::get('/list', function()
+{
+        return Session::get('openid');
+});
+
 Route::get('/profile', 'UserController@showProfile');
 
 Route::post('/profile', 'UserController@editProfile');

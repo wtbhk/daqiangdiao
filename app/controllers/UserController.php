@@ -4,7 +4,7 @@ Class UserController extends BaseController {
 
         function showProfile()
         {
-                //
+                 
         }
 
         function editProfile()
