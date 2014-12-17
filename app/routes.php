@@ -18,7 +18,7 @@ Route::get('/', function()
 
 Route::get('/list', function()
 {
-        return Session::get('openid');
+        return View::make('list');
 });
 
 Route::get('/profile', 'UserController@showProfile');
