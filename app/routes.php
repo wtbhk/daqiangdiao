@@ -11,15 +11,9 @@
 |
 */
 
-Route::get('/', function()
-{
-        return View::make('index');
-});
+Route::get('/', 'ListController@showIndex');
 
-Route::get('/list', function()
-{
-        return View::make('list');
-});
+Route::get('/list', 'ListController@showList');
 
 Route::get('/profile', 'UserController@showProfile');
 

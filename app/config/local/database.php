@@ -8,7 +8,7 @@ return array(
 
 		'sqlite' => array(
 			'driver'   => 'sqlite',
-			'database' => __DIR__.'/../database/local.sqlite',
+			'database' => __DIR__.'/../../database/local.sqlite',
 			'prefix'   => '',
 		),
 

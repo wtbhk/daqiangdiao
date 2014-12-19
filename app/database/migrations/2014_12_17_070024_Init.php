@@ -29,11 +29,12 @@ class Init extends Migration {
                         $table->increments("id");
                         $table->float("price");
                         $table->integer("reservation_day");
-                        $table->integer("inventory_per_day")
+                        $table->integer("inventory_per_day");
                         $table->boolean("ignore_inventory");
                         $table->string("title");
                         $table->string("description");
                         $table->string("content");
+                        $table->integer("rank");
                         $table->timestamps();
                         $table->softDeletes();
                 });
@@ -44,7 +45,7 @@ class Init extends Migration {
                         $table->integer("product_id");
                         $table->date("date");
                         $table->integer("inventory");
-                        $table->timestamps()
+                        $table->timestamps();
                 });
 
                 Schema::Create("orders", function($table)
@@ -62,7 +63,7 @@ class Init extends Migration {
                 Schema::Create("orderitems", function($table)
                 {
                         $table->increments("id");
-                        $talbe->integer("product_id");
+                        $table->integer("product_id");
                         $table->integer("order_id");
                         $table->string("title");
                         $table->string("description");

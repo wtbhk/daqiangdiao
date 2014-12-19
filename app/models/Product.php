@@ -23,5 +23,14 @@ class Product extends Eloquent {
                 return $this->hasOne('Video');
         }
 
+        function scopeRank($query)
+        {
+                return $query->orderBy('rank', 'desc');
+        }
+
+        function scopeNew($query)
+        {
+                return $query->orderBy('created_at');
+        }
 
 }

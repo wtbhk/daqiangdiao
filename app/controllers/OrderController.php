@@ -1,6 +1,6 @@
 <?php
 
-Class UserController extends BaseController {
+Class OrderController extends BaseController {
 
         function showOrder()
         {
