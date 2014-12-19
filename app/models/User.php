@@ -17,6 +17,20 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
         protected $softDelete = true;
 
+        static function boot()
+        {
+                parent::boot();
+                User::creating(function($user)
+                {
+                        if(!$user->headimgurl)
+                        {
+                                $wechat_user_info = Session::has('wechat_userinfo') ?
+                                        Session::get('wehcat_userinfo') : array();
+                                $user->headimgurl = $wechat_user_info['headimgurl'];
+                        }
+                });
+        }
+
         function orders()
         {
                 return $this->hasMany('Order');
