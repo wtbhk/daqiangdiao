@@ -11,25 +11,30 @@
 |
 */
 
-Route::get('/', 'ListController@showIndex');
 
-Route::get('/list', 'ListController@showList');
+Route::group(arrray('before'=>'wechat.base'), function()
+{
 
-Route::get('/profile', 'UserController@showProfile');
+        Route::get('/', 'ListController@showIndex');
 
-Route::post('/profile', 'UserController@editProfile');
+        Route::get('/list', 'ListController@showList');
 
-Route::get('/phone', 'UserController@showPhone');
+        Route::get('/profile', 'UserController@showProfile');
 
-Route::get('/address', 'UserController@showAddAddress');
+        Route::post('/profile', 'UserController@editProfile');
 
-Route::post('/address', 'UserController@addAddress');
+        Route::get('/phone', 'UserController@showPhone');
 
-Route::delete('/address/{id}', 'UserController@delAddress');
+        Route::get('/address', 'UserController@showAddAddress');
 
-Route::get('/orders', 'UserController@showOrders');
+        Route::post('/address', 'UserController@addAddress');
 
-Route::get('/order/{id}', 'OrderController@showOrder');
+        Route::delete('/address/{id}', 'UserController@delAddress');
 
-Route::get('/product/{id}', 'ProductController@showProduct');
+        Route::get('/orders', 'UserController@showOrders');
 
+        Route::get('/order/{id}', 'OrderController@showOrder');
+
+        Route::get('/product/{id}', 'ProductController@showProduct');
+
+});
