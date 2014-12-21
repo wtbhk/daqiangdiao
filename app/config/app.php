@@ -83,8 +83,7 @@ return array(
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
 	/*
-	|--------------------------------------------------------------------------
-	| Autoloaded Service Providers
+	|-------------------------------------------------------------------------- | Autoloaded Service Providers
 	|--------------------------------------------------------------------------
 	|
 	| The service providers listed here will be automatically loaded on the
@@ -121,7 +120,8 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-                'Xjchen\WechatFilter\WechatFilterServiceProvider'
+                'Xjchen\WechatFilter\WechatFilterServiceProvider',
+                'Gloudemans\Shoppingcart\ShoppingcartServiceProvider'
 
 	),
 
@@ -189,6 +189,7 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+                'Cart'              => 'Gloudemans\Shoppingcart\Facades\Cart',
 
 	),
 

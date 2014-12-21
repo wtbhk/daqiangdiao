@@ -33,8 +33,10 @@ Route::group(arrray('before'=>'wechat.base'), function()
 
         Route::get('/orders', 'UserController@showOrders');
 
-        Route::get('/order/{id}', 'OrderController@showOrder');
-
         Route::get('/product/{id}', 'ProductController@showProduct');
+
+        Route::get('/cart', 'CartController@showCart');
+
+        Route::post('/cart', 'CartController@editCart');
 
 });
