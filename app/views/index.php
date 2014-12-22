@@ -1,3 +1,2 @@
-<html>
-hello
-</html>
+<?php
+        var_dump($products);

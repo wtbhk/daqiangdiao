@@ -34,6 +34,8 @@ Class CartController extends BaseController {
 
         function checkCart()
         {
+                if(Cart::total()==0)
+                        return Redirect::to('/cart')->withErrors(array('msg'=>'Empty cart'));
                 if(!(Input::has('today')||Input::has('date')) || !Input::has('items'))
                 {
                         return Redirect::to('/cart')->withError(true);
