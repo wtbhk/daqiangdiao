@@ -8,6 +8,16 @@ class Addressee extends Eloquent {
 
         protected $softDelete = true; 
 
+        static function boot()
+        {
+                parent::boot();
+                Addressee::created(function($addressee)
+                {
+                        if(!$addressee->user->phone)
+                                $addressee->user->phone = $addressee->phone;
+                });
+        }
+
         function user()
         {
                 return $this->belongsTo('User');
