@@ -13,4 +13,9 @@ class Inventory extends Eloquent {
                 return $this->hasOne('Product');
         }
 
+        function scopeWhen($query, $date)
+        {
+                return $query->whereDate($date);
+        }
+
 }

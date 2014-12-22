@@ -33,4 +33,22 @@ class Product extends Eloquent {
                 return $query->orderBy('created_at');
         }
 
+        function inventory_in($date)
+        {
+                return $this->inventory->when($date)->firstOrCreate(array(
+                        'product_id'=>$this->id,
+                        'date'=>$date,
+                        'inventory'=>$this->inventory_per_day
+                ));
+        }
+
+        function checkInventory($qty, $date)
+        {
+                if($this->ignore_inventory)
+                        return true;
+                if($qty <= $this->inventory_in($date))
+                        return true;
+                return false;
+        }
+
 }

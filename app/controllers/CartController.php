@@ -32,6 +32,41 @@ Class CartController extends BaseController {
                 );
         }
 
+        function checkCart()
+        {
+                if(!(Input::has('today')||Input::has('date')) || !Input::has('items'))
+                {
+                        return Redirect::to('/cart')->withError(true);
+                }
+                $date = Input::has('today') ? date('Y-m-d') :  Input::get('date');
+                if(strtotime($date) < strtotime(date('Y-m-d')))
+                {
+                        return Redirect::to('/cart')->withError('Invaild date');
+                }
+                Session::set('date', $date);
+
+                $cart = array();
+                foreach(Input::get('items') as $item)
+                {
+                        $product = Product::find($item->id);
+                        if(!$product)
+                                return Redirect::to('/cart')->withError('Error in items');
+                        if(!$product->checkInventory($item->qty, $date))
+                                return Redirect::to('/cart')->withError('Error in inventory');
+                        $cart[] = array(
+                                'id'=>$product->id, 
+                                'name'=>$product->title, 
+                                'qty'=>$items->qty,
+                                'price'=>$product->price
+                        );
+                }
+                Cart::destroy();
+                Cart::associate('Product')->add($cart);
+
+                return Redirect::to('/checkorder');
+
+        }
+
         function editCart()
         {
                 $input = Input::only('id', 'qty');
