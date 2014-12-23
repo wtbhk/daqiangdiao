@@ -4,8 +4,7 @@ Class OrderController extends BaseController {
 
         function showOrder($id)
         {
-                $wechat_user_info = Session::get('wechat_userinfo');
-                $user = User::where('wechat_id', $wechat_user_info['openid'])->first();
+                $user = $this->user;
                 $order = $user->orders->where('id', $id);
                 if(!$order)
                         return Redirect::to('/profile')->withErrors('msg'=>'Permissoin denied');
@@ -34,8 +33,7 @@ Class OrderController extends BaseController {
 ]
         function checkOrder()
         {
-                $wechat_user_info = Session::get('wechat_userinfo');
-                $user = User::where('wechat_id', $wechat_user_info['openid'])->first();
+                $user = $this->user;
                 $validator = Validator::make(array(
                         Input::only('payment', 'addressee'),
                         'payment'=>'required|in:cash,balance',

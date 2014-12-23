@@ -22,12 +22,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
                 parent::boot();
                 User::creating(function($user)
                 {
-                        if(!$user->headimgurl)
-                        {
-                                $wechat_user_info = Session::has('wechat_userinfo') ?
-                                        Session::get('wehcat_userinfo') : array();
-                                $user->headimgurl = $wechat_user_info['headimgurl'];
-                        }
+                        if($user->headimgurl or !Session::has('wechat_userinfo'))
+                                return;
+                        $wechat_user_info = Session::get('wehcat_userinfo');
+                        $user->headimgurl = $wechat_user_info['headimgurl'];
                 });
         }
 

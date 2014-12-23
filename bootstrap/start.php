@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('wtbhk_workplace', 'wtbhk_workplace2'),
+	'local' => array('wtbhkworkplace', 'wtbhk_workplace2'),
 
 ));
 

@@ -7,6 +7,19 @@ class BaseController extends Controller {
 	 *
 	 * @return void
 	 */
+        
+        function __construct()
+        {
+                if(!Session::has('openid'))
+                        throw new Exception;
+                $this->wechat_id = Session::get('openid'); 
+                $this->user = User::firstOrCreate(array(
+                        'wechat_id'=>$this->wechat_id
+                ));
+                if(Session::has('wechat_userinfo'))
+                        $this->wechat_user_info = Session::get('wechat_userinfo');
+        }
+
 	protected function setupLayout()
 	{
 		if ( ! is_null($this->layout))

@@ -4,17 +4,13 @@ Class UserController extends BaseController {
 
         function showProfile()
         {
-                $wechat_user_info = Session::get('wechat_userinfo');
-                $user = User::firstOrCreate(array(
-                        'wechat_id'=>$wechat_user_info['openid']
-                ))->with('addressee');
+                $user = $this->user;
                 return View::make('profile.profile', array('user'=>$user));
         }
 
         function editProfile()
         {
-                $wechat_user_info = Session::get('wechat_userinfo');
-                $user = User::where('wechat_id', Session::get($wechat_user_info['openid']))->first();
+                $user = $this->user;
                 $input = Input::only('phone', 'password');
                 if(!$input)
                 {
@@ -34,25 +30,24 @@ Class UserController extends BaseController {
 
         function showPhone()
         {
-                return View::make('profile.phone')
+                return View::make('profile.phone');
         }
 
         function showAddAddress()
         {
-                return View::make('profile.address')
+                return View::make('profile.address');
         }
 
         function addAddress()
         {
-                $wechat_user_info = Session::get('wechat_userinfo');
-                $user = User::where('wechat_id', Session::get($wechat_user_info['openid']))->first();
+                $user = $this->user;
                 $input = Input::only('name', 'address', 'phone');
                 $validator = Validator::make($input, array(
                         'phone'=>'required|digits_between:7,12',
                         'name'=>'required',
                         'address'=>'required'
                 ));
-                if($validator->fails(){
+                if($validator->fails()){
                         return Redirect::to('/address')->withError($validator);
                 }
                 $user->addressees()->insert($input);
@@ -61,8 +56,7 @@ Class UserController extends BaseController {
 
         function delAddress($id)
         {
-                $wechat_user_info = Session::get('wechat_userinfo');
-                $user = User::where('wechat_id', Session::get($wechat_user_info['openid']))->first();
+                $user = $this->user;
                 if(in_array($id, $user->addressees()->pluck('id')))
                 {
                         Addressee::find($id)->delete();
@@ -73,8 +67,7 @@ Class UserController extends BaseController {
 
         function showOrders()
         {
-                $wechat_user_info = Session::get('wechat_userinfo');
-                $user = User::where('wechat_id', Session::get($wechat_user_info['openid']))->first();
+                $user = $this->user;
                 $orders = $user->orders()->with('order.orderitems');
                 return View::make(
                         'profile.orders', 
