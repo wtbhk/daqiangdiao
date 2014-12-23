@@ -12,7 +12,7 @@
 */
 
 
-Route::group(arrray('before'=>'wechat.base'), function()
+Route::group(array('before'=>'wechat.base'), function()
 {
 
         Route::get('/', 'ListController@showIndex');
