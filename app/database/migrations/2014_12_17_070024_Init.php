@@ -15,11 +15,11 @@ class Init extends Migration {
                 Schema::Create("users", function($table)
                 {
                         $table->increments("id");
-                        $table->string("phone");
-                        $table->string("password");
-                        $table->string("wechat_id");
-                        $table->float("balance");
-                        $table->string("headimgurl");
+                        $table->string("phone")->nullable();
+                        $table->string("password")->nullable();
+                        $table->string("wechat_id")->unique();
+                        $table->float("balance")->default(0);
+                        $table->string("headimgurl")->nullable();
                         $table->timestamps();
                         $table->softDeletes();
                 });
@@ -30,11 +30,11 @@ class Init extends Migration {
                         $table->float("price");
                         $table->integer("reservation_day");
                         $table->integer("inventory_per_day");
-                        $table->boolean("ignore_inventory");
+                        $table->boolean("ignore_inventory")->default(false);
                         $table->string("title");
-                        $table->string("description");
-                        $table->string("content");
-                        $table->integer("rank");
+                        $table->string("description")->nullable();
+                        $table->string("content")->nullable();
+                        $table->integer("rank")->default(0);
                         $table->timestamps();
                         $table->softDeletes();
                 });
@@ -66,8 +66,8 @@ class Init extends Migration {
                         $table->integer("product_id");
                         $table->integer("order_id");
                         $table->string("title");
-                        $table->string("description");
-                        $table->string("content");
+                        $table->string("description")->nullable();
+                        $table->string("content")->nullable();
                         $table->timestamps();
                         $table->softDeletes();
                 });
@@ -76,7 +76,7 @@ class Init extends Migration {
                 {
                         $table->increments("id");
                         $table->string("file");
-                        $table->string("description");
+                        $table->string("description")->nullable();
                         $table->morphs("imageable");
                         $table->timestamps();
                         $table->softDeletes();
@@ -87,7 +87,7 @@ class Init extends Migration {
                         $table->increments("id");
                         $table->integer("product_id");
                         $table->string("file");
-                        $table->string("description");
+                        $table->string("description")->nullable();
                         $table->timestamps();
                         $table->softDeletes();
                 });

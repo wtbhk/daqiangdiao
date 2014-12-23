@@ -72,6 +72,11 @@ Class OrderController extends BaseController {
                                         'description'=>$item->product->description,
                                         'content'=>$item->product->content
                                 ));
+                                if(!$item->product->ignore_inventory)
+                                {
+                                        $item->product->iventory = $item->product->inventory - $item->qty;
+                                        $item->save();
+                                }
                         }
                         if(Input::get('payment')=='balance')
                         {
