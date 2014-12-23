@@ -16,6 +16,8 @@ class Init extends Migration {
                 {
                         $table->increments("id");
                         $table->string("phone")->nullable();
+                        $table->string("nickname")->nullable();
+                        $table->string("name")->nullable();
                         $table->string("password")->nullable();
                         $table->string("wechat_id")->unique();
                         $table->float("balance")->default(0);

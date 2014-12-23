@@ -35,7 +35,8 @@ Class UserController extends BaseController {
 
         function showAddAddress()
         {
-                return View::make('profile.address');
+                $user = $this->user;
+                return View::make('profile.address', array('user'=>$user));
         }
 
         function addAddress()

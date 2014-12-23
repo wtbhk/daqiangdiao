@@ -15,6 +15,8 @@ class Addressee extends Eloquent {
                 {
                         if(!$addressee->user->phone)
                                 $addressee->user->phone = $addressee->phone;
+                        if(!$addressee->user->name)
+                                $addressee->user->name = $addressee->name;
                 });
         }
 
