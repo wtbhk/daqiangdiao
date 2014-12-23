@@ -27,6 +27,7 @@ class Init extends Migration {
                 Schema::Create("products", function($table)
                 {
                         $table->increments("id");
+                        $table->boolean("available")->default(true);
                         $table->float("price");
                         $table->integer("reservation_day");
                         $table->integer("inventory_per_day");

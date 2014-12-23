@@ -43,18 +43,22 @@ Class CartController extends BaseController {
                 $date = Input::has('today') ? date('Y-m-d') :  Input::get('date');
                 if(strtotime($date) < strtotime(date('Y-m-d')))
                 {
-                        return Redirect::to('/cart')->withError('Invaild date');
+                        return Redirect::to('/cart')->withErrors(array('Invaild date'));
                 }
                 Session::set('date', $date);
 
                 $cart = array();
                 foreach(Input::get('items') as $item)
                 {
-                        $product = Product::find($item->id);
+                        $product = Product::find($item['id']);
                         if(!$product)
-                                return Redirect::to('/cart')->withError('Error in items');
-                        if(!$product->checkInventory($item->qty, $date))
-                                return Redirect::to('/cart')->withError('Error in inventory');
+                                return Redirect::to('/cart')->withErrors(array('msg'=>'Error in items'));
+                        if(!$product->available)
+                                return Redirect::to('/cart')->withErrors(array('msg'=>'More than one product is unavailable'));
+                        if(!$product->checkReservation($date))
+                                return Redirect::to('/cart')-withErrors(array('msg'=>'Error in reservation'));
+                        if(!$product->checkInventory($item['qty'], $date))
+                                return Redirect::to('/cart')->withErrors(array('msg'=>'Error in inventory'));
                         $cart[] = array(
                                 'id'=>$product->id, 
                                 'name'=>$product->title, 

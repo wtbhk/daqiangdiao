@@ -33,6 +33,11 @@ class Product extends Eloquent {
                 return $query->orderBy('created_at');
         }
 
+        function scopeAvailable($query)
+        {
+                return $query->where('available', true);
+        }
+
         function inventory_in($date)
         {
                 return $this->inventory->when($date)->firstOrCreate(array(
@@ -49,6 +54,14 @@ class Product extends Eloquent {
                 if($qty <= $this->inventory_in($date))
                         return true;
                 return false;
+        }
+
+        function checkReservation($date)
+        {
+                $days = round((strtotime($date)-strtotime(date('Y-m-d')))/3600/24);
+                if($days < $this->reservation_day)
+                        return false;
+                return true;
         }
 
 }

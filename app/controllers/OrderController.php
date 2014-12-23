@@ -14,10 +14,9 @@ Class OrderController extends BaseController {
 
         function showCheckOrder()
         {
+                $user = $this->user;
                 if(Cart::total()==0)
                         return Redirect::to('/cart')->withErrors(array('msg'=>'Empty cart'));
-                $wechat_user_info = Session::get('wechat_userinfo');
-                $user = User::where('wechat_id', $wechat_user_info['openid'])->first();
                 $addressee = Addressee::where('user_id', $user->id)->first();
                 $date = Session::get('date');
                 $price = Cart::total();
@@ -62,6 +61,8 @@ Class OrderController extends BaseController {
                         foreach($cart as $item)
                         {
                                 if(!$item->product->checkInventory($item->qty, Session::get('date')))
+                                        throw new Exception;
+                                if(!$item->product->checkReservation(Session::get('date'))
                                         throw new Exception;
                                 $order->orderitems->create(array(
                                         'product_id'=>$item->product->id,
