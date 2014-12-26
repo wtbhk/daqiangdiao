@@ -12,8 +12,7 @@
 */
 
 
-Route::group(array('before'=>'wechat.base'), function()
-{
+Route::group(array('before'=>'wechat.base'), function(){
 
         Route::get('/', 'ListController@showIndex');
 
@@ -46,5 +45,26 @@ Route::group(array('before'=>'wechat.base'), function()
         Route::get('/checkorder', 'OrderController@showCheckOrder');
 
         Route::post('/checkorder', 'OrderController@checkOrder');
+
+});
+
+
+
+Route::get('/admin/login', 'AdminController@login');
+
+Route::post('/admin/login', 'AdminController@checkLogin');
+
+
+Route::group(array('before'=>'admin'), function(){
+
+        Route::get('/admin', 'AdminController@settings');
+
+        Route::get('/admin/setting', 'AdminController@setting');
+
+        Route::get('/admin/product', 'AdminController@product');
+
+        Route::get('/admin/user', 'AdminController@user');
+
+        Route::get('/admin/order', 'AdminController@order');
 
 });

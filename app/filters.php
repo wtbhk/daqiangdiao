@@ -34,6 +34,13 @@ App::after(function($request, $response)
 |
 */
 
+Route::filter('admin', function()
+{
+        if(!Admin::check())
+                return Redirect::to('/admin/login');
+}
+
+
 Route::filter('auth', function()
 {
 	if (Auth::guest())

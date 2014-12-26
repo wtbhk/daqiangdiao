@@ -106,6 +106,15 @@ class Init extends Migration {
                         $table->softDeletes();
                 });
 
+                Schema::Create("admin", function($table)
+                {
+                        $table->increments("id");
+                        $table->username("username");
+                        $table->password("password");
+                        $table->timestamps();
+                        $table->softDeltes();
+                });
+
 	}
 
 	/**
@@ -115,14 +124,15 @@ class Init extends Migration {
 	 */
 	public function down()
 	{
-                Schema::dropIfExists("User");
-                Schema::dropIfExists("Product");
-                Schema::dropIfExists("Inventory");
-                Schema::dropIfExists("Order");
-                Schema::dropIfExists("OrderItem");
-                Schema::dropIfExists("Image");
-                Schema::dropIfExists("Video");
-                Schema::dropIfExists("Addressee");
+                Schema::dropIfExists("users");
+                Schema::dropIfExists("products");
+                Schema::dropIfExists("inventory");
+                Schema::dropIfExists("orders");
+                Schema::dropIfExists("orderItems");
+                Schema::dropIfExists("images");
+                Schema::dropIfExists("videos");
+                Schema::dropIfExists("addressees");
+                Schema::dropIfExists("admin");
 	}
 
 }
