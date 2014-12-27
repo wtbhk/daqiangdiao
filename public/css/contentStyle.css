@@ -1,0 +1,452 @@
+@charset "UTF-8";
+/* EcjtuNet sass modules lib
+ *
+ *致力于提高日新前端团队的开发效率
+ *
+ *@author           Venshy at EcjtuNet
+ */
+/* 文件载入
+ ----------------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* mobile highlinght */
+body {
+  -webkit-tap-highlight-color: transparent;
+  -ms-touch-action: none;
+  /* WP8 */ }
+
+/*  css reset  */
+/* 添加className形式 */
+/* 常用属性库，类名形式添加使用 
+ * such as:　<div class="fl"> </div>
+ */
+/* about float */
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.fn {
+  float: none; }
+
+.clear {
+  clear: both; }
+
+.overft {
+  overflow: hidden; }
+
+/* about display */
+.hidden {
+  display: none; }
+
+/* about position */
+.head-fixed {
+  position: fixed;
+  left: 0;
+  top: 0; }
+
+.foot-fixed {
+  position: fixed;
+  left: 0;
+  bottom: 0; }
+
+/* 居中 */
+.center-x {
+  text-align: center;
+  margin: 0 auto; }
+
+/* page layout 通过给body添加className使用
+ * such as: <body class="mse"></body>
+ * WARNING: html按照README书写，或参考测试页面
+ * _config.scss宽高参数需自主修改 
+ * Default: $sub-width: 0; $extra-width: 0; $wrap-width: 990px;
+ *
+ *
+ *
+ * 因为布局遵循内容至上原则,所以需要设置$header-height
+ * Default: $header-height: 0;
+ */
+/* 布局
+ -------------------------------------------------------------*/
+/* m: main, s: sub, e: extra */
+.wrap {
+  width: 100%;
+  overflow: hidden; }
+
+#content {
+  overflow: hidden;
+  margin-top: 37px; }
+
+footer {
+  width: 100%; }
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 0; }
+
+.mse .main {
+  width: 100%;
+  float: left; }
+  .mse .main .wrap {
+    margin: 0 0 0 0; }
+.mse .sub {
+  width: 0;
+  float: left;
+  margin-left: 0; }
+.mse .extra {
+  width: 0;
+  margin-left: 0;
+  float: left; }
+
+/**************************************************************/
+.sme .main {
+  width: 100%;
+  float: left; }
+  .sme .main .main-wrap {
+    margin: 0 0 0 0; }
+.sme .sub {
+  width: 0;
+  float: left;
+  margin-left: -100%; }
+.sme .extra {
+  width: 0;
+  margin-left: 0;
+  float: left; }
+
+/**************************************************************/
+.sem #content {
+  overflow: hidden;
+  margin-top: 37px; }
+.sem .main {
+  width: 100%;
+  float: left; }
+  .sem .main .main-wrap {
+    margin: 0 0 0 0; }
+.sem .sub {
+  width: 0;
+  float: left;
+  margin-left: -100%;
+  position: relative;
+  left: 0; }
+.sem .extra {
+  width: 0;
+  margin-left: -100%;
+  float: left;
+  position: relative;
+  left: 0; }
+
+/*  布局  */
+/* mixin形式 */
+/* 圆角
+ --------------------------------------------------*/
+/* =appearance
+ *-------------------------------------------------*/
+/* user-select
+ --------------------------------------------------*/
+/* =animation
+ *-------------------------------------------------*/
+/* =rotate
+ *-------------------------------------------------*/
+select {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-align: center;
+  background: #fff;
+  border: 0; }
+
+/*  组件  */
+header {
+  background: #ee6b62;
+  text-align: center; }
+  header .fl, header .fr {
+    position: relative;
+    top: 11px; }
+  header h1 {
+    display: inline-block;
+    font: 16px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    color: #fff; }
+
+header .wrap {
+  width: 90%;
+  margin: 0 auto;
+  color: #fff;
+  height: 37px;
+  line-height: 37px; }
+
+header .set {
+  display: inline-block;
+  width: 16px; }
+  header .set p {
+    height: 3px;
+    background: #fff;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    ms-border-radius: 1px;
+    border-radius: 1px; }
+  header .set p + p {
+    margin-top: 3px; }
+
+.toUser {
+  width: 15px;
+  height: 17px;
+  background: url("../images/toUser.png") no-repeat; }
+
+/* 布局
+ -------------------------------------------------------------*/
+footer {
+  border-top: 1px solid #bebebe;
+  background: #616161;
+  height: 49px; }
+  footer .wrap {
+    width: 90%;
+    margin: 0 auto;
+    color: #333; }
+  footer .get {
+    display: inline-block;
+    width: 22px;
+    height: 19px;
+    background: url("../images/get.png") no-repeat;
+    position: relative;
+    top: 17px; }
+  footer .delivery {
+    margin-top: 9px;
+    color: #fff;
+    display: inline-block;
+    padding: 8px 13px;
+    background: #7a7a7a;
+    font: 16px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    ms-border-radius: 2px;
+    border-radius: 2px; }
+
+#slide {
+  width: 100%; }
+  #slide .tab-pannel {
+    overflow: hidden; }
+  #slide .slide-img {
+    width: 100%;
+    float: left; }
+    #slide .slide-img img {
+      width: 100%; }
+
+#content {
+  padding-bottom: 70px; }
+
+div.maincontent {
+  width: 90%;
+  margin: 25px auto;
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray; }
+  div.maincontent h2 {
+    font: 600 20px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    margin-bottom: 18px; }
+
+div.priceBox {
+  margin-top: 18px; }
+
+span.del, span.price {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  ms-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  width: 30px;
+  height: 25px;
+  -webkit-box-shadow: 0 0 3px gray;
+  -moz-box-shadow: 0 0 3px gray;
+  box-shadow: 0 0 3px gray;
+  color: #f53874; }
+
+span.del {
+  font: 900 8px/25px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+  position: relative;
+  width: 25px;
+  top: -2px;
+  text-align: center; }
+
+span.number {
+  font: bolder 12px/25px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+  color: #f53874; }
+
+span.price {
+  width: auto;
+  padding: 0 6px;
+  font: 900 12px/25px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+  position: relative;
+  right: 2px; }
+
+span.order, span.remain {
+  display: inline-block;
+  border: 1px solid #bbbbbb;
+  font: 12px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+  color: red;
+  border-radius: 3px; }
+
+span.order {
+  color: #fff;
+  padding: 2px 3px;
+  margin-bottom: 10px;
+  background: #e64c4c; }
+
+span.remain {
+  padding-left: 0; }
+
+span.today {
+  display: inline-block;
+  font: 12px/1.0 "宋体";
+  color: #fff;
+  padding: 2px;
+  background: #ffb14a;
+  border-radius: 2px; }
+
+#description {
+  width: 90%;
+  margin: 20px auto;
+  color: #695e69; }
+  #description h2 {
+    font: bold 20px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    margin-bottom: 10px; }
+  #description p {
+    font: 16px/1.5 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    text-indent: 32px; }
+  #description img {
+    width: 90%;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    -webkit-box-shadow: 2px 2px 3px gray;
+    -moz-box-shadow: 2px 2px 3px gray;
+    box-shadow: 2px 2px 3px gray; }
+
+.foodBox {
+  width: 90%;
+  margin: 10px auto 10px;
+  overflow: visible;
+  -webkit-box-shadow: 0 0 15px #999999;
+  -moz-box-shadow: 0 0 15px #999999;
+  box-shadow: 0 0 15px #999999; }
+  .foodBox .food-img {
+    position: relative; }
+    .foodBox .food-img h2 {
+      position: absolute;
+      bottom: 7px;
+      left: 25px;
+      font: 400 22px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+      color: #fff; }
+  .foodBox img {
+    width: 100%; }
+  .foodBox .left h3 {
+    font: 14px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    margin-bottom: 12px; }
+  .foodBox .left p {
+    font: 12px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    color: #d1c7d1; }
+  .foodBox .priceBox {
+    margin: 0; }
+  .foodBox .price {
+    color: #e72c33;
+    height: auto;
+    margin-bottom: 5px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    font: 12px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif; }
+  .foodBox .maincontent {
+    margin: 20px 0 0 15px;
+    border-bottom: none; }

@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+
+header {
+	background: $header-color;
+    text-align: center;
+
+    .fl, .fr {
+        position: relative;
+        top: 11px;
+    }
+
+    h1 {
+        display: inline-block;
+        font: 16px/1.0 $font-family;
+        color: #fff;
+    }
+}
+header .wrap {
+	width: 90%;
+	margin: 0 auto;
+	color: #fff;
+	height: $header-height;
+	line-height: $header-height;
+}
+header .set {
+	display: inline-block;
+    width: 16px;
+
+    p {
+        height: 3px;
+        background: #fff;
+        @include radius(1px);
+    }
+
+    p + p {
+        margin-top: 3px;
+    }
+}
+.toUser {
+    width: 15px;
+    height: 17px;
+	background: url($images-path + "toUser.png") no-repeat;
+}

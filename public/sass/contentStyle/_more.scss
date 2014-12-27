@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+
+.foodBox {
+    width: 90%;
+    margin: 10px auto 10px;
+    overflow: visible;
+    @include box-shadow(0 0 15px #999);
+
+
+    .food-img {
+        position: relative;
+
+        h2 {
+            position: absolute;
+            bottom: 7px;
+            left: 25px;
+            font: 400 22px/1.0 $font-family;
+            color: #fff;
+        }
+    }
+    
+    img {
+        width: 100%;
+    }
+
+    .left {
+        h3 {
+            font: 14px/1.0 $font-family;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font: 12px/1.0 $font-family;
+            color: #d1c7d1;
+        }
+    }
+    
+    .priceBox {
+        margin: 0;
+    }
+    .price {
+        color: #e72c33;
+        height: auto;
+        margin-bottom: 5px;
+        @include box-shadow(none);
+        font: 12px/1.0 $font-family;
+    }
+
+    .maincontent {
+        margin: 20px 0 0 15px;
+        border-bottom: none;
+    }
+}

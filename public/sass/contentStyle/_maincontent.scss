@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+#content {
+	padding-bottom: 70px;
+}
+div.maincontent {
+	
+	width: 90%;
+	margin: 25px auto;
+	padding-bottom: 10px;
+	border-bottom: 1px solid gray;
+
+	h2 {
+		font: 600 20px/1.0 $font-family;
+		margin-bottom: 18px;
+	}
+}
+div.priceBox {
+	margin-top: 18px;
+}
+
+span.del, span.price {
+	@include radius(3px);
+	display: inline-block;
+	width: 30px;
+	height: 25px;
+	@include box-shadow(0 0 3px gray);
+	color: #f53874;
+}
+span.del {
+	font: 900 8px/25px $font-family;
+	position: relative;
+	width: 25px;
+	top: -2px;
+	text-align: center;
+}
+span.number {
+	font: bolder 12px/25px $font-family;
+	color: #f53874;
+}
+
+span.price {
+	width: auto;
+	padding: 0 6px;
+	font: 900 12px/25px $font-family;
+	position: relative;
+	right: 2px;
+}
+
+span.order, span.remain {
+	display: inline-block;
+	border: 1px solid #bbbbbb;
+	font: 12px/1.0 $font-family;
+	color: red;
+	border-radius: 3px;
+}
+span.order {
+	color: #fff;
+	padding: 2px 3px;
+	margin-bottom: 10px;
+	background: #e64c4c;
+}
+span.remain {
+	padding-left: 0;
+}
+span.today {
+	display: inline-block;
+	font: 12px/1.0 "宋体";
+	color: #fff;
+	padding: 2px;
+	background: #ffb14a;
+	border-radius: 2px;
+}
+

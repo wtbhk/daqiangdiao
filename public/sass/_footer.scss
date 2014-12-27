@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+@import "ui/ui/config";
+
+footer {
+	border-top: 1px solid #bebebe;
+	background: $footer-bg;
+	height: 49px;
+
+	.wrap {
+		width: 90%;
+		margin: 0 auto;
+		color: #333;
+	}
+	
+	.get {
+		display: inline-block;
+		width: 22px;
+		height: 19px;
+		background: url($images-path + "get.png") no-repeat;
+		position: relative;
+		top: 17px;
+	}
+
+	.delivery {
+		margin-top: 9px;
+		color: #fff;
+		display: inline-block;
+		padding: 8px 13px;
+		background: #7a7a7a;
+		font: 16px/1 $font-family;
+		@include radius(2px);
+	}
+}

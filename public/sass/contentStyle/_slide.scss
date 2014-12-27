@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+#slide {
+	width: 100%;
+
+	.tab-pannel {
+		overflow: hidden;
+	}
+
+	.slide-img {
+		width: 100%;
+		float: left;
+
+		img {
+			width: 100%;
+		}
+	}
+
+}

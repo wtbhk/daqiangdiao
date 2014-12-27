@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+
+.fl img {
+    width: 48px;
+    height: 40px;
+}
+.foodName {
+    margin-left: 7px;
+    display: inline-block;
+}
+
+.ignore {
+    font: 12px/1.0 $font-family;
+    color: #adadad;
+}
+
+.price {
+    color: #e51c23;
+    position: relative;
+    top: 17px;
+}
+
+span.type {
+    font: 14px/1.0 $font-family;
+}
+span.time {
+    font: 12px/1.0 $font-family;
+    color: #adadad;
+}
+span.totalPrice {
+    font: blod 14px/1 $font-family;
+    color: #e51c23;
+}
+
+li.typeItem {
+    padding: 0;
+}

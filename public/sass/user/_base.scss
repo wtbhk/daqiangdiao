@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+body {
+    background: #f0f0f2;
+}
+
+#list {
+    margin-bottom: 30px;
+    
+    ul {
+        width: 340/360 * 100%;
+        margin: 0 auto;
+    }
+    li {
+        width: 100%;
+        overflow: hidden;
+        background: #fafafa;
+        font: 14px/26px $font-family;
+        padding:10/340*100% 0;
+
+        @include box-shadow(0 0 3px #ccc);
+
+        .fl {
+            margin-left: 16px;
+        }
+
+        .fr {
+            margin-right: 16px;
+            line-height: 26px;
+        }
+    }
+
+    .mar10 {
+        margin-top: 10px;
+    }
+}
+
+
+
+.more {
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    background: url($images-path + "more.png");
+}
+
+.add {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background: url($images-path + "add.png");
+}
+.del {
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    background: url($images-path + "del.png");
+}
+
+.checked {
+    display: inline-block;
+    width: 15px;
+    height: 12px;
+    background: url($images-path + "checked.png");
+}
+
+.headBack {
+    display: inline-block;
+    width: 12px;
+    height: 17px;
+    background: url($images-path + "back.png");
+}
+
+.wrap form {
+    width: 100% - 9*2/360*100%;
+    margin: 10px 8px 15px;
+    text-align: center;
+
+    input[type=text] {
+        font: 16px/1.0 $font-family;
+        color: #888;
+        width: 99.5%;
+        height: 45px;
+        margin: 0 auto;
+        text-indent: 20px;
+        border: 1px solid #c8c8c9;
+        background: #fafafa;
+    }
+
+    input[type=submit] {
+        font: 16px/1.0 $font-family;
+        color: #fff;
+        width: 100%;
+        height: 40px;
+        border: 1px solid #bbb;
+        background: #e66b63;
+        margin-top: 10px;
+        @include radius();
+    }
+    
+    input.mar5 {
+        margin-top: 5px;
+    }
+
+    input.next {
+        border-top: none;
+    }
+
+    .tips {
+        color: #b6b6b6;
+        font: 12px/1.0 $font-family;
+        margin-top: 20px;
+        margin-right: 15px;
+
+        i {
+            display: inline-block;
+            position: relative;
+            top: -3px;
+            right: 3px;
+            width: 4px;
+            height: 4px;
+            background: #ffb14a;
+            @include radius(4px);
+        }
+    }
+}
+
+
+
+#modal, #mask {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#errorBox {
+    position: relative;
+    top: 30%;
+    z-index: 2;
+    margin: 0 auto;
+    text-align: center;
+    width: 60%;
+    padding: 40px 10%;
+    line-height: 60px;
+    background: #fff;
+    font: 18px/1.0 $font-family;
+    color: #888;
+    @include box-shadow(0 0 3px gray);
+    @include radius(8px);
+}
+
+#modalClose {
+    position: absolute;
+    top: 10px;
+    right: 5%;
+    font: 24px/1.0 $font-family;
+    color: #888;
+    z-index: 2;
+}
+
+#mask {
+    background: rgba(0, 0, 0, 0.5);
+}

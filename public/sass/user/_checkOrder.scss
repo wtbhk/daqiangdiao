@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/*
+ *@author           Venshy at EcjtuNet
+ */
+.fl img {
+    width: 48px;
+    height: 40px;
+}
+.foodName {
+    display: inline-block;
+    margin-left: 7px;
+}
+div.priceBox {
+    margin-top: 18px;
+}
+.ignore {
+    font: 12px/1.0 $font-family;
+    color: #adadad;
+}
+span.delNum, span.price {
+    @include radius(3px);
+    display: inline-block;
+    width: 30px;
+    height: 25px;
+    @include box-shadow(0 0 3px gray);
+    color: #f53874;
+}
+span.delNum {
+    font: 900 8px/25px $font-family;
+    position: relative;
+    width: 25px;
+    top: -2px;
+    text-align: center;
+}
+span.number {
+    font: bolder 12px/25px $font-family;
+    color: #f53874;
+    margin: 0 3px;
+}
+
+span.price {
+    width: auto;
+    padding: 0 6px;
+    font: 900 12px/25px $font-family;
+    position: relative;
+    right: 2px;
+}
+
+li .add, li .more {
+    margin-top: 7px;
+}

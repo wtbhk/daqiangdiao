@@ -1,0 +1,65 @@
+@charset "utf-8";
+@import "../ui/ui/config";
+
+
+#slide {
+	width: 100%;
+
+	.tab-pannel {
+		overflow: hidden;
+	}
+
+	.slide-img {
+		width: 60%;
+		float: left;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.slide-content {
+		position: relative;
+		width: 40%;
+		height: 100%;
+		float: left;
+	}
+
+	h2 {
+		font: bold 24px/1.0 "微软雅黑";
+		text-align: center;
+		margin: 10px 0;
+	}
+	p {
+		padding: 0 10px;
+		font: 14px/1.2 "黑体";
+	}
+}
+
+div.priceBox {
+	text-align: center;
+	margin-top: 8px;
+}
+
+span.del, span.price {
+	border-radius: 3px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: $header-color;
+	color: #fff;
+	}
+span.del {
+	font: 900 8px/20px "微软雅黑";
+	position: relative;
+	top: -2px;
+}
+span.number {
+	font: bolder 12px/20px "微软雅黑";
+}
+
+span.price {
+	width: auto;
+	padding: 0 6px;
+	font: 900 12px/20px "微软雅黑";
+}

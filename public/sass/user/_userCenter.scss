@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+#banner {
+    width: 100%;
+    padding-bottom: (142/360) * 100%;
+    background: url($images-path + "slideImg1.jpg");
+    background-size: cover;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+
+    }
+}
+
+#user {
+    width: 100%;
+    height: 45px;
+
+    .fl {
+        width: 80px;
+        height: 80px;
+        border: 1px solid #bbb;
+        background: #fff;
+        position: relative;
+        top: -37px;
+        left: (34/360) * 100%;
+        z-index: 1;
+    }
+
+    .fr {
+        position: relative;
+        top: 16px;
+        right: (87 / 360) * 100%;
+    }
+}
+
+#name {
+    font: 20px/1.0 $font-family;
+
+}
+#extra, #phoneNumber {
+    margin-bottom: 10px;
+}
+#extra .fr {
+    color: #e51c23;
+}
+#phoneNumber .fr {
+    font: 12px/14px $font-family;
+    color: #b2b2b2;
+
+    span + span {
+        margin-left: 16px;
+    }
+}
+#list .add {
+    margin-top: 7px;
+}
+
+#list .del {
+    margin-top: 18px;
+}
