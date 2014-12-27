@@ -22,19 +22,15 @@
                             <li id="addAddress" class="mar10">
                                 <a href="#"></a>
                             </li>
+                            <?php foreach($addressees as $addressee): ?>
                             <li class="mar10">
                                 <span class="fl">
-                                    <p class="address">华东交通大学华东交通大学</p>
-                                    <span class="name">李艳呀</span>，<span class="phoneNumber">1234567890</span>
+                                    <p class="address"><?php echo $addressee->address; ?></p>
+                                    <span class="name"><?php echo $addressee->name; ?></span>，<span class="phoneNumber"><?php echo $addressee->phone; ?></span>
                                 </span>
-                                <span class="fr checked addressChecked"></span>
+                                <?php echo $addressee->id==$checked ? '<span class="fr checked addressChecked"></span>' : ''; ?>
                             </li>
-                            <li class="mar10">
-                                <span class="fl">
-                                    <p class="address">华东交通大学华东交通大学</p>
-                                    <span class="name">李艳呀</span>，<span class="phoneNumber">1234567890</span>
-                                </span>
-                            </li>
+                            <?php endforeach; ?>
                         </ul>
                         <span class="tips fr"><i></i>请确认无误后保存</span>
                     </div>
