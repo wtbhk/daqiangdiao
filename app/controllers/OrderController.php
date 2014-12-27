@@ -48,12 +48,14 @@ Class OrderController extends BaseController {
                 $date = Session::get('date');
                 $price = Cart::total();
                 $cart = Cart::content();
+                $date = Session::get('date');
                 return View::make('checkorder', array(
                         'user'=>$user,
                         'addressee'=>$addressee,
                         'cart'=>$cart,
                         'price'=>$price,
-                        'balance'=>$user->balance
+                        'balance'=>$user->balance,
+                        'date'=>$date
                 )); 
         }
 ]

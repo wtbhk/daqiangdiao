@@ -30,11 +30,15 @@
 
                             <li class="mar10">
                                 <span class="fl">送达时间</span>
+                                <?php if($date==date('Y-m-d')): ?>
                                 <span class="fr ignore">立即送达</span>
+                                <?php else: ?>
+                                <span class="fr ignore"><?php echo $date; ?></span>
+                                <?php endif; ?>
                             </li>
                             <li>
                                 <span class="fl">订单总价</span>
-                                <span class="fr price">￥50.0</span>   
+                                <span class="fr price">￥<?php echo $price; ?></span>   
                             </li>
 
 
@@ -45,7 +49,7 @@
                             <li>
                                 <span class="fl">
                                     <p>余额</p>
-                                    <p class="ignore">剩余￥20.0</p>
+                                    <p class="ignore">剩余￥<?php echo $balance; ?></p>
                                 </span>
                             </li>
 

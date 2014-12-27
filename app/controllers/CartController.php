@@ -40,7 +40,7 @@ Class CartController extends BaseController {
                 {
                         return Redirect::to('/cart')->withError(true);
                 }
-                $date = Input::has('today') ? date('Y-m-d') :  Input::get('date');
+                $date = Input::has('today') ? date('Y-m-d') : Input::get('date');
                 if(strtotime($date) < strtotime(date('Y-m-d')))
                 {
                         return Redirect::to('/cart')->withErrors(array('Invaild date'));
