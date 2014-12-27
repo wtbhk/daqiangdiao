@@ -108,6 +108,18 @@ dd {
 
 	.fl {
 		width: (210/340)*100% - 0.5%;
+
+		span {
+			display: block;
+			position: relative;
+			top: -20px;
+			text-align: center;
+			font: 14px/1.0 $font-family;
+			color: #fff;
+			width: 100%;
+			padding: 3px 0;
+			background: rgba(#aaa, .85);
+		}
 	}
 
 	.fr {
