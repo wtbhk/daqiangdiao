@@ -67,8 +67,11 @@ class Init extends Migration {
                 {
                         $table->increments("id");
                         $table->integer("product_id");
+                        $table->float("price");
                         $table->integer("order_id");
+                        %table->integer("amount");
                         $table->string("title");
+                        $table->string("image");
                         $table->string("description")->nullable();
                         $table->string("content")->nullable();
                         $table->timestamps();

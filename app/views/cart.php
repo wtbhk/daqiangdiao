@@ -23,62 +23,31 @@
 
                             <li class="mar10">
                                 <span class="fl">立即送达</span>
-                                <span class="fr checked"></span>
+                                <span class="fr <?php echo $today ? 'checked' : ''; ?>"></span>
                             </li>
                             <li class="mar10">
                                 <span class="fl">选择时间</span>
                                 <span class="fr more"></span>   
                             </li>
 
-
+                            <?php foreach($cart as $item): ?>
                             <li class="mar10">
                                 <div class="fl">
-                                    <img src="./images/slideImg1.jpg" alt="">
+                                    <img src="<?php echo $item->image; ?>" alt="">
                                     <div class="foodName">
-                                        <h3>猪肉炖粉条</h3>
-                                        <span class="ignore">还剩4份</span>   
+                                        <h3><?php echo $item->title; ?></h3>
+                                        <span class="ignore">还剩<?php echo $item->product->inventory_in($date); ?>份</span>   
                                     </div>
                                 </div>
                                 <div class="fr">
                                     <div class="priceBox">
                                         <span class="delNum">—</span>
-                                        <span class="number">1</span>
-                                        <span class="price">￥12.5</span>
+                                        <span class="number"><?php echo $item->qty; ?></span>
+                                        <span class="price">￥<?php echo $item->product->price; ?></span>
                                     </div>
                                 </div>
                             </li>
-                            <li class="mar10 typeItem">
-                                <div class="fl">
-                                    <img src="./images/slideImg1.jpg" alt="">
-                                    <div class="foodName">
-                                        <h3>猪肉炖粉条</h3>
-                                        <span class="ignore">还剩4份</span>   
-                                    </div>
-                                </div>
-                                <div class="fr">
-                                    <div class="priceBox">
-                                        <span class="delNum">—</span>
-                                        <span class="number">1</span>
-                                        <span class="price">￥12.5</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="mar10">
-                                <div class="fl">
-                                    <img src="./images/slideImg1.jpg" alt="">
-                                    <div class="foodName">
-                                        <h3>猪肉炖粉条</h3>
-                                        <span class="ignore">还剩4份</span>   
-                                    </div>
-                                </div>
-                                <div class="fr">
-                                    <div class="priceBox">
-                                        <span class="delNum">—</span>
-                                        <span class="number">1</span>
-                                        <span class="price">￥12.5</span>
-                                    </div>
-                                </div>
-                            </li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
 

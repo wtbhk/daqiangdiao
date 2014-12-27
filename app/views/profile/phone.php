@@ -19,7 +19,7 @@
                 <div class="wrap">
                     
                     <form action="">
-                        <input type="text" value="12345678990">
+                        <input type="text" value="<?php echo $user->phone; ?>">
                         <input type="submit" value="保存">
                         <span class="tips fr"><i></i>请确认无误后保存</span>
                     </form>

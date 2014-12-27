@@ -20,93 +20,30 @@
                     
                     <div id="list">
                         <ul>
+                            <?php foreach($orders as $order): ?>
                             <li class="mar10">
                                 <span class="fl">
                                     <span class="type">已完成</span>
-                                    <span class="totalPrice">￥17.9</span>
+                                    <span class="totalPrice">￥<?php echo $order->orderitems->sum('price'); ?></span>
                                 </span>
-                                <span class="fr time">2014.12.12</span>   
+                                <span class="fr time"><?php echo $order->created_at; ?></span>   
                             </li>
+                            <?php foreach($order->orderitems as $item): ?>
                             <li>
                                 <div class="fl">
-                                    <img src="./images/slideImg1.jpg" alt="">
+                                    <img src="<?php echo $item->image; ?>" alt="">
                                     <div class="foodName">
-                                        <h3>猪肉炖粉条</h3>
-                                        <span class="ignore">4份</span>   
+                                        <h3><?php echo $item->title; ?></h3>
+                                        <span class="ignore"><?php echo $item->amount; ?>份</span>   
                                     </div>
                                 </div>
                                 <div class="fr">
-                                    <span class="price">￥8.0</span>
+                                    <span class="price">￥<?php echo $item->price; ?></span>
                                 </div>
                             </li>
-                            <li>
-                                <div class="fl">
-                                    <img src="./images/slideImg1.jpg" alt="">
-                                    <div class="foodName">
-                                        <h3>猪肉炖粉条</h3>
-                                        <span class="ignore">4份</span>   
-                                    </div>
-                                </div>
-                                <div class="fr">
-                                    <span class="price">￥8.0</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fl">
-                                    <img src="./images/slideImg1.jpg" alt="">
-                                    <div class="foodName">
-                                        <h3>猪肉炖粉条</h3>
-                                        <span class="ignore">4份</span>   
-                                    </div>
-                                </div>
-                                <div class="fr">
-                                    <span class="price">￥8.0</span>
-                                </div>
-                            </li>
+                            <?php endforeach; ?>
+                            <?php endforeach; ?>
 
-                            <li class="mar10">
-                                <span class="fl">
-                                    <span class="type">未完成</span>
-                                    <span class="totalPrice">￥17.9</span>
-                                </span>
-                                <span class="fr time">2014.12.12</span>   
-                            </li>
-                            <li>
-                                <div class="fl">
-                                    <img src="./images/slideImg1.jpg" alt="">
-                                    <div class="foodName">
-                                        <h3>猪肉炖粉条</h3>
-                                        <span class="ignore">4份</span>   
-                                    </div>
-                                </div>
-                                <div class="fr">
-                                    <span class="price">￥8.0</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fl">
-                                    <img src="./images/slideImg1.jpg" alt="">
-                                    <div class="foodName">
-                                        <h3>猪肉炖粉条</h3>
-                                        <span class="ignore">4份</span>   
-                                    </div>
-                                </div>
-                                <div class="fr">
-                                    <span class="price">￥8.0</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fl">
-                                    <img src="./images/slideImg1.jpg" alt="">
-                                    <div class="foodName">
-                                        <h3>猪肉炖粉条</h3>
-                                        <span class="ignore">4份</span>   
-                                    </div>
-                                </div>
-                                <div class="fr">
-                                    <span class="price">￥8.0</span>
-                                </div>
-                            </li>
                         </ul>
                     </div>
 

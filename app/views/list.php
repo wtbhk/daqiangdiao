@@ -32,7 +32,7 @@
                             </div>
                             <div class="tag fr">
                                 <div class="priceBox">
-                                    <span class="price">￥12.5</span>
+                                    <span class="price">￥<?php echo $product->price; ?></span>
                                 </div>
                                 <span class="remain">
                                     <span class="today">jin</span>

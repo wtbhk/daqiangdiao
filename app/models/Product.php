@@ -38,6 +38,11 @@ class Product extends Eloquent {
                 return $query->where('available', true);
         }
 
+        function getPriceAttribute($price)
+        {
+                return number_format($price, 1, '.', '');
+        }
+
         function inventory_in($date)
         {
                 return $this->inventory->when($date)->firstOrCreate(array(

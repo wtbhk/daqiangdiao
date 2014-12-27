@@ -29,18 +29,18 @@
                     <div class="maincontent overft">
 
                         <div class="fl">
-                            <h2>菜品</h2>
-                            <span class="order">提前1天订单</span>
+                            <h2><?php echo $product->title; ?></h2>
+                            <span class="order">提前<?php echo $product->reservation_day; ?>天订单</span>
                             <span class="remain">
-                                <span class="today">剩</span>
-                                <span><strong>2</strong>份</span>
+                                <span class="today">jin</span>
+                                <span><strong><?php echo $product->inventory_today; ?></strong>份</span>
                             </span>
                         </div>
                         <div class="fr">
                             <div class="priceBox">
                                 <span class="del">—</span>
-                                <span class="number">1</span>
-                                <span class="price">￥12.5</span>
+                                <span class="number">0</span>
+                                <span class="price">￥<?php echo $product->price; ?></span>
                             </div>
                         </div>
                     </div>
@@ -48,9 +48,10 @@
                     <!-- 详细描述 -->
                     <div id="description">
                         <h2>菜品介绍</h2>
-                        <p>菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍菜品介绍
-                        </p>
-                        <img src="images/slideImg1.jpg" alt="">
+                        <p><?php echo $product->content; ?></p>
+                        <?php foreach($product->images as $image): ?>
+                        <img src="<?php echo $image->file; ?>" alt="">
+                        <?php endforeach; ?>
                     </div>
 
                 </div>

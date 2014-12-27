@@ -93,6 +93,9 @@ Class OrderController extends BaseController {
                                         throw new Exception;
                                 $order->orderitems->create(array(
                                         'product_id'=>$item->product->id,
+                                        'price'=>$item->product->price,
+                                        'amount'=>$item->qty,
+                                        'image'=>$item->product->one_image_url(),
                                         'order_id'=>$order->id,
                                         'title'=>$item->product->title,
                                         'description'=>$item->product->description,

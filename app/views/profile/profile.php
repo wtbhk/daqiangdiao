@@ -21,9 +21,9 @@
                     <div id="banner"></div>
 
                     <div id="user">
-                        <div class="fl"><img src="images/userLogo.png" alt=""></div>
+                        <div class="fl"><img src="<?php echo $user->headimgurl; ?>" alt=""></div>
                         <div class="fr">
-                            <span id="name">李艳艳</span>
+                            <span id="name"><?php echo $user->name ? $user->name : $user->nickname; ?></span>
                         </div>
                     </div>
 
@@ -31,12 +31,12 @@
                         <ul>
                             <li id="extra">
                                 <span class="fl">余额</span>
-                                <span class="fr">￥50</span>
+                                <span class="fr">￥<?php echo $user->balance; ?></span>
                             </li>
                             <li id="phoneNumber">
                                 <span class="fl">手机号码</span>
                                 <span class="fr">
-                                    <span>1234567890</span>
+                                    <span><?php echo $user->phone; ?></span>
                                     <span class="more"></span>
                                 </span>
                             </li>
@@ -45,27 +45,15 @@
                                 <span class="fr add"></span>
                                 <i class="y"></i>
                             </li>
+                            <?php foreach($user->addressees() as $addressee): ?>
                             <li>
                                 <span class="fl">
-                                    <p class="address">华东交通大学华东交通大学</p>
-                                    <span class="name">李艳呀</span>，<span class="phoneNumber">1234567890</span>
+                                    <p class="address"><?php echo $addressee->address; ?></p>
+                                    <span class="name"><?php echo $addressee->name; ?></span>，<span class="phoneNumber"><?php echo $addressee->phone; ?></span>
                                 </span>
                                 <span class="fr del"></span>
                             </li>
-                            <li>
-                                <span class="fl">
-                                    <p class="address">华东交通大学华东交通大学</p>
-                                    <span class="name">李艳呀</span>，<span class="phoneNumber">1234567890</span>
-                                </span>
-                                <span class="fr del"></span>
-                            </li>
-                            <li>
-                                <span class="fl">
-                                    <p class="address">华东交通大学华东交通大学</p>
-                                    <span class="name">李艳呀</span>，<span class="phoneNumber">1234567890</span>
-                                </span>
-                                <span class="fr del"></span>
-                            </li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
 
