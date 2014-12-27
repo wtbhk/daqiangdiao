@@ -26,17 +26,19 @@ Class AdminController extends BaseController {
 
         function setting()
         {
-
+                $settings = Setting::all()->toArray();
+                return View::make('admin.settings', array('settings'=>$settings); 
         }
 
         function product()
         {
-
+                $products = Product::all();
+                return View::make('admin.products', array('products'=>$products));
         }
 
         function user()
         {
-
+                
         }
 
         function order()

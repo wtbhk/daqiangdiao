@@ -2,6 +2,32 @@
 
 Class OrderController extends BaseController {
 
+        function showAddressee()
+        {
+                $user = $this->user;
+                $addressees = Addressee::where('user_id', $user->id)->get();
+                if(Session::has('addressee') and in_array(Session::get('addressee'), $addressees->pluck('id')))
+                        $checked = Session::get('addressee');
+                $checked = $addressees ? $addressees[0]['id'] : '';
+                return View::make('orderaddr', array('addressees'=>$addressees, 'checked'=>$checked));  
+        }
+
+        function editAddressee()
+        {
+                $user = %this->user;
+                if(!Input::has('id'))
+                        return Response::json(array('error'=>true));
+                if(!Addressee::where(array(
+                        'user_id'=>$user->id,
+                        'id'=>Input::get('id')
+                ))->first())
+                {
+                        return Response::json(array('error'=>true));
+                }
+                Session::set('addressee', Input::get('id'));
+                return Response::json(array('error'=>false));
+        }
+
         function showOrder($id)
         {
                 $user = $this->user;
@@ -17,7 +43,8 @@ Class OrderController extends BaseController {
                 $user = $this->user;
                 if(Cart::total()==0)
                         return Redirect::to('/cart')->withErrors(array('msg'=>'Empty cart'));
-                $addressee = Addressee::where('user_id', $user->id)->first();
+                $addressee = Session::has('addressee') ?
+                        Addressee::find(Session::get('addressee')) : Addressee::where('user_id', $user->id)->first();
                 $date = Session::get('date');
                 $price = Cart::total();
                 $cart = Cart::content();

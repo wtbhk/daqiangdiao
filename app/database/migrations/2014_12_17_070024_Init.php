@@ -115,6 +115,12 @@ class Init extends Migration {
                         $table->softDeltes();
                 });
 
+                Schema::Create("settings", function($table)
+                {
+                        $table->string("key")->primary();
+                        $table->string("value");
+                });
+
 	}
 
 	/**
@@ -133,6 +139,7 @@ class Init extends Migration {
                 Schema::dropIfExists("videos");
                 Schema::dropIfExists("addressees");
                 Schema::dropIfExists("admin");
+                Schema::dropIfExists("settings");
 	}
 
 }

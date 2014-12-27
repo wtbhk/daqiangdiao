@@ -46,6 +46,10 @@ Route::group(array('before'=>'wechat.base'), function(){
 
         Route::post('/checkorder', 'OrderController@checkOrder');
 
+        Route::get('/orderaddr', 'OrderController@showAddressee');
+
+        Route::post('/orderaddr', 'OrderController@editAddressee');
+
 });
 
 
