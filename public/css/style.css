@@ -422,6 +422,16 @@ dd {
   box-shadow: 0 0 15px #999999; }
 #manyPic .fl {
   width: 61.26471%; }
+  #manyPic .fl span {
+    display: block;
+    position: relative;
+    top: -20px;
+    text-align: center;
+    font: 14px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    color: #fff;
+    width: 100%;
+    padding: 3px 0;
+    background: rgba(170, 170, 170, 0.85); }
 #manyPic .fr {
   width: 28.23529%; }
   #manyPic .fr img + img {

@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+#addAddress a{
+    display: block;
+    margin: 0 auto;
+    width: 19px;
+    height: 19px;
+    background: url($images-path + 'addAddress.png');
+}
+.addressChecked {
+    margin-top: 17px;
+}
