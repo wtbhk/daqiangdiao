@@ -38,11 +38,13 @@ Class AdminController extends BaseController {
 
         function user()
         {
-                
+                $users = User::all();
+                return View::make('admin.users', array('users'=>$users));
         }
 
         function order()
         {
-
+                $orders = Order::with('OrderItems')->all();
+                return View::make('admin.orders', array('orders'=>$orders));
         }
 }
