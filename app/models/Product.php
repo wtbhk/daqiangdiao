@@ -66,7 +66,7 @@ class Product extends Eloquent {
 
         function chineseReservation()
         {
-                num_list = array(
+                $num_list = array(
                         1 => 'yi',
                         2 => 'er',
                         3 => 'san',
@@ -80,7 +80,7 @@ class Product extends Eloquent {
                 );
                 if($this->reservation_day<=0 or $this->reservation_day>10)
                         return false;
-                return num_list[$this->reservation_day];
+                return $num_list[$this->reservation_day];
         }
 
         function checkInventory($qty, $date)
