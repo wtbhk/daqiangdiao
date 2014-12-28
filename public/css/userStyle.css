@@ -305,6 +305,12 @@ body {
     #list li .fr {
       margin-right: 16px;
       line-height: 26px; }
+  #list .error span {
+    margin-left: 16px;
+    font: 14px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    color: #888; }
+  #list .error .more {
+    margin-top: 0; }
   #list .mar10 {
     margin-top: 10px; }
 
