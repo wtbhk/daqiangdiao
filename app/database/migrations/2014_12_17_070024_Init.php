@@ -69,7 +69,7 @@ class Init extends Migration {
                         $table->integer("product_id");
                         $table->float("price");
                         $table->integer("order_id");
-                        %table->integer("amount");
+                        $table->integer("amount");
                         $table->string("title");
                         $table->string("image");
                         $table->string("description")->nullable();
@@ -112,10 +112,10 @@ class Init extends Migration {
                 Schema::Create("admin", function($table)
                 {
                         $table->increments("id");
-                        $table->username("username");
-                        $table->password("password");
+                        $table->string("username");
+                        $table->string("password");
                         $table->timestamps();
-                        $table->softDeltes();
+                        $table->softDeletes();
                 });
 
                 Schema::Create("settings", function($table)
