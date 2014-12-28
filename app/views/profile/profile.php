@@ -10,7 +10,7 @@
     <meta name="description" content="商店demo">
     <meta name="author" content="zvenshy@gmail.com">
     <title>商店demo</title>
-<link rel="stylesheet" href="css/userStyle.css">
+<link rel="stylesheet" href="/css/userStyle.css">
 </head>
 <body class="sme">
     <div id="content">

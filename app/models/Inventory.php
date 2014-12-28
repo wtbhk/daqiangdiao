@@ -8,9 +8,19 @@ class Inventory extends Eloquent {
 
         protected $softDelete = true; 
 
+        static function boot()
+        {
+                parent::boot();
+                Inventory::creating(function($inventory)
+                {
+                        if(!$inventory->inventory)
+                                $inventory->inventory = $inventory->product->inventory_per_day;
+                });
+        }
+
         function product()
         {
-                return $this->hasOne('Product');
+                return $this->belongsTo('Product');
         }
 
         function scopeWhen($query, $date)

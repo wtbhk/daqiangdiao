@@ -10,6 +10,8 @@ class BaseController extends Controller {
         
         function __construct()
         {
+                if(App::environment('local'))
+                        Session::set('openid', 'testopenid');
                 if(!Session::has('openid'))
                         throw new Exception;
                 $this->wechat_id = Session::get('openid'); 

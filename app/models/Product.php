@@ -45,11 +45,11 @@ class Product extends Eloquent {
 
         function inventory_in($date)
         {
-                return $this->inventory->when($date)->firstOrCreate(array(
-                        'product_id'=>$this->id,
-                        'date'=>$date,
-                        'inventory'=>$this->inventory_per_day
-                ));
+                $inventory = Inventory::firstOrCreate(array(
+                                        'product_id'=>$this->id,
+                                        'date'=>$date
+                                ));
+                return $inventory->inventory;
         }
 
         function inventory_today()

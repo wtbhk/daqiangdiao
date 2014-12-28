@@ -10,7 +10,7 @@
     <meta name="description" content="商店demo">
     <meta name="author" content="zvenshy@gmail.com">
     <title>商店demo</title>
-<link rel="stylesheet" href="css/contentStyle.css">
+<link rel="stylesheet" href="/css/contentStyle.css">
 </head>
 <body class="sme">
     <div id="content">
@@ -21,7 +21,7 @@
                     <!-- 视频 -->
                     <div id="slide" class="overft">
                         <div class="slide-img">
-                            <img src="images/slideImg1.jpg" alt="">
+                            <img src="/images/slideImg1.jpg" alt="">
                         </div>
                     </div>
 
@@ -33,7 +33,7 @@
                             <span class="order">提前<?php echo $product->reservation_day; ?>天订单</span>
                             <span class="remain">
                                 <span class="today">jin</span>
-                                <span><strong><?php echo $product->inventory_today; ?></strong>份</span>
+                                <span><strong><?php echo $product->inventory_today(); ?></strong>份</span>
                             </span>
                         </div>
                         <div class="fr">

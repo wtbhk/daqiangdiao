@@ -30,7 +30,7 @@ Class UserController extends BaseController {
 
         function showPhone()
         {
-                return View::make('profile.phone');
+                return View::make('profile.phone', array('user'=>$this->user));
         }
 
         function showAddAddress()
