@@ -5,19 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
 	<meta name="author" content="zvenshy@gmail.com">
 	<title>后台管理</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.min.css">
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
-	<meta name="author" content="zvenshy@gmail.com">
-	<title>后台管理</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.min.css">
+	<link href="/manage/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/manage/css/style.min.css">
 </head>
 <body>
 	<div id="login-body">

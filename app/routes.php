@@ -61,7 +61,7 @@ Route::post('/admin/login', 'AdminController@checkLogin');
 
 Route::group(array('before'=>'admin'), function(){
 
-        Route::get('/admin', 'AdminController@settings');
+        Route::get('/admin', 'AdminController@setting');
 
         Route::get('/admin/setting', 'AdminController@setting');
 

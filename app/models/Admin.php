@@ -15,14 +15,14 @@ class Admin extends Eloquent {
                 return false;
         }
 
-        static function attempt($arr)
+        static function attempt()
         {
                 if(Admin::where(array(
-                        'username'=>$arr['username'],
-                        'password'=>$arr['password']
+                        'username'=>Input::get('username'),
+                        'password'=>Input::get('password')
                 ))->first())
                 {
-                        Session::set('admin', $arr['username']);
+                        Session::set('admin', Input::get('username'));
                         return true;
                 }
                 return false;

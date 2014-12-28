@@ -27,7 +27,7 @@ Class AdminController extends BaseController {
         function setting()
         {
                 $settings = Setting::all();
-                return View::make('admin.settings', array('settings'=>$settings); 
+                return View::make('admin.settings', array('settings'=>$settings)); 
         }
 
         function product()

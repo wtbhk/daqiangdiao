@@ -5,7 +5,8 @@ Class UserController extends BaseController {
         function showProfile()
         {
                 $user = $this->user;
-                return View::make('profile.profile', array('user'=>$user));
+                $addressees = $user->addressees;
+                return View::make('profile.profile', array('user'=>$user, 'addressees'=>$addressees));
         }
 
         function editProfile()

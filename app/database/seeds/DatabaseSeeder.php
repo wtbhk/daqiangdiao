@@ -9,8 +9,11 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-                $s = Setting::set('minimum_amount', 50);
-                $this->command->info($s);
+                Setting::set('minimum_amount', 50);
+                Admin::create(array(
+                        'username'=>'admin',
+                        'password'=>'admin'
+                ));
                 $user = User::create(array(
                         'phone'=>12345678900,
                         'nickname'=>'testnickname',
@@ -18,6 +21,15 @@ class DatabaseSeeder extends Seeder {
                         'wechat_id'=>'testopenid',
                         'balance'=>121.5
                 ));
+                for($i=0;$i<5;$i++)
+                {
+                        Addressee::create(array(
+                                'user_id'=>$user->id,
+                                'name'=>$user->name,
+                                'address'=>'testaddress'.$i,
+                                'phone'=>$user->phone
+                        ));
+                }
                 for($i=0;$i<20;$i++)
                 {
                         Product::create(array(

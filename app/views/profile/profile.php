@@ -45,7 +45,7 @@
                                 <span class="fr add"></span>
                                 <i class="y"></i>
                             </li>
-                            <?php foreach($user->addressees() as $addressee): ?>
+                            <?php foreach($addressees as $addressee): ?>
                             <li>
                                 <span class="fl">
                                     <p class="address"><?php echo $addressee->address; ?></p>
