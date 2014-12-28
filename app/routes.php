@@ -67,6 +67,14 @@ Route::group(array('before'=>'admin'), function(){
 
         Route::get('/admin/product', 'AdminController@product');
 
+        Route::post('/admin/product', 'AdminController@editProduct');
+
+        Route::delete('/admin/product/{id}', 'AdminController@deleteProduct');
+
+        Route::post('/admin/product/{id}/image', 'AdminController@addImage');
+
+        Route::delete('/admin/product/{pid}/image/{iid}', 'AdminController@deleteImage');
+
         Route::get('/admin/user', 'AdminController@user');
 
         Route::get('/admin/order', 'AdminController@order');
