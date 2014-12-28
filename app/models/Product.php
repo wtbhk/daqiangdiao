@@ -102,8 +102,8 @@ class Product extends Eloquent {
 
         function one_image_url()
         {
-                if($this->images)
-                        return $this->images->first()->file;
+                if($this->images()->first())
+                        return $this->images()->first()->file;
                 return '/images/default.jpg';
         }
 

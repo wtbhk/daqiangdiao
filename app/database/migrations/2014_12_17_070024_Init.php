@@ -121,7 +121,7 @@ class Init extends Migration {
                 Schema::Create("settings", function($table)
                 {
                         $table->string("key")->primary();
-                        $table->string("value");
+                        $table->string("value")->nullable();
                 });
 
 	}

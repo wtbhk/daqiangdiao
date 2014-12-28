@@ -9,14 +9,16 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
+                $s = Setting::set('minimum_amount', 50);
+                $this->command->info($s);
                 $user = User::create(array(
-                        'phone'=>12345678909,
+                        'phone'=>12345678900,
                         'nickname'=>'testnickname',
                         'name'=>'testname',
                         'wechat_id'=>'testopenid',
                         'balance'=>121.5
                 ));
-                for($i=0,$i<20,$i++)
+                for($i=0;$i<20;$i++)
                 {
                         Product::create(array(
                                 'price'=>20,
