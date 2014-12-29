@@ -18,7 +18,7 @@
             <div class="main">
                 <div class="wrap">
                     <div id="banner">
-                        <img src="<?php echo $products[0]->one_image_url(); ?>" alt="">
+                        <a href="/product/<?php echo $products[0]->id; ?>"><img src="<?php echo $products[0]->one_image_url(); ?>" alt=""></a>
                         <h2><?php echo $products[0]->title; ?></h2>
                     </div>
                     <!-- 列表 -->
@@ -26,24 +26,24 @@
 
                         <div class="list-header overft">
                             <h2 class="fl">美好菜单</h2>
-                            <span class="fr">查看更多</span>
+                            <a href="/list"><span class="fr">查看更多</span></a>
                         </div>
                         <div id="manyPic">
-                                <div class="fl"><img src="<?php echo $products[1]->one_image_url(); ?>" alt=""></div>
+                                <div class="fl"><a href="/product/<?php echo $products[1]->id; ?>"><img src="<?php echo $products[1]->one_image_url(); ?>" alt=""></a></div>
                             <div class="fr">
-                                <img src="<?php echo $products[2]->one_image_url(); ?>" alt="">
-                                <img src="<?php echo $products[3]->one_image_url(); ?>" alt="">
+                                <a href="/product/<?php echo $products[2]->id; ?>"><img src="<?php echo $products[2]->one_image_url(); ?>" alt=""></a>
+                                <a href="/product/<?php echo $products[3]->id; ?>"><img src="<?php echo $products[3]->one_image_url(); ?>" alt=""></a>
                             </div>
                         </div>
 
                         <div class="list-header overft">
                             <h2 class="fl">推荐</h2>
-                            <span class="fr">查看更多</span>
+                            <a href="/list"><span class="fr">查看更多</span></a>
                         </div>
                         <ul>
                             <li>
                                 <dl>
-                                        <dt><img src="<?php echo $products[4]->one_image_url(); ?>" alt=""></dt>
+                                    <dt><img src="<?php echo $products[4]->one_image_url(); ?>" alt=""></dt>
                                     <dd class="overft">
                                         <div class="dish">
                                             <h3><?php echo $products[4]->title; ?></h3>
