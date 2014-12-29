@@ -75,5 +75,15 @@
             <span class="toUser fr"></span>
         </div>
     </header>
+    <div id="modal" class="hidden">
+        <div id="errorBox">
+            这里是错误提示这里是错误提示这里是错误提示
+            <div id="modalClose">&times</div>
+        </div>
+
+        <div id="mask"></div>
+    </div>
+    <script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/js/base.js"></script>
 </body>
 </html>
