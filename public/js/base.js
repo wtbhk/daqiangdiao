@@ -10,14 +10,13 @@ $(document).ready(function () {
         if (items.length) return;
         var needPrice = $('span.needPrice');
         var need = needPrice.text()*1;
-        var url = '';
         $('span.del').on('click', function () {
             var number = $(this).siblings('span.number'),
                 price = $(this).siblings('span.price');
             var num = number.text()*1,
                 change = price.text().substring(1)*1;
             if (!num) return;
-            $.post('/eidtcart', 
+            $.post('/editcart', 
                 {
                     'id': $(this).parent().attr('id'), 
                     'qty': num - 1
@@ -35,7 +34,7 @@ $(document).ready(function () {
             var num = number.text()*1,
                 change = price.text().substring(1)*1;
             if ( num + 1 > $('span.remain strong').text()*1) return;
-            $.post('/eidtcart', 
+            $.post('/editcart', 
                 {
                     'id': $(this).parent().attr('id'), 
                     'qty': num + 1
