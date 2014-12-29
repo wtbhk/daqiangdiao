@@ -29,7 +29,7 @@ Class CartController extends BaseController {
                         'cart'=>$cart, 
                         'date'=>$date, 
                         'today'=>$today
-                );
+                ));
         }
 
         function checkCart()
@@ -80,7 +80,7 @@ Class CartController extends BaseController {
                         'id'=>'required|integer',
                         'qty'=>'required|integer'
                 ));
-                if($validator->fails()
+                if($validator->fails())
                 {
                         return Response::json(array('error'=>true));
                 }

@@ -21,7 +21,7 @@ class Order extends Eloquent {
 
         function orderitems()
         {
-                return $this->hasMany('OrderItems');
+                return $this->hasMany('OrderItem');
         }
 
 

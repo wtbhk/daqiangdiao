@@ -108,8 +108,38 @@ Class AdminController extends BaseController {
 
         function order()
         {
-                $orders = Order::with('OrderItems')->all();
-                return View::make('admin.orders', array('orders'=>$orders));
+                return View::make('admin.orders');
+        }
+
+        function orderNew()
+        {
+                $order = Order::with('OrderItems')->where('status', Order::OPEN)->first();
+                if($order)
+                        return Response::json($order->toArray());
+                return Response::json(array('error'=>true));
+        }
+
+        function orderStatus($id, $status)
+        {
+                $status = strtoupper($status);
+                $order = Order::find($id);
+                if($order)
+                        $order->status = Order::$status;
+                return Response::json(array('error'=>false));
+        }
+
+        function orderToday()
+        {
+                $orders = Order::with('OrderItems')
+                        ->where(DB::raw('to_days(delivery) = to_days(now())')
+                        ->get(); 
+                return Response::json($orders->toArray());
+        }
+
+        function orderAll()
+        {
+                $orders = Order::with('OrderItems')->orderBy('created_at', 'desc')->take(50)->get();
+                return Response::json($orders->toArray());
         }
 
 }

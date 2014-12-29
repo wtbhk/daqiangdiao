@@ -14,7 +14,7 @@ Class OrderController extends BaseController {
 
         function editAddressee()
         {
-                $user = %this->user;
+                $user = $this->user;
                 if(!Input::has('id'))
                         return Response::json(array('error'=>true));
                 if(!Addressee::where(array(
@@ -33,8 +33,8 @@ Class OrderController extends BaseController {
                 $user = $this->user;
                 $order = $user->orders->where('id', $id);
                 if(!$order)
-                        return Redirect::to('/profile')->withErrors('msg'=>'Permissoin denied');
-                return View::make('order', array('user'=>$user, 'order'=>$order);
+                        return Redirect::to('/profile')->withErrors(array('msg'=>'Permissoin denied'));
+                return View::make('order', array('user'=>$user, 'order'=>$order));
         }
 
 
@@ -58,7 +58,7 @@ Class OrderController extends BaseController {
                         'date'=>$date
                 )); 
         }
-]
+
         function checkOrder()
         {
                 $user = $this->user;
@@ -73,7 +73,7 @@ Class OrderController extends BaseController {
                         return Redirect::to('/cart')->withErrors(array('msg'=>'Empty cart'));
                 if(!Session::has('date') || strtotime(Session::get('date'))<strtotime(date('Y-m-d')))
                         return Redirect::to('/cart')->withErrors(array('msg'=>'Date error'));
-                $addressee=Addressee::find(Input::get('addressee'))
+                $addressee=Addressee::find(Input::get('addressee'));
                 if(!$addressee)
                         return Redirect::to('/cart')->withErrors(array('msg'=>'Addressee error'));
                 $cart = Cart::content();
@@ -91,7 +91,7 @@ Class OrderController extends BaseController {
                         {
                                 if(!$item->product->checkInventory($item->qty, Session::get('date')))
                                         throw new Exception;
-                                if(!$item->product->checkReservation(Session::get('date'))
+                                if(!$item->product->checkReservation(Session::get('date')))
                                         throw new Exception;
                                 $order->orderitems->create(array(
                                         'product_id'=>$item->product->id,

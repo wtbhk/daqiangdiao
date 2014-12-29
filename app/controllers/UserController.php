@@ -70,7 +70,7 @@ Class UserController extends BaseController {
         function showOrders()
         {
                 $user = $this->user;
-                $orders = $user->orders()->with('orderitems');
+                $orders = Order::with('orderitems')->where('user_id', $user->id)->get();
                 return View::make(
                         'profile.orders', 
                         array('user'=>$user, 'orders'=>$orders)

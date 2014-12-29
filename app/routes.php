@@ -79,4 +79,12 @@ Route::group(array('before'=>'admin'), function(){
 
         Route::get('/admin/order', 'AdminController@order');
 
+        Route::get('/admin/order/new', 'AdminController@orderNew');
+
+        Route::get('/admin/order/{id}/status/{status}', 'AdminController@orderStatus');
+
+        Route::get('/admin/order/today', 'AdminController@orderToday');
+
+        Route::get('/admin/order/all', 'AdminController@orderAll');
+
 });

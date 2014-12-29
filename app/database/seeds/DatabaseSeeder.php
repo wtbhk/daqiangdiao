@@ -42,7 +42,28 @@ class DatabaseSeeder extends Seeder {
                                 'rank'=>$i
                         ));
                 }
-
+                for($i=0;$i<20;$i++)
+                {
+                        $order = Order::create(array(
+                                'user_id'=>$user->id,
+                                'status'=>1,
+                                'addressee'=>'addresseetest',
+                                'phone'=>18343432112 + $i,
+                                'address'=>'addresstest',
+                                'delivery'=>date('Y-m-d')
+                        ));
+                        for($j=1;$j<5;$j++)
+                        {
+                                OrderItem::create(array(
+                                        'order_id'=>$order->id,
+                                        'product_id'=>$j,
+                                        'price'=>$j,
+                                        'amount'=>$j,
+                                        'title'=>'testtitle'.$j,
+                                        'image'=>'/images/default.jpg'
+                                ));
+                        }
+                }
 		// $this->call('UserTableSeeder');
 	}
 

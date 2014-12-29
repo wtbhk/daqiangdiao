@@ -55,7 +55,7 @@ class Init extends Migration {
                 {
                         $table->increments("id");
                         $table->integer("user_id");
-                        $table->integer("status");
+                        $table->integer("status")->default(1);
                         $table->string("addressee");
                         $table->string("phone");
                         $table->string("address");
