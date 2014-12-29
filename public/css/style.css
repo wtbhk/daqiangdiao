@@ -107,6 +107,10 @@ body {
   -ms-touch-action: none;
   /* WP8 */ }
 
+a {
+  text-decoration: none;
+  color: #000; }
+
 /*  css reset  */
 /* 添加className形式 */
 /* 常用属性库，类名形式添加使用 
@@ -363,6 +367,8 @@ body {
 
 #content-list {
   margin-bottom: 30px; }
+  #content-list a {
+    display: block; }
 
 #content-list li {
   width: 100%;
@@ -372,11 +378,11 @@ body {
   width: 100%; }
   .list-header h2, .list-header span {
     margin: 0 auto;
-    height: 30px;
-    font: 12px/30px "微软雅黑";
+    height: 40px;
+    font: 12px/40px "微软雅黑";
     color: #b4b4b4;
     margin-top: -2px; }
-  .list-header span {
+  .list-header span a {
     color: #e6353b; }
 
 #content-list h3 {
@@ -421,11 +427,12 @@ dd {
   -moz-box-shadow: 0 0 15px #999999;
   box-shadow: 0 0 15px #999999; }
 #manyPic .fl {
-  width: 61.26471%; }
-  #manyPic .fl span {
+  width: 65.26471%;
+  position: relative; }
+  #manyPic .fl .foodTitle {
     display: block;
-    position: relative;
-    top: -20px;
+    position: absolute;
+    bottom: 0;
     text-align: center;
     font: 14px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
     color: #fff;
@@ -433,8 +440,8 @@ dd {
     padding: 3px 0;
     background: rgba(170, 170, 170, 0.85); }
 #manyPic .fr {
-  width: 28.23529%; }
-  #manyPic .fr img + img {
+  width: 30.23529%; }
+  #manyPic .fr a + a img {
     display: inline-block;
     margin-top: 5%; }
 

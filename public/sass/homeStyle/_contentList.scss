@@ -31,6 +31,10 @@ body {
 }
 #content-list {
 	margin-bottom: 30px;
+
+	a {
+		display: block;
+	}
 }
 #content-list li {
 	width: 100%;
@@ -42,13 +46,13 @@ body {
 
 	h2, span {
 		margin: 0 auto;
-		height: 30px;
-		font: 12px/30px "微软雅黑";
+		height: 40px;
+		font: 12px/40px "微软雅黑";
 		color: #b4b4b4;
 		margin-top: -2px;
 	}
 
-	span {
+	span a {
 		color: #e6353b;
 	}
 }
@@ -107,12 +111,14 @@ dd {
 	}
 
 	.fl {
-		width: (210/340)*100% - 0.5%;
+		width: (210/340)*100% + 3.5%;
+		position: relative;
 
-		span {
+
+		.foodTitle {
 			display: block;
-			position: relative;
-			top: -20px;
+			position: absolute;
+			bottom: 0; 
 			text-align: center;
 			font: 14px/1.0 $font-family;
 			color: #fff;
@@ -123,9 +129,9 @@ dd {
 	}
 
 	.fr {
-		width: (1 - 210/340)*100% - 10%;
+		width: (1 - 210/340)*100% - 8%;
 
-		img + img {
+		a + a img {
 			display: inline-block;
 			margin-top: 5%;
 		}

@@ -26,10 +26,15 @@
 
                         <div class="list-header overft">
                             <h2 class="fl">美好菜单</h2>
-                            <a href="/list"><span class="fr">查看更多</span></a>
+                            <span class="fr"><a href="/list">查看更多</a></span>
                         </div>
                         <div id="manyPic">
-                                <div class="fl"><a href="/product/<?php echo $products[1]->id; ?>"><img src="<?php echo $products[1]->one_image_url(); ?>" alt=""></a></div>
+                                <div class="fl">
+                                    <a href="/product/<?php echo $products[1]->id; ?>">
+                                        <img src="<?php echo $products[1]->one_image_url(); ?>" alt="">
+                                    </a>
+                                    <a href="#"><span class="foodTitle">我是吃的</span></a>
+                                </div>
                             <div class="fr">
                                 <a href="/product/<?php echo $products[2]->id; ?>"><img src="<?php echo $products[2]->one_image_url(); ?>" alt=""></a>
                                 <a href="/product/<?php echo $products[3]->id; ?>"><img src="<?php echo $products[3]->one_image_url(); ?>" alt=""></a>
@@ -41,7 +46,7 @@
                             <a href="/list"><span class="fr">查看更多</span></a>
                         </div>
                         <ul>
-                            <li>
+                            <a href=""><li>
                                 <dl>
                                     <dt><img src="<?php echo $products[4]->one_image_url(); ?>" alt=""></dt>
                                     <dd class="overft">
@@ -55,7 +60,7 @@
                                         </div>
                                     </dd>
                                 </dl>
-                            </li>
+                            </li></a>
                             <li>
                                 <dl>
                                         <dt><img src="<?php echo $products[5]->one_image_url(); ?>" alt=""></dt>

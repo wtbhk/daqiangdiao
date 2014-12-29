@@ -104,6 +104,10 @@ body {
   -ms-touch-action: none;
   /* WP8 */ }
 
+a {
+  text-decoration: none;
+  color: #000; }
+
 /*  css reset  */
 /* 添加className形式 */
 /* 常用属性库，类名形式添加使用 
