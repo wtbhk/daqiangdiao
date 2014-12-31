@@ -35,14 +35,14 @@
 				<tbody>
                                                 <?php foreach($products as $product): ?>
 						<tr>
-                                                        <td><input type="text" disabled="disabled" value="<?php echo $product->title; ?>"></td>
-							<td><input type="text" disabled="disabled" value="<?php echo $product->description; ?>"></td>
-							<td><input type="text" disabled="disabled" value="<?php echo $product->content; ?>"></td>
-							<td><input type="text" disabled="disabled" value="<?php echo $product->price; ?>"></td>
-							<td><input type="text" disabled="disabled" value="<?php echo $product->reservation_day; ?>"></td>
-							<td><input type="text" disabled="disabled" value="<?php echo $product->inventory_per_day; ?>"></td>
-							<td><input type="checkbox" disabled="disabled" <?php if($product->ignore_inventory) echo 'checked="checked"'; ?>></td>
-							<td><input type="text" disabled="disabled" value="<?php echo $product->rank; ?>"></td>
+                                                        <td><input type="text" disabled="disabled" name="title" value="<?php echo $product->title; ?>"></td>
+							<td><input type="text" disabled="disabled" name="description" value="<?php echo $product->description; ?>"></td>
+							<td><input type="text" disabled="disabled" name="content" value="<?php echo $product->content; ?>"></td>
+							<td><input type="text" disabled="disabled" name="price" value="<?php echo $product->price; ?>"></td>
+							<td><input type="text" disabled="disabled" name="reservation_day" value="<?php echo $product->reservation_day; ?>"></td>
+							<td><input type="text" disabled="disabled" name="inventory_per_day" value="<?php echo $product->inventory_per_day; ?>"></td>
+							<td><input type="checkbox" disabled="disabled" name="ignore_inventory" <?php if($product->ignore_inventory) echo 'checked="checked"'; ?>></td>
+							<td><input type="text" disabled="disabled" name="rank" value="<?php echo $product->rank; ?>"></td>
 						</tr>
 						<tr id="<?php echo $product->id; ?>">
 							<td>    

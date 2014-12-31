@@ -92,9 +92,11 @@ Class CartController extends BaseController {
                 elseif(Product::find($input['id']))
                 {
                         $product = Product::find($input['id']);
-                        if(Cart::get($product->id))
+                        $rowid = Cart::search(array('id'=>$product->id));
+                        $rowid = $rowid ? $rowid[0] : NULL;
+                        if(Cart::get($rowid))
                         {
-                                Cart::update($product->id, $input['qty']);
+                                Cart::update($rowid, $input['qty']);
                         }
                         else
                         {

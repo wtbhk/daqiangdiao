@@ -15,7 +15,7 @@ App::before(function($request)
 {
         Config::set('wechat.appid', 'wxc2b448d7bf4f74a6');
         Config::set('wechat.secret', 'ad4483be94fc0e204ca59a726c02a45a'); 
-        View::share('minimum_amount', Setting::get('minimum_amount'));
+        View::share('minimum_amount', Setting::get('minimum_amount', 50));
 });
 
 
