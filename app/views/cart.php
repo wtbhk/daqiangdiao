@@ -38,7 +38,7 @@
                                     <img src="<?php echo $item->product->one_image_url(); ?>" alt="">
                                     <div class="foodName">
                                         <h3><?php echo $item->product->title; ?></h3>
-                                        <span class="ignore">还剩<?php echo $item->product->inventory_in($date); ?>份</span>   
+                                        <span class="ignore">还剩<strong><?php echo $item->product->inventory_in($date); ?></strong>份</span>   
                                     </div>
                                 </div>
                                 <div class="fr">
