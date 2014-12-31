@@ -32,7 +32,7 @@
                             <h2><?php echo $product->title; ?></h2>
                             <span class="order">提前<?php echo $product->reservation_day; ?>天订单</span>
                             <span class="remain">
-                                <span class="today">jin</span>
+                                <span class="today">今</span>
                                 <span><strong><?php echo $product->inventory_today(); ?></strong>份</span>
                             </span>
                         </div>
