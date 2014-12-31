@@ -6,7 +6,7 @@ Class CartController extends BaseController {
         {
                 $date = date('Y-m-d');
                 $date_ = '';
-                $today = false;
+                $today = true;
                 if(Input::has('date')) 
                 {
                         $date_ = Input::get('date');
@@ -18,9 +18,18 @@ Class CartController extends BaseController {
                 else
                 {
                         $date_ = date('Y-m-d');
-                        $today = true;
                 }
-                $date = strtotime($date)>strtotime($date_) ? $date : $date_; 
+                if(strtotime($date) >= strtotime($date_))
+                {
+                        $today = true;
+                        $date = $date;
+                }
+                else
+                {
+                        $today = false;
+                        $date = $date_;
+                }
+
                 Session::set('date', $date);
 
                 $cart = Cart::content();
@@ -108,6 +117,12 @@ Class CartController extends BaseController {
                                 );
                         }
                 }
+                return Response::json(array('error'=>false));
+        }
+
+        function deleteCart()
+        {
+                Cart::destroy();
                 return Response::json(array('error'=>false));
         }
 

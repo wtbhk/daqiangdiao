@@ -28,7 +28,7 @@
                             <li class="mar10 selectTime">
                                 <span class="fl">选择时间</span>
                                 <span class="fr more"></span>
-                                <input type="text" id="time" class="hidden fr" placeholder>
+                                <input type="text" id="time" class="<?php if($today) echo 'hidden'; ?> fr" placeholder <?php if(!$today) echo 'value="$date"'; ?>>
 
                             </li>
 
@@ -53,12 +53,16 @@
                             <form action="">
                                 <input type="hidden" name="today" value="true">
                                 <input type="hidden" name="time" value="">
-                                <input type="hidden" name="items[0][id]" value="">
-                                <input type="hidden" name="items[0][qty]" value="">
-                                <input type="hidden" name="items[1][id]" value="">
-                                <input type="hidden" name="items[1][qty]" value="">
-                                <input type="hidden" name="items[2][id]" value="">
-                                <input type="hidden" name="items[2][qty]" value="">
+                                <?php 
+                                $i = 0;
+                                foreach($cart as $item):
+                                ?>
+                                <input type="hidden" name="items[<?php echo $i; ?>][id]" value="<?php echo $item->product->id; ?>">
+                                <input type="hidden" name="items[<?php echo $i; ?>][qty]" value="<?php echo $item->qty; ?>">
+                                <?php 
+                                $i++;
+                                endforeach; 
+                                ?>
                             </form>
                         </ul>
                     </div>

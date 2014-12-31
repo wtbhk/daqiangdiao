@@ -36,6 +36,8 @@ Route::group(array('before'=>'wechat.base'), function(){
 
         Route::get('/cart', 'CartController@showCart');
 
+        Route::delete('/cart', 'CartController@deleteCart');
+
         Route::post('/cart', 'CartController@checkCart');
 
         Route::post('/editcart', 'CartController@editCart');

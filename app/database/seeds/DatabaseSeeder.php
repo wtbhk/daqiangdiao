@@ -9,7 +9,6 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-                Setting::set('minimum_amount', 50);
                 Admin::create(array(
                         'username'=>'admin',
                         'password'=>'admin'
