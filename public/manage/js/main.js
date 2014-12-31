@@ -84,6 +84,7 @@ $(document).ready(function () {
                 url: '/admin/product/' + id,
                 type: 'DELETE'
             }).done(function (data) {
+                $('#' + id).prev().remove();
                 $('#' + id).remove();
             });
         });
