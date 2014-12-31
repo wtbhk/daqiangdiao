@@ -18,19 +18,18 @@ legend a:hover {
 	text-decoration: none;
 }
 /* 登录 */
-#login {
-	float: right;
-	position: relative;
-	left: -30px;
-	top: -50px;
-}
-.password span {
+.password {
 	padding-right: 19px !important;
+    margin-left: 30px;
 }
 #login-body {
 	width: 600px;
 	margin: 0 auto;
 	margin-top: 60px;
+}
+
+#password, #username {
+	height: 28px !important;
 }
 form {
 	margin-top: 60px;

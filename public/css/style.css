@@ -386,7 +386,7 @@ body {
     color: #e6353b; }
 
 #content-list h3 {
-  font: bold 16px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+  font: 16px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
   text-align: left; }
 
 dl {
@@ -401,25 +401,30 @@ dt, dd {
   float: left; }
 
 dt {
-  width: 35%; }
+  width: 48.82353%;
+  padding-bottom: 31.17647%;
+  position: relative; }
   dt img {
-    width: 100%; }
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
 
 dd {
-  width: 65%;
+  width: 50.87647%;
+  padding-top: 8.82353%;
   padding-bottom: 5px; }
   dd .dish {
-    width: 55%;
-    margin-left: 20%;
-    margin-top: 9%; }
+    width: 80%;
+    margin-left: 12%; }
     dd .dish h3, dd .dish span {
       text-align: center;
       line-height: 1.0; }
 
 .advance {
   color: #d7ced7;
-  font: 14px/1.0 "宋体",sans-serif;
-  padding-top: 10px; }
+  font: 14px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+  margin-top: 12px; }
 
 #manyPic img {
   width: 100%;
@@ -440,10 +445,11 @@ dd {
     padding: 3px 0;
     background: rgba(170, 170, 170, 0.85); }
 #manyPic .fr {
-  width: 30.23529%; }
+  width: 30.23529%;
+  position: relative; }
   #manyPic .fr a + a img {
     display: inline-block;
-    margin-top: 5%; }
+    margin-top: 6.7%; }
 
 /* 布局
  -------------------------------------------------------------*/
