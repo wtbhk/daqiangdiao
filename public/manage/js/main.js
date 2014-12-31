@@ -18,10 +18,9 @@ $(document).ready(function () {
             '    </button>        '+    
             '</td>'+
         '</tr>';
-        var url = 'http://localhost:8080/myfileupload/upload';
         var currentData = {};
         $('input.fileupload').fileupload({autoUpload: true,
-            url: url,
+            url: '/admin/product/' + $(this).parent().parent().parent().attr('id') + '/image',
             dataType: 'json',
             add: function (e, data) {
                var templateImpl = $.tmpl(template,
@@ -77,12 +76,12 @@ $(document).ready(function () {
                 return par.prev().remove()
                     .end().remove()
             }
-    /*        $.ajax({
-                url: '' + id,
+            $.ajax({
+                url: '/admin/product/' + id,
                 type: 'DELETE'
             }).done(function (data) {
                 $('#' + id).remove();
-            });*/
+            });
         });
 
         tbody.on('click', 'input.save', function (e) {
@@ -93,7 +92,7 @@ $(document).ready(function () {
             $(this).addClass('hidden').prev().removeClass('hidden').removeAttr('disabled');
             par.find('input.chanle').addClass('hidden').prev().removeClass('hidden').removeAttr('disabled');
             $.ajax({
-                url: '',
+                url: '/admin/product',
                 type: 'POST',
                 dataType: 'JSON',
                 data: {
@@ -153,10 +152,10 @@ $(document).ready(function () {
                     '<button class="btn btn-primary rOrder" type="button">接受</button>' +
                 '</div>' +
             '</li>';
-*/        $('.cOrder').on('click', function () {
+*/        $('div.wait').on('click', 'button.cOrder', function () {
 
         });
-        $('.rOrder').on('click', function () {
+        $('div.wait').on('click', 'button.rOrder', function () {
 
         });
     }());
