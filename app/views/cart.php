@@ -21,17 +21,19 @@
                     <div id="list">
                         <ul>
 
-                            <li class="mar10">
+                            <li class="mar10" id="now">
                                 <span class="fl">立即送达</span>
                                 <span class="fr <?php echo $today ? 'checked' : ''; ?>"></span>
                             </li>
-                            <li class="mar10">
+                            <li class="mar10 selectTime">
                                 <span class="fl">选择时间</span>
-                                <span class="fr more"></span>   
+                                <span class="fr more"></span>
+                                <input type="text" id="time" class="hidden fr" placeholder>
+
                             </li>
 
                             <?php foreach($cart as $item): ?>
-                            <li class="mar10">
+                            <li class="order mar10">
                                 <div class="fl">
                                     <img src="<?php echo $item->product->one_image_url(); ?>" alt="">
                                     <div class="foodName">
