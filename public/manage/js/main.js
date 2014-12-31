@@ -86,20 +86,21 @@ $(document).ready(function () {
         tbody.on('click', 'input.save', function (e) {
             e.preventDefault();
             var par = $(this).parent().parent();
+            var idx = $('input.save').index(this);
             par.find('input').attr('disabled', 'disabled');
             par.prev().find('input').attr('disabled', 'disabled');
             $(this).addClass('hidden').prev().removeClass('hidden').removeAttr('disabled');
             par.find('input.chanle').addClass('hidden').prev().removeClass('hidden').removeAttr('disabled');
             var data ={
                     'id': par.attr('id'),
-                    'price': $('input[name="price"').val(),
-                    'reservation_day': $('input[name="reservation_day"').val(),
-                    'inventory_per_day': $('input[name="inventory_per_day"').val(),
-                    'ignore_inventory': true,
-                    'title': $('input[name="title"').val(),
-                    'description': $('input[name="description"').val(),
-                    'content': $('input[name="content"').val(),
-                    'rank': $('input[name="rank"').val()
+                    'price': $('input[name="price"').eq(idx).val(),
+                    'reservation_day': $('input[name="reservation_day"').eq(idx).val(),
+                    'inventory_per_day': $('input[name="inventory_per_day"').eq(idx).val(),
+                    'ignore_inventory': $('input[type="checkbox"').eq(idx).prop('checked'),
+                    'title': $('input[name="title"').eq(idx).val(),
+                    'description': $('input[name="description"').eq(idx).val(),
+                    'content': $('input[name="content"').eq(idx).val(),
+                    'rank': $('input[name="rank"').eq(idx).val()
                 }
             $.ajax({
                 url: '/admin/product',
