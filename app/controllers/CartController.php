@@ -44,15 +44,15 @@ Class CartController extends BaseController {
         function checkCart()
         {
                 if(Cart::total()==0)
-                        return Redirect::to('/cart')->withErrors(array('msg'=>'Empty cart'));
+                        return Redirect::to('/cart')->with('error', 'Empty cart');
                 if(!(Input::has('today')||Input::has('date')) || !Input::has('items'))
                 {
-                        return Redirect::to('/cart')->withError(true);
+                        return Redirect::to('/cart')->withErrors('unknow');
                 }
                 $date = Input::has('today') ? date('Y-m-d') : Input::get('date');
                 if(strtotime($date) < strtotime(date('Y-m-d')))
                 {
-                        return Redirect::to('/cart')->withErrors(array('Invaild date'));
+                        return Redirect::to('/cart')->with('error', 'Invaild date');
                 }
                 Session::set('date', $date);
 
@@ -61,13 +61,13 @@ Class CartController extends BaseController {
                 {
                         $product = Product::find($item['id']);
                         if(!$product)
-                                return Redirect::to('/cart')->withErrors(array('msg'=>'Error in items'));
+                                return Redirect::to('/cart')->with('error', 'Error in items');
                         if(!$product->available)
-                                return Redirect::to('/cart')->withErrors(array('msg'=>'More than one product is unavailable'));
+                                return Redirect::to('/cart')->with('error', 'More than one product is unavailable');
                         if(!$product->checkReservation($date))
-                                return Redirect::to('/cart')-withErrors(array('msg'=>'Error in reservation'));
+                                return Redirect::to('/cart')->with('error', 'Error in reservation');
                         if(!$product->checkInventory($item['qty'], $date))
-                                return Redirect::to('/cart')->withErrors(array('msg'=>'Error in inventory'));
+                                return Redirect::to('/cart')->with('error', 'Error in inventory');
                         $cart[] = array(
                                 'id'=>$product->id, 
                                 'name'=>$product->title, 

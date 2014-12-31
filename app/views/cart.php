@@ -52,7 +52,7 @@
                             <?php endforeach; ?>
                             <form action="" method="POST">
                                 <input type="hidden" name="today" value="true">
-                                <input type="hidden" name="time" value="">
+                                <input type="hidden" name="date" value="">
                                 <?php 
                                 $i = 0;
                                 foreach($cart as $item):
@@ -87,9 +87,9 @@
             <span class="toUser fr"></span>
         </div>
     </header>
-    <div id="modal" class="hidden">
+    <div id="modal" <?php if(!$errors) echo 'class="hidden"'; ?>>
         <div id="errorBox">
-            这里是错误提示这里是错误提示这里是错误提示
+            <?php if($errors) var_dump($errors); ?>
             <div id="modalClose">&times</div>
         </div>
 
