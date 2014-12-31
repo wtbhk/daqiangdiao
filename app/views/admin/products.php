@@ -5,8 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
 	<meta name="author" content="zvenshy@gmail.com">
 	<title>后台管理</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.min.css">
+	<link href="/manage/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/manage/css/style.min.css">
 </head>
 <body>
 	<div class="row-fluid">
@@ -33,21 +33,22 @@
 					</tr>
 				</thead>
 				<tbody>
+                                                <?php foreach($products as $product): ?>
 						<tr>
-							<td><input type="text" disabled="disabled" value="标题2"></td>
-							<td><input type="text" disabled="disabled" value="描述2"></td>
-							<td><input type="text" disabled="disabled" value="内容2"></td>
-							<td><input type="text" disabled="disabled" value="22.5"></td>
-							<td><input type="text" disabled="disabled" value="3"></td>
-							<td><input type="text" disabled="disabled" value="20"></td>
-							<td><input type="checkbox" disabled="disabled" checked="checked"></td>
-							<td><input type="text" disabled="disabled" value="2"></td>
+                                                        <td><input type="text" disabled="disabled" value="<?php echo $product->title; ?>"></td>
+							<td><input type="text" disabled="disabled" value="<?php echo $product->description; ?>"></td>
+							<td><input type="text" disabled="disabled" value="<?php echo $product->content; ?>"></td>
+							<td><input type="text" disabled="disabled" value="<?php echo $product->price; ?>"></td>
+							<td><input type="text" disabled="disabled" value="<?php echo $product->reservation_day; ?>"></td>
+							<td><input type="text" disabled="disabled" value="<?php echo $product->inventory_per_day; ?>"></td>
+							<td><input type="checkbox" disabled="disabled" <?php if($product->ignore_inventory) echo 'checked="checked"'; ?>></td>
+							<td><input type="text" disabled="disabled" value="<?php echo $product->rank; ?>"></td>
 						</tr>
-						<tr id="0">
+						<tr id="<?php echo $product->id; ?>">
 							<td>    
 								<span class="btn btn-success fileinput-button">
 						        <span>Select files...</span>
-							        <input class="fileupload" type="file" name="files[]" disabled="disabled" multiple>
+							        <input class="fileupload" type="file" name="image[]" disabled="disabled" multiple>
 							    </span>
 						    </td>
 						    <td>    
@@ -63,51 +64,20 @@
 							<td></td>
 							<td></td>
 						</tr>
-
-						<tr>
-							<td><input type="text" disabled="disabled" name="title" value="标题1"></td>
-							<td><input type="text" disabled="disabled" name="description" value="描述1"></td>
-							<td><input type="text" disabled="disabled" name="content" value="内容1"></td>
-							<td><input type="text" disabled="disabled" name="price" value="22.5"></td>
-							<td><input type="text" disabled="disabled" value="3"></td>
-							<td><input type="text" disabled="disabled" value="20"></td>
-							<td><input type="checkbox" disabled="disabled" checked="checked"></td>
-							<td><input type="text" disabled="disabled" value="2"></td>
-						</tr>
-						<tr id="1">
-							<td>    
-								<span class="btn btn-success fileinput-button">
-						        <span>Select files...</span>
-							        <input class="fileupload" type="file" name="files[]" disabled="disabled" multiple>
-							    </span>
-						    </td>
-						    <td>    
-						    	<table role="presentation" class="table table-striped">
-							      <tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery">
-							      </tbody>
-							    </table>
-							</td>
-							<td></td>
-							<td></td>
-							<td><input type="submit" class="change" value="修改"><input type="submit" class="save hidden" value="保存"></td>
-							<td><input type="submit" class="del" value="删除"><input type="submit" class="chanle hidden" value="取消"></td>
-							<td></td>
-							<td></td>
-						</tr>
-
+                                                <?php endforeach; ?>
 				</tbody>
 			</table>
 		</div>
 	</div>
 	
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.ui.widget.js"></script>
-	<script src="js/load.img.js"></script>
-	<script src="js/canvas.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.iframe-transport.js"></script>
-	<script src="js/jquery.fileupload.js"></script>
-	<script src="js/temp.js"></script>
-	<script src="js/main.js"></script>
+	<script src="/manage/js/jquery.min.js"></script>
+	<script src="/manage/js/jquery.ui.widget.js"></script>
+	<script src="/manage/js/load.img.js"></script>
+	<script src="/manage/js/canvas.js"></script>
+	<script src="/manage/js/bootstrap.min.js"></script>
+	<script src="/manage/js/jquery.iframe-transport.js"></script>
+	<script src="/manage/js/jquery.fileupload.js"></script>
+	<script src="/manage/js/temp.js"></script>
+	<script src="/manage/js/main.js"></script>
 </body>
 </html>
