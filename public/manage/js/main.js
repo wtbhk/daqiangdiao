@@ -101,25 +101,15 @@ $(document).ready(function () {
                     'content': $('input[name="content"').val(),
                     'rank': $('input[name="rank"').val()
                 }
-                console.log(data);
-/*            $.ajax({
+            $.ajax({
                 url: '/admin/product',
                 type: 'POST',
-                dataType: 'JSON',
-                data: {
-                    'id': par.attr('id'),
-                    'price': $('input[name="price"').val(),
-                    'reservation_day': $('input[name="reservation_day"').val(),
-                    'inventory_per_day': $('input[name="inventory_per_day"').val(),
-                    'ignore_inventory': true,
-                    'title': $('input[name="title"').val(),
-                    'description': $('input[name="description"').val(),
-                    'content': $('input[name="content"'),
-                    'rank': $('input[name="rank"').val()
+                dataType: 'json',
+                data: data,
+                success: function (data) {
+                    console.log(data);
                 }
-            }).done(function (data) {
-                return;
-            });*/
+            });
         });
 
         tbody.on('click', 'input.chanle', function (e) {
