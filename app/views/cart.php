@@ -50,7 +50,7 @@
                                 </div>
                             </li>
                             <?php endforeach; ?>
-                            <form action="">
+                            <form action="" method="POST">
                                 <input type="hidden" name="today" value="true">
                                 <input type="hidden" name="time" value="">
                                 <?php 
