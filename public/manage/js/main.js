@@ -19,26 +19,31 @@ $(document).ready(function () {
             '</td>'+
         '</tr>';
         var currentData = {};
+        $('input.fileupload').on('click', function () {
+            currentData.id = $(this).parent().parent().parent().attr('id');
+            console.log(currentData.id);
+        })
         $('input.fileupload').fileupload({autoUpload: true,
-            url: '/admin/product/' + $(this).parent().parent().parent().attr('id') + '/image',
+            url: '/admin/product/' + currentData.id + '/image',
             dataType: 'json',
             add: function (e, data) {
-               var templateImpl = $.tmpl(template,
+                data.url = '/admin/product/' + currentData.id + '/image'
+                var templateImpl = $.tmpl(template,
                     {
                         "fileName_":data.files[0].name,
                         "fileSize_":(data.files[0].size/1000).toFixed(2)
                     }).appendTo( ".files:eq(" + $('input.fileupload').index(this) + ")" );
-               data.content = templateImpl;
-               $(".start", templateImpl).click(function () {
+                data.content = templateImpl;
+                $(".start", templateImpl).click(function () {
                     currentData.bar = templateImpl;             
                     $('<p/>').text('Uploading...').addClass("uploading").replaceAll($(this));
                     data.submit();//上传文件
-               });
-               $(".cancel", templateImpl).click(function () {
+                });
+                $(".cancel", templateImpl).click(function () {
                     $('<p/>').text('cancel...').replaceAll($(this));
                     data.abort();//取消上传
                     $(templateImpl).remove();
-               });
+                });
             },
 
             done: function (e, data) {
