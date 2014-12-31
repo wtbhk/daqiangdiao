@@ -89,13 +89,12 @@ $(document).ready(function () {
         $('#time').change(function () {
             $('input[name="time"]').val($(this).val());
             $('input[name="today"]').val('false');
-            $('#now span.checked').hide();
+            $('form').eq(0).submit();
         });
         $('#now').click(function () {
-            $(this).find('span.checked').show();
-            $('#time').val('').hide();
             $('input[name="time"]').val('');
             $('input[name="today"]').val('true');
+            $('form').eq(0).submit();
         })
     }());
 });
