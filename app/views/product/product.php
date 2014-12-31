@@ -37,9 +37,9 @@
                             </span>
                         </div>
                         <div class="fr">
-                            <div class="priceBox">
+                            <div class="priceBox" id="<?php echo $product->id; ?>">
                                 <span class="del">—</span>
-                                <span class="number">0</span>
+                                <span class="number"><?php echo $product->in_cart; ?></span>
                                 <span class="price">￥<?php echo $product->price; ?></span>
                             </div>
                         </div>

@@ -131,7 +131,7 @@ Class AdminController extends BaseController {
         function orderToday()
         {
                 $orders = Order::with('OrderItems')
-                        ->where(DB::raw('to_days(delivery) = to_days(now())')
+                        ->where(DB::raw('to_days(delivery) = to_days(now())'))
                         ->get(); 
                 return Response::json($orders->toArray());
         }

@@ -82,15 +82,16 @@ Class CartController extends BaseController {
                 ));
                 if($validator->fails())
                 {
-                        return Response::json(array('error'=>true));
+                        return Response::json(array('error'=>true, 'msg'=>'input error'));
                 }
                 if($input['qty']<=0 || !Product::find($input['id']))
                 {
                         if(Cart::get($input['id']))
                                 Cart::remove($input['id']);
                 }
-                elseif($product=Product::find($input['id']))
+                elseif(Product::find($input['id']))
                 {
+                        $product = Product::find($input['id']);
                         if(Cart::get($product->id))
                         {
                                 Cart::update($product->id, $input['qty']);
