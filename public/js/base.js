@@ -98,7 +98,8 @@ $(document).ready(function () {
         $('body').on('click', 'button.ui-datepicker-close', function () {
             $('form').eq(0).submit();
         });
-        $('input[name="submit"]').on('click', function () {
+        $('#sub').on('click', function (e) {
+            e.preventDefault();
             $('form').eq(0).submit();
         });
     }());
