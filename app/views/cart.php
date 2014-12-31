@@ -52,7 +52,7 @@
                             <?php endforeach; ?>
                             <form action="">
                                 <input type="hidden" name="today" value="true">
-                                <input type="hidden" name="time" value="">
+                                <input type="hidden" name="date" value="">
                                 <input type="hidden" name="items[0][id]" value="">
                                 <input type="hidden" name="items[0][qty]" value="">
                                 <input type="hidden" name="items[1][id]" value="">

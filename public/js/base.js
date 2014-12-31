@@ -87,16 +87,19 @@ $(document).ready(function () {
             });
         });
         $('#time').change(function () {
-            $('input[name="time"]').val($(this).val());
+            $('input[name="date"]').val($(this).val());
             $('input[name="today"]').val('false');
         });
         $('#now').click(function () {
-            $('input[name="time"]').val('');
+            $('input[name="date"]').val('');
             $('input[name="today"]').val('true');
             $('form').eq(0).submit();
         });
         $('body').on('click', 'button.ui-datepicker-close', function () {
             $('form').eq(0).submit();
-        })
+        });
+        $('input[name="submit"]').on('click', function () {
+            $('form').eq(0).submit();
+        });
     }());
 });
