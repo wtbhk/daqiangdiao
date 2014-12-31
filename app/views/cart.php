@@ -33,9 +33,9 @@
                             <?php foreach($cart as $item): ?>
                             <li class="mar10">
                                 <div class="fl">
-                                    <img src="<?php echo $item->image; ?>" alt="">
+                                    <img src="<?php echo $item->product->one_image_url(); ?>" alt="">
                                     <div class="foodName">
-                                        <h3><?php echo $item->title; ?></h3>
+                                        <h3><?php echo $item->product->title; ?></h3>
                                         <span class="ignore">还剩<?php echo $item->product->inventory_in($date); ?>份</span>   
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
 
         <div id="mask"></div>
     </div>
-    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/js/base.js"></script>
 </body>
 </html>
