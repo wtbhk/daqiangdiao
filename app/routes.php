@@ -10,8 +10,6 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-
 Route::group(array('before'=>'wechat.base'), function(){
 
         Route::get('/', 'ListController@showIndex');

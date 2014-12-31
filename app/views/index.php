@@ -46,7 +46,7 @@
                             <span class="fr"><a href="/list">查看更多</a></span>
                         </div>
                         <ul>
-                            <a href=""><li>
+                            <a href="/product/<?php echo $products[4]->id; ?>"><li>
                                 <dl>
                                     <dt><img src="<?php echo $products[4]->one_image_url(); ?>" alt=""></dt>
                                     <dd class="overft">
@@ -61,9 +61,9 @@
                                     </dd>
                                 </dl>
                             </li></a>
-                            <li>
+                            <a href="/product/<?php echo $products[5]->id; ?>"><li>
                                 <dl>
-                                        <dt><img src="<?php echo $products[5]->one_image_url(); ?>" alt=""></dt>
+                                    <dt><img src="<?php echo $products[5]->one_image_url(); ?>" alt=""></dt>
                                     <dd class="overft">
                                         <div class="dish">
                                             <h3><?php echo $products[5]->title; ?></h3>
@@ -75,7 +75,7 @@
                                         </div>
                                     </dd>
                                 </dl>
-                            </li>
+                            </li></a>
                         </ul>
                     </div>
                 </div>
