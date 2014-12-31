@@ -11,7 +11,7 @@
 <body>
 	<div class="row-fluid">
 		<div class="span10 offset1">
-			<legend>后台管理<small></legend>
+			<legend>后台管理</legend>
 			<div id="new"><a href="#loginModal" role="button" data-toggle="modal">新建</a></div>
 		</div>
 	</div>
