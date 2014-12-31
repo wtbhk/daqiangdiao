@@ -43,7 +43,7 @@
 
                         <div class="list-header overft">
                             <h2 class="fl">推荐</h2>
-                            <a href="/list"><span class="fr">查看更多</span></a>
+                            <span class="fr"><a href="/list">查看更多</a></span>
                         </div>
                         <ul>
                             <a href=""><li>

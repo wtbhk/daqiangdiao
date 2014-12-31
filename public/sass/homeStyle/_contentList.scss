@@ -58,7 +58,7 @@ body {
 }
 
 #content-list h3 {
-	font: bold 16px/1 $font-family;
+	font: 16px/1 $font-family;
 	text-align: left;
 }
 dl {
@@ -72,21 +72,27 @@ dt, dd{
 	float: left;
 }
 dt {
-	width: 35%;
+	width: 166/340*100%;
+	padding-bottom: 166/340*(106/166)*100%;
+	position: relative;
+
 
 	img{
 		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 }
 
 dd {
-	width: 65%;
+	width: (1-166/340)*100% - 0.3%;
+	padding-top: 30/340*100%;
 	padding-bottom: 5px;
 	
 	.dish {
-		width: 55%;
-		margin-left: 20%;
-		margin-top: 9%;
+		width: 80%;
+		margin-left: 12%;
 		
 		h3, span {
 			text-align: center;
@@ -99,8 +105,8 @@ dd {
 
 .advance {
 	color: #d7ced7;
-	font: 14px/1.0 "宋体",sans-serif;
-	padding-top: 10px;
+	font: 14px/1.0 $font-family;
+	margin-top: 12px;
 }
 
 #manyPic {
@@ -130,10 +136,11 @@ dd {
 
 	.fr {
 		width: (1 - 210/340)*100% - 8%;
+		position: relative;
 
 		a + a img {
 			display: inline-block;
-			margin-top: 5%;
+			margin-top: 6.7%;
 		}
 	}
 }
