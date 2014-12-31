@@ -393,9 +393,9 @@ dl {
   overflow: hidden;
   background: #fff;
   width: 100%;
-  -webkit-box-shadow: 0 0 7px #999999;
-  -moz-box-shadow: 0 0 7px #999999;
-  box-shadow: 0 0 7px #999999; }
+  -webkit-box-shadow: 0 0 14px #aaaaaa;
+  -moz-box-shadow: 0 0 14px #aaaaaa;
+  box-shadow: 0 0 14px #aaaaaa; }
 
 dt, dd {
   float: left; }
@@ -428,9 +428,9 @@ dd {
 
 #manyPic img {
   width: 100%;
-  -webkit-box-shadow: 0 0 15px #999999;
-  -moz-box-shadow: 0 0 15px #999999;
-  box-shadow: 0 0 15px #999999; }
+  -webkit-box-shadow: 0 0 14px #aaaaaa;
+  -moz-box-shadow: 0 0 14px #aaaaaa;
+  box-shadow: 0 0 14px #aaaaaa; }
 #manyPic .fl {
   width: 65.26471%;
   position: relative; }

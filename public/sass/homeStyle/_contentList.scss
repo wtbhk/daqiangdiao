@@ -65,7 +65,7 @@ dl {
 	overflow: hidden;
 	background: #fff;
 	width: 100%;
-	@include box-shadow(0 0 7px #999)
+	@include box-shadow(0 0 14px #aaa)
 }
 
 dt, dd{
@@ -113,7 +113,7 @@ dd {
 
 	img {
 		width: 100%;
-		@include box-shadow(0 0 15px #999);
+		@include box-shadow(0 0 14px #aaa);
 	}
 
 	.fl {
