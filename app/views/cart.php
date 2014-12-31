@@ -72,7 +72,9 @@
         </div>
     </div>
     <footer class="foot-fixed">
-        <input id="sub" type="submit" value="确认订单">
+        <div class="wrap">
+            <input id="sub" type="submit" value="确认订单">
+        </div>
     </footer>
     <header>
         <div class="wrap">
@@ -93,9 +95,9 @@
 
         <div id="mask"></div>
     </div>
-    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="js/jqueryui.js"></script>
-    <script type="text/javascript" src="js/jqueryui-timepicker.js"></script>
-    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/js/jqueryui.js"></script>
+    <script type="text/javascript" src="/js/jqueryui-timepicker.js"></script>
+    <script type="text/javascript" src="/js/base.js"></script>
 </body>
 </html>
