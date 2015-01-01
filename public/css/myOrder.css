@@ -484,7 +484,10 @@ span.totalPrice {
 li.typeItem {
   padding: 0; }
 
-#addAddress a {
+#list > a {
+  display: block; }
+
+#addAddress span {
   display: block;
   margin: 0 auto;
   width: 19px;

@@ -1,6 +1,9 @@
 @charset "utf-8";
 
-#addAddress a{
+#list > a {
+    display: block;
+}
+#addAddress span{
     display: block;
     margin: 0 auto;
     width: 19px;

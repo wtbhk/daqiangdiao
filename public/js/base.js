@@ -142,4 +142,19 @@ $(document).ready(function () {
             checkorder.submit();
         });
     }());
+    //orderAddr 
+    (function () {
+        var orderAddr = $('#orderAddr');
+        if (orderAddr.length === 0) return;
+        $('li.addr').on('click', function () {
+            var addrId = $(this).find('.address').attr('id');
+            var par = $(this);
+            $.post('/orderaddr', function (data) {
+                return !data['error'] ? 
+                    par.find('.fr').addClass('checked')
+                        .end().siblings('.addr').find('.fr').removeClass('checked') :
+                    false;
+            }, 'json');
+        });
+    }())
 });

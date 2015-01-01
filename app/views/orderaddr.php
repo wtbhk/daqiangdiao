@@ -18,17 +18,17 @@
             <div class="main">
                 <div class="wrap">
                      <div id="list">
-                        <ul>
-                            <li id="addAddress" class="mar10">
-                                <a href="#"></a>
-                            </li>
+                        <ul id="orderAddr">
+                            <a href="address?redirect_to=/orderaddr"><li id="addAddress" class="mar10">
+                                <span href="#"></span>
+                            </li></a>
                             <?php foreach($addressees as $addressee): ?>
-                            <li class="mar10">
+                            <li class="mar10 addr">
                                 <span class="fl">
                                     <p class="address"><?php echo $addressee->address; ?></p>
                                     <span class="name"><?php echo $addressee->name; ?></span>，<span class="phoneNumber"><?php echo $addressee->phone; ?></span>
                                 </span>
-                                <?php echo $addressee->id==$checked ? '<span class="fr checked addressChecked"></span>' : ''; ?>
+                                <span class="fr <?php echo $addressee->id==$checked ? 'checked ' : ''; ?> addressChecked"></span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -47,5 +47,15 @@
             <span class="toUser fr"></span>
         </div>
     </header>
+    <div id="modal" class="hidden">
+        <div id="errorBox">
+            这里是错误提示这里是错误提示这里是错误提示
+            <div id="modalClose">&times</div>
+        </div>
+
+        <div id="mask"></div>
+    </div>
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
 </body>
 </html>
