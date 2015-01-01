@@ -20,10 +20,12 @@
                     
                     <div id="list">
                         <ul>
+                            <?php if(!$addressee): ?>
                             <a href="orderaddr"><li class="error mar10 hidden">
                                 <span class="fl">添加收货地址</span>
                                 <span class="fr more"></span>
                             </li></a>
+                            <?php else: ?>
                             <a href="orderaddr"><li class="mar10">
                                 <span class="fl">
                                     <p class="address"><?php echo $addressee->address; ?></p>
@@ -31,6 +33,7 @@
                                 </span>
                                 <span class="fr more"></span>
                             </li></a>
+                            <?php endif; ?>
 
                             <li class="mar10">
                                 <span class="fl">送达时间</span>
@@ -62,7 +65,7 @@
                     </div>
 
 
-                    <form id="checkorder" action="">
+                    <form id="checkorder" action="" method="POST">
                             <input type="hidden" name="payment" value="cash">
                             <input type="hidden" name="addressee" value="<?php echo $addressee->id; ?>">
                     </form>
