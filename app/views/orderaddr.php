@@ -25,7 +25,7 @@
                             <?php foreach($addressees as $addressee): ?>
                             <li class="mar10">
                                 <span class="fl">
-                                    <p class="address"><?php echo $addressee->address; ?></p>
+                                    <p id="<?php echo $addressee->id; ?>" class="address"><?php echo $addressee->address; ?></p>
                                     <span class="name"><?php echo $addressee->name; ?></span>，<span class="phoneNumber"><?php echo $addressee->phone; ?></span>
                                 </span>
                                 <?php echo $addressee->id==$checked ? '<span class="fr checked addressChecked"></span>' : ''; ?>
