@@ -93,9 +93,11 @@ $(document).ready(function () {
         $('#now').click(function () {
             $('input[name="date"]').val('');
             $('input[name="today"]').val('true');
+            $('form').eq(0).attr('method', 'GET');
             $('form').eq(0).submit();
         });
         $('body').on('click', 'button.ui-datepicker-close', function () {
+            $('form').eq(0).attr('method', 'GET');
             $('form').eq(0).submit();
         });
         $('#sub').on('click', function (e) {
