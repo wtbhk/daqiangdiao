@@ -79,7 +79,7 @@ Class CartController extends BaseController {
                         $cart[] = array(
                                 'id'=>$product->id, 
                                 'name'=>$product->title, 
-                                'qty'=>$items->qty,
+                                'qty'=>$item['qty'],
                                 'price'=>$product->price
                         );
                 }

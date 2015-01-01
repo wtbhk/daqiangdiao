@@ -33,7 +33,7 @@ Class OrderController extends BaseController {
                 $user = $this->user;
                 $order = $user->orders->where('id', $id);
                 if(!$order)
-                        return Redirect::to('/profile')->withErrors(array('msg'=>'Permissoin denied'));
+                        return Redirect::to('/profile')->withErrors(array('message'=>'Permissoin denied'));
                 return View::make('order', array('user'=>$user, 'order'=>$order));
         }
 
@@ -42,9 +42,9 @@ Class OrderController extends BaseController {
         {
                 $user = $this->user;
                 if(Cart::total()==0)
-                        return Redirect::to('/cart')->withErrors(array('msg'=>'Empty cart'));
+                        return Redirect::to('/cart')->withErrors(array('message'=>'Empty cart'));
                 $addressee = Session::has('addressee') ?
-                        Addressee::find(Session::get('addressee')) : Addressee::where('user_id', $user->id)->first();
+                        Addressee::find(Session::get('addressee')) : Addressee::where('user_id', $user->id)->lastused()->first();
                 $date = Session::get('date');
                 $price = Cart::total();
                 $cart = Cart::content();
@@ -70,12 +70,12 @@ Class OrderController extends BaseController {
                 if($validator->fails())
                         return Redirect::to('/checkorder')->withErrors($validator);
                 if(Cart::total()==0)
-                        return Redirect::to('/cart')->withErrors(array('msg'=>'Empty cart'));
+                        return Redirect::to('/cart')->withErrors(array('message'=>'Empty cart'));
                 if(!Session::has('date') || strtotime(Session::get('date'))<strtotime(date('Y-m-d')))
-                        return Redirect::to('/cart')->withErrors(array('msg'=>'Date error'));
+                        return Redirect::to('/cart')->withErrors(array('message'=>'Date error'));
                 $addressee=Addressee::find(Input::get('addressee'));
                 if(!$addressee)
-                        return Redirect::to('/cart')->withErrors(array('msg'=>'Addressee error'));
+                        return Redirect::to('/cart')->withErrors(array('message'=>'Addressee error'));
                 $cart = Cart::content();
                 DB::beginTransaction();
                 try{
