@@ -43,7 +43,7 @@
 
 
                             <li class="mar10">
-                                <span class="fl">收货地址</span>
+                                <span class="fl">货到付款</span>
                                 <span class="fr checked"></span>
                             </li>
                             <li>
