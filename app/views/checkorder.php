@@ -50,8 +50,8 @@
                                 <span class="fl">货到付款</span>
                                 <span class="fr checked"></span>
                             </li>
-                            <li>
-                                <span class="fl" id="balance">
+                            <li id="balance">
+                                <span class="fl">
                                     <p>余额</p>
                                     <p class="ignore">剩余￥<?php echo $balance; ?></p>
                                 </span>

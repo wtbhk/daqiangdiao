@@ -112,7 +112,7 @@ $(document).ready(function () {
         $('#payment').on('click', function () {
             var sub = $(this).find('.fr');
             var inp = $('input[name="payment"]');
-            var bal = $('#balance');
+            var bal = $('#balance').find('.fr');
             if (sub.hasClass('checked')) {
                 sub.removeClass('checked');
                 bal.addClass('checked');
@@ -126,7 +126,7 @@ $(document).ready(function () {
         $('#balance').on('click', function () {
             var sub = $('#payment').find('.fr');
             var inp = $('input[name="payment"]');
-            var bal = $(this);
+            var bal = $(this).find('.fr');
             if (sub.hasClass('checked')) {
                 sub.removeClass('checked');
                 bal.addClass('checked');
