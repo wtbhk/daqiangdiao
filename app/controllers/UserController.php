@@ -37,23 +37,24 @@ Class UserController extends BaseController {
         function showAddAddress()
         {
                 $user = $this->user;
-                return View::make('profile.address', array('user'=>$user));
+                $redirect_to = Input::get('redirect_to');
+                return View::make('profile.address', array('user'=>$user, 'redirect_to'=>$redirect_to));
         }
 
         function addAddress()
         {
                 $user = $this->user;
-                $input = Input::only('name', 'address', 'phone');
+                $input = Input::only('name', 'address', 'phone', 'redirect_to');
                 $validator = Validator::make($input, array(
                         'phone'=>'required|digits_between:7,12',
                         'name'=>'required',
-                        'address'=>'required'
+                        'address'=>'required',
+                        'redirect_to'=>'sometimes'
                 ));
-                if($validator->fails()){
-                        return Redirect::to('/address')->withError($validator);
-                }
+                if($validator->fails())
+                        return Redirect::to('/address')->withErrors($validator);
                 $user->addressees()->insert($input);
-                return Redirect::to('/profile');    
+                return Redirect::to(Input::get('redirect_to', '/profile'));    
         }
 
         function delAddress($id)

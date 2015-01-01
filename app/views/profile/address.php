@@ -22,6 +22,7 @@
                         <input type="text" value="" placeholder="收货地址">
                         <input class="mar5" type="text" value="<?php echo $user->name; ?>" placeholder="联系人">
                         <input class="next" type="text" value="<?php echo $user->phone; ?>" placeholder="联系方式">
+                        <input type="hidden" name="redirect_to" value="<?php echo $redirect_to; ?>">
                         <input type="submit" value="保存">
                         <span class="tips fr"><i></i>请确认无误后保存</span>
                     </form>
