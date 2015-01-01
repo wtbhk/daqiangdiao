@@ -26,8 +26,8 @@
                             </li></a>
                             <a href="orderaddr"><li class="mar10">
                                 <span class="fl">
-                                    <p class="address">华东交通大学华东交通大学</p>
-                                    <span class="name">李艳呀</span>，<span class="phoneNumber">1234567890</span>
+                                    <p class="address"><?php echo $addressee->address; ?></p>
+                                    <span class="name"><?php echo $addressee->name; ?></span>，<span class="phoneNumber"><?php echo $addressee->phone; ?></span>
                                 </span>
                                 <span class="fr more"></span>
                             </li></a>
@@ -64,7 +64,7 @@
 
                     <form id="checkorder" action="">
                             <input type="hidden" name="payment" value="cash">
-                            <input type="hidden" name="addressee" value="">
+                            <input type="hidden" name="addressee" value="<?php echo $addressee->id; ?>">
                     </form>
                 </div>
             </div>

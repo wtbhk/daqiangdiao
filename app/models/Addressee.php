@@ -25,5 +25,10 @@ class Addressee extends Eloquent {
                 return $this->belongsTo('User');
         }
 
+        function scopeLastused($query)
+        {
+                return $query->orderBy('updated_at');
+        }
+
 
 }

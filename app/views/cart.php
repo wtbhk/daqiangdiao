@@ -51,8 +51,8 @@
                             </li>
                             <?php endforeach; ?>
                             <form action="" method="POST">
-                                <input type="hidden" name="today" value="true">
-                                <input type="hidden" name="date" value="">
+                                <input type="hidden" name="today" value="<?php echo $today ? true : false; ?>">
+                                <input type="hidden" name="date" value="<?php echo $today ? '' : $date; ?>">
                                 <?php 
                                 $i = 0;
                                 foreach($cart as $item):
