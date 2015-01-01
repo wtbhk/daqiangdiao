@@ -6,28 +6,35 @@ Class CartController extends BaseController {
         {
                 $date = date('Y-m-d');
                 $date_ = '';
-                $today = true;
-                if(Input::has('date')) 
+                if(!Input::get('today'))
                 {
-                        $date_ = Input::get('date');
-                }
-                elseif(Session::has('date'))
-                {
-                        $date_ = Session::get('date');
+                        if(Input::has('date')) 
+                        {
+                                $date_ = Input::get('date');
+                        }
+                        elseif(Session::has('date'))
+                        {
+                                $date_ = Session::get('date');
+                        }
+                        else
+                        {
+                                $date_ = date('Y-m-d');
+                        }
+                        if(strtotime($date) >= strtotime($date_))
+                        {
+                                $today = true;
+                                $date = $date;
+                        }
+                        else
+                        {
+                                $today = false;
+                                $date = $date_;
+                        }
                 }
                 else
                 {
-                        $date_ = date('Y-m-d');
-                }
-                if(strtotime($date) >= strtotime($date_))
-                {
+                        $date = date('Y-m-d');
                         $today = true;
-                        $date = $date;
-                }
-                else
-                {
-                        $today = false;
-                        $date = $date_;
                 }
 
                 Session::set('date', $date);
@@ -44,15 +51,16 @@ Class CartController extends BaseController {
         function checkCart()
         {
                 if(Cart::total()==0)
-                        return Redirect::to('/cart')->with('error', 'Empty cart');
+                        return Redirect::to('/cart')->withErrors(array('message'=>'Empty cart'));
+
                 if(!(Input::has('today')||Input::has('date')) || !Input::has('items'))
                 {
-                        return Redirect::to('/cart')->withErrors('unknow');
+                        return Redirect::to('/cart')->withErrors(array('message'=>'unknow'));
                 }
                 $date = Input::has('today') ? date('Y-m-d') : Input::get('date');
                 if(strtotime($date) < strtotime(date('Y-m-d')))
                 {
-                        return Redirect::to('/cart')->with('error', 'Invaild date');
+                        return Redirect::to('/cart')->withErrors(array('message'=>'Invaild date'));
                 }
                 Session::set('date', $date);
 
@@ -61,13 +69,13 @@ Class CartController extends BaseController {
                 {
                         $product = Product::find($item['id']);
                         if(!$product)
-                                return Redirect::to('/cart')->with('error', 'Error in items');
+                                return Redirect::to('/cart')->withErrors(array('message'=>'Error in items'));
                         if(!$product->available)
-                                return Redirect::to('/cart')->with('error', 'More than one product is unavailable');
+                                return Redirect::to('/cart')->withErrors(array('message'=>'More than one product is unavailable'));
                         if(!$product->checkReservation($date))
-                                return Redirect::to('/cart')->with('error', 'Error in reservation');
+                                return Redirect::to('/cart')->withErrors(array('message'=>'Error in reservation'));
                         if(!$product->checkInventory($item['qty'], $date))
-                                return Redirect::to('/cart')->with('error', 'Error in inventory');
+                                return Redirect::to('/cart')->withErrors(array('message'=>'Error in inventory'));
                         $cart[] = array(
                                 'id'=>$product->id, 
                                 'name'=>$product->title, 

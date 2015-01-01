@@ -28,7 +28,7 @@
                             <li class="mar10 selectTime">
                                 <span class="fl">选择时间</span>
                                 <span class="fr more"></span>
-                                <input type="text" id="time" class="<?php if($today) echo 'hidden'; ?> fr" placeholder <?php if(!$today) echo 'value="$date"'; ?>>
+                                <input type="text" id="time" class="<?php if($today) echo 'hidden'; ?> fr" placeholder <?php if(!$today) echo 'value="'.$date.'"'; ?>>
 
                             </li>
 
@@ -50,7 +50,7 @@
                                 </div>
                             </li>
                             <?php endforeach; ?>
-                            <form action="" method="POST">
+                            <form action="">
                                 <input type="hidden" name="today" value="true">
                                 <input type="hidden" name="date" value="">
                                 <?php 
@@ -93,9 +93,9 @@
 
         <div id="mask"></div>
     </div>
-    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="js/jqueryui.js"></script>
-    <script type="text/javascript" src="js/jqueryui-timepicker.js"></script>
-    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/js/jqueryui.js"></script>
+    <script type="text/javascript" src="/js/jqueryui-timepicker.js"></script>
+    <script type="text/javascript" src="/js/base.js"></script>
 </body>
 </html>
