@@ -72,7 +72,9 @@
         </div>
     </div>
     <footer class="foot-fixed">
-        <input id="sub" type="submit" value="确认订单">
+        <div class="wrap">
+            <input id="sub" type="submit" value="确认订单">
+        </div>
     </footer>
     <header>
         <div class="wrap">

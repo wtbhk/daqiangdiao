@@ -488,10 +488,9 @@ span.delNum, span.price {
   color: #f53874; }
 
 span.delNum {
-  font: 900 8px/25px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+  font: 900 8px/29px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
   position: relative;
   width: 25px;
-  top: -2px;
   text-align: center; }
 
 span.number {
