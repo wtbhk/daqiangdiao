@@ -20,6 +20,10 @@
                     
                     <div id="list">
                         <ul>
+                            <li class="error mar10 hidden">
+                                <span class="fl">添加收货地址</span>
+                                <span class="fr more"></span>
+                            </li>
                             <li class="mar10">
                                 <span class="fl">
                                     <p class="address">华东交通大学华东交通大学</p>
@@ -42,7 +46,7 @@
                             </li>
 
 
-                            <li class="mar10">
+                            <li class="mar10" id="payment">
                                 <span class="fl">货到付款</span>
                                 <span class="fr checked"></span>
                             </li>
@@ -57,15 +61,9 @@
                     </div>
 
 
-                    <form action="">
-                        <input type="hidden" name="today" value="true">
-                        <input type="hidden" name="time" value="">
-                        <input type="hidden" name="items[0][id]" value="">
-                        <input type="hidden" name="items[0][qty]" value="">
-                        <input type="hidden" name="items[1][id]" value="">
-                        <input type="hidden" name="items[1][qty]" value="">
-                        <input type="hidden" name="items[2][id]" value="">
-                        <input type="hidden" name="items[2][qty]" value="">
+                    <form id="checkorder" action="">
+                            <input type="hidden" name="payment" value="cash">
+                            <input type="hidden" name="addressee" value="">
                     </form>
                 </div>
             </div>
@@ -73,7 +71,7 @@
     </div>
     <footer class="foot-fixed">
         <div class="wrap">
-            <input type="submit" value="确认订单">
+            <input id="subCheckOrder" type="submit" value="确认订单">
         </div>
     </footer>
     <header>
@@ -96,8 +94,6 @@
         <div id="mask"></div>
     </div>
     <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="js/jqueryui.js"></script>
-    <script type="text/javascript" src="js/jqueryui-timepicker.js"></script>
     <script type="text/javascript" src="js/base.js"></script>
 </body>
 </html>

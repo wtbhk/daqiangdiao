@@ -105,4 +105,24 @@ $(document).ready(function () {
             $('form').eq(0).submit();
         });
     }());
+    //付款页
+    (function () {
+        var checkorder = $('#checkorder');
+        if (checkorder.length === 0) return;
+        $('#payment').on('click', function () {
+            var sub = $(this).find('fr');
+            var inp = $('input[name="payment"]');
+            if (sub.has('checked')) {
+                sub.removeClass('checked');
+                inp.val('balance');
+            } else {
+                sub.addClass('checked');
+                inp.val('cash');
+            }
+        });
+        $('#subCheckOrder').on('click', function (e) {
+            e.preventDefault();
+            checkorder.submit();
+        });
+    }());
 });
