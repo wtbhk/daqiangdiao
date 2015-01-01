@@ -51,10 +51,11 @@
                                 <span class="fr checked"></span>
                             </li>
                             <li>
-                                <span class="fl">
+                                <span class="fl" id="balance">
                                     <p>余额</p>
                                     <p class="ignore">剩余￥<?php echo $balance; ?></p>
                                 </span>
+                                <span class="fr"></span>
                             </li>
 
                         </ul>
