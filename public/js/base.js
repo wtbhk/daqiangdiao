@@ -123,6 +123,20 @@ $(document).ready(function () {
                 inp.val('cash');
             }
         });
+        $('#balance').on('click', function () {
+            var sub = $('#payment').find('.fr');
+            var inp = $('input[name="payment"]');
+            var bal = $(this);
+            if (sub.hasClass('checked')) {
+                sub.removeClass('checked');
+                bal.addClass('checked');
+                inp.val('balance');
+            } else {
+                sub.addClass('checked');
+                bal.removeClass('checked');
+                inp.val('cash');
+            }
+        });
         $('#subCheckOrder').on('click', function (e) {
             e.preventDefault();
             checkorder.submit();

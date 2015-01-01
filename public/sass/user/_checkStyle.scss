@@ -19,3 +19,7 @@ li .more {
 .fl .ignore {
     font: 12px/1.0 $font-family;
 }
+
+#list > a {
+    display: block;
+}
