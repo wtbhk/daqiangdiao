@@ -20,17 +20,17 @@
                     
                     <div id="list">
                         <ul>
-                            <li class="error mar10 hidden">
+                            <a href="orderaddr"><li class="error mar10 hidden">
                                 <span class="fl">添加收货地址</span>
                                 <span class="fr more"></span>
-                            </li>
-                            <li class="mar10">
+                            </li></a>
+                            <a href="orderaddr"><li class="mar10">
                                 <span class="fl">
                                     <p class="address">华东交通大学华东交通大学</p>
                                     <span class="name">李艳呀</span>，<span class="phoneNumber">1234567890</span>
                                 </span>
                                 <span class="fr more"></span>
-                            </li>
+                            </li></a>
 
                             <li class="mar10">
                                 <span class="fl">送达时间</span>

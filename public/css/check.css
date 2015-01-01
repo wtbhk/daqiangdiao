@@ -467,3 +467,6 @@ li .more {
 
 .fl .ignore {
   font: 12px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif; }
+
+#list > a {
+  display: block; }
