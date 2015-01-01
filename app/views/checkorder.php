@@ -62,7 +62,7 @@
                     </div>
 
 
-                    <form id="checkorder" action="">
+                    <form id="checkorder" action="" method="POST">
                             <input type="hidden" name="payment" value="cash">
                             <input type="hidden" name="addressee" value="<?php echo $addressee->id; ?>">
                     </form>
