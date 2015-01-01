@@ -110,13 +110,16 @@ $(document).ready(function () {
         var checkorder = $('#checkorder');
         if (checkorder.length === 0) return;
         $('#payment').on('click', function () {
-            var sub = $(this).find('fr');
+            var sub = $(this).find('.fr');
             var inp = $('input[name="payment"]');
-            if (sub.has('checked')) {
+            var bal = $('#balance');
+            if (sub.hasClass('checked')) {
                 sub.removeClass('checked');
+                bal.addClass('checked');
                 inp.val('balance');
             } else {
                 sub.addClass('checked');
+                bal.removeClass('checked');
                 inp.val('cash');
             }
         });
