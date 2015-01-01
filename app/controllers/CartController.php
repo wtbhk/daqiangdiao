@@ -6,7 +6,7 @@ Class CartController extends BaseController {
         {
                 $date = date('Y-m-d');
                 $date_ = '';
-                if(!Input::get('today'))
+                if(Input::get('today')=='false')
                 {
                         if(Input::has('date')) 
                         {

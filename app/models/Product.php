@@ -94,7 +94,7 @@ class Product extends Eloquent {
 
         function checkReservation($date)
         {
-                $days = round((strtotime($date)-strtotime(date('Y-m-d')))/3600/24);
+                $days = floor((strtotime($date)-strtotime(date('Y-m-d')))/3600/24);
                 if($days < $this->reservation_day)
                         return false;
                 return true;
