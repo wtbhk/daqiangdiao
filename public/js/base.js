@@ -113,29 +113,17 @@ $(document).ready(function () {
             var sub = $(this).find('.fr');
             var inp = $('input[name="payment"]');
             var bal = $('#balance').find('.fr');
-            if (sub.hasClass('checked')) {
-                sub.removeClass('checked');
-                bal.addClass('checked');
-                inp.val('balance');
-            } else {
-                sub.addClass('checked');
-                bal.removeClass('checked');
-                inp.val('cash');
-            }
+            sub.addClass('checked');
+            bal.removeClass('checked');
+            inp.val('cash');
         });
         $('#balance').on('click', function () {
             var sub = $('#payment').find('.fr');
             var inp = $('input[name="payment"]');
             var bal = $(this).find('.fr');
-            if (sub.hasClass('checked')) {
-                sub.removeClass('checked');
-                bal.addClass('checked');
-                inp.val('balance');
-            } else {
-                sub.addClass('checked');
-                bal.removeClass('checked');
-                inp.val('cash');
-            }
+            sub.removeClass('checked');
+            bal.addClass('checked');
+            inp.val('balance');
         });
         $('#subCheckOrder').on('click', function (e) {
             e.preventDefault();
