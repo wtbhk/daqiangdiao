@@ -6,9 +6,10 @@ Class OrderController extends BaseController {
         {
                 $user = $this->user;
                 $addressees = Addressee::where('user_id', $user->id)->get();
-                if(Session::has('addressee') and in_array(Session::get('addressee'), $addressees->pluck('id')))
+                if(Session::has('addressee') and $addressees->contains(Session::get('addressee')))
                         $checked = Session::get('addressee');
-                $checked = $addressees ? $addressees[0]['id'] : '';
+                else
+                        $checked = $addressees ? $addressees[0]['id'] : '';
                 return View::make('orderaddr', array('addressees'=>$addressees, 'checked'=>$checked));  
         }
 
@@ -36,7 +37,6 @@ Class OrderController extends BaseController {
                         return Redirect::to('/profile')->withErrors(array('message'=>'Permissoin denied'));
                 return View::make('order', array('user'=>$user, 'order'=>$order));
         }
-
 
         function showCheckOrder()
         {
@@ -108,7 +108,8 @@ Class OrderController extends BaseController {
                                 ));
                                 if(!$item->product->ignore_inventory)
                                 {
-                                        $item->product->inventory_in($date) = $item->product->inventory_in($date) - $item->qty;
+                                        $date = Session::get('date');
+                                        $item->product->inventory = $item->product->inventory_in($date) - $item->qty;
                                         $item->save();
                                 }
                         }
@@ -122,8 +123,8 @@ Class OrderController extends BaseController {
                         }
                         DB::commit();
                 }catch(Exception $e){
-                        return Redirect::to('/checkorder')->withErrors('Order error');
                         DB::rollback();
+                        return Redirect::to('/checkorder')->withErrors('Order error');
                 }
                 Session::forget('date');
                 Cart::destroy(); 
