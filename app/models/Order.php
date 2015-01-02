@@ -24,5 +24,14 @@ class Order extends Eloquent {
                 return $this->hasMany('OrderItem');
         }
 
+        function scopeNewest($query)
+        {
+                return $query->orderBy('created_at', 'desc');
+        }
+
+        function price()
+        {
+                return $this->orderitems->sum('price');
+        }
 
 }

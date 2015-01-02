@@ -32,7 +32,9 @@ Class OrderController extends BaseController {
         function showOrder($id)
         {
                 $user = $this->user;
-                $order = $user->orders->where('id', $id);
+                $order = Order::find($id);
+                if($order->user_id!=$user->id)
+                        return Redirect::to('/');
                 if(!$order)
                         return Redirect::to('/profile')->withErrors(array('message'=>'Permissoin denied'));
                 return View::make('order', array('user'=>$user, 'order'=>$order));
@@ -110,7 +112,7 @@ Class OrderController extends BaseController {
                                 {
                                         $date = Session::get('date');
                                         $item->product->inventory = $item->product->inventory_in($date) - $item->qty;
-                                        $item->save();
+                                        $item->product->save();
                                 }
                         }
                         if(Input::get('payment')=='balance')
@@ -128,6 +130,6 @@ Class OrderController extends BaseController {
                 }
                 Session::forget('date');
                 Cart::destroy(); 
-                return Redirect::to('/order/'.$order->id);
+                return Redirect::to('/orders');
         }
 }

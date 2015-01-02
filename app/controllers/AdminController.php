@@ -106,9 +106,21 @@ Class AdminController extends BaseController {
                 return View::make('admin.users', array('users'=>$users));
         }
 
-        function order()
+        function order($action='all')
         {
-                return View::make('admin.orders');
+                if(!in_array($action, array('all', 'today')))
+                        return Redirect::to('/admin');
+                if($action=='all')
+                {
+                        $orders = Order::with('OrderItems')->orderBy('created_at', 'desc')->get();
+                }
+                else
+                {
+                        $orders = Order::with('OrderItems')
+                        ->where(DB::raw('to_days(delivery) = to_days(now())'))
+                        ->get(); 
+                }
+                return View::make('admin.orders', array('action'=>$action, 'orders'=>$orders));
         }
 
         function orderNew()

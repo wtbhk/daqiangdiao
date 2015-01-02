@@ -23,7 +23,7 @@
                             <?php foreach($orders as $order): ?>
                             <li class="mar10">
                                 <span class="fl">
-                                    <span class="type">已完成</span>
+                                    <span class="type"><?php echo $order->status; ?></span>
                                     <span class="totalPrice">￥<?php echo $order->orderitems->sum('price'); ?></span>
                                 </span>
                                 <span class="fr time"><?php echo $order->created_at; ?></span>   
