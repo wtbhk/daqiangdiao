@@ -122,8 +122,8 @@ Class OrderController extends BaseController {
                         }
                         DB::commit();
                 }catch(Exception $e){
-                        DB::rollback();
                         return Redirect::to('/checkorder')->withErrors('Order error');
+                        DB::rollback();
                 }
                 Session::forget('date');
                 Cart::destroy(); 
