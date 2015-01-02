@@ -44,16 +44,17 @@ Class UserController extends BaseController {
         function addAddress()
         {
                 $user = $this->user;
-                $input = Input::only('name', 'address', 'phone', 'redirect_to');
-                $validator = Validator::make($input, array(
+                $validator = Validator::make(Input::all(), array(
                         'phone'=>'required|digits_between:7,12',
                         'name'=>'required',
                         'address'=>'required',
                         'redirect_to'=>'sometimes'
                 ));
+                $addressee = Input::only('name', 'address', 'phone');
+                $addressee['user_id'] = $user->id;
                 if($validator->fails())
                         return Redirect::to('/address')->withErrors($validator);
-                $user->addressees()->insert($input);
+                $user->addressees()->create($addressee);
                 return Redirect::to(Input::get('redirect_to', '/profile'));    
         }
 

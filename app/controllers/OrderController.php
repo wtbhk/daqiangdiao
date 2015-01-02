@@ -62,18 +62,20 @@ Class OrderController extends BaseController {
         function checkOrder()
         {
                 $user = $this->user;
-                $validator = Validator::make(array(
+                $validator = Validator::make(
                         Input::only('payment', 'addressee'),
-                        'payment'=>'required|in:cash,balance',
-                        'addressee'=>'required|integer'
-                ));
+                        array(
+                                'payment'=>'required|in:cash,balance',
+                                'addressee'=>'required|integer'
+                        )
+                );
                 if($validator->fails())
                         return Redirect::to('/checkorder')->withErrors($validator);
                 if(Cart::total()==0)
                         return Redirect::to('/cart')->withErrors(array('message'=>'Empty cart'));
                 if(!Session::has('date') || strtotime(Session::get('date'))<strtotime(date('Y-m-d')))
                         return Redirect::to('/cart')->withErrors(array('message'=>'Date error'));
-                $addressee=Addressee::find(Input::get('addressee'));
+                $addressee = Addressee::find(Input::get('addressee'));
                 if(!$addressee)
                         return Redirect::to('/cart')->withErrors(array('message'=>'Addressee error'));
                 $cart = Cart::content();
@@ -85,7 +87,7 @@ Class OrderController extends BaseController {
                                 'addressee'=>$addressee->name,
                                 'phone'=>$addressee->phone,
                                 'address'=>$addressee->address,
-                                'delivery'=>$date
+                                'delivery'=>Session::get('date')
                         ));
                         foreach($cart as $item)
                         {
@@ -93,7 +95,8 @@ Class OrderController extends BaseController {
                                         throw new Exception;
                                 if(!$item->product->checkReservation(Session::get('date')))
                                         throw new Exception;
-                                $order->orderitems->create(array(
+                                OrderItem::create(array(
+                                        'order_id'=>$order->id,
                                         'product_id'=>$item->product->id,
                                         'price'=>$item->product->price,
                                         'amount'=>$item->qty,
@@ -105,7 +108,7 @@ Class OrderController extends BaseController {
                                 ));
                                 if(!$item->product->ignore_inventory)
                                 {
-                                        $item->product->iventory = $item->product->inventory - $item->qty;
+                                        $item->product->inventory_in($date) = $item->product->inventory_in($date) - $item->qty;
                                         $item->save();
                                 }
                         }
@@ -117,7 +120,9 @@ Class OrderController extends BaseController {
                                 $user->balance = $user->balance - Cart::total();
                                 $user->save();
                         }
+                        DB::commit();
                 }catch(Exception $e){
+                        DB::rollback();
                         return Redirect::to('/checkorder')->withErrors('Order error');
                 }
                 Session::forget('date');

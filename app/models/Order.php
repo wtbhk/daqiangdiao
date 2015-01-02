@@ -8,11 +8,11 @@ class Order extends Eloquent {
 
         protected $softDelete = true; 
 
-        static $OPEN = 1;
-        static $CHECKED = 2;
-        static $DELIVERING = 3;
-        static $COMPLETED = 4;
-        static $CLOSED = 0;
+        const OPEN = 1;
+        const CHECKED = 2;
+        const DELIVERING = 3;
+        const COMPLETED = 4;
+        const CLOSED = 0;
 
         function user()
         {
