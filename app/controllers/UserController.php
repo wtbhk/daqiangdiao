@@ -73,6 +73,13 @@ Class UserController extends BaseController {
         {
                 $user = $this->user;
                 $orders = Order::with('orderitems')->where('user_id', $user->id)->newest()->get();
+                $orders = $orders->each(function($order)
+                {
+                        foreach($order->orderitems as $item)
+                        {
+                                $order->total += $item->total;
+                        }
+                });
                 return View::make(
                         'profile.orders', 
                         array('user'=>$user, 'orders'=>$orders)

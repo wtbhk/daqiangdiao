@@ -30,7 +30,9 @@
 
                         <div class="fl">
                             <h2><?php echo $product->title; ?></h2>
+                            <?php if($product->reservation_day>0):?>
                             <span class="order">提前<?php echo $product->reservation_day; ?>天订单</span>
+                            <?php endif;?>
                             <span class="remain">
                                 <span class="today">今</span>
                                 <span><strong><?php echo $product->inventory_today(); ?></strong>份</span>

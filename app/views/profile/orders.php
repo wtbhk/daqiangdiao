@@ -24,7 +24,7 @@
                             <li class="mar10">
                                 <span class="fl">
                                     <span class="type"><?php echo $order->status; ?></span>
-                                    <span class="totalPrice">￥<?php echo $order->orderitems->sum('price'); ?></span>
+                                    <span class="totalPrice">￥<?php echo $order->total; ?></span>
                                 </span>
                                 <span class="fr time"><?php echo $order->created_at; ?></span>   
                             </li>
@@ -34,11 +34,11 @@
                                     <img src="<?php echo $item->image; ?>" alt="">
                                     <div class="foodName">
                                         <h3><?php echo $item->title; ?></h3>
-                                        <span class="ignore"><?php echo $item->amount; ?>份</span>   
+                                        <span class="ignore"><?php echo $item->amount; ?>份</span>
                                     </div>
                                 </div>
                                 <div class="fr">
-                                    <span class="price">￥<?php echo $item->price; ?></span>
+                                    <span class="price">￥<?php echo $item->total; ?></span>
                                 </div>
                             </li>
                             <?php endforeach; ?>

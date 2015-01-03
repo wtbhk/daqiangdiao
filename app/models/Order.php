@@ -43,5 +43,4 @@ class Order extends Eloquent {
                 );
                 return $list[$this->status];
         }
-
 }

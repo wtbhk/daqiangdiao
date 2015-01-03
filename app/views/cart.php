@@ -33,12 +33,17 @@
                             </li>
 
                             <?php foreach($cart as $item): ?>
-                            <li class="order mar10">
+                            <li class="order mar10 <?php if(!$item->product->checkReservation($date)) echo 'warning';?>">
                                 <div class="fl">
                                     <img src="<?php echo $item->product->one_image_url(); ?>" alt="">
                                     <div class="foodName">
                                         <h3><?php echo $item->product->title; ?></h3>
-                                        <span class="ignore">还剩<strong><?php echo $item->product->inventory_in($date); ?></strong>份</span>   
+
+                                        <?php if(!$item->product->checkReservation($date)):?>
+                                        <span class="ignore">tiqian<?php echo $item->product->reservation_day;?>tian</span>
+                                        <?php else:?>
+                                        <span class="ignore">还剩<strong><?php echo $item->product->inventory_in($date)->inventory; ?></strong>份</span>   
+                                        <?php endif;?>
                                     </div>
                                 </div>
                                 <div class="fr">
@@ -87,9 +92,9 @@
             <span class="toUser fr"></span>
         </div>
     </header>
-    <div id="modal" <?php if(!$errors) echo 'class="hidden"'; ?>>
+    <div id="modal" <?php if(!$errors->first('message')) echo 'class="hidden"'; ?>>
         <div id="errorBox">
-            <?php if($errors) var_dump($errors); ?>
+            <?php if($errors->first('message')) echo $errors->first('message'); ?>
             <div id="modalClose">&times</div>
         </div>
 
