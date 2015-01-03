@@ -43,18 +43,24 @@ class Product extends Eloquent {
                 return number_format($price, 1, '.', '');
         }
 
+        function getIgnoreInventoryAttribute($ignore_inventory)
+        {
+                if($ignore_inventory == 'false' or $ignore_inventory == '0' or $ignore_inventory== false)
+                        return false;
+                return true;
+        }
+
         function inventory_in($date)
         {
-                $inventory = Inventory::firstOrCreate(array(
+                return Inventory::firstOrCreate(array(
                                         'product_id'=>$this->id,
-                                        'date'=>$date
+                                        'date'=>date('Y-m-d', strtotime($date))
                                 ));
-                return $inventory->inventory;
         }
 
         function inventory_today()
         {
-                return $this->inventory_in(date('Y-m-d'));
+                return $this->inventory_in(date('Y-m-d'))->inventory;
         }
 
         function needReservation()

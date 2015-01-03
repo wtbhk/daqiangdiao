@@ -89,9 +89,9 @@
             <span class="toUser fr"></span>
         </div>
     </header>
-    <div id="modal" class="hidden">
+    <div id="modal" <?php if(!$errors->first('message')) echo 'class="hidden"';?>>
         <div id="errorBox">
-            这里是错误提示这里是错误提示这里是错误提示
+            <?php if($errors->first('message')) echo $errors->first('message');?>
             <div id="modalClose">&times</div>
         </div>
 

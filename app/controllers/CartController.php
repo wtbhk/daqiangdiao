@@ -67,6 +67,10 @@ Class CartController extends BaseController {
                 $cart = array();
                 foreach(Input::get('items') as $item)
                 {
+                        if($item->qty==0)
+                        {
+                                break;
+                        }
                         $product = Product::find($item['id']);
                         if(!$product)
                                 return Redirect::to('/cart')->withErrors(array('message'=>'Error in items'));

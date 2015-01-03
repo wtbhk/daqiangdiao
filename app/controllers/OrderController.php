@@ -93,10 +93,12 @@ Class OrderController extends BaseController {
                         ));
                         foreach($cart as $item)
                         {
+                                if($item->qty==0)
+                                        break;
                                 if(!$item->product->checkInventory($item->qty, Session::get('date')))
-                                        throw new Exception;
+                                        throw new Exception('Inventory error');
                                 if(!$item->product->checkReservation(Session::get('date')))
-                                        throw new Exception;
+                                        throw new Exception('Reservation error');
                                 OrderItem::create(array(
                                         'order_id'=>$order->id,
                                         'product_id'=>$item->product->id,
@@ -111,22 +113,23 @@ Class OrderController extends BaseController {
                                 if(!$item->product->ignore_inventory)
                                 {
                                         $date = Session::get('date');
-                                        $item->product->inventory = $item->product->inventory_in($date) - $item->qty;
-                                        $item->product->save();
+                                        $inventory = $item->product->inventory_in($date);
+                                        $inventory->inventory = $inventory->inventory - $item->qty;
+                                        $inventory->save();
                                 }
                         }
                         if(Input::get('payment')=='balance')
                         {
-                                $user = User::find($user->id)->lockForUpdate();
+                                $user = User::lockForUpdate()->find($user->id);
                                 if($user->balance < Cart::total())
-                                        throw new Exception;
+                                        throw new Exception('User balance error');
                                 $user->balance = $user->balance - Cart::total();
                                 $user->save();
                         }
                         DB::commit();
                 }catch(Exception $e){
                         DB::rollback();
-                        return Redirect::to('/checkorder')->withErrors('Order error');
+                        return Redirect::to('/checkorder')->withErrors(array('message'=>$e->getMessage()));
                 }
                 Session::forget('date');
                 Cart::destroy(); 

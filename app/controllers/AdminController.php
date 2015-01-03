@@ -43,7 +43,7 @@ Class AdminController extends BaseController {
                         'price'=>'required|numeric',
                         'reservation_day'=>'integer',
                         'inventory_per_day'=>'required|integer',
-                        'ignore_inventory'=>'boolean',
+                        'ignore_inventory'=>'in:true,false',
                         'title'=>'required|max:16',
                         'description'=>'max:28',
                         'rank'=>'integer'
@@ -80,7 +80,6 @@ Class AdminController extends BaseController {
                 if(! $product = Product::find($id))
                         return Response::json(array('error'=>true));
                 $file = Input::file('image');
-                $file = $file[0];
                 $filename = time().'.'.$file->getClientOriginalExtension();
                 $file->move('uploads/', $filename);
                 Image::create(array(
