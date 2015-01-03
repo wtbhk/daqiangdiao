@@ -55,26 +55,38 @@ $(document).ready(function () {
         var rest = items.find('strong'),
             num  = items.find('span.number');
         for (var i = num.length - 1; i >= 0; i--) {
-            if (num.eq(i).text()*1 > rest.eq(i).text()*1)
-                items.eq(i).addClass('warning');
+            if (!rest.eq(i).hasClass('day')) {
+                if (num.eq(i).text()*1 > rest.eq(i).text()*1)
+                    items.eq(i).addClass('warning');  
+            } else {
+                items.eq(i).addClass('warning'); 
+            }
+
         };
         items.find('span.delNum').on('click', function () {
             var number = $(this).siblings('span.number');
             var num = number.text()*1 - 1;
             var idx = items.find('span.delNum').index(this);
-            if (num === -1) return;
-            number.text(num);
-            $('input[name="items[' + idx +'][qty]"').val(num);
-            console.log($('input[name="items[' + idx +'][qty]"').val());
-            return rest.eq(idx).text()*1 < num ?
-                items.eq(idx).addClass('warning') :
-                items.eq(idx).removeClass('warning');
+            //提前天数不足
+            if (!rest.eq(i).hasClass('day')) {
+                if (num === -1) return;
+                number.text(num);
+                $('input[name="items[' + idx +'][qty]"').val(num);
+                return rest.eq(idx).text()*1 < num ?
+                    items.eq(idx).addClass('warning') :
+                    items.eq(idx).removeClass('warning');
+            } else {
+                $('input[name="items[' + idx +'][qty]"').val(num);
+                return num === -1 ? items.eq(idx).removeClass('warning') : false;
+            }
+
         });
         items.find('span.price').on('click', function () {
             var number = $(this).siblings('span.number');
             var num = number.text()*1 + 1;
             var idx = items.find('span.price').index(this);
-            if ( num > rest.eq(idx).text()*1) return;
+            if (rest.eq(i).hasClass('day')) return;
+            if (num > rest.eq(idx).text()*1) return;
             number.text(num);
             $('input[name="items[' + idx +'][qty]"').val(num);
                         console.log($('input[name="items[' + idx +'][qty]"').val());
