@@ -141,7 +141,7 @@ $(document).ready(function () {
     
     //订单浏览
     (function () {
-        var newOrder = $('div.newOrder');
+        var newOrder = $('div.wait');
         if (newOrder.length === 0) return;
 /*        var tmpl = '<li>' + 
                 '<ul class="unstyled fl">' + 
@@ -161,11 +161,12 @@ $(document).ready(function () {
                     '<button class="btn btn-primary rOrder" type="button">接受</button>' +
                 '</div>' +
             '</li>';
-*/        $('div.wait').on('click', 'button.cOrder', function () {
-
-        });
-        $('div.wait').on('click', 'button.rOrder', function () {
-
+*/      newOrder.find('button.cOrder a').add('button.rOrder a')
+            .on('click', function (e) {
+            e.preventDefault();
+            $.get($(this).attr('href'), function (data) {
+                location.reload();
+            });
         });
     }());
 

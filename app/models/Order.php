@@ -37,9 +37,9 @@ class Order extends Eloquent {
         function next_step_chn()
         {
                 $list = array(
-                        Order::OPEN => 'jieshou',
-                        Order::CHECKED => 'fahuo',
-                        Order::DELIVERING => 'wancheng'
+                        Order::OPEN => '接受',
+                        Order::CHECKED => '发货',
+                        Order::DELIVERING => '完成'
                 );
                 return $list[$this->status];
         }
