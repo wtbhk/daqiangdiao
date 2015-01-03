@@ -48,7 +48,7 @@
 							<td>    
 								<span class="btn btn-success fileinput-button">
 						        <span>Select files...</span>
-							        <input class="fileupload" type="file" name="image[]" disabled="disabled" multiple>
+							        <input class="fileupload" type="file" name="image" disabled="disabled" multiple>
 							    </span>
 						    </td>
 						    <td>    

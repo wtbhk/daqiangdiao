@@ -79,13 +79,14 @@ Class AdminController extends BaseController {
                 ));
                 if(! $product = Product::find($id))
                         return Response::json(array('error'=>true));
-                if(!Input::file('image')->isValid())
-                        return Response::json(array('error'=>true));
                 $file = Input::file('image');
+                $file = $file[0];
                 $filename = time().'.'.$file->getClientOriginalExtension();
-                $file->move('/uploads/', $filename);
-                $product->image->create(array(
-                        'file'=>'/uploads/'.$filename
+                $file->move('uploads/', $filename);
+                Image::create(array(
+                        'file'=>'/uploads/'.$filename,
+                        'imageable_id'=>$product->id,
+                        'imageable_type'=>'Product'
                 ));
                 return Response::json(array('error'=>false, 'image'=>'/uploads/'.$filename));
         }
@@ -142,14 +143,19 @@ Class AdminController extends BaseController {
 
         function orderStatus($id, $status)
         {
-                $status = strtoupper($status);
                 $order = Order::find($id);
                 if($order)
                 {
                         if(is_numeric($status))
+                        {
                                 $order->status = $status;
+                        }
                         else
+                        {
+                                $status = strtoupper($status);
                                 $order->status = Order::$status;
+                        }
+                        $order->save();
                 }
                 return Response::json(array('error'=>false));
         }
