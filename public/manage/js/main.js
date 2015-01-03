@@ -30,6 +30,7 @@ $(document).ready(function () {
                 data.url = '/admin/product/' + currentData.id + '/image';
                 var src;
                 if (data.files && data.files[0]) {
+                    var idx = $('input.fileupload').index(this);
                     var reader = new FileReader();
                     reader.onload = function(e) {
                         src =  e.target.result;
@@ -38,7 +39,7 @@ $(document).ready(function () {
                                 "fileName_":data.files[0].name,
                                 "fileSize_":(data.files[0].size/1000).toFixed(2),
                                 "imgSrc_":src
-                            }).appendTo( ".files:eq(" + $('input.fileupload').index(this) + ")" );
+                            }).appendTo( ".files:eq(" + idx + ")" );
                         data.content = templateImpl;
                         $(".start", templateImpl).click(function () {
                             currentData.bar = templateImpl;             
