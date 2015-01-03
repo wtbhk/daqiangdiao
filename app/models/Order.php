@@ -34,4 +34,14 @@ class Order extends Eloquent {
                 return $this->orderitems->sum('price');
         }
 
+        function next_step_chn()
+        {
+                $list = array(
+                        Order::OPEN => 'jieshou',
+                        Order::CHECKED => 'fahuo',
+                        Order::DELIVERING => 'wancheng'
+                );
+                return $list[$this->status];
+        }
+
 }

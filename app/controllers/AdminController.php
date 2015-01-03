@@ -145,7 +145,12 @@ Class AdminController extends BaseController {
                 $status = strtoupper($status);
                 $order = Order::find($id);
                 if($order)
-                        $order->status = Order::$status;
+                {
+                        if(is_numeric($status))
+                                $order->status = $status;
+                        else
+                                $order->status = Order::$status;
+                }
                 return Response::json(array('error'=>false));
         }
 

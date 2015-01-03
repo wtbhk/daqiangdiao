@@ -71,10 +71,12 @@
                                 <li><span class="fl">总价</span><span class="fr">￥<?php echo $order->price;?></span></li>
                                 <li><span class="fl">在线支付</span><span class="fr"><?php echo $order->payment ? 'YES' : 'NO';?></span></li>
                             </ul>
+                            <?php if($order->status!=Order::CLOSED and $order->status!=Order::COMPLETED):?>
                             <div class="btn-group">
-                                <button class="btn btn-danger cOrder" type="button">关闭</button>
-                                <button class="btn btn-primary rOrder" type="button">接受</button>
+                                <button class="btn btn-danger cOrder" type="button"><a href="/admin/order/<?php echo $order->id;?>/status/closed">关闭</a></button>
+                                <button class="btn btn-primary rOrder" type="button"><a href="/admin/order/<?php echo $order->id;?>/status/<?php echo $order->status+1;?>"><?php echo $order->next_step_chn();?></a></button>
                             </div>
+                            <?php endif;?>
 
                         </li>
                         <?php endforeach;?>
@@ -102,12 +104,13 @@
                                 <?php endforeach;?>
                                 <li><span class="fl">总价</span><span class="fr">￥<?php echo $order->price();?></span></li>
                                 <li><span class="fl">在线支付</span><span class="fr"><?php echo $order->payment ? 'YES' : 'NO';?></span></li>
-                            </ul>
+                            </ul> 
+                            <?php if($order->status!=Order::CLOSED and $order->status!=Order::COMPLETED):?>
                             <div class="btn-group">
-                                <button class="btn btn-danger cOrder" type="button">关闭</button>
-                                <button class="btn btn-primary rOrder" type="button">接受</button>
+                                <button class="btn btn-danger cOrder" type="button"><a href="/admin/order/<?php echo $order->id;?>/status/closed">关闭</a></button>
+                                <button class="btn btn-primary rOrder" type="button"><a href="/admin/order/<?php echo $order->id;?>/status/<?php echo $order->status+1;?>"><?php echo $order->next_step_chn();?></a></button>
                             </div>
-
+                            <?php endif;?>
                         </li>
                         <?php endforeach;?>
                         <?php endif;?>
