@@ -80,11 +80,11 @@
     </footer>
     <header>
         <div class="wrap">
-            <span class="set fl">
+            <a class="set fl" href="/">
                 <p></p>
                 <p></p>
                 <p></p>
-            </span>
+            </a>
             <h1>订单</h1>
             <span class="toUser fr"></span>
         </div>

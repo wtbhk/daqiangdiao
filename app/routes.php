@@ -26,7 +26,7 @@ Route::group(array('before'=>'wechat.base'), function(){
 
         Route::post('/address', 'UserController@addAddress');
 
-        Route::delete('/address/{id}', 'UserController@delAddress');
+        Route::get('/address/{id}/delete', 'UserController@delAddress');
 
         Route::get('/orders', 'UserController@showOrders');
 

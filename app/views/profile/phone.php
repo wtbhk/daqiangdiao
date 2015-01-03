@@ -18,8 +18,8 @@
             <div class="main">
                 <div class="wrap">
                     
-                    <form action="">
-                        <input type="text" value="<?php echo $user->phone; ?>">
+                    <form action="profile" method="POST">
+                        <input type="text" name="phone" value="<?php echo $user->phone; ?>">
                         <input type="submit" value="保存">
                         <span class="tips fr"><i></i>请确认无误后保存</span>
                     </form>
@@ -30,10 +30,9 @@
     </div>
     <header>
         <div class="wrap">
-            <span class="headBack fl">
-            </span>
+            <a class="headBack fl" href="/profile">
+            </a>
             <h1>修改号码</h1>
-            <span class="toUser fr"></span>
         </div>
     </header>
     <div id="modal" class="hidden">

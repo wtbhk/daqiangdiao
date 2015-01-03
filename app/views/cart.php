@@ -40,7 +40,7 @@
                                         <h3><?php echo $item->product->title; ?></h3>
 
                                         <?php if(!$item->product->checkReservation($date)):?>
-                                        <span class="ignore">tiqian<?php echo $item->product->reservation_day;?>tian</span>
+                                        <span class="ignore">tiqian<strong class="day"><?php echo $item->product->reservation_day;?></strong>tian</span>
                                         <?php else:?>
                                         <span class="ignore">还剩<strong><?php echo $item->product->inventory_in($date)->inventory; ?></strong>份</span>   
                                         <?php endif;?>
@@ -83,13 +83,13 @@
     </footer>
     <header>
         <div class="wrap">
-            <span class="set fl">
+            <a class="set fl" href="/">
                 <p></p>
                 <p></p>
                 <p></p>
-            </span>
+            </a>
             <h1>订单</h1>
-            <span class="toUser fr"></span>
+            <a class="toUser fr" href="/profile"></a>
         </div>
     </header>
     <div id="modal" <?php if(!$errors->first('message')) echo 'class="hidden"'; ?>>

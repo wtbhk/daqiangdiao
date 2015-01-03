@@ -49,7 +49,7 @@
     <footer class="foot-fixed">
         <div class="wrap">
             <span class="get fl"></span>
-            <span class="delivery fr">￥<?php echo $minimum_amount; ?>元 起送</span>
+            <a class="delivery fr" href="/cart">￥<?php echo $minimum_amount; ?>元 起送</a>
         </div>
     </footer>
     <header>
@@ -60,6 +60,7 @@
                 <p></p>
             </span>
             <h1>标题</h1>
+            <a class="toUser fr" href="/profile"></a>
         </div>
     </header>
 </body>

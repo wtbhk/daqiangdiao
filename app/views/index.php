@@ -33,7 +33,7 @@
                                     <a href="/product/<?php echo $products[1]->id; ?>">
                                         <img src="<?php echo $products[1]->one_image_url(); ?>" alt="">
                                     </a>
-                                    <a href="#"><span class="foodTitle">我是吃的</span></a>
+                                    <a href="/product/<?php echo $products[1]->id; ?>"><span class="foodTitle"><?php echo $products[1]->title;?></span></a>
                                 </div>
                             <div class="fr">
                                 <a href="/product/<?php echo $products[2]->id; ?>"><img src="<?php echo $products[2]->one_image_url(); ?>" alt=""></a>
@@ -85,18 +85,18 @@
     <footer class="foot-fixed">
         <div class="wrap">
             <span class="get fl"></span>
-            <span class="delivery fr">￥<?php echo $minimum_amount; ?>元 起送</span>
+            <a class="delivery fr" href="/cart">￥<?php echo $minimum_amount; ?>元 起送</a>
         </div>
     </footer>
     <header>
         <div class="wrap">
-            <span class="set fl">
+            <a class="set fl" href="/list">
                 <p></p>
                 <p></p>
                 <p></p>
-            </span>
+            </a>
             <h1>首页</h1>
-            <span class="toUser fr"></span>
+            <a class="toUser fr" href="/profile"></a>
         </div>
     </header>
 </body>

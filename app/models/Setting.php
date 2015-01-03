@@ -24,11 +24,11 @@ class Setting extends Eloquent {
         {
                 if(!$key or !$value)
                         return false;
-                if(Setting::find($key))
-                        $s = Setting::find($key);
+                $s = Setting::find($key);
+                if(!$s)
+                        $s = Setting::create(array('key'=>$key, 'value'=>$value));
                 else
-                        $s = Setting::create(array('key'=>$key));
-                $s->value = $value;
+                        $s->value = $value;
                 $s->save();
                 return $s->value;
         }

@@ -40,6 +40,16 @@ Class CartController extends BaseController {
                 Session::set('date', $date);
 
                 $cart = Cart::content();
+                foreach($cart as $item)
+                {
+                        if(!$item->product)
+                        {
+                                Cart::destroy();
+                                $cart = array();
+                                break;
+                        }
+
+                }
 
                 return View::make('cart', array(
                         'cart'=>$cart, 
@@ -67,7 +77,7 @@ Class CartController extends BaseController {
                 $cart = array();
                 foreach(Input::get('items') as $item)
                 {
-                        if($item->qty==0)
+                        if($item['qty']==0)
                         {
                                 break;
                         }

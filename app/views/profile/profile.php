@@ -33,16 +33,16 @@
                                 <span class="fl">余额</span>
                                 <span class="fr">￥<?php echo $user->balance; ?></span>
                             </li>
-                            <li id="phoneNumber">
+                            <a href="/phone"><li id="phoneNumber">
                                 <span class="fl">手机号码</span>
                                 <span class="fr">
                                     <span><?php echo $user->phone; ?></span>
                                     <span class="more"></span>
                                 </span>
-                            </li>
+                            </li></a>
                             <li>
                                 <span class="fl">收货地址</span>
-                                <span class="fr add"></span>
+                                <a class="fr add" href="address?redirect_to=/profile"></a>
                                 <i class="y"></i>
                             </li>
                             <?php foreach($addressees as $addressee): ?>
@@ -51,7 +51,7 @@
                                     <p class="address"><?php echo $addressee->address; ?></p>
                                     <span class="name"><?php echo $addressee->name; ?></span>，<span class="phoneNumber"><?php echo $addressee->phone; ?></span>
                                 </span>
-                                <span class="fr del"></span>
+                                <a class="fr del" href="/address/<?php echo $addressee->id;?>/delete"></a>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -66,11 +66,11 @@
 
     <header>
         <div class="wrap">
-            <span class="set fl">
+            <a class="set fl" href="/">
                 <p></p>
                 <p></p>
                 <p></p>
-            </span>
+            </a>
             <h1>用户中心</h1>
         </div>
     </header>

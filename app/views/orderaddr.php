@@ -41,10 +41,10 @@
     </div>
     <header>
         <div class="wrap">
-            <span class="headBack fl">
-            </span>
+            <a class="headBack fl" href="/checkorder">
+            </a>
             <h1>添加地址</h1>
-            <span class="toUser fr"></span>
+            <a class="toUser fr" href="/profile"></a>
         </div>
     </header>
     <div id="modal" class="hidden">
