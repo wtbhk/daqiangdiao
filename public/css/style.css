@@ -271,6 +271,8 @@ header .wrap {
   color: #fff;
   height: 37px;
   line-height: 37px; }
+  header .wrap a {
+    display: block; }
 
 header .set {
   display: inline-block;

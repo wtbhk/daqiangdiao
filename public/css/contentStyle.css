@@ -268,6 +268,8 @@ header .wrap {
   color: #fff;
   height: 37px;
   line-height: 37px; }
+  header .wrap a {
+    display: block; }
 
 header .set {
   display: inline-block;
@@ -355,14 +357,15 @@ span.del, span.price {
   color: #f53874; }
 
 span.del {
-  font: 900 8px/29px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+  font: 900 12px/25px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
   position: relative;
   width: 25px;
   text-align: center; }
 
 span.number {
   font: bolder 12px/25px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-  color: #f53874; }
+  color: #f53874;
+  margin: 0 5px 0 3px; }
 
 span.price {
   width: auto;
