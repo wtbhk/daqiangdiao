@@ -28,7 +28,7 @@ span.del, span.price {
 	color: #f53874;
 }
 span.del {
-	font: 900 8px/29px $font-family;
+	font: 900 12px/25px $font-family;
 	position: relative;
 	width: 25px;
 	text-align: center;
@@ -36,6 +36,7 @@ span.del {
 span.number {
 	font: bolder 12px/25px $font-family;
 	color: #f53874;
+    margin: 0 5px 0 3px;
 }
 
 span.price {

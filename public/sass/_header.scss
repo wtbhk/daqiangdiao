@@ -22,6 +22,10 @@ header .wrap {
 	color: #fff;
 	height: $header-height;
 	line-height: $header-height;
+
+    a {
+        display: block;
+    }
 }
 header .set {
 	display: inline-block;
