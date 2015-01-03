@@ -46,8 +46,8 @@
     
         <div class="tabbable span10 offset1" id="tabs-470124"> <!-- Only required for left/right tabs -->
           <ul class="nav nav-tabs">
-            <li class="<?php if($action=='today') echo 'active';?>"><a href="today#panel-684546" data-toggle="tab">待处理</a></li>
-            <li class="<?php if($action=='all') echo 'active';?>"><a href="all#panel-726754" data-toggle="tab">所有订单</a></li>
+            <li class="<?php if($action=='today') echo 'active';?>"><a href="/admin/order/today">待处理</a></li>
+            <li class="<?php if($action=='all') echo 'active';?>"><a href="/admin/order/all">所有订单</a></li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane" id="panel-684546">

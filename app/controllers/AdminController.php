@@ -116,9 +116,18 @@ Class AdminController extends BaseController {
                 }
                 else
                 {
-                        $orders = Order::with('OrderItems')
-                        ->where(DB::raw('to_days(delivery) = to_days(now())'))
-                        ->get(); 
+                        if(App::environment('local'))
+                        {
+                                $orders = Order::with('OrderItems')
+                                        ->where(DB::raw('julianday(datetime("now","localtime"))-julianday(delivery)<1'))
+                                        ->get();
+                        }
+                        else
+                        {
+                                $orders = Order::with('OrderItems')
+                                        ->where(DB::raw('to_days(delivery) = to_days(now())'))
+                                        ->get(); 
+                        }
                 }
                 return View::make('admin.orders', array('action'=>$action, 'orders'=>$orders));
         }
