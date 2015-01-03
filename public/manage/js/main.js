@@ -4,7 +4,7 @@ $(document).ready(function () {
         if ($('input.fileupload').length === 0) return;
         var template = '<tr class="template-upload fade in">'+
             '<td>'+
-                '<span class="preview"><canvas width="46" height="80"></canvas></span>'+
+                '<span class="preview"><img width="46" height="80" src="${imgSrc_}"></span>'+
             '</td>'+
             '<td>'+
                ' <p class="name">${fileName_}</p>  '+          
@@ -27,23 +27,32 @@ $(document).ready(function () {
             url: '/admin/product/' + currentData.id + '/image',
             dataType: 'json',
             add: function (e, data) {
-                data.url = '/admin/product/' + currentData.id + '/image'
-                var templateImpl = $.tmpl(template,
-                    {
-                        "fileName_":data.files[0].name,
-                        "fileSize_":(data.files[0].size/1000).toFixed(2)
-                    }).appendTo( ".files:eq(" + $('input.fileupload').index(this) + ")" );
-                data.content = templateImpl;
-                $(".start", templateImpl).click(function () {
-                    currentData.bar = templateImpl;             
-                    $('<p/>').text('Uploading...').addClass("uploading").replaceAll($(this));
-                    data.submit();//上传文件
-                });
-                $(".cancel", templateImpl).click(function () {
-                    $('<p/>').text('cancel...').replaceAll($(this));
-                    data.abort();//取消上传
-                    $(templateImpl).remove();
-                });
+                data.url = '/admin/product/' + currentData.id + '/image';
+                var src;
+                if (data.files && data.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        src =  e.target.result;
+                        var templateImpl = $.tmpl(template,
+                            {
+                                "fileName_":data.files[0].name,
+                                "fileSize_":(data.files[0].size/1000).toFixed(2),
+                                "imgSrc_":src
+                            }).appendTo( ".files:eq(" + $('input.fileupload').index(this) + ")" );
+                        data.content = templateImpl;
+                        $(".start", templateImpl).click(function () {
+                            currentData.bar = templateImpl;             
+                            $('<p/>').text('Uploading...').addClass("uploading").replaceAll($(this));
+                            data.submit();//上传文件
+                        });
+                        $(".cancel", templateImpl).click(function () {
+                            $('<p/>').text('cancel...').replaceAll($(this));
+                            data.abort();//取消上传
+                            $(templateImpl).remove();
+                        });
+                    }
+                    reader.readAsDataURL(data.files[0]);
+                }
             },
 
             done: function (e, data) {
