@@ -40,7 +40,7 @@
                                         <h3><?php echo $item->product->title; ?></h3>
 
                                         <?php if(!$item->product->checkReservation($date)):?>
-                                        <span class="ignore">tiqian<strong class="day"><?php echo $item->product->reservation_day;?></strong>tian</span>
+                                        <span class="ignore">提前<strong class="day"><?php echo $item->product->reservation_day;?></strong>天预订</span>
                                         <?php else:?>
                                         <span class="ignore">还剩<strong><?php echo $item->product->inventory_in($date)->inventory; ?></strong>份</span>   
                                         <?php endif;?>
