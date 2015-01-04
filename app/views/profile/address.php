@@ -7,9 +7,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="keywords" content="rcss">
-    <meta name="description" content="商店demo">
+    <meta name="description" content="大腔调">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>商店demo</title>
+    <title>添加地址</title>
 <link rel="stylesheet" href="/css/myOrder.css">
 </head>
 <body class="sme">

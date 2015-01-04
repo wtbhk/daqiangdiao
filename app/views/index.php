@@ -7,9 +7,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="keywords" content="rcss">
-    <meta name="description" content="商店demo">
+    <meta name="description" content="大腔调">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>商店demo</title>
+    <title>首页 - 大腔调</title>
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="sme">
@@ -54,7 +54,7 @@
                                             <h3><?php echo $products[4]->title; ?></h3>
                                             <div class="advance">
                                                 <?php if($products[4]->needReservation()): ?>
-                                                <span>请提前<?php echo $products[4]->chineseReservation(); ?>天订单</span>
+                                                <span>请提前<?php echo $products[4]->chineseReservation(); ?>天预订</span>
                                                 <?php endif; ?>
                                             </div>
                                         </div>
@@ -69,7 +69,7 @@
                                             <h3><?php echo $products[5]->title; ?></h3>
                                             <div class="advance">
                                                 <?php if($products[5]->needReservation()): ?>
-                                                <span>请提前<?php echo $products[5]->chineseReservation(); ?>天订单</span>
+                                                <span>请提前<?php echo $products[5]->chineseReservation(); ?>天预订</span>
                                                 <?php endif; ?>
                                             </div>
                                         </div>
@@ -95,7 +95,7 @@
                 <p></p>
                 <p></p>
             </a>
-            <h1>首页</h1>
+            <h1>大腔调</h1>
             <a class="toUser fr" href="/profile"></a>
         </div>
     </header>

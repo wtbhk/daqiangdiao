@@ -7,9 +7,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="keywords" content="rcss">
-    <meta name="description" content="商店demo">
+    <meta name="description" content="大腔调">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>商店demo</title>
+    <title><?php echo $product->titile;?></title>
 <link rel="stylesheet" href="/css/contentStyle.css">
 </head>
 <body class="sme">
@@ -31,11 +31,11 @@
                         <div class="fl">
                             <h2><?php echo $product->title; ?></h2>
                             <?php if($product->reservation_day>0):?>
-                            <span class="order">提前<?php echo $product->reservation_day; ?>天订单</span>
+                            <span class="order">提前<?php echo $product->reservation_day; ?>天预订</span>
                             <?php endif;?>
                             <span class="remain">
                                 <span class="today">今</span>
-                                <span><strong><?php echo $product->inventory_today(); ?></strong>份</span>
+                                <span>剩<strong><?php echo $product->inventory_today(); ?></strong>份</span>
                             </span>
                         </div>
                         <div class="fr">
@@ -73,7 +73,7 @@
                 <p></p>
                 <p></p>
             </a>
-            <h1>标题</h1>
+            <h1><?php echo $product->title;?></h1>
             <span class="toUser fr"></span>
         </div>
     </header>

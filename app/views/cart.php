@@ -7,9 +7,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="keywords" content="rcss">
-    <meta name="description" content="商店demo">
+    <meta name="description" content="大腔调">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>商店demo</title>
+    <title>购物车</title>
 <link rel="stylesheet" href="/css/checkOrder.css">
 </head>
 <body class="sme">
@@ -78,7 +78,7 @@
     </div>
     <footer class="foot-fixed">
         <div class="wrap">
-            <input id="sub" type="submit" value="确认订单">
+            <input id="sub" type="submit" value="确认购物车">
         </div>
     </footer>
     <header>
@@ -88,7 +88,7 @@
                 <p></p>
                 <p></p>
             </a>
-            <h1>订单</h1>
+            <h1>购物车</h1>
             <a class="toUser fr" href="/profile"></a>
         </div>
     </header>
