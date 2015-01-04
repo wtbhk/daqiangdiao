@@ -15,32 +15,24 @@ class DatabaseSeeder extends Seeder {
                 ));
                 $user = User::create(array(
                         'phone'=>12345678900,
-                        'nickname'=>'testnickname',
-                        'name'=>'testname',
+                        'nickname'=>'钟无艳Nickname',
+                        'name'=>'钟无艳',
                         'wechat_id'=>'testopenid',
-                        'balance'=>121.5
+                        'balance'=>8500.5
                 ));
-                for($i=0;$i<5;$i++)
-                {
-                        Addressee::create(array(
-                                'user_id'=>$user->id,
-                                'name'=>$user->name,
-                                'address'=>'testaddress'.$i,
-                                'phone'=>$user->phone
-                        ));
-                }
-                for($i=0;$i<20;$i++)
+                for($i=0;$i<7;$i++)
                 {
                         Product::create(array(
-                                'price'=>20,
-                                'reservation_day'=>3,
-                                'inventory_per_day'=>20,
-                                'title'=>'testproduct'.$i,
-                                'description'=>'testdescription'.$i,
-                                'content'=>'testcontent'.$i,
-                                'rank'=>$i
+                                'price'=>20+$i*2,
+                                'reservation_day'=>floor($i/3),
+                                'inventory_per_day'=>20-$i,
+                                'title'=>'商品测试标题'.$i,
+                                'description'=>'商品测试描述'.$i,
+                                'content'=>'商品测试内容'.$i,
+                                'rank'=>floor($i/4)
                         ));
                 }
+                /*
                 for($i=0;$i<20;$i++)
                 {
                         $order = Order::create(array(
@@ -63,6 +55,7 @@ class DatabaseSeeder extends Seeder {
                                 ));
                         }
                 }
+                 */
 		// $this->call('UserTableSeeder');
 	}
 
