@@ -10,6 +10,7 @@
     <meta name="description" content="商店demo">
     <meta name="author" content="zvenshy@gmail.com">
     <title>商店demo</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/checkOrder.css">
 </head>
 <body class="sme">
@@ -28,7 +29,12 @@
                             <li class="mar10 selectTime">
                                 <span class="fl">选择时间</span>
                                 <span class="fr more"></span>
-                                <input type="text" id="time" class="<?php if($today) echo 'hidden'; ?> fr" placeholder <?php if(!$today) echo 'value="'.$date.'"'; ?>>
+                                <div class="form-group <?php if($today) echo 'hidden'; ?> fr" id="timepicker">
+                                    <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="hidden-date" data-link-format="yyyy-mm-dd hh:ii">
+                                        <input id="time" class="form-control" size="16" type="text" <?php if(!$today) echo 'value="'.$date.'"'; ?> readonly>
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                    </div>
+                                </div>
 
                             </li>
 
@@ -57,7 +63,7 @@
                             <?php endforeach; ?>
                             <form action="" method="POST">
                                 <input type="hidden" name="today" value="<?php echo $today ? true : false; ?>">
-                                <input type="hidden" name="date" value="<?php echo $today ? '' : $date; ?>">
+                                <input type="hidden" name="date" id="hidden-date" value="<?php echo $today ? '' : $date; ?>">
                                 <?php 
                                 $i = 0;
                                 foreach($cart as $item):
@@ -101,8 +107,7 @@
         <div id="mask"></div>
     </div>
     <script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="/js/jqueryui.js"></script>
-    <script type="text/javascript" src="/js/jqueryui-timepicker.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="/js/base.js"></script>
 </body>
 </html>
