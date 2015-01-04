@@ -19,6 +19,7 @@
                 <div class="wrap">
 
                     <?php foreach($products as $product): ?>
+                    <a href="/product/<?php echo $product->id;?>">
                     <div class="foodBox">
                         <div class="food-img">
                             <img src="<?php echo $product->one_image_url(); ?>" alt="">
@@ -28,19 +29,20 @@
                         <div class="maincontent overft">
                             <div class="left fl">
                                 <h3><?php echo $product->description; ?></h3>
-                                <p>请提前<?php echo $product->chineseReservation(); ?>天预定</p>
+                                <p>请提前<?php echo $product->chineseReservation(); ?>天预订</p>
                             </div>
                             <div class="tag fr">
                                 <div class="priceBox">
                                     <span class="price">￥<?php echo $product->price; ?></span>
                                 </div>
                                 <span class="remain">
-                                    <span class="today">jin</span>
-                                    <span><strong><?php echo $product->inventory_today(); ?></strong>份</span>
+                                    <span class="today">今</span>
+                                    <span>剩<strong><?php echo $product->inventory_today(); ?></strong>份</span>
                                 </span>
                             </div>
                         </div>
                     </div>
+                    </a>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -49,7 +51,7 @@
     <footer class="foot-fixed">
         <div class="wrap">
             <span class="get fl"></span>
-            <span class="delivery fr">￥<?php echo $minimum_amount; ?>元 起送</span>
+            <a class="delivery fr" href="/cart">￥<?php echo $minimum_amount; ?>元 起送</a>
         </div>
     </footer>
     <header>
@@ -59,7 +61,8 @@
                 <p></p>
                 <p></p>
             </span>
-            <h1>标题</h1>
+            <h1>所有菜品</h1>
+            <a class="toUser fr" href="/profile"></a>
         </div>
     </header>
 </body>

@@ -7,10 +7,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="keywords" content="rcss">
-    <meta name="description" content="商店demo">
+    <meta name="description" content="大腔调">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>商店demo</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>购物车</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/checkOrder.css">
 </head>
 <body class="sme">
@@ -46,7 +46,7 @@
                                         <h3><?php echo $item->product->title; ?></h3>
 
                                         <?php if(!$item->product->checkReservation($date)):?>
-                                        <span class="ignore">tiqian<?php echo $item->product->reservation_day;?>tian</span>
+                                        <span class="ignore">提前<strong class="day"><?php echo $item->product->reservation_day;?></strong>天预订</span>
                                         <?php else:?>
                                         <span class="ignore">还剩<strong><?php echo $item->product->inventory_in($date)->inventory; ?></strong>份</span>   
                                         <?php endif;?>
@@ -84,18 +84,18 @@
     </div>
     <footer class="foot-fixed">
         <div class="wrap">
-            <input id="sub" type="submit" value="确认订单">
+            <input id="sub" type="submit" value="确认购物车">
         </div>
     </footer>
     <header>
         <div class="wrap">
-            <span class="set fl">
+            <a class="set fl" href="/">
                 <p></p>
                 <p></p>
                 <p></p>
-            </span>
-            <h1>订单</h1>
-            <span class="toUser fr"></span>
+            </a>
+            <h1>购物车</h1>
+            <a class="toUser fr" href="/profile"></a>
         </div>
     </header>
     <div id="modal" <?php if(!$errors->first('message')) echo 'class="hidden"'; ?>>

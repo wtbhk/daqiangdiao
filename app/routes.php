@@ -26,7 +26,7 @@ Route::group(array('before'=>'wechat.base'), function(){
 
         Route::post('/address', 'UserController@addAddress');
 
-        Route::delete('/address/{id}', 'UserController@delAddress');
+        Route::get('/address/{id}/delete', 'UserController@delAddress');
 
         Route::get('/orders', 'UserController@showOrders');
 
@@ -61,7 +61,10 @@ Route::post('/admin/login', 'AdminController@checkLogin');
 
 Route::group(array('before'=>'admin'), function(){
 
-        Route::get('/admin', 'AdminController@setting');
+        Route::get('/admin', function()
+        {
+                return Redirect::to('/admin/order');
+        });
 
         Route::get('/admin/setting', 'AdminController@setting');
 

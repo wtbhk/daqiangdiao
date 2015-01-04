@@ -7,9 +7,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="keywords" content="rcss">
-    <meta name="description" content="商店demo">
+    <meta name="description" content="大腔调">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>商店demo</title>
+    <title>修改号码</title>
 <link rel="stylesheet" href="/css/myOrder.css">
 </head>
 <body class="sme">
@@ -18,8 +18,8 @@
             <div class="main">
                 <div class="wrap">
                     
-                    <form action="">
-                        <input type="text" value="<?php echo $user->phone; ?>">
+                    <form action="profile" method="POST">
+                        <input type="text" name="phone" value="<?php echo $user->phone; ?>">
                         <input type="submit" value="保存">
                         <span class="tips fr"><i></i>请确认无误后保存</span>
                     </form>
@@ -30,10 +30,9 @@
     </div>
     <header>
         <div class="wrap">
-            <span class="headBack fl">
-            </span>
+            <a class="headBack fl" href="/profile">
+            </a>
             <h1>修改号码</h1>
-            <span class="toUser fr"></span>
         </div>
     </header>
     <div id="modal" class="hidden">

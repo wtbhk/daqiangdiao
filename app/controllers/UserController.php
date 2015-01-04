@@ -5,7 +5,9 @@ Class UserController extends BaseController {
         function showProfile()
         {
                 $user = $this->user;
-                $addressees = $user->addressees;
+                $addressees = Addressee::where(array(
+                        'user_id'=>$user->id
+                ))->orderBy('created_at', 'desc')->get();
                 return View::make('profile.profile', array('user'=>$user, 'addressees'=>$addressees));
         }
 
@@ -61,10 +63,10 @@ Class UserController extends BaseController {
         function delAddress($id)
         {
                 $user = $this->user;
-                if(in_array($id, $user->addressees()->pluck('id')))
+                if($user->addressees->contains($id))
                 {
                         Addressee::find($id)->delete();
-                        return Redirect::to('/profile')-withSuccess('Success');
+                        return Redirect::to('/profile')->withSuccess('Success');
                 }
                 return Redirect::to('/profile');
         }
