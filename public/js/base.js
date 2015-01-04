@@ -61,7 +61,6 @@ $(document).ready(function () {
             } else {
                 items.eq(i).addClass('warning'); 
             }
-
         };
         items.find('span.delNum').on('click', function () {
             var number = $(this).siblings('span.number');
@@ -79,7 +78,6 @@ $(document).ready(function () {
                 $('input[name="items[' + idx +'][qty]"').val(num);
                 return num === -1 ? items.eq(idx).removeClass('warning') : false;
             }
-
         });
         items.find('span.price').on('click', function () {
             var number = $(this).siblings('span.number');
@@ -92,15 +90,12 @@ $(document).ready(function () {
                         console.log($('input[name="items[' + idx +'][qty]"').val());
         });
         $('li.selectTime').on('click', function () {
-            $('#time').show();
-            $('#time').datetimepicker({
-                timeFormat: "HH:mm:ss",
-                dateFormat: "yy-mm-dd"
-            });
+            $('#timepicker').removeClass('hidden');
         });
         $('#time').change(function () {
-            $('input[name="date"]').val($(this).val());
             $('input[name="today"]').val('false');
+            $('form').eq(0).attr('method', 'GET');
+            $('form').eq(0).submit();
         });
         $('#now').click(function () {
             $('input[name="date"]').val('');
@@ -108,13 +103,20 @@ $(document).ready(function () {
             $('form').eq(0).attr('method', 'GET');
             $('form').eq(0).submit();
         });
-        $('body').on('click', 'button.ui-datepicker-close', function () {
-            $('form').eq(0).attr('method', 'GET');
-            $('form').eq(0).submit();
-        });
         $('#sub').on('click', function (e) {
             e.preventDefault();
             $('form').eq(0).submit();
+        });
+        $('.form_time').datetimepicker({
+            format: 'yyyy-mm-dd hh:ii',
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 1,
+            minView: 0,
+            maxView: 1,
+            forceParse: 0
         });
     }());
     //付款页
