@@ -12,12 +12,15 @@ body {
 
 #banner {
 	width: 100%;
+	overflow: hidden;
+	padding-bottom: 190/340*100%;
 	margin: 10px auto 0;
 	position: relative;
 	@include box-shadow(0 0 15px #999);
 
 
 	img {
+		position: absolute;
 		width: 100%;
 	}
 
@@ -124,7 +127,7 @@ dd {
 		.foodTitle {
 			display: block;
 			position: absolute;
-			bottom: 0; 
+			bottom: 2px; 
 			text-align: center;
 			font: 14px/1.0 $font-family;
 			color: #fff;

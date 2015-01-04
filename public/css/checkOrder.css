@@ -461,6 +461,9 @@ body {
 #content {
   margin-bottom: 70px; }
 
+.checked {
+  margin-top: 7px; }
+
 .fl img {
   width: 48px;
   height: 40px; }

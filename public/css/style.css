@@ -353,12 +353,15 @@ body {
 
 #banner {
   width: 100%;
+  overflow: hidden;
+  padding-bottom: 55.88235%;
   margin: 10px auto 0;
   position: relative;
   -webkit-box-shadow: 0 0 15px #999999;
   -moz-box-shadow: 0 0 15px #999999;
   box-shadow: 0 0 15px #999999; }
   #banner img {
+    position: absolute;
     width: 100%; }
   #banner h2 {
     position: absolute;
@@ -439,7 +442,7 @@ dd {
   #manyPic .fl .foodTitle {
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: 2px;
     text-align: center;
     font: 14px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
     color: #fff;
