@@ -56,11 +56,11 @@
     </footer>
     <header>
         <div class="wrap">
-            <span class="set fl">
+            <a class="set fl" href="/">
                 <p></p>
                 <p></p>
                 <p></p>
-            </span>
+            </a>
             <h1>所有菜品</h1>
             <a class="toUser fr" href="/profile"></a>
         </div>
