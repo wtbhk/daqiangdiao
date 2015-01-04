@@ -19,9 +19,9 @@ Class AdminController extends BaseController {
                         )
                 );
                 if($validator->fails())
-                        return Redirect::to('/admin/login')->withErrors(array('msg'=>'Login failed'));
+                        return Redirect::to('/admin/login')->withErrors(array('msg'=>'登录失败'));
                 if(!Admin::attempt())
-                        return Redirect::to('/admin/login')->withErrors(array('msg'=>'Login failed'));
+                        return Redirect::to('/admin/login')->withErrors(array('msg'=>'登录失败'));
         }
 
         function setting()

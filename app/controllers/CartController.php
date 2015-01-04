@@ -61,16 +61,16 @@ Class CartController extends BaseController {
         function checkCart()
         {
                 if(Cart::total()==0)
-                        return Redirect::to('/cart')->withErrors(array('message'=>'Empty cart'));
+                        return Redirect::to('/cart')->withErrors(array('message'=>'购物车是空的'));
 
                 if(!(Input::has('today')||Input::has('date')) || !Input::has('items'))
                 {
-                        return Redirect::to('/cart')->withErrors(array('message'=>'unknow'));
+                        return Redirect::to('/cart')->withErrors(array('message'=>'未知错误'));
                 }
                 $date = Input::has('today') ? date('Y-m-d') : Input::get('date');
                 if(strtotime($date) < strtotime(date('Y-m-d')))
                 {
-                        return Redirect::to('/cart')->withErrors(array('message'=>'Invaild date'));
+                        return Redirect::to('/cart')->withErrors(array('message'=>'日期有误'));
                 }
                 Session::set('date', $date);
 
@@ -83,13 +83,13 @@ Class CartController extends BaseController {
                         }
                         $product = Product::find($item['id']);
                         if(!$product)
-                                return Redirect::to('/cart')->withErrors(array('message'=>'Error in items'));
+                                return Redirect::to('/cart')->withErrors(array('message'=>'商品失效'));
                         if(!$product->available)
-                                return Redirect::to('/cart')->withErrors(array('message'=>'More than one product is unavailable'));
+                                return Redirect::to('/cart')->withErrors(array('message'=>'商品已下架'));
                         if(!$product->checkReservation($date))
-                                return Redirect::to('/cart')->withErrors(array('message'=>'Error in reservation'));
+                                return Redirect::to('/cart')->withErrors(array('message'=>'超过一件商品需要提前预订'));
                         if(!$product->checkInventory($item['qty'], $date))
-                                return Redirect::to('/cart')->withErrors(array('message'=>'Error in inventory'));
+                                return Redirect::to('/cart')->withErrors(array('message'=>'库存不足'));
                         $cart[] = array(
                                 'id'=>$product->id, 
                                 'name'=>$product->title, 
@@ -113,7 +113,7 @@ Class CartController extends BaseController {
                 ));
                 if($validator->fails())
                 {
-                        return Response::json(array('error'=>true, 'msg'=>'input error'));
+                        return Response::json(array('error'=>true, 'msg'=>'非法参数'));
                 }
                 if($input['qty']<=0 || !Product::find($input['id']))
                 {

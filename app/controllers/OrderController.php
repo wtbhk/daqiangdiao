@@ -36,7 +36,7 @@ Class OrderController extends BaseController {
                 if($order->user_id!=$user->id)
                         return Redirect::to('/');
                 if(!$order)
-                        return Redirect::to('/profile')->withErrors(array('message'=>'Permissoin denied'));
+                        return Redirect::to('/profile')->withErrors(array('message'=>'权限不足'));
                 return View::make('order', array('user'=>$user, 'order'=>$order));
         }
 
@@ -44,7 +44,7 @@ Class OrderController extends BaseController {
         {
                 $user = $this->user;
                 if(Cart::total()==0)
-                        return Redirect::to('/cart')->withErrors(array('message'=>'Empty cart'));
+                        return Redirect::to('/cart')->withErrors(array('message'=>'购物车是空的'));
                 $addressee = Session::has('addressee') ?
                         Addressee::find(Session::get('addressee')) : Addressee::where('user_id', $user->id)->lastused()->first();
                 $date = Session::get('date');
@@ -74,12 +74,12 @@ Class OrderController extends BaseController {
                 if($validator->fails())
                         return Redirect::to('/checkorder')->withErrors($validator);
                 if(Cart::total()==0)
-                        return Redirect::to('/cart')->withErrors(array('message'=>'Empty cart'));
+                        return Redirect::to('/cart')->withErrors(array('message'=>'购物车是空的'));
                 if(!Session::has('date') || strtotime(Session::get('date'))<strtotime(date('Y-m-d')))
-                        return Redirect::to('/cart')->withErrors(array('message'=>'Date error'));
+                        return Redirect::to('/cart')->withErrors(array('message'=>'日期有误'));
                 $addressee = Addressee::find(Input::get('addressee'));
                 if(!$addressee)
-                        return Redirect::to('/cart')->withErrors(array('message'=>'Addressee error'));
+                        return Redirect::to('/cart')->withErrors(array('message'=>'地址有误'));
                 $cart = Cart::content();
                 DB::beginTransaction();
                 try{
@@ -96,9 +96,9 @@ Class OrderController extends BaseController {
                                 if($item->qty==0)
                                         break;
                                 if(!$item->product->checkInventory($item->qty, Session::get('date')))
-                                        throw new Exception('Inventory error');
+                                        throw new Exception('库存不足');
                                 if(!$item->product->checkReservation(Session::get('date')))
-                                        throw new Exception('Reservation error');
+                                        throw new Exception('超过一件商品需要提前预订');
                                 OrderItem::create(array(
                                         'order_id'=>$order->id,
                                         'product_id'=>$item->product->id,
@@ -122,7 +122,7 @@ Class OrderController extends BaseController {
                         {
                                 $user = User::lockForUpdate()->find($user->id);
                                 if($user->balance < Cart::total())
-                                        throw new Exception('User balance error');
+                                        throw new Exception('余额不足');
                                 $user->balance = $user->balance - Cart::total();
                                 $user->save();
                         }
