@@ -66,17 +66,31 @@ $(document).ready(function () {
             var number = $(this).siblings('span.number');
             var num = number.text()*1 - 1;
             var idx = items.find('span.delNum').index(this);
+            if (num === -1) return;
             //提前天数不足
             if (!rest.eq(i).hasClass('day')) {
-                if (num === -1) return;
                 number.text(num);
                 $('input[name="items[' + idx +'][qty]"').val(num);
+                $.post('/editcart', 
+                    {
+                        'id': $(this).parent().attr('id'), 
+                        'qty': num
+                    }, 
+                    function () {return;}
+                );
                 return rest.eq(idx).text()*1 < num ?
                     items.eq(idx).addClass('warning') :
                     items.eq(idx).removeClass('warning');
             } else {
                 $('input[name="items[' + idx +'][qty]"').val(num);
-                return num === -1 ? items.eq(idx).removeClass('warning') : false;
+                $.post('/editcart', 
+                    {
+                        'id': $(this).parent().attr('id'), 
+                        'qty': num
+                    }, 
+                    function () {return;}
+                );
+                return num === 0 ? items.eq(idx).removeClass('warning') : false;
             }
         });
         items.find('span.price').on('click', function () {
@@ -85,6 +99,13 @@ $(document).ready(function () {
             var idx = items.find('span.price').index(this);
             if (rest.eq(i).hasClass('day')) return;
             if (num > rest.eq(idx).text()*1) return;
+            $.post('/editcart', 
+                {
+                    'id': $(this).parent().attr('id'), 
+                    'qty': num
+                }, 
+                function () {return;}
+            );
             number.text(num);
             $('input[name="items[' + idx +'][qty]"').val(num);
                         console.log($('input[name="items[' + idx +'][qty]"').val());
