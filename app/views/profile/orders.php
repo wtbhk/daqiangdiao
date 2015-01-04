@@ -53,13 +53,13 @@
     </div>
     <header>
         <div class="wrap">
-            <span class="set fl">
+            <a class="set fl" href="/">
                 <p></p>
                 <p></p>
                 <p></p>
-            </span>
+            </a>
             <h1>我的订单</h1>
-            <span class="toUser fr"></span>
+            <a class="toUser fr" href="/profile"></a>
         </div>
     </header>
 </body>
