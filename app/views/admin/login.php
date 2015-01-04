@@ -6,10 +6,9 @@
 	<meta name="author" content="zvenshy@gmail.com">
 	<title>后台管理</title>
 	<link href="/manage/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="/manage/css/style.min.css">
 </head>
 <body>
-	<div id="login-body">
+	<div id="login-body"  class="span10 offset3" style="margin-top: 30px;">
 		<legend>后台管理</legend>
 		<form action="" method="POST">
 			<div class="input-prepend username">
