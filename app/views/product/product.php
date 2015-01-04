@@ -21,7 +21,7 @@
                     <!-- 视频 -->
                     <div id="slide" class="overft">
                         <div class="slide-img">
-                            <img src="/images/slideImg1.jpg" alt="">
+                            <img src="<?php echo $product->one_image_url();?>" alt="">
                         </div>
                     </div>
 

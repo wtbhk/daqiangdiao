@@ -32,7 +32,7 @@ Class AdminController extends BaseController {
 
         function product()
         {
-                $products = Product::all();
+                $products = Product::orderBy('updated_at', 'desc')->get();
                 return View::make('admin.products', array('products'=>$products));
         }
 

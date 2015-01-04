@@ -19,6 +19,7 @@
                 <div class="wrap">
 
                     <?php foreach($products as $product): ?>
+                    <a href="/product/<?php echo $product->id;?>">
                     <div class="foodBox">
                         <div class="food-img">
                             <img src="<?php echo $product->one_image_url(); ?>" alt="">
@@ -41,6 +42,7 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                     <?php endforeach; ?>
                 </div>
             </div>

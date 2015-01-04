@@ -61,7 +61,10 @@ Route::post('/admin/login', 'AdminController@checkLogin');
 
 Route::group(array('before'=>'admin'), function(){
 
-        Route::get('/admin', 'AdminController@setting');
+        Route::get('/admin', function()
+        {
+                return Redirect::to('/admin/order');
+        });
 
         Route::get('/admin/setting', 'AdminController@setting');
 
