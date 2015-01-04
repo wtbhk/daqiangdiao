@@ -533,6 +533,9 @@ li .add, li .more {
 #timepicker {
   display: inline-block; }
 
+.form_time {
+  padding: 5px 0 0 15px; }
+
 /*!
  * Datetimepicker for Bootstrap
  *
