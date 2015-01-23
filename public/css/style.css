@@ -459,7 +459,6 @@ dd {
 /* 布局
  -------------------------------------------------------------*/
 footer {
-  border-top: 1px solid #bebebe;
   background: #616161;
   height: 49px; }
   footer .wrap {

@@ -292,7 +292,6 @@ header .set {
 /* 布局
  -------------------------------------------------------------*/
 footer {
-  border-top: 1px solid #bebebe;
   background: #616161;
   height: 49px; }
   footer .wrap {
@@ -370,7 +369,7 @@ span.number {
 span.price {
   width: auto;
   padding: 0 6px;
-  font: 900 12px/25px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+  font: 12px/25px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
   position: relative;
   right: 2px; }
 
