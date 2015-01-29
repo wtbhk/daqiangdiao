@@ -83,8 +83,13 @@ li .add, li .more {
 
 #timepicker {
     display: inline-block;
+    margin-bottom: 0;
 }
 
-.form_time {
-    padding: 5px 0 0 15px;
+#time {
+    border: none;
+    background: none;
+    color: #adadad;
+    font-size: 14px;
+    @include box-shadow(none);
 }

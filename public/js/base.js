@@ -51,7 +51,6 @@ $(document).ready(function () {
     (function () {
         var items = $('#list li.order');
         if (!items.length) return;
-        console.log("sss");
         var rest = items.find('strong'),
             num  = items.find('span.number');
         for (var i = num.length - 1; i >= 0; i--) {
@@ -68,7 +67,7 @@ $(document).ready(function () {
             var idx = items.find('span.delNum').index(this);
             if (num === -1) return;
             //提前天数不足
-            if (!rest.eq(i).hasClass('day')) {
+            if (!rest.eq(idx).hasClass('day')) {
                 number.text(num);
                 $('input[name="items[' + idx +'][qty]"').val(num);
                 $.post('/editcart', 
@@ -111,7 +110,18 @@ $(document).ready(function () {
                         console.log($('input[name="items[' + idx +'][qty]"').val());
         });
         $('li.selectTime').on('click', function () {
+            var offset = $(this).offset();
             $('#timepicker').removeClass('hidden');
+
+            $('div.datetimepicker').css({
+                'display': 'block',
+                'position': 'absolute',
+                'left': offset.left,
+                'top': offset.top,
+                'z-index': 1010
+            });
+            $('div.datetimepicker-hour').css('display', 'block');
+            console.log(offset.left, offset.top, $('div.datetimepicker').css('left'));
         });
         $('#time').change(function () {
             $('input[name="today"]').val('false');

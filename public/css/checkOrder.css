@@ -539,10 +539,17 @@ li .add, li .more {
     line-height: 20px;
 } */
 #timepicker {
-  display: inline-block; }
+  display: inline-block;
+  margin-bottom: 0; }
 
-.form_time {
-  padding: 5px 0 0 15px; }
+#time {
+  border: none;
+  background: none;
+  color: #adadad;
+  font-size: 14px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
 
 /*!
  * Datetimepicker for Bootstrap
