@@ -66,10 +66,7 @@
 
     <header>
         <div class="wrap">
-            <a class="set fl" href="/">
-                <p></p>
-                <p></p>
-                <p></p>
+            <a class="toHome fl" href="/">
             </a>
             <h1>用户中心</h1>
         </div>

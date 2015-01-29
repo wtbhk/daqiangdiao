@@ -56,10 +56,7 @@
     </footer>
     <header>
         <div class="wrap">
-            <a class="set fl" href="/">
-                <p></p>
-                <p></p>
-                <p></p>
+            <a class="toHome fl" href="/">
             </a>
             <h1>所有菜品</h1>
             <a class="toUser fr" href="/profile"></a>

@@ -68,7 +68,7 @@
     </footer>
     <header>
         <div class="wrap">
-            <a class="set fl" href="/">
+            <a class="set fl" href="/list">
                 <p></p>
                 <p></p>
                 <p></p>
