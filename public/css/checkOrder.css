@@ -547,6 +547,8 @@ li .add, li .more {
   background: none;
   color: #adadad;
   font-size: 14px;
+  height: auto;
+  padding: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none; }

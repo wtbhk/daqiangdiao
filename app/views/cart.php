@@ -31,8 +31,7 @@
                                 <span class="fr more"></span>
                                 <div class="form-group <?php if($today) echo 'hidden'; ?> fr" id="timepicker">
                                     <div class="input-group date form_time" data-date="" data-date-format="hh:ii" data-link-field="hidden-date" data-link-format="yyyy-mm-dd hh:ii">
-                                        <input id="time" class="form-control" size="16" type="text" <?php if(!$today) echo 'value="'.$date.'"'; ?> readonly>
-                                        <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                        <input id="time" class="form-control" size="12" type="text" <?php if(!$today) echo 'value="'.$date.'"'; ?> readonly>
                                     </div>
                                 </div>
 
