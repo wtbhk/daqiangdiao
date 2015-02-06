@@ -4,6 +4,11 @@ $(document).ready(function () {
     $('#modalClose').add('#mask').on('click', function () {
         modal.hide();
     });
+    //返回到上一页
+    $('.headBack').on('click', function (e) {
+        e.preventDefault();
+        history.back();
+    });
     //添加购物车
     (function(){
         var items = $('#list li.order');

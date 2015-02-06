@@ -294,6 +294,12 @@ header .set {
   height: 17px;
   background: url("../images/home.png") no-repeat; }
 
+.headBack {
+  display: inline-block;
+  width: 12px;
+  height: 17px;
+  background: url("../images/back.png"); }
+
 /* 布局
  -------------------------------------------------------------*/
 footer {

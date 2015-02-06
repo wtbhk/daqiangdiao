@@ -52,3 +52,10 @@ header .set {
     height: 17px;
     background: url($images-path + "home.png") no-repeat;
 }
+
+.headBack {
+    display: inline-block;
+    width: 12px;
+    height: 17px;
+    background: url($images-path + "back.png");
+}

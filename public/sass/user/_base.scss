@@ -69,13 +69,6 @@ body {
     background: url($images-path + "checked.png");
 }
 
-.headBack {
-    display: inline-block;
-    width: 12px;
-    height: 17px;
-    background: url($images-path + "back.png");
-}
-
 .wrap form {
     width: 100% - 9*2/360*100%;
     margin: 10px 8px 15px;

@@ -68,10 +68,7 @@
     </footer>
     <header>
         <div class="wrap">
-            <a class="set fl" href="/list">
-                <p></p>
-                <p></p>
-                <p></p>
+            <a class="headBack fl" href="/list">
             </a>
             <h1><?php echo $product->title;?></h1>
             <span class="toUser fr"></span>

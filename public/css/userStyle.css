@@ -294,6 +294,12 @@ header .set {
   height: 17px;
   background: url("../images/home.png") no-repeat; }
 
+.headBack {
+  display: inline-block;
+  width: 12px;
+  height: 17px;
+  background: url("../images/back.png"); }
+
 body {
   background: #f0f0f2; }
 
@@ -348,12 +354,6 @@ body {
   width: 15px;
   height: 12px;
   background: url("../images/checked.png"); }
-
-.headBack {
-  display: inline-block;
-  width: 12px;
-  height: 17px;
-  background: url("../images/back.png"); }
 
 .wrap form {
   width: 95%;
