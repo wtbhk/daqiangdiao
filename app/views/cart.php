@@ -90,11 +90,6 @@
         <div class="wrap">
             <a class="toHome fl" href="/">
             </a>
-            <a class="set fl" href="/">
-                <p></p>
-                <p></p>
-                <p></p>
-            </a>
             <h1>购物车</h1>
             <a class="toUser fr" href="/profile"></a>
         </div>
