@@ -35,7 +35,7 @@
                             <?php endif;?>
                             <span class="remain">
                                 <span class="today">今</span>
-                                <span>剩<strong><?php echo $product->inventory_today(); ?></strong>份</span>
+                                <span><strong><?php echo $product->inventory_today(); ?></strong>份</span>
                             </span>
                         </div>
                         <div class="fr">
@@ -68,7 +68,7 @@
     </footer>
     <header>
         <div class="wrap">
-            <a class="headBack fl" href="/list">
+            <a class="toHome fl" href="/">
             </a>
             <h1><?php echo $product->title;?></h1>
             <span class="toUser fr"></span>
