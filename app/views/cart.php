@@ -88,6 +88,8 @@
     </footer>
     <header>
         <div class="wrap">
+            <a class="toHome fl" href="/">
+            </a>
             <a class="set fl" href="/">
                 <p></p>
                 <p></p>
