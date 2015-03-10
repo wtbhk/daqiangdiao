@@ -114,45 +114,49 @@ $(document).ready(function () {
             $('input[name="items[' + idx +'][qty]"').val(num);
                         console.log($('input[name="items[' + idx +'][qty]"').val());
         });
-        $('li.selectTime').on('click', function () {
-            var offset = $(this).offset();
-            $('#timepicker').removeClass('hidden');
 
-            $('div.datetimepicker').css({
-                'display': 'block',
-                'position': 'absolute',
-                'left': offset.left,
-                'top': offset.top,
-                'z-index': 1010
-            });
-            $('div.datetimepicker-hour').css('display', 'block');
-            console.log(offset.left, offset.top, $('div.datetimepicker').css('left'));
-        });
-        $('#time').change(function () {
-            $('input[name="today"]').val('false');
-            $('form').eq(0).attr('method', 'GET');
-            $('form').eq(0).submit();
-        });
         $('#now').click(function () {
             $('input[name="date"]').val('');
             $('input[name="today"]').val('true');
             $('form').eq(0).attr('method', 'GET');
             $('form').eq(0).submit();
         });
+        //确认订单
         $('#sub').on('click', function (e) {
             e.preventDefault();
             $('form').eq(0).submit();
         });
-        $('.form_time').datetimepicker({
+        $('li.selectTime').on('click', function () {
+
+            //if($('div.datetimepicker').css('display') !== 'none') return;
+            var offset = $(this).offset();
+            $('#timepicker').removeClass('hidden');
+
+/*            $('div.datetimepicker').css({
+                'display': 'block',
+                'position': 'absolute',
+                'left': offset.left,
+                'top': offset.top,
+                'margin-left': '-30px',
+                'background': '#fff',
+                'border': '1px solid #ccc',
+                'z-index': 1010
+            });
+            $('div.datetimepicker-hour').css('display', 'block');*/
+            $('#time').datetimepicker('show')
+        });
+        $('#time').change(function () {
+            $('input[name="today"]').val('false');
+            $('form').eq(0).attr('method', 'GET');
+            $('form').eq(0).submit();
+        });
+        $('#time').datetimepicker({
             format: 'yyyy-mm-dd hh:ii',
-            weekStart: 1,
-            todayBtn:  1,
+            weekStart: 0,
             autoclose: 1,
             todayHighlight: 1,
-            startView: 1,
-            minView: 0,
-            maxView: 1,
-            forceParse: 0
+            todayBtn: 1,
+
         });
     }());
     //付款页

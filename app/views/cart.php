@@ -30,11 +30,11 @@
                                 <span class="fl">选择时间</span>
                                 <span class="fr more"></span>
                                 <div class="form-group <?php if($today) echo 'hidden'; ?> fr" id="timepicker">
-                                    <div class="input-group date form_time" data-date="" data-date-format="hh:ii" data-link-field="hidden-date" data-link-format="yyyy-mm-dd hh:ii">
-                                        <input id="time" class="form-control" size="12" type="text" <?php if(!$today) echo 'value="'.$date.'"'; ?> readonly>
+                                    <div class="input-group date form_time" data-date-format="hh:ii" data-link-field="hidden-date" data-link-format="yyyy-mm-dd hh:ii">
+                                        <input id="time" class="form-control" size="16" type="text" <?php if(!$today) echo 'value="'.$date.'"'; ?> readonly>
                                     </div>
                                 </div>
-
+                                <div class="clear"></div>
                             </li>
 
                             <?php foreach($cart as $item): ?>

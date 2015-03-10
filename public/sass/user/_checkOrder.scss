@@ -83,6 +83,7 @@ li .add, li .more {
 
 #timepicker {
     display: inline-block;
+    position: relative;
     margin-bottom: 0;
 }
 
@@ -94,4 +95,10 @@ li .add, li .more {
     height: auto;
     padding:0;
     @include box-shadow(none);
+}
+.clear {
+    clear: both;
+}
+.selectTime {
+    overflow: visible !important;
 }
