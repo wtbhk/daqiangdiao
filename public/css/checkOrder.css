@@ -594,6 +594,29 @@ body {
   #list ul {
     width: 94.44444%;
     margin: 0 auto; }
+  #list .ordertitle h3 {
+    margin: 0 9px 18px 16px;
+    display: inline-block;
+    font: 18px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif; }
+  #list .ordertitle h3 + .ignore {
+    position: relative;
+    top: -3px; }
+  #list .imgs {
+    margin-left: 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e6e6e6;
+    width: 90%; }
+    #list .imgs span {
+      display: inline-block;
+      width: 30%;
+      padding-bottom: 25.625%;
+      overflow: hidden;
+      position: relative; }
+    #list .imgs span + span {
+      margin-left: 3%; }
+    #list .imgs img {
+      position: absolute;
+      width: 100%; }
   #list li {
     width: 100%;
     overflow: hidden;
@@ -604,9 +627,11 @@ body {
     -moz-box-shadow: 0 0 3px #cccccc;
     box-shadow: 0 0 3px #cccccc; }
     #list li .fl {
-      margin-left: 16px; }
+      margin-left: 16px;
+      margin-top: 8px; }
     #list li .fr {
       margin-right: 16px;
+      margin-bottom: 4px;
       line-height: 26px; }
   #list .error span {
     margin-left: 16px;
@@ -616,6 +641,8 @@ body {
     margin-top: 0; }
   #list .mar10 {
     margin-top: 10px; }
+  #list .mar20 {
+    margin-top: 20px; }
 
 .more {
   display: inline-block;
@@ -746,7 +773,7 @@ body {
   margin-left: 7px; }
 
 div.priceBox {
-  margin-top: 18px; }
+  margin-top: 8px; }
 
 .ignore {
   font: 12px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
@@ -757,12 +784,11 @@ span.delNum, span.price {
   -moz-border-radius: 3px;
   ms-border-radius: 3px;
   border-radius: 3px;
+  text-align: center;
   display: inline-block;
   width: 30px;
   height: 25px;
-  -webkit-box-shadow: 0 0 3px gray;
-  -moz-box-shadow: 0 0 3px gray;
-  box-shadow: 0 0 3px gray;
+  border: 1px solid #bbb;
   color: #f53874; }
 
 span.delNum {
@@ -772,13 +798,15 @@ span.delNum {
   text-align: center; }
 
 span.number {
+  display: inline-block;
+  width: 24px;
   font: bolder 12px/25px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
   color: #f53874;
+  text-align: center;
   margin: 0 5px 0 3px; }
 
 span.price {
-  width: auto;
-  padding: 0 6px;
+  width: 60px;
   font: 12px/25px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
   position: relative;
   right: 2px; }
@@ -825,4 +853,5 @@ li .add, li .more {
   clear: both; }
 
 .selectTime {
-  overflow: visible !important; }
+  overflow: visible !important;
+  margin-bottom: 20px !important; }

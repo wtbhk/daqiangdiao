@@ -20,7 +20,7 @@
     margin-left: 7px;
 }
 div.priceBox {
-    margin-top: 18px;
+    margin-top: 8px;
 }
 .ignore {
     font: 12px/1.0 $font-family;
@@ -28,10 +28,12 @@ div.priceBox {
 }
 span.delNum, span.price {
     @include radius(3px);
+    text-align: center;
     display: inline-block;
     width: 30px;
     height: 25px;
-    @include box-shadow(0 0 3px gray);
+    border: 1px solid #bbb;
+    //@include box-shadow(0 0 3px gray);
     color: #f53874;
 }
 span.delNum {
@@ -41,14 +43,17 @@ span.delNum {
     text-align: center;
 }
 span.number {
+    display: inline-block;
+    width: 24px;
     font: bolder 12px/25px $font-family;
     color: #f53874;
+    text-align: center;
     margin: 0 5px 0 3px;
 }
 
 span.price {
-    width: auto;
-    padding: 0 6px;
+    width: 60px;
+
     font: 12px/25px $font-family;
     position: relative;
     right: 2px;
@@ -100,4 +105,5 @@ li .add, li .more {
 }
 .selectTime {
     overflow: visible !important;
+    margin-bottom: 20px !important;
 }

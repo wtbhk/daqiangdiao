@@ -447,6 +447,9 @@ span.today {
 #mask {
   background: rgba(0, 0, 0, 0.5); }
 
+.odeli {
+  background: blue !important; }
+
 #description {
   width: 90%;
   margin: 20px auto;

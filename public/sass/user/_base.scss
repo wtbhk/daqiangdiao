@@ -11,6 +11,39 @@ body {
         width: 340/360 * 100%;
         margin: 0 auto;
     }
+    .ordertitle {
+
+        h3 {
+            margin: 0 9px 18px 16px;
+            display: inline-block;
+            font: 18px/1.0 $font-family;
+        }
+        h3 + .ignore {
+            position: relative;
+            top: -3px;
+        }
+    }
+    .imgs {
+        margin-left: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #e6e6e6;
+        width: 90%;
+
+        span {
+            display: inline-block;
+            width: 30%;
+            padding-bottom: 82/96 * 30%;
+            overflow: hidden;
+            position: relative;
+        }
+        span + span {
+            margin-left: 3%;
+        }
+        img {
+            position: absolute;
+            width: 100%;
+        }
+    }
     li {
         width: 100%;
         overflow: hidden;
@@ -21,10 +54,12 @@ body {
 
         .fl {
             margin-left: 16px;
+            margin-top: 8px;
         }
 
         .fr {
             margin-right: 16px;
+            margin-bottom: 4px;
             line-height: 26px;
         }
     }
@@ -38,6 +73,9 @@ body {
     }
     .mar10 {
         margin-top: 10px;
+    }
+    .mar20 {
+        margin-top: 20px;
     }
 }
 

@@ -9,110 +9,73 @@ $(document).ready(function () {
         e.preventDefault();
         history.back();
     });
+    function deal(qty, id) {
+        $.post('/editcart', 
+            {
+                'id': id, 
+                'qty': qty
+            }, 
+            function (data) {return console.log(data);}
+        );   
+    }
     //添加购物车
     (function(){
-        var items = $('#list li.order');
-        if (items.length) return;
-        var needPrice = $('span.needPrice');
-        var need = needPrice.text()*1;
+        var items = $('#product');
+        if (!items.length) return;
+        var need = $('span.needPrice').text()*1, //起送金额
+            delivery = $('.delivery');           //起送按钮
         $('span.del').on('click', function () {
-            var number = $(this).siblings('span.number'),
-                price = $(this).siblings('span.price');
-            var num = number.text()*1,
-                change = price.text().substring(1)*1;
+            var ts = $(this),
+                number = ts.siblings('span.number'),
+                num = number.text()*1,
+                change = ts.siblings('span.price').text().substring(1)*1;
             if (!num) return;
-            $.post('/editcart', 
-                {
-                    'id': $(this).parent().attr('id'), 
-                    'qty': num - 1
-                }, 
-                function () {return;}
-            );
-            number.text(num - 1);
+            deal(num --, $(this).parent().attr('id'));
+            number.text(num --);
             need += change;
-            return need > 0 ? needPrice.text(need)
-                : needPrice.text(0);
+            console.log(need);
+            return need <= 0 ? delivery.addClass('odeli') : 
+                delivery.removeClass('odeli');
         });
         $('span.price').on('click', function () {
-            var number = $(this).siblings('span.number'),
-                price = $(this);
-            var num = number.text()*1,
-                change = price.text().substring(1)*1;
-            if ( num + 1 > $('span.remain strong').text()*1) return;
-            $.post('/editcart', 
-                {
-                    'id': $(this).parent().attr('id'), 
-                    'qty': num + 1
-                }, 
-                function () {return;}
-            );
-            number.text(num + 1);
+            var ts = $(this),
+                number = ts.siblings('span.number'),
+                num = number.text()*1,
+                change = ts.text().substring(1)*1;
+            if ( num + 1 > $('span.remain strong').text()*1) {
+                return;
+            }
+            deal(num ++, $(this).parent().attr('id'));
+            number.text(num ++);
             need -= change;
-            return need > 0 ? needPrice.text(need - change)
-                : needPrice.text(0);
+            return need <= 0 ? delivery.addClass('odeli') : 
+                delivery.removeClass('odeli');
         });
     }());
     //购物车页面
     (function () {
-        var items = $('#list li.order');
-        if (!items.length) return;
-        var rest = items.find('strong'),
+        var cart = $('#cart');
+        if (!cart.length) return;
+        var items = $('#list .order'),
+            rest = items.find('strong.liu'),
             num  = items.find('span.number');
-        for (var i = num.length - 1; i >= 0; i--) {
-            if (!rest.eq(i).hasClass('day')) {
-                if (num.eq(i).text()*1 > rest.eq(i).text()*1)
-                    items.eq(i).addClass('warning');  
-            } else {
-                items.eq(i).addClass('warning'); 
-            }
-        };
         items.find('span.delNum').on('click', function () {
             var number = $(this).siblings('span.number');
-            var num = number.text()*1 - 1;
+            var num = number.text()*1;
             var idx = items.find('span.delNum').index(this);
-            if (num === -1) return;
-            //提前天数不足
-            if (!rest.eq(idx).hasClass('day')) {
-                number.text(num);
-                $('input[name="items[' + idx +'][qty]"').val(num);
-                $.post('/editcart', 
-                    {
-                        'id': $(this).parent().attr('id'), 
-                        'qty': num
-                    }, 
-                    function () {return;}
-                );
-                return rest.eq(idx).text()*1 < num ?
-                    items.eq(idx).addClass('warning') :
-                    items.eq(idx).removeClass('warning');
-            } else {
-                $('input[name="items[' + idx +'][qty]"').val(num);
-                $.post('/editcart', 
-                    {
-                        'id': $(this).parent().attr('id'), 
-                        'qty': num
-                    }, 
-                    function () {return;}
-                );
-                return num === 0 ? items.eq(idx).removeClass('warning') : false;
-            }
+            if (!num) return;
+            number.text(num - 1);
+            $('input[name="items[' + idx +'][qty]"').val(num - 1);
+            deal(num - 1, $(this).parent().attr('id'));
         });
         items.find('span.price').on('click', function () {
             var number = $(this).siblings('span.number');
-            var num = number.text()*1 + 1;
+            var num = number.text()*1;
             var idx = items.find('span.price').index(this);
-            if (rest.eq(i).hasClass('day')) return;
-            if (num > rest.eq(idx).text()*1) return;
-            $.post('/editcart', 
-                {
-                    'id': $(this).parent().attr('id'), 
-                    'qty': num
-                }, 
-                function () {return;}
-            );
-            number.text(num);
-            $('input[name="items[' + idx +'][qty]"').val(num);
-                        console.log($('input[name="items[' + idx +'][qty]"').val());
+            if (num + 1 > rest.eq(idx).text()*1) return;
+            number.text(num + 1);
+            $('input[name="items[' + idx +'][qty]"').val(num + 1);
+            deal(num + 1, $(this).parent().attr('id'));      
         });
 
         $('#now').click(function () {
@@ -131,22 +94,11 @@ $(document).ready(function () {
             //if($('div.datetimepicker').css('display') !== 'none') return;
             var offset = $(this).offset();
             $('#timepicker').removeClass('hidden');
-
-/*            $('div.datetimepicker').css({
-                'display': 'block',
-                'position': 'absolute',
-                'left': offset.left,
-                'top': offset.top,
-                'margin-left': '-30px',
-                'background': '#fff',
-                'border': '1px solid #ccc',
-                'z-index': 1010
-            });
-            $('div.datetimepicker-hour').css('display', 'block');*/
             $('#time').datetimepicker('show')
         });
         $('#time').change(function () {
             $('input[name="today"]').val('false');
+            alert($('#hidden-date').val())
             $('form').eq(0).attr('method', 'GET');
             $('form').eq(0).submit();
         });
