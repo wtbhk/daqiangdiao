@@ -29,7 +29,7 @@
                             <li class="mar10 selectTime">
                                 <span class="fl">选择时间</span>
                                 <span class="fr more"></span>
-                                <div class="form-group <?php if($today) echo 'hidden'; ?> fr" id="timepicker">
+                                <div class="form-group <?php if($today) echo 'hidden'; ?> fl" id="timepicker">
                                     <div class="input-group date form_time" data-date-format="hh:ii" data-link-field="hidden-date" data-link-format="yyyy-mm-dd hh:ii">
                                         <input id="time" class="form-control" size="20" data-link-field="hidden-date" type="text" <?php if(!$today) echo 'value="'.$date.'"'; ?> readonly>
                                     </div>
