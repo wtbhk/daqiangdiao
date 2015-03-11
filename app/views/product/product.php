@@ -15,7 +15,7 @@
 <body class="sme">
     <div id="content">
         <div class="content-wrap">
-            <div class="main">
+            <div class="main" id="product">
                 <div class="wrap">
 
                     <!-- 视频 -->
