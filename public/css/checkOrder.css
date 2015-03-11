@@ -809,7 +809,8 @@ li .add, li .more {
 #timepicker {
   display: inline-block;
   position: relative;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  margin-right: 0 !important; }
 
 #time {
   border: none;
