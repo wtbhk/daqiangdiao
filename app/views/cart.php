@@ -52,7 +52,7 @@
                                     </div>
                                 </div>
                                 <div class="fr">
-                                    <div class="priceBox">
+                                    <div class="priceBox" id="<?php echo $item->id; ?>">
                                         <span class="delNum">—</span>
                                         <span class="number"><?php echo $item->qty; ?></span>
                                         <span class="price">￥<?php echo $item->product->price; ?></span>
