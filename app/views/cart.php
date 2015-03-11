@@ -26,7 +26,7 @@
                                 <span class="fl">立即送达</span>
                                 <span class="fr <?php echo $today ? 'checked' : ''; ?>"></span>
                             </li>
-                            <li class="mar10 selectTime">
+                            <li class="selectTime">
                                 <span class="fl">选择时间</span>
                                 <span class="fr more"></span>
                                 <div class="form-group <?php if($today) echo 'hidden'; ?> fr" id="timepicker">
@@ -39,15 +39,19 @@
 
                             <?php foreach($cart as $item): ?>
                             <li class="order mar10 <?php if(!$item->product->checkReservation($date)) echo 'warning';?>">
+                                <div class="ordertitle">
+                                    <h3><?php echo $item->product->title; ?></h3>
+                                    <?php if(!$item->product->checkReservation($date)):?>
+                                    <span class="ignore">提前<strong class="day"><?php echo $item->product->reservation_day;?></strong>天预订</span>
+                                    <?php else:?>
+                                </div>
+                                <div class="imgs">
+                                    <span><img src="<?php echo $item->product->one_image_url(); ?>" alt=""></span>
+                                </div>
                                 <div class="fl">
-                                    <img src="<?php echo $item->product->one_image_url(); ?>" alt="">
                                     <div class="foodName">
-                                        <h3><?php echo $item->product->title; ?></h3>
-
-                                        <?php if(!$item->product->checkReservation($date)):?>
-                                        <span class="ignore">提前<strong class="day"><?php echo $item->product->reservation_day;?></strong>天预订</span>
-                                        <?php else:?>
-                                        <span class="ignore">还剩<strong><?php echo $item->product->inventory_in($date)->inventory; ?></strong>份</span>   
+                                       <?php else:?>
+                                        <span class="ignore">还剩<strong class="liu"><?php echo $item->product->inventory_in($date)->inventory; ?></strong>份</span>   
                                         <?php endif;?>
                                     </div>
                                 </div>
