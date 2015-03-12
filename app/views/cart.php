@@ -38,7 +38,7 @@
                             </li>
 
                             <?php foreach($cart as $item): ?>
-                            <li class="order mar10 <?php if(!$item->product->checkReservation($date)) echo 'warning';?>">
+                            <li class="order mar10">
                                 <div class="ordertitle">
                                     <h3><?php echo $item->product->title; ?></h3>
                                     <?php if(!$item->product->checkReservation($date)):?>
