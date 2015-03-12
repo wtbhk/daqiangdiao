@@ -46,7 +46,12 @@
                                     <?php endif;?>
                                 </div>
                                 <div class="imgs">
-                                    <span><img src="<?php echo $item->product->one_image_url(); ?>" alt=""></span>
+                                    <?php $i=0; ?>
+                                    <?php foreach($item->product->images as $image): ?>
+                                    <?php if($i==3) break; ?>
+                                    <?php $i++; ?>
+                                    <span><img src="<?php echo $item->product->images[$i]->file; ?>" alt=""></span>
+                                    <?php endforeach; ?>
                                 </div>
                                 <div class="fl">
                                     <span class="ignore">还剩<strong class="liu"><?php echo $item->product->inventory_in($date)->inventory; ?></strong>份</span>
