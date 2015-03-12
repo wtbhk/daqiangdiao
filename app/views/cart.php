@@ -43,7 +43,7 @@
                                     <h3><?php echo $item->product->title; ?></h3>
                                     <?php if(!$item->product->checkReservation($date)):?>
                                     <span class="ignore">提前<strong class="day"><?php echo $item->product->reservation_day;?></strong>天预订</span>
-                                    <?php else:?>
+                                    <?php endif;?>
                                 </div>
                                 <div class="imgs">
                                     <span><img src="<?php echo $item->product->one_image_url(); ?>" alt=""></span>
