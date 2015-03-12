@@ -44,6 +44,9 @@ body {
             width: 100%;
         }
     }
+    .imgs + .fl {
+        margin-top: 8px !important;
+    }
     li {
         width: 100%;
         overflow: hidden;
@@ -54,7 +57,6 @@ body {
 
         .fl {
             margin-left: 16px;
-            margin-top: 8px;
         }
 
         .fr {

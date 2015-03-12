@@ -617,6 +617,8 @@ body {
     #list .imgs img {
       position: absolute;
       width: 100%; }
+  #list .imgs + .fl {
+    margin-top: 8px !important; }
   #list li {
     width: 100%;
     overflow: hidden;
@@ -627,8 +629,7 @@ body {
     -moz-box-shadow: 0 0 3px #cccccc;
     box-shadow: 0 0 3px #cccccc; }
     #list li .fl {
-      margin-left: 16px;
-      margin-top: 8px; }
+      margin-left: 16px; }
     #list li .fr {
       margin-right: 16px;
       margin-bottom: 4px;
@@ -855,5 +856,6 @@ li .add, li .more {
 #list .selectTime {
   overflow: visible !important;
   margin-bottom: 20px !important; }
-  #list .selectTime li {
-    margin-top: 0 !important; }
+
+#list li .fl {
+  margin-top: 0 !important; }
