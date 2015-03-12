@@ -609,7 +609,7 @@ body {
     #list .imgs span {
       display: inline-block;
       width: 30%;
-      padding-bottom: 25.625%;
+      padding-bottom: 20.68966%;
       overflow: hidden;
       position: relative; }
     #list .imgs span + span {
@@ -852,6 +852,7 @@ li .add, li .more {
 .clear {
   clear: both; }
 
-.selectTime {
+#list .selectTime {
   overflow: visible !important;
-  margin-bottom: 20px !important; }
+  margin-bottom: 20px !important;
+  margin-top: 0 !important; }

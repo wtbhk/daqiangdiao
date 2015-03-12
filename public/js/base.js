@@ -90,8 +90,6 @@ $(document).ready(function () {
             $('form').eq(0).submit();
         });
         $('li.selectTime').on('click', function () {
-
-            //if($('div.datetimepicker').css('display') !== 'none') return;
             var offset = $(this).offset();
             $('#timepicker').removeClass('hidden');
             $('#time').datetimepicker('show')
