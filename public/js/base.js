@@ -39,9 +39,6 @@ $(document).ready(function () {
                 number = ts.siblings('span.number'),
                 num = number.text()*1,
                 change = ts.text().substring(1)*1;
-            if ( num + 1 > $('span.remain strong').text()*1) {
-                return;
-            }
             deal(num + 1, $(this).parent().attr('id'));
             number.text(num + 1);
             need -= change;

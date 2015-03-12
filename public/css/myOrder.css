@@ -326,31 +326,6 @@ body {
   #list ul {
     width: 94.44444%;
     margin: 0 auto; }
-  #list .ordertitle h3 {
-    margin: 0 9px 18px 16px;
-    display: inline-block;
-    font: 18px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif; }
-  #list .ordertitle h3 + .ignore {
-    position: relative;
-    top: -3px; }
-  #list .imgs {
-    padding-left: 16px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #e6e6e6;
-    width: 96%; }
-    #list .imgs span {
-      display: inline-block;
-      width: 30%;
-      padding-bottom: 20.68966%;
-      overflow: hidden;
-      position: relative; }
-    #list .imgs span + span {
-      margin-left: 3%; }
-    #list .imgs img {
-      position: absolute;
-      width: 100%; }
-  #list .imgs + .fl {
-    margin-top: 8px !important; }
   #list li {
     width: 100%;
     overflow: hidden;
