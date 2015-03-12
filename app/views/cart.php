@@ -50,9 +50,7 @@
                                 </div>
                                 <div class="fl">
                                     <div class="foodName">
-                                       <?php else:?>
-                                        <span class="ignore">还剩<strong class="liu"><?php echo $item->product->inventory_in($date)->inventory; ?></strong>份</span>   
-                                        <?php endif;?>
+                                        <span class="ignore">还剩<strong class="liu"><?php echo $item->product->inventory_in($date)->inventory; ?></strong>份</span>
                                     </div>
                                 </div>
                                 <div class="fr">
