@@ -117,7 +117,7 @@ Class CartController extends BaseController {
                 }
                 if($input['qty']<=0 || !Product::find($input['id']))
                 {
-                        $rowid = Cart::search(array('id'=>$input['id']));
+                        $rowid = Cart::search(array('id'=>intval($input['id'])));
                         if($rowid)
                                 Cart::remove($rowid[0]);
                 }
