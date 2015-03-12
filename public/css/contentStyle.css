@@ -306,6 +306,7 @@ footer {
   background: #616161;
   height: 49px; }
   footer .wrap {
+    display: block;
     width: 90%;
     margin: 0 auto;
     color: #333; }

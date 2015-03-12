@@ -30,12 +30,9 @@ $(document).ready(function () {
                 num = number.text()*1,
                 change = ts.siblings('span.price').text().substring(1)*1;
             if (!num) return;
-            deal(num --, $(this).parent().attr('id'));
-            number.text(num --);
+            deal(num - 1, $(this).parent().attr('id'));
+            number.text(num - 1);
             need += change;
-            console.log(need);
-            return need <= 0 ? delivery.addClass('odeli') : 
-                delivery.removeClass('odeli');
         });
         $('span.price').on('click', function () {
             var ts = $(this),
@@ -45,11 +42,9 @@ $(document).ready(function () {
             if ( num + 1 > $('span.remain strong').text()*1) {
                 return;
             }
-            deal(num ++, $(this).parent().attr('id'));
-            number.text(num ++);
+            deal(num + 1, $(this).parent().attr('id'));
+            number.text(num + 1);
             need -= change;
-            return need <= 0 ? delivery.addClass('odeli') : 
-                delivery.removeClass('odeli');
         });
     }());
     //购物车页面
