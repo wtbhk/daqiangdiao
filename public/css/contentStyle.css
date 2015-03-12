@@ -359,12 +359,11 @@ span.del, span.price {
   -moz-border-radius: 3px;
   ms-border-radius: 3px;
   border-radius: 3px;
+  text-align: center;
   display: inline-block;
   width: 30px;
   height: 25px;
-  -webkit-box-shadow: 0 0 3px gray;
-  -moz-box-shadow: 0 0 3px gray;
-  box-shadow: 0 0 3px gray;
+  border: 1px solid #bbb;
   color: #f53874; }
 
 span.del {
