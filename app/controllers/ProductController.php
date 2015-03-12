@@ -4,7 +4,7 @@ Class ProductController extends BaseController {
 
         function showProduct($id)
         {
-                $rowid = Cart::search(array('id'=>$id));
+                $rowid = Cart::search(array('id'=>intval($id));
                 $rowid = $rowid[0];
                 $product = Cart::get($rowid);
                 $qty = $product ? $product->qty : 0;
