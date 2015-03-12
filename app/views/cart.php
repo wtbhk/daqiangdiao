@@ -49,9 +49,7 @@
                                     <span><img src="<?php echo $item->product->one_image_url(); ?>" alt=""></span>
                                 </div>
                                 <div class="fl">
-                                    <div class="foodName">
-                                        <span class="ignore">还剩<strong class="liu"><?php echo $item->product->inventory_in($date)->inventory; ?></strong>份</span>
-                                    </div>
+                                    <span class="ignore">还剩<strong class="liu"><?php echo $item->product->inventory_in($date)->inventory; ?></strong>份</span>
                                 </div>
                                 <div class="fr">
                                     <div class="priceBox" id="<?php echo $item->id; ?>">
