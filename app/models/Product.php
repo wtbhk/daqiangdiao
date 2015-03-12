@@ -93,7 +93,7 @@ class Product extends Eloquent {
         {
                 if($this->ignore_inventory)
                         return true;
-                if($qty <= $this->inventory_in($date))
+                if($qty <= $this->inventory_in($date)->inventory)
                         return true;
                 return false;
         }
