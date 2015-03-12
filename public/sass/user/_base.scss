@@ -11,42 +11,6 @@ body {
         width: 340/360 * 100%;
         margin: 0 auto;
     }
-    .ordertitle {
-
-        h3 {
-            margin: 0 9px 18px 16px;
-            display: inline-block;
-            font: 18px/1.0 $font-family;
-        }
-        h3 + .ignore {
-            position: relative;
-            top: -3px;
-        }
-    }
-    .imgs {
-        padding-left: 16px;
-        padding-bottom: 6px;
-        border-bottom: 1px solid #e6e6e6;
-        width: 100%;
-
-        span {
-            display: inline-block;
-            width: 30%;
-            padding-bottom: 60/87 * 30%;
-            overflow: hidden;
-            position: relative;
-        }
-        span + span {
-            margin-left: 3%;
-        }
-        img {
-            position: absolute;
-            width: 100%;
-        }
-    }
-    .imgs + .fl {
-        margin-top: 8px !important;
-    }
     li {
         width: 100%;
         overflow: hidden;
