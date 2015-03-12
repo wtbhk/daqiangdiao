@@ -35,10 +35,8 @@
                             </li>
                             <a href="/phone"><li id="phoneNumber">
                                 <span class="fl">手机号码</span>
-                                <span class="fr">
-                                    <span><?php echo $user->phone; ?></span>
-                                    <span class="more"></span>
-                                </span>
+                                <span class="fr more" style="margin-top: 6px;"></span>
+                                <span class="fr"><?php echo $user->phone; ?></span>
                             </li></a>
                             <li>
                                 <span class="fl">收货地址</span>
