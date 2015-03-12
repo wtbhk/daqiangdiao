@@ -51,7 +51,7 @@
                                     <?php foreach($images as $image): ?>
                                     <?php if($j==3) break; ?>
                                     <?php $j++; ?>
-                                    <span><img src="<?php echo $images[$i]->file; ?>" alt=""></span>
+                                    <span><img src="<?php echo $images[$j]->file; ?>" alt=""></span>
                                     <?php endforeach; ?>
                                 </div>
                                 <div class="fl">
