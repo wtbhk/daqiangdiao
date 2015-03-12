@@ -98,7 +98,6 @@ $(document).ready(function () {
         });
         $('#time').change(function () {
             $('input[name="today"]').val('false');
-            alert($('#hidden-date').val())
             $('form').eq(0).attr('method', 'GET');
             $('form').eq(0).submit();
         });
