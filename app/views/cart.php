@@ -46,11 +46,12 @@
                                     <?php endif;?>
                                 </div>
                                 <div class="imgs">
-                                    <?php $i=0; ?>
-                                    <?php foreach($item->product->images as $image): ?>
-                                    <?php if($i==3) break; ?>
-                                    <?php $i++; ?>
-                                    <span><img src="<?php echo $item->product->images[$i]->file; ?>" alt=""></span>
+                                    <?php $j=0; ?>
+                                    <?php $images = $item->product->images; ?>
+                                    <?php foreach($images as $image): ?>
+                                    <?php if($j==3) break; ?>
+                                    <?php $j++; ?>
+                                    <span><img src="<?php echo $image->file; ?>" alt=""></span>
                                     <?php endforeach; ?>
                                 </div>
                                 <div class="fl">
