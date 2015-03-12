@@ -105,7 +105,7 @@ $(document).ready(function () {
             autoclose: 1,
             todayHighlight: 1,
             todayBtn: 1,
-
+            startDate: new Date()
         });
     }());
     //付款页
