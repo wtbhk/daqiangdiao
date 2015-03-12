@@ -854,5 +854,6 @@ li .add, li .more {
 
 #list .selectTime {
   overflow: visible !important;
-  margin-bottom: 20px !important;
-  margin-top: 0 !important; }
+  margin-bottom: 20px !important; }
+  #list .selectTime li {
+    margin-top: 0 !important; }
