@@ -624,6 +624,7 @@ body {
   display: inline-block;
   width: 8px;
   height: 14px;
+  margin-top: 6px;
   background: url("../images/more.png"); }
 
 .add {

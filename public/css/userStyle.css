@@ -338,6 +338,7 @@ body {
   display: inline-block;
   width: 8px;
   height: 14px;
+  margin-top: 6px;
   background: url("../images/more.png"); }
 
 .add {
@@ -474,7 +475,7 @@ body {
 #name {
   font: 20px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif; }
 
-#extra, #phoneNumber {
+#extra, #phoneNumber, #toMyOrder {
   margin-bottom: 10px; }
 
 #extra .fr {

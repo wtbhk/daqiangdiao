@@ -29,6 +29,10 @@
 
                     <div id="list">
                         <ul>
+                            <li id="toMyOrder">
+                                <span class="fl">我的订单</span>
+                                <a class="fr more" href="/orders"></a>
+                            </li>
                             <li id="extra">
                                 <span class="fl">余额</span>
                                 <span class="fr">￥<?php echo $user->balance; ?></span>
