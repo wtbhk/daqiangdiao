@@ -29,14 +29,14 @@
 
                     <div id="list">
                         <ul>
-                            <li id="toMyOrder">
-                                <span class="fl">我的订单</span>
-                                <a class="fr more" href="/orders"></a>
-                            </li>
                             <li id="extra">
                                 <span class="fl">余额</span>
                                 <span class="fr">￥<?php echo $user->balance; ?></span>
                             </li>
+                            <a href="/orders"><li id="toMyOrder">
+                                <span class="fl">我的订单</span>
+                                <span class="fr more"></span>
+                            </li></a>
                             <a href="/phone"><li id="phoneNumber">
                                 <span class="fl">手机号码</span>
                                 <span class="fr more" style="margin-top: 6px;"></span>
