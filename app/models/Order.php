@@ -43,4 +43,21 @@ class Order extends Eloquent {
                 );
                 return $list[$this->status];
         }
+
+        function status_chn()
+        {
+                switch ($this->status)
+                {
+                        case Order::OPEN:
+                                return '进行中';
+                        case Order::CHECKED:
+                                return '已确认';
+                        case Order::DELIVERING:
+                                return '派送中';
+                        case Order::COMPLETED:
+                                return '已完成';
+                        case Order::CLOSED:
+                                return '已关闭';
+                }
+        }
 }

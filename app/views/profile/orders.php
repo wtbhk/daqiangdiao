@@ -23,7 +23,7 @@
                             <?php foreach($orders as $order): ?>
                             <li class="mar10">
                                 <span class="fl">
-                                    <span class="type"><?php echo $order->status; ?></span>
+                                    <span class="type"><?php echo $order->status_chn(); ?></span>
                                     <span class="totalPrice">￥<?php echo $order->total; ?></span>
                                 </span>
                                 <span class="fr time"><?php echo $order->created_at; ?></span>   
