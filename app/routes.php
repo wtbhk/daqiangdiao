@@ -32,6 +32,8 @@ Route::group(array('before'=>'wechat.base'), function(){
 
         Route::get('/order/{id}', 'OrderController@showOrder');
 
+        Route::get('/order/{id}/share', 'OrderController@showShareOrder');
+
         Route::get('/product/{id}', 'ProductController@showProduct');
 
         Route::get('/cart', 'CartController@showCart');

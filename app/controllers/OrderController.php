@@ -40,6 +40,29 @@ Class OrderController extends BaseController {
                 return View::make('order', array('user'=>$user, 'order'=>$order));
         }
 
+        function showShareOrder($id)
+        {
+                $user = $this->user;
+                $order = Order::find($id);
+                $is_owner = ($order->user_id == $user->id) ? true : false;
+                $sharedorder = SharedOrder::find($id);
+                if($is_owner && !$sharedorder)
+                        return View::make('profile.sharedorder', array(
+                                'shared'=>false, 
+                                'image'=>false, 
+                                'content'=>false, 
+                                'orderitems'=>$order->orderitems
+                                ));
+                if($sharedorder)
+                        return View::make('profile.sharedorder', array(
+                                'shared'=>true, 
+                                'image'=>$sharedorder->images, 
+                                'content'=>$sharedorder->content, 
+                                'orderitems'=>$sharedorder->orderitems
+                                ));
+                return Redirect::to('/')->withErrors(array('message'=>'非法参数'));
+        }
+
         function showCheckOrder()
         {
                 $user = $this->user;

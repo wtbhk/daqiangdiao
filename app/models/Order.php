@@ -19,6 +19,11 @@ class Order extends Eloquent {
                 return $this->belongsTo('User');
         }
 
+        function sharedorder()
+        {
+                return $this->hasOne('SharedOrder');
+        }
+
         function orderitems()
         {
                 return $this->hasMany('OrderItem');
