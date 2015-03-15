@@ -15,7 +15,7 @@ class CreateSharedordersTable extends Migration {
                 Schema::Create("sharedorders", function($table)
                 {
                         $table->increments("order_id");
-                        $table->string("content");
+                        $table->string("content")->nullable();
                         $table->timestamps();
                         $table->softDeletes();
                 }

@@ -52,15 +52,45 @@ Class OrderController extends BaseController {
                                 'image'=>false, 
                                 'content'=>false, 
                                 'orderitems'=>$order->orderitems
-                                ));
+                        ));
                 if($sharedorder)
                         return View::make('profile.sharedorder', array(
                                 'shared'=>true, 
                                 'image'=>$sharedorder->images, 
                                 'content'=>$sharedorder->content, 
                                 'orderitems'=>$sharedorder->orderitems
-                                ));
+                        ));
                 return Redirect::to('/')->withErrors(array('message'=>'非法参数'));
+        }
+
+        function editShareOrder($id)
+        {
+                $order = Order::find($id);
+                if($order->user_id != $this->user->id)
+                        return Redirect::to('/')->withErrors(array('message'=>'非法操作'));
+                $sharedorder = SharedOrder::firstOrCreate(array('order_id'=>$order->id));
+                $validator = Validator::make(
+                        Input::only(array('content', 'image')),
+                        array('content'=>'max:40', 'image'=>'image')
+                );
+                if($validator->fails())
+                {
+                        return Redirect::action('OrderController@showShareOrder', array('id' => $order->id));
+                }
+                if(Input::has('content'))
+                        $sharedorder->content = Input::get('content');
+                if(Input::has('image'))
+                {
+                        $file = Input::file('image');
+                        $filename = time().'.'.$file->getClientOriginalExtension();
+                        $file->move('uploads/', $filename);
+                                Image::create(array(
+                                'file'=>'/uploads/'.$filename,
+                                'imageable_id'=>$sharedorder->id,
+                                'imageable_type'=>'SharedOrder'
+                        ));
+                }
+                return Redirect::action('OrderController@showShareOrder', array('id' => $order->id));
         }
 
         function showCheckOrder()

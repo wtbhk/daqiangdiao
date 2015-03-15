@@ -1,10 +1,12 @@
 <?php
 
-class Order extends Eloquent {
+class SharedOrder extends Eloquent {
     
         protected $table = 'sharedorders';
 
-        protected $softDelete = true; 
+        protected $fillable = array('order_id', 'content');
+
+        protected $softDelete = true;
 
         function order()
         {
