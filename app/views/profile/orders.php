@@ -42,9 +42,11 @@
                                 </div>
                             </li>
                             <?php endforeach; ?>
+                            <?php if($order->status == Order::COMPLETED): ?>
                             <div class="clear shareOrder">
-                                    <a href="">一键晒单</a>
+                                    <a href="/order/<?php echo $order-id; ?>/share">一键晒单</a>
                                 </div>
+                            <?php endif; ?>
                             <?php endforeach; ?>
 
                         </ul>

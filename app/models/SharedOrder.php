@@ -23,4 +23,8 @@ class SharedOrder extends Eloquent {
                 return $this->order()->orderitems();
         }
 
+        function last_image()
+        {
+                return $this->images->orderBy('created_at', 'desc')->first();
+        }
 }
