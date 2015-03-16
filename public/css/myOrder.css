@@ -495,6 +495,19 @@ span.totalPrice {
 li.typeItem {
   padding: 0; }
 
+.shareOrder {
+  text-align: center; }
+  .shareOrder a {
+    color: #101010;
+    font: 14px/2 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    display: inline-block;
+    width: 70px;
+    border: 1px solid #c7c7c7;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    ms-border-radius: 2px;
+    border-radius: 2px; }
+
 #list > a {
   display: block; }
 

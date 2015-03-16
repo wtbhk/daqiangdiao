@@ -42,6 +42,9 @@
                                 </div>
                             </li>
                             <?php endforeach; ?>
+                            <div class="clear shareOrder">
+                                    <a href="">一键晒单</a>
+                                </div>
                             <?php endforeach; ?>
 
                         </ul>

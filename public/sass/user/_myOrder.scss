@@ -36,3 +36,16 @@ span.totalPrice {
 li.typeItem {
     padding: 0;
 }
+.shareOrder{
+    text-align: center;
+
+    a {
+        color: #101010;
+        font: 14px/2.0 $font-family;
+        display: inline-block;
+        width: 70px;
+        border: 1px solid #c7c7c7;
+        @include radius(2px)
+    }
+    
+}
