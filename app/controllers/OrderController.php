@@ -56,7 +56,7 @@ Class OrderController extends BaseController {
                 if($sharedorder)
                         return View::make('profile.sharedorder', array(
                                 'shared'=>true, 
-                                'image'=>$sharedorder->images, 
+                                'image'=>$sharedorder->last_image(), 
                                 'content'=>$sharedorder->content, 
                                 'orderitems'=>$sharedorder->orderitems
                         ));
