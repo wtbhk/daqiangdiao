@@ -43,9 +43,11 @@
                             </li>
                             <?php endforeach; ?>
                             <?php if($order->status == Order::COMPLETED): ?>
+                            <li>
                             <div class="clear shareOrder">
                                     <a href="/order/<?php echo $order->id; ?>/share">一键晒单</a>
                                 </div>
+                            </li>
                             <?php endif; ?>
                             <?php endforeach; ?>
 
