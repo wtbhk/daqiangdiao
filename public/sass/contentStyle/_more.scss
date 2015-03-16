@@ -43,8 +43,8 @@
         color: #e72c33;
         height: auto;
         margin-bottom: 5px;
-        @include box-shadow(none);
         border: none;
+        @include box-shadow(none);
         font: 12px/1.0 $font-family;
     }
 

@@ -142,4 +142,19 @@ $(document).ready(function () {
             }, 'json');
         });
     }());
+
+    //晒单
+    (function () {
+        if($('#shai').length === 0) return;
+        $('#img_upload').on('click', function () {
+            $('#file').trigger('click');
+        });
+        $('#file').on('change', function () {
+            var obj = $(this)[0].files[0];
+            window.URL = window.URL || window.webkitURL;
+            $('#before').addClass('hidden')
+                .next().removeClass('hidden')
+                    .children('img').attr('src', window.URL.createObjectURL(obj) );
+        });
+    })();
 });

@@ -1,9 +1,4 @@
 @charset "UTF-8";
-/*
- *@author           Venshy at EcjtuNet
- */
-/* 文件载入
- ----------------------------------------------------------*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -108,7 +103,6 @@ a {
   text-decoration: none;
   color: #000; }
 
-/*  css reset  */
 /* 添加className形式 */
 /* 常用属性库，类名形式添加使用 
  * such as:　<div class="fl"> </div>
@@ -300,212 +294,123 @@ header .set {
   height: 17px;
   background: url("../images/back.png"); }
 
-/* 布局
- -------------------------------------------------------------*/
 footer {
-  background: #616161;
-  height: 49px; }
-  footer .wrap {
+  width: 100%;
+  background: #2e272e;
+  padding: 58px 0 14px; }
+  footer p {
+    text-align: center;
+    font: 16px/1.5 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    color: #b0b0b0; }
+  footer a {
     display: block;
-    width: 90%;
-    margin: 0 auto;
-    color: #333; }
-  footer .get {
-    display: inline-block;
-    width: 22px;
-    height: 19px;
-    background: url("../images/get.png") no-repeat;
-    position: relative;
-    top: 17px; }
-  footer .delivery {
-    margin-top: 9px;
-    color: #fff;
-    display: inline-block;
-    padding: 8px 13px;
-    background: #7a7a7a;
-    font: 16px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    ms-border-radius: 2px;
-    border-radius: 2px; }
-
-#slide {
-  width: 100%; }
-  #slide .tab-pannel {
-    overflow: hidden; }
-  #slide .slide-img {
-    width: 100%;
-    float: left; }
-    #slide .slide-img img {
-      width: 100%; }
+    margin: 42px auto 0;
+    padding: 13px 0;
+    width: 74.44444%;
+    height: 18px;
+    font: 18px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    color: #e3e3e3;
+    background: #e84e40;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    ms-border-radius: 5px;
+    border-radius: 5px; }
 
 #content {
-  padding-bottom: 70px; }
+  width: 100%; }
 
-div.maincontent {
-  width: 90%;
-  margin: 25px auto;
-  padding-bottom: 10px;
-  border-bottom: 1px solid gray; }
-  div.maincontent h2 {
-    font: 600 20px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-    margin-bottom: 18px; }
+#shai {
+  width: 100%;
+  padding-top: 27px;
+  padding-bottom: 20px;
+  background: #2e272e; }
+  #shai button {
+    display: block;
+    margin: 0 auto;
+    padding: 13px 0;
+    width: 74.44444%;
+    font: 18px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    color: #e3e3e3;
+    background: #e84e40;
+    text-align: center;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    ms-border-radius: 5px;
+    border-radius: 5px; }
 
-div.priceBox {
-  margin-top: 18px; }
-
-span.del, span.price {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  ms-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
-  display: inline-block;
-  width: 30px;
-  height: 25px;
-  border: 1px solid #bbb;
-  color: #f53874; }
-
-span.del {
-  font: 900 12px/25px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+#img_upload {
+  width: 92.77778%;
+  padding-bottom: 72.45509%;
   position: relative;
-  width: 25px;
-  text-align: center; }
+  margin: 0 auto; }
 
-span.number {
-  display: inline-block;
-  width: 24px;
-  font: bolder 12px/25px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-  color: #f53874;
-  text-align: center;
-  margin: 0 5px 0 3px; }
-
-span.price {
-  width: auto;
-  padding: 0 6px;
-  font: 12px/25px "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-  position: relative;
-  right: 2px; }
-
-span.order, span.remain {
-  display: inline-block;
-  border: 1px solid #bbbbbb;
-  font: 12px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-  color: red;
-  border-radius: 3px; }
-
-span.order {
-  color: #fff;
-  padding: 2px 3px;
-  margin-bottom: 10px;
-  background: #e64c4c; }
-
-span.remain {
-  padding-left: 0; }
-
-span.today {
-  display: inline-block;
-  font: 12px/1.0 "宋体";
-  color: #fff;
-  padding: 2px;
-  background: #ffb14a;
-  border-radius: 2px; }
-
-#modal, #mask {
-  position: absolute;
-  z-index: 1;
+#before {
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0; }
-
-#errorBox {
-  position: relative;
-  top: 30%;
-  z-index: 2;
-  margin: 0 auto;
-  text-align: center;
-  width: 60%;
-  padding: 40px 10%;
-  line-height: 60px;
-  background: #fff;
-  font: 18px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-  color: #888;
-  -webkit-box-shadow: 0 0 3px gray;
-  -moz-box-shadow: 0 0 3px gray;
-  box-shadow: 0 0 3px gray;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  ms-border-radius: 8px;
-  border-radius: 8px; }
-
-#modalClose {
-  position: absolute;
-  top: 10px;
-  right: 5%;
-  font: 24px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-  color: #888;
-  z-index: 2; }
-
-#mask {
-  background: rgba(0, 0, 0, 0.5); }
-
-.odeli {
-  background: #e32222 !important; }
-
-#description {
-  width: 90%;
-  margin: 20px auto;
-  color: #695e69; }
-  #description h2 {
-    font: bold 20px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-    margin-bottom: 10px; }
-  #description p {
-    font: 16px/1.5 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-    text-indent: 32px; }
-  #description img {
-    width: 90%;
-    display: block;
-    margin: 10px auto;
+  background: #595959;
+  position: absolute; }
+  #before div {
+    width: 80%;
+    height: 80%;
+    margin: 6% auto;
+    border: 5px dashed #e3e3e3;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    ms-border-radius: 12px;
+    border-radius: 12px;
+    font: 30px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    color: #e3e3e3;
     text-align: center;
-    -webkit-box-shadow: 2px 2px 3px gray;
-    -moz-box-shadow: 2px 2px 3px gray;
-    box-shadow: 2px 2px 3px gray; }
-
-.foodBox {
-  width: 90%;
-  margin: 10px auto 10px;
-  overflow: visible;
-  -webkit-box-shadow: 0 0 15px #999999;
-  -moz-box-shadow: 0 0 15px #999999;
-  box-shadow: 0 0 15px #999999; }
-  .foodBox .food-img {
     position: relative; }
-    .foodBox .food-img h2 {
-      position: absolute;
-      bottom: 7px;
-      left: 25px;
-      font: 400 22px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-      color: #fff; }
-  .foodBox img {
-    width: 100%; }
-  .foodBox .left h3 {
-    font: 14px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-    margin-bottom: 12px; }
-  .foodBox .left p {
-    font: 12px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-    color: #d1c7d1; }
-  .foodBox .priceBox {
-    margin: 0; }
-  .foodBox .price {
-    color: #e72c33;
-    height: auto;
-    margin-bottom: 5px;
-    border: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    font: 12px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif; }
-  .foodBox .maincontent {
-    margin: 20px 0 0 15px;
-    border-bottom: none; }
+    #before div span {
+      position: relative;
+      top: calc(50% - 15px); }
+
+#after {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute; }
+  #after img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+#write {
+  display: block;
+  border: none;
+  background: none;
+  width: 88.77778%;
+  height: 160px;
+  padding: 0 2%;
+  margin: 84px auto 30px;
+  color: #b0b0b0;
+  font: 24px/1.5 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif; }
+
+#imglists {
+  width: 100%;
+  background: #ebe4eb;
+  padding: 30px 0 60px; }
+  #imglists li {
+    width: 91.66667%;
+    margin: 0 auto; }
+    #imglists li span {
+      display: inline-block;
+      width: 30%;
+      padding-bottom: 19.0678%;
+      position: relative; }
+      #imglists li span img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute; }
+    #imglists li span + span {
+      margin-left: 2%; }
+  #imglists li + li {
+    margin-top: 32px; }
+  #imglists h2 {
+    font: 18px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    color: #101010;
+    margin-bottom: 17px; }
