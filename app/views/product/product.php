@@ -71,7 +71,7 @@
             <a class="toHome fl" href="/">
             </a>
             <h1><?php echo $product->title;?></h1>
-            <span class="toUser fr"></span>
+            <a class="toUser fr" href="/profile"></a>
         </div>
     </header>
     <div id="modal" class="hidden">
