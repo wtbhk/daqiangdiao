@@ -498,8 +498,8 @@ li.typeItem {
 .shareOrder {
   text-align: center; }
   .shareOrder a {
-    color: #101010;
-    font: 14px/2 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    color: #e51c23;
+    font: 12px/2 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
     display: inline-block;
     width: 70px;
     border: 1px solid #c7c7c7;
