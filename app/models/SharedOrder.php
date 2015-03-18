@@ -4,6 +4,8 @@ class SharedOrder extends Eloquent {
     
         protected $table = 'sharedorders';
 
+        protected $primaryKey = 'order_id';
+
         protected $fillable = array('order_id', 'content');
 
         protected $softDelete = true;
