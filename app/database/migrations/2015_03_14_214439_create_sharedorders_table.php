@@ -18,7 +18,7 @@ class CreateSharedordersTable extends Migration {
                         $table->string("content")->nullable();
                         $table->timestamps();
                         $table->softDeletes();
-                }
+                });
 	}
 
 	/**
