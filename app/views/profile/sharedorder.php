@@ -10,7 +10,7 @@
     <meta name="description" content="商店demo">
     <meta name="author" content="zvenshy@gmail.com">
     <title>晒单分享</title>
-<link rel="stylesheet" href="css/shai.css">
+<link rel="stylesheet" href="/css/shai.css">
 </head>
 <body class="sme">
     <div id="content">
@@ -84,7 +84,7 @@
         <div id="mask"></div>
     </div>
     </div>
-    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/js/base.js"></script>
 </body>
 </html>
