@@ -88,7 +88,3 @@
     <script type="text/javascript" src="js/base.js"></script>
 </body>
 </html>
-
-<?php
-    echo $shared;
-    var_dump($orderitems);
