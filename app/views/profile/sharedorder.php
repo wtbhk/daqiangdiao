@@ -73,7 +73,7 @@
             <a class="toUser fr" href="/profile"></a>
         </div>
     </header>
-    <div id="modal" class="hidden">
+    <div id="modal" class="<?php if(!$shared) echo 'hidden'; ?>">
         <div id="errorBox" class="hidden">
             这里是错误提示这里是错误提示这里是错误提示
             <div id="modalClose">&times</div>
