@@ -17,7 +17,7 @@
 
         <div id="shai">
             <div id="img_upload">
-                <div id="before" <?php echo $image ? 'class="hidden"' : ''; ?>
+                <div id="before" <?php echo $image ? 'class="hidden"' : ''; ?> >
                     <div>
                         <span>点击上传照片</span>
                     </div>
