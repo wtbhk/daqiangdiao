@@ -27,6 +27,8 @@ class SharedOrder extends Eloquent {
 
         function last_image()
         {
-                return $this->images->orderBy('created_at', 'desc')->first();
+                return Image::where('imageable_id', $this->order_id)
+                        ->where('imageable_type', 'SharedOrder')
+                        ->latest();
         }
 }
