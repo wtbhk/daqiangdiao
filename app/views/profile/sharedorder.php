@@ -31,7 +31,7 @@
 	            <?php else: ?>
                 <textarea id="write" type="text" value="" placeholder="点击修改分享内容"></textarea>
 	            <?php endif; ?>
-	            <?php if(!$shared): ?>
+	            <?php if($is_owner): ?>
                 <button type="submit">晒单</button>
 	            <?php endif; ?>
             </form>

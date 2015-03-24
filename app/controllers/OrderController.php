@@ -48,6 +48,7 @@ Class OrderController extends BaseController {
                 $sharedorder = SharedOrder::find($id);
                 if($is_owner && !$sharedorder)
                         return View::make('profile.sharedorder', array(
+                                'is_owner'=>$is_owner,
                                 'shared'=>false, 
                                 'image'=>false, 
                                 'content'=>false, 
@@ -55,6 +56,7 @@ Class OrderController extends BaseController {
                         ));
                 if($sharedorder)
                         return View::make('profile.sharedorder', array(
+                                'is_owner'=>$is_owner,
                                 'shared'=>true, 
                                 'image'=>$sharedorder->last_image(), 
                                 'content'=>$sharedorder->content, 
