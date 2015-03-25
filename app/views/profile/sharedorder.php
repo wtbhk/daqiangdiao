@@ -24,7 +24,7 @@
                 </div>
                 <div id="after" <?php echo $image ? '' : 'class="hidden"'; ?>><img src="<?php echo $image ? $image->file : ''; ?>" alt=""/></div>
             </div>
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <input type="file" name="image" class="hidden" id="file" accept="image/*" capture="camera"/>
                 <?php if($content): ?>
                 <textarea id="write" name="content" type="text" value="" placeholder="<?php echo $content; ?>" disabled></textarea>

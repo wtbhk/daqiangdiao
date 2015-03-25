@@ -73,25 +73,26 @@ Class OrderController extends BaseController {
                 $sharedorder = SharedOrder::firstOrCreate(array('order_id'=>$order->id));
                 $validator = Validator::make(
                         Input::only(array('content', 'image')),
-                        array('content'=>'max:40', 'image'=>'image')
+                        array('content'=>'max:40')
                 );
                 if($validator->fails())
                 {
                         return Redirect::action('OrderController@showShareOrder', array('id' => $order->id));
                 }
-                if(Input::has('content'))
+                if(Input::has('content') && Input::get('content')!='')
                         $sharedorder->content = Input::get('content');
-                if(Input::has('image'))
+                if(Input::file('image'))
                 {
                         $file = Input::file('image');
                         $filename = time().'.'.$file->getClientOriginalExtension();
                         $file->move('uploads/', $filename);
                                 Image::create(array(
                                 'file'=>'/uploads/'.$filename,
-                                'imageable_id'=>$sharedorder->id,
+                                'imageable_id'=>$sharedorder->order_id,
                                 'imageable_type'=>'SharedOrder'
                         ));
                 }
+                $sharedorder->save();
                 return Redirect::action('OrderController@showShareOrder', array('id' => $order->id));
         }
 
