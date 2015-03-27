@@ -10,6 +10,10 @@
 	float: right;
 }
 
+li {
+    list-style: none;
+}
+
 button a {
     color: #fff;
 }
@@ -269,4 +273,10 @@ input {
 
 .topOrder > ul > li  {
 	border-bottom: none;
+}
+
+
+.imglist li img{
+    width: 40px;
+    margin-left: 8px;
 }

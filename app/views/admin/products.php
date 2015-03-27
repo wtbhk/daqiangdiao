@@ -33,9 +33,9 @@
 					</tr>
 				</thead>
 				<tbody>
-                                                <?php foreach($products as $product): ?>
+                    <?php foreach($products as $product): ?>
 						<tr>
-                                                        <td><input type="text" disabled="disabled" name="title" value="<?php echo $product->title; ?>"></td>
+                            <td><input type="text" disabled="disabled" name="title" value="<?php echo $product->title; ?>"></td>
 							<td><input type="text" disabled="disabled" name="description" value="<?php echo $product->description; ?>"></td>
 							<td><input type="text" disabled="disabled" name="content" value="<?php echo $product->content; ?>"></td>
 							<td><input type="text" disabled="disabled" name="price" value="<?php echo $product->price; ?>"></td>
@@ -47,7 +47,7 @@
 						<tr id="<?php echo $product->id; ?>">
 							<td>    
 								<span class="btn btn-success fileinput-button">
-						        <span>Select files...</span>
+						        <span>选择图片</span>
 							        <input class="fileupload" type="file" name="image" disabled="disabled" multiple>
 							    </span>
 						    </td>
@@ -57,7 +57,11 @@
 							      </tbody>
 							    </table>
 							</td>
-							<td></td>
+							<td>
+								<ul>
+									<li class="fl"><img src="imgsrc" alt=""></li>
+								</ul>
+							</td>
 							<td></td>
 							<td><input type="submit" class="change" value="修改"><input type="submit" class="save hidden" value="保存"></td>
 							<td><input type="submit" class="del" value="删除"><input type="submit" class="chanle hidden" value="取消"></td>
