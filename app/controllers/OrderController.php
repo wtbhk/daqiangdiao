@@ -5,11 +5,11 @@ Class OrderController extends BaseController {
         function showAddressee()
         {
                 $user = $this->user;
-                $addressees = Addressee::where('user_id', $user->id)->get();
+                $addressees = Addressee::where('user_id', $user->id)->lastused()->get();
                 if(Session::has('addressee') and $addressees->contains(Session::get('addressee')))
                         $checked = Session::get('addressee');
                 else
-                        $checked = $addressees ? $addressees[0]['id'] : '';
+                        $checked = $addressees->first() ? $addressees->first()->id : '';
                 return View::make('orderaddr', array('addressees'=>$addressees, 'checked'=>$checked));  
         }
 
