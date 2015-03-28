@@ -22,6 +22,7 @@ Class AdminController extends BaseController {
                         return Redirect::to('/admin/login')->withErrors(array('msg'=>'登录失败'));
                 if(!Admin::attempt())
                         return Redirect::to('/admin/login')->withErrors(array('msg'=>'登录失败'));
+                return Redirect::to('/admin');
         }
 
         function setting()
