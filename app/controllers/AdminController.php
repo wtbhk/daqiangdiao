@@ -117,7 +117,7 @@ Class AdminController extends BaseController {
                 }
                 else
                 {
-                        if(App::environment('local'))
+                        if(Config::get('database.default')=='sqlite')
                         {
                                 $orders = Order::with('OrderItems')
                                         ->where(DB::raw('julianday(datetime("now","localtime"))-julianday(delivery)<1'))
