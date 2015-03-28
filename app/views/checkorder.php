@@ -21,7 +21,7 @@
                     <div id="list">
                         <ul>
                             <?php if(!$addressee): ?>
-                            <a href="orderaddr"><li class="error mar10 hidden">
+                            <a href="orderaddr"><li class="mar10">
                                 <span class="fl">添加收货地址</span>
                                 <span class="fr more"></span>
                             </li></a>
