@@ -30,7 +30,7 @@
                     <div id="list">
                         <ul>
                             <li id="extra">
-                                <span class="fl">余额</span>
+                                <span class="fl">账户余额</span>
                                 <span class="fr">￥<?php echo $user->balance; ?></span>
                             </li>
                             <a href="/orders"><li id="toMyOrder">
