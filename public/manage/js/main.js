@@ -11,43 +11,42 @@ $(document).ready(function () {
             '</td>'+
             '<td>'+
             '    <button class="btn btn-primary start">'+
-            '       <span>Start</span>'+
+            '       <span>上传</span>'+
             '    </button>'+
             '    <button class="btn btn-warning cancel">'+
-            '       <span>Cancel</span>'+
+            '       <span>取消</span>'+
             '    </button>        '+    
             '</td>'+
         '</tr>';
         var currentData = {};
         $('input.fileupload').on('click', function () {
             currentData.id = $(this).parent().parent().parent().attr('id');
-            console.log(currentData.id);
-        })
+        });
         $('input.fileupload').fileupload({autoUpload: true,
             url: '/admin/product/' + currentData.id + '/image',
             dataType: 'json',
             add: function (e, data) {
                 data.url = '/admin/product/' + currentData.id + '/image';
-                var src;
+
                 if (data.files && data.files[0]) {
                     var idx = $('input.fileupload').index(this);
                     var reader = new FileReader();
                     reader.onload = function(e) {
-                        src =  e.target.result;
+                        currentData.src =  e.target.result;
                         var templateImpl = $.tmpl(template,
                             {
                                 "fileName_":data.files[0].name,
                                 "fileSize_":(data.files[0].size/1000).toFixed(2),
-                                "imgSrc_":src
+                                "imgSrc_":currentData.src
                             }).appendTo( ".files:eq(" + idx + ")" );
                         data.content = templateImpl;
                         $(".start", templateImpl).click(function () {
                             currentData.bar = templateImpl;             
-                            $('<p/>').text('Uploading...').addClass("uploading").replaceAll($(this));
+                            $('<p/>').text('上传中...').addClass("uploading").replaceAll($(this));
                             data.submit();//上传文件
                         });
                         $(".cancel", templateImpl).click(function () {
-                            $('<p/>').text('cancel...').replaceAll($(this));
+                            $('<p/>').text('取消中...').replaceAll($(this));
                             data.abort();//取消上传
                             $(templateImpl).remove();
                         });
@@ -58,6 +57,8 @@ $(document).ready(function () {
 
             done: function (e, data) {
                 $(".uploading", data.content).text('上传成功');
+                var imgTmpt = '<li><img src="' + currentData.src + '" alt=""></li>';
+                $(this).parent().parent().siblings('.imglist').children().append(imgTmpt);
             },
             progressall: function (e, data) {
                 var progress = parseInt(data.loaded / data.total * 100, 10);
@@ -108,16 +109,16 @@ $(document).ready(function () {
             $(this).addClass('hidden').prev().removeClass('hidden').removeAttr('disabled');
             par.find('input.chanle').addClass('hidden').prev().removeClass('hidden').removeAttr('disabled');
             var data ={
-                    'id': par.attr('id'),
-                    'price': $('input[name="price"').eq(idx).val(),
-                    'reservation_day': $('input[name="reservation_day"').eq(idx).val(),
-                    'inventory_per_day': $('input[name="inventory_per_day"').eq(idx).val(),
-                    'ignore_inventory': $('input[type="checkbox"').eq(idx).prop('checked'),
-                    'title': $('input[name="title"').eq(idx).val(),
-                    'description': $('input[name="description"').eq(idx).val(),
-                    'content': $('input[name="content"').eq(idx).val(),
-                    'rank': $('input[name="rank"').eq(idx).val()
-                }
+                'id': par.attr('id'),
+                'price': $('input[name="price"').eq(idx).val(),
+                'reservation_day': $('input[name="reservation_day"').eq(idx).val(),
+                'inventory_per_day': $('input[name="inventory_per_day"').eq(idx).val(),
+                'ignore_inventory': $('input[type="checkbox"').eq(idx).prop('checked'),
+                'title': $('input[name="title"').eq(idx).val(),
+                'description': $('input[name="description"').eq(idx).val(),
+                'content': $('input[name="content"').eq(idx).val(),
+                'rank': $('input[name="rank"').eq(idx).val()
+            }
             $.ajax({
                 url: '/admin/product',
                 type: 'POST',
