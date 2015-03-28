@@ -67,7 +67,7 @@
 
                     <form id="checkorder" action="" method="POST">
                             <input type="hidden" name="payment" value="cash">
-                            <input type="hidden" name="addressee" value="<?php echo $addressee->id; ?>">
+                            <input type="hidden" name="addressee" value="<?php echo $addressee ? $addressee->id : ''; ?>">
                     </form>
                 </div>
             </div>
