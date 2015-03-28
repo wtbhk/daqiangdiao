@@ -83,7 +83,7 @@
             <a class="headBack fl" href="/cart">
             </a>
             <h1>订单</h1>
-            <span class="toUser fr"></span>
+            <a class="toUser fr" href="/profile"></a>
         </div>
     </header>
     <div id="modal" <?php if(!$errors->first('message')) echo 'class="hidden"';?>>
