@@ -122,7 +122,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
                 'Xjchen\WechatFilter\WechatFilterServiceProvider',
                 'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
-                'Intervention\Image\ImageServiceProvider',
+                'Iveoles\Image\ImageServiceProvider',
 
 	),
 
@@ -191,7 +191,7 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
                 'Cart'              => 'Gloudemans\Shoppingcart\Facades\Cart',
-                'ImageHelper'       => 'Intervention\Image\Facades\Image',
+                'ImageHelper'       => 'Iveoles\Image\Facades\Image',
 
 	),
 

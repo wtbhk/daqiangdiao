@@ -15,7 +15,7 @@ class Image extends Eloquent {
 
         function scopeLatest($query)
         {
-        		return $query->orderBy('created_at', 'desc')->first();
+        	return $query->orderBy('created_at', 'desc')->first();
         }
 
 }

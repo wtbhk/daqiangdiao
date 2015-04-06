@@ -9,7 +9,7 @@
 		"xjchen/wechat-filter": "~1.1",
 		"php-curl-class/php-curl-class": "dev-master",
 		"gloudemans/shoppingcart": "~1.2",
-		"intervention/image": "2.1.3"
+		"iveoles/image":"dev-master"
 	},
 	"autoload": {
 		"classmap": [

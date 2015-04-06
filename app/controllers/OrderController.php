@@ -84,9 +84,8 @@ Class OrderController extends BaseController {
                 if(Input::file('image'))
                 {
                         $file = Input::file('image');
-                        $img = ImageHelper::make($file);
                         $filename = time().'.'.$file->getClientOriginalExtension();
-                        $img->resize(640, 400)->save('uploads/'.$filename, 70);
+                        $file->move('uploads/', $filename);
                         Image::create(array(
                                 'file'=>'/uploads/'.$filename,
                                 'imageable_id'=>$sharedorder->order_id,
