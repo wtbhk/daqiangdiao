@@ -41,7 +41,7 @@ class Order extends Eloquent {
 
         function isDeliveryNow()
         {
-                $dt = Carbon::parse($this->delivery);
+                $dt = \Carbon\Carbon::parse($this->delivery);
                 return ($dt->hour + $dt->minute + $dt->second == 0) ? true : false;
         }
 
