@@ -56,7 +56,7 @@ Class UserController extends BaseController {
                 $addressee['user_id'] = $user->id;
                 if($validator->fails())
                         return Redirect::to('/address')->withErrors($validator);
-                $user->addressees()->create($addressee);
+                $addressee = $user->addressees()->create($addressee);
                 Session::set('addressee', $addressee->id);
                 return Redirect::to(Input::get('redirect_to', '/profile'));
         }
