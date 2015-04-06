@@ -23,7 +23,7 @@
                             <?php if(!$addressee): ?>
                             <a href="orderaddr"><li class="mar10">
                                 <span class="fl">添加收货地址</span>
-                                <span class="fr more"></span>
+                                <span class="fr add" style="margin-top:7px;"></span>
                             </li></a>
                             <?php else: ?>
                             <a href="orderaddr"><li class="mar10">
