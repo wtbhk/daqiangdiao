@@ -18,7 +18,7 @@
             <div class="main">
                 <div class="wrap">
                     <div id="banner">
-                        <a href="/product/<?php echo $products[0]->id; ?>"><img src="<?php echo $products[0]->mainImage()->resize(640, 400); ?>" alt=""></a>
+                        <a href="/product/<?php echo $products[0]->id; ?>"><img src="<?php echo $products[0]->mainImage()->resize(320, 200); ?>" alt=""></a>
                         <h2><?php echo $products[0]->title; ?></h2>
                     </div>
                     <!-- 列表 -->
@@ -31,13 +31,13 @@
                         <div id="manyPic">
                                 <div class="fl">
                                     <a href="/product/<?php echo $products[1]->id; ?>">
-                                        <img src="<?php echo $products[1]->mainImage()->resize(640, 400); ?>" alt="">
+                                        <img src="<?php echo $products[1]->mainImage()->resize(320, 200); ?>" alt="">
                                     </a>
                                     <a href="/product/<?php echo $products[1]->id; ?>"><span class="foodTitle"><?php echo $products[1]->title;?></span></a>
                                 </div>
                             <div class="fr">
-                                <a href="/product/<?php echo $products[2]->id; ?>"><img src="<?php echo $products[2]->mainImage()->resize(320, 200); ?>" alt=""></a>
-                                <a href="/product/<?php echo $products[3]->id; ?>"><img src="<?php echo $products[3]->mainImage()->resize(320, 200); ?>" alt=""></a>
+                                <a href="/product/<?php echo $products[2]->id; ?>"><img src="<?php echo $products[2]->mainImage()->resize(160, 100); ?>" alt=""></a>
+                                <a href="/product/<?php echo $products[3]->id; ?>"><img src="<?php echo $products[3]->mainImage()->resize(160, 100); ?>" alt=""></a>
                             </div>
                         </div>
 
@@ -48,7 +48,7 @@
                         <ul>
                             <a href="/product/<?php echo $products[4]->id; ?>"><li>
                                 <dl>
-                                    <dt><img src="<?php echo $products[4]->mainImage()->resize(320, 200); ?>" alt=""></dt>
+                                    <dt><img src="<?php echo $products[4]->mainImage()->resize(220, 150); ?>" alt=""></dt>
                                     <dd class="overft">
                                         <div class="dish">
                                             <h3><?php echo $products[4]->title; ?></h3>
@@ -63,7 +63,7 @@
                             </li></a>
                             <a href="/product/<?php echo $products[5]->id; ?>"><li>
                                 <dl>
-                                    <dt><img src="<?php echo $products[5]->mainImage()->resize(320, 200); ?>" alt=""></dt>
+                                    <dt><img src="<?php echo $products[5]->mainImage()->resize(220, 150); ?>" alt=""></dt>
                                     <dd class="overft">
                                         <div class="dish">
                                             <h3><?php echo $products[5]->title; ?></h3>

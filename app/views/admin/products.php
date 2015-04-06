@@ -60,7 +60,7 @@
 							<td>
 								<ul class="imglist">
 									<?php foreach($product->images as $image): ?>
-									<li class="fl"><img id="<?php echo $image->id ;?> " src="<?php echo $image->resize(160,10) ;?>" alt=""></li>
+									<li class="fl"><img id="<?php echo $image->id ;?> " src="<?php echo $image->resize(160,100) ;?>" alt=""></li>
 									<?php endforeach; ?>
 								</ul>
 							</td>
