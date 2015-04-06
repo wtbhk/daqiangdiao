@@ -81,8 +81,9 @@ Class AdminController extends BaseController {
                 if(! $product = Product::find($id))
                         return Response::json(array('error'=>true));
                 $file = Input::file('image');
+                $img = ImageHelper::make($file);
                 $filename = time().'.'.$file->getClientOriginalExtension();
-                $file->move('uploads/', $filename);
+                $img->resize(640, 400)->save('uploads/'.$filename, 70);
                 Image::create(array(
                         'file'=>'/uploads/'.$filename,
                         'imageable_id'=>$product->id,
@@ -97,7 +98,7 @@ Class AdminController extends BaseController {
                 if(!$image or $image->product->id != $pid)
                         return Response::json(array('error'=>true));
                 $image->delete();
-                        return Response::json(array('error'=>false, 'image'=>$iid));
+                return Response::json(array('error'=>false, 'image'=>$iid));
         }
 
 
