@@ -39,6 +39,12 @@ class Order extends Eloquent {
                 return $this->orderitems->sum('price');
         }
 
+        function isDeliveryNow()
+        {
+                $dt = $this->delivery;
+                return ($dt->hour + $dt->minute + $dt->second == 0) ? true : false;
+        }
+
         function next_step_chn()
         {
                 $list = array(

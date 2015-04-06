@@ -62,14 +62,14 @@
                                 <li><span class="fl">电话</span><span class="fr"><?php echo $order->phone;?></span></li>
                                 <li><span class="fl">地址</span><span class="fr"><?php echo $order->address;?></span></li>
                                 <li><span class="fl">下单日期</span><span class="fr"><?php echo $order->created_at;?></span></li>
-                                <li><span class="fl">送达时间</span><span class="fr"><?php echo $order->delivery;?></span></li>
+                                <li><span class="fl">送达时间</span><span class="fr"><?php echo $order->isDeliveryNow() ? '立即送达' : $order->delivery;?></span></li>
                             </ul>
                             <ul class="unstyled fr">
                                 <?php foreach($order->orderitems as $item):?>
                                 <li><span class="fl"><?php echo $item->title;?></span><span><?php echo $item->amount;?></span><span class="fr">￥<?php echo $item->price;?></span></li>
                                 <?php endforeach;?>
                                 <li><span class="fl">总价</span><span class="fr">￥<?php echo $order->price;?></span></li>
-                                <li><span class="fl">在线支付</span><span class="fr"><?php echo $order->payment ? 'YES' : 'NO';?></span></li>
+                                <li><span class="fl">在线支付</span><span class="fr"><?php echo $order->payment ? '是' : '否';?></span></li>
                             </ul>
                             <?php if($order->status!=Order::CLOSED and $order->status!=Order::COMPLETED):?>
                             <div class="btn-group">
