@@ -83,7 +83,6 @@ Class AdminController extends BaseController {
                 $file = Input::file('image');
                 $filename = time().'.'.$file->getClientOriginalExtension();
                 $file->move('uploads/', $filename);
-                $img->resize(640, 400)->save('uploads/'.$filename, 70);
                 Image::create(array(
                         'file'=>'/uploads/'.$filename,
                         'imageable_id'=>$product->id,
