@@ -100,6 +100,7 @@ $(document).ready(function () {
             });
         });
 
+
         tbody.on('click', 'input.save', function (e) {
             e.preventDefault();
             var par = $(this).parent().parent();
@@ -147,6 +148,23 @@ $(document).ready(function () {
             tbody.find('tr:eq(1)').clone(true).prependTo(tbody);
             tbody.find('tr:eq(0) input[type="text"]').val('');
             tbody.find('tr:eq(1)').removeAttr('id');
+        });
+
+        tbody.on('click', '.imglist img', function (e) {
+            var ts = $(this);
+            var imgId = ts.attr('id');
+            ts.fadeOut(1000, function () {
+                ts.remove();
+            });
+            
+            $.ajax({
+                url: '/admin/product' + ts.parent().parent().attr('id') + 'image' + ts.attr('id'),
+                type: 'DELETE',
+            }).done(function (data) {
+                ts.fadeOut(500, function () {
+                    ts.remove();
+                });
+            });
         });
     }());
     
