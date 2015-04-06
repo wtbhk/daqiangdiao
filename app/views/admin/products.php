@@ -59,7 +59,9 @@
 							</td>
 							<td>
 								<ul>
-									<li class="fl"><img src="imgsrc" alt=""></li>
+									<?php foreach($product->images as $image): ?>
+									<li class="fl"><img src="<?php echo $image->file ;?>" alt=""></li>
+									<?php endforeach; ?>
 								</ul>
 							</td>
 							<td></td>
