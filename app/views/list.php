@@ -22,7 +22,7 @@
                     <a href="/product/<?php echo $product->id;?>">
                     <div class="foodBox">
                         <div class="food-img">
-                            <img src="<?php echo $product->one_image_url(); ?>" alt="">
+                            <img src="<?php echo $product->mainImage()->resize(640, 400); ?>" alt="">
                             <h2><?php echo $product->title; ?></h2>
                         </div>
                         <!-- price -->

@@ -31,7 +31,7 @@
                             <?php foreach($order->orderitems as $item): ?>
                             <li>
                                 <div class="fl">
-                                    <img src="<?php echo $item->image; ?>" alt="">
+                                    <img src="<?php echo $item->image()->resize(160, 100); ?>" alt="">
                                     <div class="foodName">
                                         <h3><?php echo $item->title; ?></h3>
                                         <span class="ignore"><?php echo $item->amount; ?>份</span>

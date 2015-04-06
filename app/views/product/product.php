@@ -21,7 +21,7 @@
                     <!-- 视频 -->
                     <div id="slide" class="overft">
                         <div class="slide-img">
-                            <img src="<?php echo $product->one_image_url();?>" alt="">
+                            <img src="<?php echo $product->mainImage()->resize(640, 400);?>" alt="">
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@
                         <h2>菜品介绍</h2>
                         <p><?php echo $product->content; ?></p>
                         <?php foreach($product->images as $image): ?>
-                        <img src="<?php echo $image->file; ?>" alt="">
+                        <img src="<?php echo $image->resize(640, 400); ?>" alt="">
                         <?php endforeach; ?>
                     </div>
 

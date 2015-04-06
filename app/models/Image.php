@@ -18,4 +18,9 @@ class Image extends Eloquent {
         	return $query->orderBy('created_at', 'desc')->first();
         }
 
+        function resize($w, $h)
+        {
+                return ImageHelper::path($this->file, 'resizeCrop', $w, $h);
+        }
+
 }
