@@ -58,9 +58,9 @@
 							    </table>
 							</td>
 							<td>
-								<ul>
+								<ul class="imglist">
 									<?php foreach($product->images as $image): ?>
-									<li class="fl"><img src="<?php echo $image->file ;?>" alt=""></li>
+									<li class="fl"><img id="imgid" src="<?php echo $image->file ;?>" alt=""></li>
 									<?php endforeach; ?>
 								</ul>
 							</td>
