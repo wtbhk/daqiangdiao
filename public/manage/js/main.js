@@ -153,12 +153,9 @@ $(document).ready(function () {
         tbody.on('click', '.imglist img', function (e) {
             var ts = $(this);
             var imgId = ts.attr('id');
-            ts.fadeOut(1000, function () {
-                ts.remove();
-            });
             
             $.ajax({
-                url: '/admin/product' + ts.parent().parent().attr('id') + 'image' + ts.attr('id'),
+                url: '/admin/product/' + ts.parent().parent().parent().parent().attr('id') + 'image/' + ts.attr('id'),
                 type: 'DELETE',
             }).done(function (data) {
                 ts.fadeOut(500, function () {
