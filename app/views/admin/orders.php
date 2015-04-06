@@ -73,7 +73,7 @@
                             </ul>
                             <?php if($order->status!=Order::CLOSED and $order->status!=Order::COMPLETED):?>
                             <div class="btn-group">
-                                <button class="btn btn-danger cOrder" type="button"><a href="/admin/order/<?php echo $order->id;?>/status/closed">关闭</a></button>
+                                <button class="btn btn-danger cOrder" type="button"><a href="/admin/order/<?php echo $order->id;?>/status/<?php echo Order::CLOSED; ?>">关闭</a></button>
                                 <button class="btn btn-primary rOrder" type="button"><a href="/admin/order/<?php echo $order->id;?>/status/<?php echo $order->status+1;?>"><?php echo $order->next_step_chn();?></a></button>
                             </div>
                             <?php endif;?>
@@ -107,7 +107,7 @@
                             </ul> 
                             <?php if($order->status!=Order::CLOSED and $order->status!=Order::COMPLETED):?>
                             <div class="btn-group">
-                                <button class="btn btn-danger cOrder" type="button"><a href="/admin/order/<?php echo $order->id;?>/status/closed">关闭</a></button>
+                                <button class="btn btn-danger cOrder" type="button"><a href="/admin/order/<?php echo $order->id;?>/status/<?php echo Order::CLOSED; ?>">关闭</a></button>
                                 <button class="btn btn-primary rOrder" type="button"><a href="/admin/order/<?php echo $order->id;?>/status/<?php echo $order->status+1;?>"><?php echo $order->next_step_chn();?></a></button>
                             </div>
                             <?php endif;?>
