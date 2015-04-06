@@ -96,7 +96,7 @@
                                 <li><span class="fl">电话</span><span class="fr"><?php echo $order->phone;?></span></li>
                                 <li><span class="fl">地址</span><span class="fr"><?php echo $order->address;?></span></li>
                                 <li><span class="fl">下单日期</span><span class="fr"><?php echo $order->created_at;?></span></li>
-                                <li><span class="fl">送达时间</span><span class="fr"><?php echo $order->delivery;?></span></li>
+                                <li><span class="fl">送达时间</span><span class="fr"><?php echo $order->isDeliveryNow() ? '立即送达' : $order->delivery;?></span></li>
                             </ul>
                             <ul class="unstyled fr">
                                 <?php foreach($order->orderitems as $item):?>
