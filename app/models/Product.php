@@ -113,4 +113,11 @@ class Product extends Eloquent {
                 return '/images/default.jpg';
         }
 
+        function mainImage()
+        {
+                if($this->images()->first())
+                        return $this->images()->first();
+                return false;
+        }
+
 }

@@ -34,7 +34,6 @@
                         </ul>
                         <span class="tips fr"><i></i>请确认无误后保存</span>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -43,7 +42,7 @@
         <div class="wrap">
             <a class="headBack fl" href="/checkorder">
             </a>
-            <h1>添加地址</h1>
+            <h1>收货地址</h1>
             <a class="toUser fr" href="/profile"></a>
         </div>
     </header>

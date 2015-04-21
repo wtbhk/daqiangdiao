@@ -121,7 +121,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
                 'Xjchen\WechatFilter\WechatFilterServiceProvider',
-                'Gloudemans\Shoppingcart\ShoppingcartServiceProvider'
+                'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
+                'Iveoles\Image\ImageServiceProvider',
 
 	),
 
@@ -190,6 +191,7 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
                 'Cart'              => 'Gloudemans\Shoppingcart\Facades\Cart',
+                'ImageHelper'       => 'Iveoles\Image\Facades\Image',
 
 	),
 

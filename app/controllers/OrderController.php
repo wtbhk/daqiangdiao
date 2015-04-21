@@ -5,11 +5,11 @@ Class OrderController extends BaseController {
         function showAddressee()
         {
                 $user = $this->user;
-                $addressees = Addressee::where('user_id', $user->id)->get();
+                $addressees = Addressee::where('user_id', $user->id)->lastused()->get();
                 if(Session::has('addressee') and $addressees->contains(Session::get('addressee')))
                         $checked = Session::get('addressee');
                 else
-                        $checked = $addressees ? $addressees[0]['id'] : '';
+                        $checked = $addressees->first() ? $addressees->first()->id : '';
                 return View::make('orderaddr', array('addressees'=>$addressees, 'checked'=>$checked));  
         }
 
@@ -48,6 +48,7 @@ Class OrderController extends BaseController {
                 $sharedorder = SharedOrder::find($id);
                 if($is_owner && !$sharedorder)
                         return View::make('profile.sharedorder', array(
+                                'is_owner'=>$is_owner,
                                 'shared'=>false, 
                                 'image'=>false, 
                                 'content'=>false, 
@@ -55,6 +56,7 @@ Class OrderController extends BaseController {
                         ));
                 if($sharedorder)
                         return View::make('profile.sharedorder', array(
+                                'is_owner'=>$is_owner,
                                 'shared'=>true, 
                                 'image'=>$sharedorder->last_image(), 
                                 'content'=>$sharedorder->content, 
@@ -71,25 +73,26 @@ Class OrderController extends BaseController {
                 $sharedorder = SharedOrder::firstOrCreate(array('order_id'=>$order->id));
                 $validator = Validator::make(
                         Input::only(array('content', 'image')),
-                        array('content'=>'max:40', 'image'=>'image')
+                        array('content'=>'max:40')
                 );
                 if($validator->fails())
                 {
                         return Redirect::action('OrderController@showShareOrder', array('id' => $order->id));
                 }
-                if(Input::has('content'))
+                if(Input::has('content') && Input::get('content')!='')
                         $sharedorder->content = Input::get('content');
-                if(Input::has('image'))
+                if(Input::file('image'))
                 {
                         $file = Input::file('image');
                         $filename = time().'.'.$file->getClientOriginalExtension();
                         $file->move('uploads/', $filename);
-                                Image::create(array(
+                        Image::create(array(
                                 'file'=>'/uploads/'.$filename,
-                                'imageable_id'=>$sharedorder->id,
+                                'imageable_id'=>$sharedorder->order_id,
                                 'imageable_type'=>'SharedOrder'
                         ));
                 }
+                $sharedorder->save();
                 return Redirect::action('OrderController@showShareOrder', array('id' => $order->id));
         }
 

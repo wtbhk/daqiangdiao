@@ -15,7 +15,12 @@ class Image extends Eloquent {
 
         function scopeLatest($query)
         {
-        		return $query->orderBy('created_at', 'desc')->first();
+        	return $query->orderBy('created_at', 'desc')->first();
+        }
+
+        function resize($w, $h)
+        {
+                return ImageHelper::path($this->file, 'resizeCrop', $w, $h);
         }
 
 }

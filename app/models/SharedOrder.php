@@ -22,13 +22,11 @@ class SharedOrder extends Eloquent {
 
         function orderitems()
         {
-                return $this->order()->orderitems();
+                return Order::with('orderitems')->find($this->order_id)->orderitems();
         }
 
         function last_image()
         {
-                return Image::where('imageable_id', $this->order_id)
-                        ->where('imageable_type', 'SharedOrder')
-                        ->latest();
+                return $this->images()->orderBy('created_at', 'desc')->first();
         }
 }

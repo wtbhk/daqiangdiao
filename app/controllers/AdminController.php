@@ -22,6 +22,7 @@ Class AdminController extends BaseController {
                         return Redirect::to('/admin/login')->withErrors(array('msg'=>'登录失败'));
                 if(!Admin::attempt())
                         return Redirect::to('/admin/login')->withErrors(array('msg'=>'登录失败'));
+                return Redirect::to('/admin');
         }
 
         function setting()
@@ -96,7 +97,7 @@ Class AdminController extends BaseController {
                 if(!$image or $image->product->id != $pid)
                         return Response::json(array('error'=>true));
                 $image->delete();
-                        return Response::json(array('error'=>false, 'image'=>$iid));
+                return Response::json(array('error'=>false, 'image'=>$iid));
         }
 
 
@@ -116,7 +117,7 @@ Class AdminController extends BaseController {
                 }
                 else
                 {
-                        if(App::environment('local'))
+                        if(Config::get('database.default')=='sqlite')
                         {
                                 $orders = Order::with('OrderItems')
                                         ->where(DB::raw('julianday(datetime("now","localtime"))-julianday(delivery)<1'))

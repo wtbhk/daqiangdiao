@@ -24,14 +24,14 @@
                 </div>
                 <div id="after" <?php echo $image ? '' : 'class="hidden"'; ?>><img src="<?php echo $image ? $image->file : ''; ?>" alt=""/></div>
             </div>
-            <form action="" method="post">
-                <input type="file" class="hidden" id="file" accept="image/*" capture="camera"/>
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" class="hidden" id="file" accept="image/*" capture="camera"/>
                 <?php if($content): ?>
-                <textarea id="write" type="text" value="" placeholder="<?php echo $content; ?>" disabled></textarea>
+                <textarea id="write" name="content" type="text" value="" placeholder="<?php echo $content; ?>" disabled></textarea>
 	            <?php else: ?>
-                <textarea id="write" type="text" value="" placeholder="点击修改分享内容"></textarea>
+                <textarea id="write" name="content" type="text" value="" placeholder="点击修改分享内容"></textarea>
 	            <?php endif; ?>
-	            <?php if(!$shared): ?>
+	            <?php if($is_owner): ?>
                 <button type="submit">晒单</button>
 	            <?php endif; ?>
             </form>

@@ -33,5 +33,12 @@ class OrderItem extends Eloquent {
                 return $this->price * $this->amount;
         }
 
+        function image()
+        {
+                //临时创建Image对象，一定不要save()
+                $image = new Image;
+                $image->file = $this->image;
+                return $image;
+        }
 
 }

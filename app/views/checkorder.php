@@ -21,9 +21,9 @@
                     <div id="list">
                         <ul>
                             <?php if(!$addressee): ?>
-                            <a href="orderaddr"><li class="error mar10 hidden">
+                            <a href="orderaddr"><li class="mar10">
                                 <span class="fl">添加收货地址</span>
-                                <span class="fr more"></span>
+                                <span class="fr add" style="margin-top:7px;"></span>
                             </li></a>
                             <?php else: ?>
                             <a href="orderaddr"><li class="mar10">
@@ -67,7 +67,7 @@
 
                     <form id="checkorder" action="" method="POST">
                             <input type="hidden" name="payment" value="cash">
-                            <input type="hidden" name="addressee" value="<?php echo $addressee->id; ?>">
+                            <input type="hidden" name="addressee" value="<?php echo $addressee ? $addressee->id : ''; ?>">
                     </form>
                 </div>
             </div>
@@ -83,7 +83,7 @@
             <a class="headBack fl" href="/cart">
             </a>
             <h1>订单</h1>
-            <span class="toUser fr"></span>
+            <a class="toUser fr" href="/profile"></a>
         </div>
     </header>
     <div id="modal" <?php if(!$errors->first('message')) echo 'class="hidden"';?>>
