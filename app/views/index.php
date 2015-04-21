@@ -82,12 +82,7 @@
             </div>
         </div>
     </div>
-    <footer class="foot-fixed">
-        <a class="wrap" href="/cart">
-            <span class="get fl"></span>
-            <span class="delivery fr">￥<?php echo $minimum_amount; ?>元 起送</span>
-        </a>
-    </footer>
+    <?php require_once __DIR__.'/footer.php'; ?>
     <header>
         <div class="wrap">
             <a class="set fl" href="/list">
