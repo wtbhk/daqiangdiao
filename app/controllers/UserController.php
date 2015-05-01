@@ -1,6 +1,6 @@
 <?php
 
-Class UserController extends BaseController {
+Class UserController extends WechatController {
 
         function showProfile()
         {

@@ -1,6 +1,6 @@
 <?php
 
-Class OrderController extends BaseController {
+Class OrderController extends WechatController {
 
         function showAddressee()
         {

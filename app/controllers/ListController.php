@@ -1,6 +1,6 @@
 <?php
 
-Class ListController extends BaseController {
+Class ListController extends WechatController {
 
         function showIndex()
         {

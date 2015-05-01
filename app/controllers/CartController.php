@@ -1,6 +1,6 @@
 <?php
 
-Class CartController extends BaseController {
+Class CartController extends WechatController {
 
         function showCart()
         {

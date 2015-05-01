@@ -1,6 +1,6 @@
 <?php
 
-Class ProductController extends BaseController {
+Class ProductController extends WechatController {
 
         function showProduct($id)
         {
