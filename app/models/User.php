@@ -24,7 +24,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
                 {
                         if(!$user->headimgurl and Session::has('wechat_userinfo'))
                         {
-                                $wechat_user_info = Session::get('wehcat_userinfo');
+                                $wechat_user_info = Session::get('wechat_userinfo');
                                 $user->headimgurl = $wechat_user_info['headimgurl'];
                         }
                         if(!$user->nickname)
