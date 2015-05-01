@@ -156,6 +156,7 @@ Class AdminController extends BaseController {
                                 $order->status = Order::$status;
                         }
                         $order->save();
+                        return Redirect::to('/admin/order');
                 }
                 return Response::json(array('error'=>false));
         }
