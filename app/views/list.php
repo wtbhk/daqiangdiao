@@ -9,7 +9,7 @@
     <meta name="keywords" content="rcss">
     <meta name="description" content="商店demo">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>商店demo</title>
+    <title>所有菜品</title>
 <link rel="stylesheet" href="/css/contentStyle.css">
 </head>
 <body class="sme">
