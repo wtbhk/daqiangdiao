@@ -43,7 +43,9 @@
                 <li>
                     <h2><?php echo $item->title; ?></h2>
                     <div class="imgs">
+                        <?php $i = 1;?>
                     	<?php foreach($item->product->images as $image): ?>
+                        <?php if($i>3) break; $i++;?>
                         <span><img src="<?php echo $image->file; ?>" alt=""/></span>
 	                    <?php endforeach;?>
                     </div>
