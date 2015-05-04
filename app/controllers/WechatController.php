@@ -19,6 +19,8 @@ class WechatController extends BaseController {
                         $userinfo = Userinfo::firstOrNew(array(
                                 'openid'=>$wechat_user_info['openid']
                         ));
+                        unset($wechat_user_info['subscribe']);
+                        unset($wechat_user_info['remark']);
                         $userinfo->update($wechat_user_info);
                         $userinfo->save();
                 }
