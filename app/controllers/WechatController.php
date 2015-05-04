@@ -20,6 +20,7 @@ class WechatController extends BaseController {
                                 'openid'=>$wechat_user_info['openid']
                         ));
                         $userinfo->update($wechat_user_info);
+                        $userinfo->save();
                 }
         }
 
