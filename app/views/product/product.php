@@ -9,7 +9,7 @@
     <meta name="keywords" content="rcss">
     <meta name="description" content="大腔调">
     <meta name="author" content="zvenshy@gmail.com">
-    <title><?php echo $product->titile;?></title>
+    <title><?php echo $product->title;?></title>
 <link rel="stylesheet" href="/css/contentStyle.css">
 </head>
 <body class="sme">
