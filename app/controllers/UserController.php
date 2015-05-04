@@ -57,6 +57,15 @@ Class UserController extends WechatController {
                 if($validator->fails())
                         return Redirect::to('/address')->withErrors($validator);
                 $addressee = $user->addressees()->create($addressee);
+                if($user->phone == NULL)
+                {
+                        $user->phone = $addressee->phone;
+                }
+                if($user->name == NULL)
+                {
+                        $user->name = $addressee->name;
+                }
+                $user->save();
                 Session::set('addressee', $addressee->id);
                 return Redirect::to(Input::get('redirect_to', '/profile'));
         }
