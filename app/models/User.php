@@ -58,5 +58,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
                 return number_format($balance, 1, '.', '');
         }
 
+        function Userinfo()
+        {
+                return $this->hasOne('Userinfo', 'openid', 'wechat_id');
+        }
 
 }
