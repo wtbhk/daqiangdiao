@@ -16,7 +16,7 @@ class WechatController extends BaseController {
                 {
                         $wechat_user_info = Session::get('wechat_userinfo');
                         $this->wechat_user_info = $wechat_user_info;
-                        $userinfo = Userinfo::firstOrCreate(array(
+                        $userinfo = Userinfo::firstOrNew(array(
                                 'openid'=>$wechat_user_info['openid']
                         ));
                         $userinfo->update($wechat_user_info);

@@ -6,6 +6,7 @@ class Userinfo extends Eloquent {
 
         protected $primaryKey = 'openid';
 
-        protected $fillable = array('*');
+        protected $fillable = array('openid', 'nickname', 'sex', 'city', 'country', 
+                'province', 'language', 'headimgurl', 'subscribe_time');
 
 }
