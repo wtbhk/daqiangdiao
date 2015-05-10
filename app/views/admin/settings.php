@@ -18,7 +18,7 @@
                         <a class="brand" href="#">网站名</a>
                         <div class="nav-collapse collapse navbar-responsive-collapse">
                             <ul class="nav">
-                                <li class="active"><a href="#">主页</a></li>
+                                <li><a href="#">主页</a></li>
                                 <li><a href="#">链接</a></li>
                                 <li><a href="#">链接</a></li>
                             </ul>
