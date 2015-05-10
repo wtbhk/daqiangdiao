@@ -9,8 +9,26 @@
 </head>
 <body>
 <body>
+    <!-- nav -->
+    <div class="row-fluid">
+        <div class="span10 offset1">
+           <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="brand" href="#">网站名</a>
+                        <div class="nav-collapse collapse navbar-responsive-collapse">
+                            <ul class="nav">
+                                <li class="active"><a href="#">主页</a></li>
+                                <li><a href="#">链接</a></li>
+                                <li><a href="#">链接</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="span10 offset3" style="margin-top: 30px;">
-        <legend>后台管理</legend>
         <form class="form-horizontal">
             <div class="control-group">
                 <label class="control-label" for="inputEmail">起送价格: </label>
