@@ -60,6 +60,7 @@
             </table>
         </div>
     </div>
+    <form class="hidden"><input class="real-balance" name="balance" type="text" disabled="disabled" value=""></form>
     
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>

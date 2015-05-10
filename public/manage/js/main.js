@@ -204,9 +204,8 @@ $(document).ready(function () {
             var balance = ts.parent().prev().children();
             if (ts.hasClass('saveChange')) {
                 ts.val('正在保存');
-                $.post('', {'balance': balance.val()}, function (data) {
-                    location.reload();
-                });
+                $('form.hidden').children('input.real-balance').val(balance.val())
+                    .end().submit();
             } else {
                 ts.val('保存').addClass('saveChange');
                 balance.removeAttr('disabled');
