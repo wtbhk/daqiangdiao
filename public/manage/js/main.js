@@ -195,6 +195,23 @@ $(document).ready(function () {
             });
         });
     }());
-
+    
+    (function(){
+        var userM = $('#userManager') || 0;
+        if (!userM) return;
+        $('.change').on('click', function () {
+            var ts = $(this);
+            var balance = ts.parent().prev().children();
+            if (ts.hasClass('saveChange')) {
+                ts.val('正在保存');
+                $.post('', {'balance': balance.val()}, function (data) {
+                    location.reload();
+                });
+            } else {
+                ts.val('保存').addClass('saveChange');
+                balance.removeAttr('disabled');
+            }
+        });
+    }());
 });
 
