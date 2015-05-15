@@ -102,9 +102,7 @@
                         </li>
                         <?php endforeach;?>
                     </ul>
-                    <div class="pagination">
-                        <?php echo $orders->links(); ?>
-                    </div>
+                    <?php echo $orders->links(); ?>
                     <?php endif;?>
                 </div>
             </div>
