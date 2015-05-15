@@ -102,7 +102,7 @@
                         </li>
                         <?php endforeach;?>
                     </ul>
-                    <div class="pagination">
+                    <div class="pagination" style="text-align: center;">
                         <?php echo $orders->links(); ?>
                     </div>
                     <?php endif;?>
