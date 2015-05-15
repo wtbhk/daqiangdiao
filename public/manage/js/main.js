@@ -205,7 +205,7 @@ $(document).ready(function () {
             var id = ts.parent().siblings().first().children().val();
             if (ts.hasClass('saveChange')) {
                 ts.val('正在保存');
-                $('form.hidden').attr('action', id)
+                $('form.hidden').attr('action', 'user/' + id)
                     .children('input.real-balance').val(balance.val())
                     .end().submit();
             } else {
