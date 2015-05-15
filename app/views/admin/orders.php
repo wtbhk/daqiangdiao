@@ -75,8 +75,8 @@
             </div>
             <div class="tab-pane active" id="panel-726754">
                 <div class="wait span8 offset1">
+                    <?php if($action=='all'):?>
                     <ul>
-                        <?php if($action=='all'):?>
                         <?php foreach($orders as $order):?>
                         <li>
                             <ul class="unstyled fl">
@@ -101,8 +101,9 @@
                             <?php endif;?>
                         </li>
                         <?php endforeach;?>
-                        <?php endif;?>
                     </ul>
+                    <?php echo $orders->links(); ?>
+                    <?php endif;?>
                 </div>
             </div>
           </div>

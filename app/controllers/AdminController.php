@@ -107,32 +107,6 @@ Class AdminController extends BaseController {
                 return View::make('admin.users', array('users'=>$users));
         }
 
-        function order($action='all')
-        {
-                if(!in_array($action, array('all', 'today')))
-                        return Redirect::to('/admin');
-                if($action=='all')
-                {
-                        $orders = Order::with('OrderItems')->orderBy('created_at', 'desc')->get();
-                }
-                else
-                {
-                        if(Config::get('database.default')=='sqlite')
-                        {
-                                $orders = Order::with('OrderItems')
-                                        ->where(DB::raw('julianday(datetime("now","localtime"))-julianday(delivery)<1'))
-                                        ->get();
-                        }
-                        else
-                        {
-                                $orders = Order::with('OrderItems')
-                                        ->where(DB::raw('to_days(delivery) = to_days(now())'))
-                                        ->get(); 
-                        }
-                }
-                return View::make('admin.orders', array('action'=>$action, 'orders'=>$orders));
-        }
-
         function orderNew()
         {
                 $order = Order::with('OrderItems')->where('status', Order::OPEN)->first();
@@ -163,16 +137,14 @@ Class AdminController extends BaseController {
 
         function orderToday()
         {
-                $orders = Order::with('OrderItems')
-                        ->where(DB::raw('to_days(delivery) = to_days(now())'))
-                        ->get(); 
-                return Response::json($orders->toArray());
+                $orders = Order::with('OrderItems')->deliveryToday()->isOpen()->get();
+                return View::make('admin.orders', array('orders'=>$orders, 'action'=>'today'));
         }
 
         function orderAll()
         {
-                $orders = Order::with('OrderItems')->orderBy('created_at', 'desc')->take(50)->get();
-                return Response::json($orders->toArray());
+                $orders = Order::with('OrderItems')->newest()->simplePaginate(10);
+                return View::make('admin.orders', array('orders'=>$orders, 'action'=>'all'));
         }
 
 }

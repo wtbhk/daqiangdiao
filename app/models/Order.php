@@ -34,6 +34,19 @@ class Order extends Eloquent {
                 return $query->orderBy('created_at', 'desc');
         }
 
+        function scopeDeliveryToday($query)
+        {
+                if(Config::get('database.default')=='sqlite')
+                        return $query->where(DB::raw('julianday(datetime("now","localtime"))-julianday(delivery)<1'));
+                else
+                        return $query->where(DB::raw('to_days(delivery) = to_days(now())'));
+        }
+
+        function scopeIsOpen($query)
+        {
+                return $query->whereIn('status', array(1, 2, 3));
+        }
+
         function price()
         {
                 return $this->orderitems->sum('price');
