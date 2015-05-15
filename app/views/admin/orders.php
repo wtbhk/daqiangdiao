@@ -56,7 +56,7 @@
                                 <?php foreach($order->orderitems as $item):?>
                                 <li><span class="fl"><?php echo $item->title;?></span><span><?php echo $item->amount;?></span><span class="fr">￥<?php echo $item->price;?></span></li>
                                 <?php endforeach;?>
-                                <li><span class="fl">总价</span><span class="fr">￥<?php echo $order->price;?></span></li>
+                                <li><span class="fl">总价</span><span class="fr">￥<?php echo $order->price();?></span></li>
                                 <li><span class="fl">在线支付</span><span class="fr"><?php echo $order->payment ? '是' : '否';?></span></li>
                             </ul>
                             <?php if($order->status!=Order::CLOSED and $order->status!=Order::COMPLETED):?>
