@@ -63,4 +63,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
                 return $this->hasOne('Userinfo', 'openid', 'wechat_id');
         }
 
+        function scopeNewest($query)
+        {
+                return $query->orderBy('created_at', 'desc');
+        }
+
 }

@@ -35,29 +35,30 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
+                        <th class='span1'>序号</th>
+                        <th class='span3'>微信号</th>
                         <th class='span2'>昵称</th>
-                        <th class='span2'>微信号</th>
-                        <th class='span3'>内容</th>
-                        <th class='span1'>内容</th>
-                        <th class='span1'>内容</th>
-                        <th class='span1'>内容</th>
+                        <th class='span2'>手机号</th>
+                        <th class='span2'>创建于</th>
                         <th class='span1'>余额</th>
                         <th class='span1'>操作</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($users as $user): ?>
                     <tr>
-                        <td><input type="text" disabled="disabled" value="昵称昵称昵称昵称昵称昵称"></td>
-                        <td><input type="text" disabled="disabled" value="testtest"></td>
-                        <td><input type="text" disabled="disabled" value="test"></td>
-                        <td><input type="text" disabled="disabled" value="test"></td>
-                        <td><input type="text" disabled="disabled" value="test"></td>
-                        <td><input type="text" disabled="disabled" value="test"></td>
-                        <td><input class="balance" type="text" disabled="disabled" value="200"></td>
+                        <td><input type="text" disabled="disabled" value="<?php $user->id; ?>"></td>
+                        <td><input type="text" disabled="disabled" value="<?php $user->wechat_id; ?>"></td>
+                        <td><input type="text" disabled="disabled" value="<?php $user->nickname; ?>"></td>
+                        <td><input type="text" disabled="disabled" value="<?php $user->phone; ?>"></td>
+                        <td><input type="text" disabled="disabled" value="<?php $user->created_at; ?>"></td>
+                        <td><input class="balance" type="text" disabled="disabled" value="<?php $user->balance; ?>"></td>
                         <td><input class="change btn btn-primary" type="submit" value="修改"></td>
                     </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
+            <?php echo $users->links(); ?>
         </div>
     </div>
     <form class="hidden"><input class="real-balance" name="balance" type="text" disabled="disabled" value=""></form>
