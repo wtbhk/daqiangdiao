@@ -467,6 +467,9 @@ body {
     top: -37px;
     left: 9.44444%;
     z-index: 1; }
+    #user .fl img {
+      width: 80px;
+      height: 80px; }
   #user .fr {
     position: relative;
     top: 16px;
