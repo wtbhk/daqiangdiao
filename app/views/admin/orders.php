@@ -45,7 +45,7 @@
                         <?php foreach($orders as $order):?>
                         <li>
                             <ul class="unstyled fl">
-                                <li><span class="fl">收件人</span><span class="fr"><?php echo $order->name;?></span></li>
+                                <li><span class="fl">收件人</span><span class="fr"><?php echo $order->addressee;?></span></li>
                                 <li><span class="fl">电话</span><span class="fr"><?php echo $order->phone;?></span></li>
                                 <li><span class="fl">地址</span><span class="fr"><?php echo $order->address;?></span></li>
                                 <li><span class="fl">下单日期</span><span class="fr"><?php echo $order->created_at;?></span></li>
