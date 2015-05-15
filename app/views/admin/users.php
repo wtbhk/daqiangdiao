@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <meta name="author" content="zvenshy@gmail.com">
     <title>后台管理</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link href="/manage/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/manage/css/style.min.css">
 </head>
 <body>
     <!-- nav -->
@@ -62,7 +62,7 @@
     </div>
     <form class="hidden"><input class="real-balance" name="balance" type="text" disabled="disabled" value=""></form>
     
-    <script src="js/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/manage/js/jquery.min.js"></script>
+    <script src="/manage/js/main.js"></script>
 </body>
 </html>
