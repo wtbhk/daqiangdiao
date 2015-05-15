@@ -38,11 +38,10 @@
             <li class="<?php if($action=='all') echo 'active';?>"><a href="/admin/order/all">所有订单</a></li>
           </ul>
           <div class="tab-content">
-            <div class="tab-pane" id="panel-684546">
-
+            <?php if($action=='today'):?>
+            <div class="tab-pane active" id="panel-684546">
                 <div class="wait span8 offset1">
                     <ul>
-                        <?php if($action=='today'):?>
                         <?php foreach($orders as $order):?>
                         <li>
                             <ul class="unstyled fl">
@@ -68,14 +67,14 @@
 
                         </li>
                         <?php endforeach;?>
-                        <?php endif;?>
                     </ul>
                 </div>
-
             </div>
+            <?php endif;?>
+
+            <?php if($action=='all'):?>
             <div class="tab-pane active" id="panel-726754">
                 <div class="wait span8 offset1">
-                    <?php if($action=='all'):?>
                     <ul>
                         <?php foreach($orders as $order):?>
                         <li>
@@ -103,9 +102,9 @@
                         <?php endforeach;?>
                     </ul>
                     <?php echo $orders->links(); ?>
-                    <?php endif;?>
                 </div>
             </div>
+            <?php endif;?>
           </div>
         </div>
 
