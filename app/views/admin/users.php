@@ -61,7 +61,9 @@
             <?php echo $users->links(); ?>
         </div>
     </div>
-    <form class="hidden"><input class="real-balance" name="balance" type="text" disabled="disabled" value=""></form>
+    <form class="hidden" action="" method="POST">
+        <input class="real-balance" name="balance" type="text" value="">
+    </form>
     
     <script src="/manage/js/jquery.min.js"></script>
     <script src="/manage/js/main.js"></script>

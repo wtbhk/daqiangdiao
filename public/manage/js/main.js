@@ -202,9 +202,11 @@ $(document).ready(function () {
         $('.change').on('click', function () {
             var ts = $(this);
             var balance = ts.parent().prev().children();
+            var id = ts.parent().siblings().first().children().val();
             if (ts.hasClass('saveChange')) {
                 ts.val('正在保存');
-                $('form.hidden').children('input.real-balance').val(balance.val())
+                $('form.hidden').attr('action', 'user/' + id)
+                    .children('input.real-balance').val(balance.val())
                     .end().submit();
             } else {
                 ts.val('保存').addClass('saveChange');
