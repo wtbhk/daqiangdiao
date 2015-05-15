@@ -15,12 +15,12 @@
            <div class="navbar">
                 <div class="navbar-inner">
                     <div class="container-fluid">
-                        <a class="brand" href="#">网站名</a>
+                        <a class="brand" href="/admin">大腔调后台管理</a>
                         <div class="nav-collapse collapse navbar-responsive-collapse">
                             <ul class="nav">
-                                <li><a href="#">主页</a></li>
-                                <li><a href="#">链接</a></li>
-                                <li><a href="#">链接</a></li>
+                                <li><a href="/admin/order">订单</a></li>
+                                <li><a href="/admin/product">菜品</a></li>
+                                <li><a href="/admin/user">用户</a></li>
                             </ul>
                         </div>
                     </div>
