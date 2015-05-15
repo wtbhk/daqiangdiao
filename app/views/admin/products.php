@@ -9,12 +9,25 @@
 	<link rel="stylesheet" href="/manage/css/style.min.css">
 </head>
 <body>
-	<div class="row-fluid">
-		<div class="span10 offset1">
-			<legend>后台管理</legend>
-			<div id="new"><a href="#loginModal" role="button" data-toggle="modal">新建</a></div>
-		</div>
-	</div>
+    <!-- nav -->
+    <div class="row-fluid">
+        <div class="span10 offset1">
+           <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="brand" href="#">网站名</a>
+                        <div class="nav-collapse collapse navbar-responsive-collapse">
+                            <ul class="nav">
+                                <li><a href="#">主页</a></li>
+                                <li><a href="#">链接</a></li>
+                                <li><a href="#">链接</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	<div class="row-fluid"><div class="wrap"><div class="alert">正在处理...</div></div></div>
 	<div class="row-fluid">
 

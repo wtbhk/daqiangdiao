@@ -279,6 +279,7 @@ input {
 .imglist li img{
     width: 40px;
     margin-left: 8px;
+    cursor: pointer;
 }
 .imglist {
     vertical-align: middle !important;
@@ -288,4 +289,9 @@ input {
 }
 .template-upload td{
     vertical-align: middle;
+}
+
+
+#userManager .change {
+    width: 80px !important;
 }

@@ -9,39 +9,27 @@
     <link rel="stylesheet" href="/manage/css/style.min.css">
 </head>
 <body>
+    <!-- nav -->
     <div class="row-fluid">
         <div class="span10 offset1">
-            <legend>后台管理<small></legend>
+           <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="brand" href="#">网站名</a>
+                        <div class="nav-collapse collapse navbar-responsive-collapse">
+                            <ul class="nav">
+                                <li><a href="#">主页</a></li>
+                                <li><a href="#">链接</a></li>
+                                <li><a href="#">链接</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row-fluid"><div class="wrap"><div class="alert">正在处理...</div></div></div>
-    <div class="row-fluid">
-        <div class="wait span7 offset2 topOrder">
-            <h3>新订单</h3>
-            <ul>
-                <li>
-                    <ul class="unstyled fl">
-                        <li><span class="fl">收件人</span><span class="fr">李艳艳</span></li>
-                        <li><span class="fl">电话</span><span class="fr">12345678909</span></li>
-                        <li><span class="fl">地址</span><span class="fr">华东交大华东交大华东交大华东交大华东交大华东交大华东交大华东交大华东交大华东交大</span></li>
-                        <li><span class="fl">下单日期</span><span class="fr">2014-10-12 20:12</span></li>
-                        <li><span class="fl">送达时间</span><span class="fr">2014-10-13 14:00</span></li>
-                    </ul>
-                    <ul class="unstyled fr">
-                        <li><span class="fl">物品1</span><span>2</span><span class="fr">￥50.0</span></li>
-                        <li><span class="fl">物品2</span><span>2</span><span class="fr">￥50.0</span></li>
-                        <li><span class="fl">物品3</span><span>2</span><span class="fr">￥50.0</span></li>
-                        <li><span class="fl">总价</span><span class="fr">￥150</span></li>
-                        <li><span class="fl">在线支付</span><span class="fr">2014-10-13 14:00</span></li>
-                    </ul>
-                    <div class="btn-group">
-                        <button class="btn btn-danger cOrder" type="button">关闭</button>
-                        <button class="btn btn-primary rOrder" type="button">接受</button>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+
     <div class="row-fluid">
     
         <div class="tabbable span10 offset1" id="tabs-470124"> <!-- Only required for left/right tabs -->
