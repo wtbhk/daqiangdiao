@@ -38,7 +38,7 @@
             <li class="<?php if($action=='all') echo 'active';?>"><a href="/admin/order/all">所有订单</a></li>
           </ul>
           <div class="tab-content">
-            <div class="tab-pane" id="panel-684546">
+            <div class="tab-pane active" id="panel-684546">
 
                 <div class="wait span8 offset1">
                     <ul>
