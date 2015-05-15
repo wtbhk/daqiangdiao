@@ -37,9 +37,9 @@ class Order extends Eloquent {
         function scopeDeliveryToday($query)
         {
                 if(Config::get('database.default')=='sqlite')
-                        return $query->where(DB::raw('julianday(datetime("now","localtime"))-julianday(delivery)<1'));
+                        return $query->whereRaw('julianday(datetime("now","localtime"))-julianday(delivery)<1');
                 else
-                        return $query->where(DB::raw('to_days(delivery) = to_days(now())'));
+                        return $query->whereRaw('to_days(delivery) = to_days(now())');
         }
 
         function scopeIsOpen($query)
