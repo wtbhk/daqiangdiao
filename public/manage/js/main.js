@@ -198,7 +198,7 @@ $(document).ready(function () {
     
     (function(){
         var userM = $('#userManager') || 0;
-        if (!userM) return;
+        if (userM.length === 0) return;
         $('.change').on('click', function () {
             var ts = $(this);
             var balance = ts.parent().prev().children();
