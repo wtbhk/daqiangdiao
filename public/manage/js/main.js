@@ -127,6 +127,7 @@ $(document).ready(function () {
                 data: data,
                 success: function (data) {
                     if(par.attr('id') === undefined) par.attr('id', data.product.id);
+                    location.reload();
                 }
             });
         });
@@ -147,7 +148,8 @@ $(document).ready(function () {
             tbody.find('tr:eq(1)').clone(true).prependTo(tbody);
             tbody.find('tr:eq(1)').clone(true).prependTo(tbody);
             tbody.find('tr:eq(0) input[type="text"]').val('');
-            tbody.find('tr:eq(1)').removeAttr('id');
+            tbody.find('tr:eq(1)').removeAttr('id')
+                .find('.imglist').html('');
         });
 
         tbody.on('click', '.imglist img', function (e) {
