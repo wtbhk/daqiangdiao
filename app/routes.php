@@ -56,7 +56,7 @@ Route::group(array('before'=>'wechat.base'), function(){
 
                 Route::post('/orderaddr', 'OrderController@editAddressee');
 
-        }));
+        });
 
         Route::get('/subscribe', function()
         {
