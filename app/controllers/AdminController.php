@@ -150,19 +150,22 @@ Class AdminController extends BaseController {
                                 $user->save();
                         }
                         $order->save();
-                        return Redirect::to('/admin/order');
+                        $page = Session::get('admin_order', 'today');
+                        return Redirect::to('/admin/order/' . $page);
                 }
                 return Response::json(array('error'=>false));
         }
 
         function orderToday()
         {
+                Session::put('admin_order', 'today');
                 $orders = Order::with('OrderItems')->deliveryToday()->isOpen()->get();
                 return View::make('admin.orders', array('orders'=>$orders, 'action'=>'today'));
         }
 
         function orderAll()
         {
+                Session::put('admin_order', 'all');
                 $orders = Order::with('OrderItems')->newest()->simplePaginate(10);
                 return View::make('admin.orders', array('orders'=>$orders, 'action'=>'all'));
         }
