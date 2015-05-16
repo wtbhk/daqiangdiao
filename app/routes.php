@@ -93,6 +93,8 @@ Route::group(array('before'=>'admin'), function(){
 
         Route::get('/admin/user', 'AdminController@user');
 
+        Route::post('/admin/user/{id}', 'AdminController@editUser');
+
         Route::get('/admin/order/new', 'AdminController@orderNew');
 
         Route::get('/admin/order/{id}/status/{status}', 'AdminController@orderStatus');

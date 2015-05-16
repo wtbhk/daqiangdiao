@@ -107,6 +107,20 @@ Class AdminController extends BaseController {
                 return View::make('admin.users', array('users'=>$users));
         }
 
+        function editUser($id)
+        {
+                $user = User::find($id);
+                if($user && Input::has('banlance'))
+                {
+                        $balance = Input::get('balance');
+                        $balance = intval($balance);
+                        $balance = $balance < 0 ? 0 : $balance;
+                        $user->balance = $balance;
+                        $user->save();
+                }
+                return Response::to('/admin/user');
+        }
+
         function orderNew()
         {
                 $order = Order::with('OrderItems')->where('status', Order::OPEN)->first();
