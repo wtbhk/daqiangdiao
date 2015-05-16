@@ -21,7 +21,7 @@ class WechatController extends BaseController {
                                 unset($wechat_user_info['subscribe']);
                                 unset($wechat_user_info['remark']);
                                 unset($wechat_user_info['groupid']);
-                                $userinfo->create($wechat_user_info);
+                                $userinfo = Userinfo::create($wechat_user_info);
                                 $userinfo->save();
                         }
                 }
