@@ -46,7 +46,7 @@
                         <?php $i = 1;?>
                     	<?php foreach($item->product->images as $image): ?>
                         <?php if($i>3) break; $i++;?>
-                        <span><img src="<?php echo $image->file; ?>" alt=""/></span>
+                        <span><img src="<?php echo $image->resize(160, 100); ?>" alt=""/></span>
 	                    <?php endforeach;?>
                     </div>
                 </li>
