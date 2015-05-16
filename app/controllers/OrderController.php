@@ -145,7 +145,8 @@ Class OrderController extends WechatController {
                                 'addressee'=>$addressee->name,
                                 'phone'=>$addressee->phone,
                                 'address'=>$addressee->address,
-                                'delivery'=>Session::get('date')
+                                'delivery'=>Session::get('date'),
+                                'payment'=>Input::get('payment'),
                         ));
                         foreach($cart as $item)
                         {
