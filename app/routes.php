@@ -16,43 +16,47 @@ Route::group(array('before'=>'wechat.base'), function(){
 
         Route::get('/list', 'ListController@showList');
 
-        Route::get('/profile', 'UserController@showProfile');
-
-        Route::post('/profile', 'UserController@editProfile');
-
-        Route::get('/phone', 'UserController@showPhone');
-
-        Route::get('/address', 'UserController@showAddAddress');
-
-        Route::post('/address', 'UserController@addAddress');
-
         Route::get('/address/{id}/delete', 'UserController@delAddress');
-
-        Route::get('/orders', 'UserController@showOrders');
-
-        Route::get('/order/{id}', 'OrderController@showOrder');
 
         Route::get('/order/{id}/share', 'OrderController@showShareOrder');
 
-        Route::post('/order/{id}/share', 'OrderController@editShareOrder');
-
         Route::get('/product/{id}', 'ProductController@showProduct');
-
-        Route::get('/cart', 'CartController@showCart');
 
         Route::delete('/cart', 'CartController@deleteCart');
 
-        Route::post('/cart', 'CartController@checkCart');
-
         Route::post('/editcart', 'CartController@editCart');
 
-        Route::get('/checkorder', 'OrderController@showCheckOrder');
+        Route::group(array('before'=>'subscribe', function(){
 
-        Route::post('/checkorder', 'OrderController@checkOrder');
+                Route::get('/profile', 'UserController@showProfile');
 
-        Route::get('/orderaddr', 'OrderController@showAddressee');
+                Route::post('/profile', 'UserController@editProfile');
 
-        Route::post('/orderaddr', 'OrderController@editAddressee');
+                Route::get('/phone', 'UserController@showPhone');
+
+                Route::get('/address', 'UserController@showAddAddress');
+
+                Route::post('/address', 'UserController@addAddress');
+
+                Route::get('/orders', 'UserController@showOrders');
+
+                Route::get('/order/{id}', 'OrderController@showOrder');
+
+                Route::post('/order/{id}/share', 'OrderController@editShareOrder');
+
+                Route::get('/cart', 'CartController@showCart');
+
+                Route::post('/cart', 'CartController@checkCart');
+
+                Route::get('/checkorder', 'OrderController@showCheckOrder');
+
+                Route::post('/checkorder', 'OrderController@checkOrder');
+
+                Route::get('/orderaddr', 'OrderController@showAddressee');
+
+                Route::post('/orderaddr', 'OrderController@editAddressee');
+
+        }));
 
         Route::get('/subscribe', function()
         {
