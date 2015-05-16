@@ -143,6 +143,12 @@ Class AdminController extends BaseController {
                                 $status = strtoupper($status);
                                 $order->status = Order::$status;
                         }
+                        if($order->status == Order::CLOSED && $order->payment=='balance')
+                        {
+                                $user = $order->user();
+                                $user->balance = $user->balance + $order->price();
+                                $user->save();
+                        }
                         $order->save();
                         return Redirect::to('/admin/order');
                 }
