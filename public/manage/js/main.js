@@ -126,7 +126,6 @@ $(document).ready(function () {
                 dataType: 'json',
                 data: data,
                 success: function (data) {
-                    if(par.attr('id') === undefined) par.attr('id', data.product.id);
                     location.reload();
                 }
             });

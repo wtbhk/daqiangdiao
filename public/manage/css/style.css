@@ -295,3 +295,12 @@ input {
 #userManager .change {
     width: 80px !important;
 }
+
+#new a {
+    color: #fff;
+
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+}
