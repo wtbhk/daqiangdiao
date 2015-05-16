@@ -103,7 +103,7 @@ Class AdminController extends BaseController {
 
         function user()
         {
-                $users = User::newest()->simplePaginate(20)->get();
+                $users = User::newest()->simplePaginate(20);
                 return View::make('admin.users', array('users'=>$users));
         }
 
