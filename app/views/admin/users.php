@@ -47,12 +47,12 @@
                 <tbody>
                     <?php foreach ($users as $user): ?>
                     <tr>
-                        <td><input type="text" disabled="disabled" value="<?php $user->id; ?>"></td>
-                        <td><input type="text" disabled="disabled" value="<?php $user->wechat_id; ?>"></td>
-                        <td><input type="text" disabled="disabled" value="<?php $user->nickname; ?>"></td>
-                        <td><input type="text" disabled="disabled" value="<?php $user->phone; ?>"></td>
-                        <td><input type="text" disabled="disabled" value="<?php $user->created_at; ?>"></td>
-                        <td><input class="balance" type="text" disabled="disabled" value="<?php $user->balance; ?>"></td>
+                        <td><input type="text" disabled="disabled" value="<?php echo $user->id; ?>"></td>
+                        <td><input type="text" disabled="disabled" value="<?php echo $user->wechat_id; ?>"></td>
+                        <td><input type="text" disabled="disabled" value="<?php echo $user->nickname; ?>"></td>
+                        <td><input type="text" disabled="disabled" value="<?php echo $user->phone; ?>"></td>
+                        <td><input type="text" disabled="disabled" value="<?php echo $user->created_at; ?>"></td>
+                        <td><input class="balance" type="text" disabled="disabled" value="<?php echo $user->balance; ?>"></td>
                         <td><input class="change btn btn-primary" type="submit" value="修改"></td>
                     </tr>
                     <?php endforeach; ?>
