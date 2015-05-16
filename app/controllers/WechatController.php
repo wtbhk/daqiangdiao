@@ -17,6 +17,7 @@ class WechatController extends BaseController {
                         $wechat_user_info = Session::get('wechat_userinfo');
                         $subscribe = ($wechat_user_info['subscribe']==0) ? false : true;
                         $this->user->subscribe = $subscribe;
+                        $this->user->save();
                         $this->wechat_user_info = $wechat_user_info;
                         $userinfo = Userinfo::find($wechat_user_info['openid']);
                         if(!$userinfo) {
