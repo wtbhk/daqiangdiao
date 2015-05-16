@@ -118,7 +118,7 @@ Class AdminController extends BaseController {
                         $user->balance = $balance;
                         $user->save();
                 }
-                return Response::to('/admin/user');
+                return Redirect::to('/admin/user');
         }
 
         function orderNew()
