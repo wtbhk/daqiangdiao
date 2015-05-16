@@ -298,9 +298,8 @@ input {
 
 #new a {
     color: #fff;
-
-    &:hover {
+}
+    #new a:hover {
         color: #fff;
         text-decoration: none;
     }
-}
