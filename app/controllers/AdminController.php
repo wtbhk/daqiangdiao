@@ -110,7 +110,7 @@ Class AdminController extends BaseController {
         function editUser($id)
         {
                 $user = User::find($id);
-                if($user && Input::has('banlance'))
+                if($user && Input::has('balance'))
                 {
                         $balance = Input::get('balance');
                         $balance = intval($balance);
