@@ -103,8 +103,22 @@ Class AdminController extends BaseController {
 
         function user()
         {
-                $users = User::newest()->simplePaginate(20)->get();
+                $users = User::newest()->simplePaginate(20);
                 return View::make('admin.users', array('users'=>$users));
+        }
+
+        function editUser($id)
+        {
+                $user = User::find($id);
+                if($user && Input::has('banlance'))
+                {
+                        $balance = Input::get('balance');
+                        $balance = intval($balance);
+                        $balance = $balance < 0 ? 0 : $balance;
+                        $user->balance = $balance;
+                        $user->save();
+                }
+                return Response::to('/admin/user');
         }
 
         function orderNew()

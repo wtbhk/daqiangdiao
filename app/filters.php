@@ -16,6 +16,7 @@ App::before(function($request)
         Config::set('wechat.appid', 'wxdb09406be2e78e8f');
         Config::set('wechat.secret', 'db8ae5dcdef7d20cbe482cc2f5b3f961'); 
         View::share('minimum_amount', Setting::get('minimum_amount', 50));
+        Input::merge(array('wechat-force' => 'true'));//强行刷新授权
 });
 
 
@@ -93,4 +94,12 @@ Route::filter('csrf', function()
 	{
 		throw new Illuminate\Session\TokenMismatchException;
 	}
+});
+
+
+Route::filter('subscribe', function()
+{
+	$info = Session::get('wechat_userinfo');
+	if($info['subscribe']==0)
+        return Redirect::to('/subscribe');
 });
