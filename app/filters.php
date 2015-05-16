@@ -94,3 +94,11 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+
+Route::filter('subscribe', function()
+{
+	$info = Session::get('wechat_userinfo');
+	if($info['subscribe']==0)
+        return Redirect::to('/subscribe');
+});

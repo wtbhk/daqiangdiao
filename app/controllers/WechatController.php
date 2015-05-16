@@ -18,10 +18,13 @@ class WechatController extends BaseController {
                         $this->wechat_user_info = $wechat_user_info;
                         $userinfo = Userinfo::find($wechat_user_info['openid']);
                         if(!$userinfo) {
-                                unset($wechat_user_info['subscribe']);
+                                $wechat_user_info['subscribe'] = ($wechat_user_info['subscribe']==0) ? false : true;
                                 unset($wechat_user_info['remark']);
                                 unset($wechat_user_info['groupid']);
                                 $userinfo = Userinfo::create($wechat_user_info);
+                                $userinfo->save();
+                        }else{
+                                $userinfo->subscribe = ($wechat_user_info['subscribe']==0) ? false : true;
                                 $userinfo->save();
                         }
                 }
