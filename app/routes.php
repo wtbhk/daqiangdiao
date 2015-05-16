@@ -26,7 +26,7 @@ Route::group(array('before'=>'wechat.base'), function(){
 
         Route::post('/editcart', 'CartController@editCart');
 
-        Route::group(array('before'=>'subscribe', function(){
+        Route::group(array('before'=>'subscribe'), function(){
 
                 Route::get('/profile', 'UserController@showProfile');
 
