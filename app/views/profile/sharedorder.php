@@ -75,16 +75,6 @@
             <a class="toUser fr" href="/profile"></a>
         </div>
     </header>
-    <div id="modal" class="<?php if(!$shared) echo 'hidden'; ?>">
-        <div id="errorBox" class="hidden">
-            这里是错误提示这里是错误提示这里是错误提示
-            <div id="modalClose">&times</div>
-        </div>
-        <div id="shareBtn">
-        </div>
-
-        <div id="mask"></div>
-    </div>
     </div>
     <script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="/js/base.js"></script>
