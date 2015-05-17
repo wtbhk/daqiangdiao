@@ -156,7 +156,7 @@ $(document).ready(function () {
             var imgId = ts.attr('id');
             
             $.ajax({
-                url: '/admin/product/' + ts.parent().parent().parent().parent().attr('id') + 'image/' + ts.attr('id'),
+                url: '/admin/product/' + ts.parent().parent().parent().parent().attr('id') + '/image/' + ts.attr('id'),
                 type: 'DELETE',
             }).done(function (data) {
                 ts.fadeOut(500, function () {
