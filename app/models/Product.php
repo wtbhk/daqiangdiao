@@ -23,6 +23,11 @@ class Product extends Eloquent {
                 return $this->hasOne('Video');
         }
 
+        function chefs()
+        {
+                return $this->belongsToMany('Chef');
+        }
+
         function scopeRank($query)
         {
                 return $query->orderBy('rank', 'desc');
