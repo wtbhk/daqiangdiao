@@ -26,6 +26,7 @@
                     </div>
                 </div>
             </div>
+            <div id="new" class="btn btn-success fileinput-button"><a href="#loginModal" role="button" data-toggle="modal">新建</a></div>
         </div>
     </div>
 	<div class="row-fluid"><div class="wrap"><div class="alert">正在处理...</div></div></div>

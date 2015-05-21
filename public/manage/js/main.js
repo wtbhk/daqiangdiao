@@ -126,7 +126,7 @@ $(document).ready(function () {
                 dataType: 'json',
                 data: data,
                 success: function (data) {
-                    console.log(data);
+                    location.reload();
                 }
             });
         });
@@ -147,7 +147,8 @@ $(document).ready(function () {
             tbody.find('tr:eq(1)').clone(true).prependTo(tbody);
             tbody.find('tr:eq(1)').clone(true).prependTo(tbody);
             tbody.find('tr:eq(0) input[type="text"]').val('');
-            tbody.find('tr:eq(1)').removeAttr('id');
+            tbody.find('tr:eq(1)').removeAttr('id')
+                .find('.imglist').html('');
         });
 
         tbody.on('click', '.imglist img', function (e) {
@@ -155,7 +156,7 @@ $(document).ready(function () {
             var imgId = ts.attr('id');
             
             $.ajax({
-                url: '/admin/product/' + ts.parent().parent().parent().parent().attr('id') + 'image/' + ts.attr('id'),
+                url: '/admin/product/' + ts.parent().parent().parent().parent().attr('id') + '/image/' + ts.attr('id'),
                 type: 'DELETE',
             }).done(function (data) {
                 ts.fadeOut(500, function () {
@@ -198,7 +199,7 @@ $(document).ready(function () {
     
     (function(){
         var userM = $('#userManager') || 0;
-        if (!userM) return;
+        if (userM.length === 0) return;
         $('.change').on('click', function () {
             var ts = $(this);
             var balance = ts.parent().prev().children();

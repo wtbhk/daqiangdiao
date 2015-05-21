@@ -46,7 +46,7 @@
                         <?php foreach($orders as $order):?>
                         <li>
                             <ul class="unstyled fl">
-                                <li><span class="fl">收件人</span><span class="fr"><?php echo $order->name;?></span></li>
+                                <li><span class="fl">收件人</span><span class="fr"><?php echo $order->addressee;?></span></li>
                                 <li><span class="fl">电话</span><span class="fr"><?php echo $order->phone;?></span></li>
                                 <li><span class="fl">地址</span><span class="fr"><?php echo $order->address;?></span></li>
                                 <li><span class="fl">下单日期</span><span class="fr"><?php echo $order->created_at;?></span></li>
@@ -95,8 +95,8 @@
                             </ul> 
                             <?php if($order->status!=Order::CLOSED and $order->status!=Order::COMPLETED):?>
                             <div class="btn-group">
-                                <a class="btn btn-danger cOrder"  href="/admin/order/<?php echo $order->id;?>/status/<?php echo Order::CLOSED; ?>">关闭</a>
-                                <a class="btn btn-primary rOrder" href="/admin/order/<?php echo $order->id;?>/status/<?php echo $order->status+1;?>"><?php echo $order->next_step_chn();?></a>
+                                <button class="btn btn-danger cOrder" type="button"><a href="/admin/order/<?php echo $order->id;?>/status/<?php echo Order::CLOSED; ?>">关闭</a></button>
+                                <button class="btn btn-primary rOrder" type="button"><a href="/admin/order/<?php echo $order->id;?>/status/<?php echo $order->status+1;?>"><?php echo $order->next_step_chn();?></a></button>
                             </div>
                             <?php endif;?>
                         </li>

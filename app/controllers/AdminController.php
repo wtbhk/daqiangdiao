@@ -103,8 +103,22 @@ Class AdminController extends BaseController {
 
         function user()
         {
-                $users = User::newest()->simplePaginate(20)->get();
+                $users = User::newest()->simplePaginate(20);
                 return View::make('admin.users', array('users'=>$users));
+        }
+
+        function editUser($id)
+        {
+                $user = User::find($id);
+                if($user && Input::has('balance'))
+                {
+                        $balance = Input::get('balance');
+                        $balance = intval($balance);
+                        $balance = $balance < 0 ? 0 : $balance;
+                        $user->balance = $balance;
+                        $user->save();
+                }
+                return Redirect::to('/admin/user');
         }
 
         function orderNew()
@@ -129,20 +143,29 @@ Class AdminController extends BaseController {
                                 $status = strtoupper($status);
                                 $order->status = Order::$status;
                         }
+                        if($order->status == Order::CLOSED && $order->payment=='balance')
+                        {
+                                $user = $order->user();
+                                $user->balance = $user->balance + $order->price();
+                                $user->save();
+                        }
                         $order->save();
-                        return Redirect::to('/admin/order');
+                        $page = Session::get('admin_order', 'today');
+                        return Redirect::to('/admin/order/' . $page);
                 }
                 return Response::json(array('error'=>false));
         }
 
         function orderToday()
         {
+                Session::put('admin_order', 'today');
                 $orders = Order::with('OrderItems')->deliveryToday()->isOpen()->get();
                 return View::make('admin.orders', array('orders'=>$orders, 'action'=>'today'));
         }
 
         function orderAll()
         {
+                Session::put('admin_order', 'all');
                 $orders = Order::with('OrderItems')->newest()->simplePaginate(10);
                 return View::make('admin.orders', array('orders'=>$orders, 'action'=>'all'));
         }
