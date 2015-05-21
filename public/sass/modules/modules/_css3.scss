@@ -5,7 +5,7 @@
 @mixin radius($radius:5px) {
     -webkit-border-radius : $radius; 
        -moz-border-radius : $radius;
-         ms-border-radius : $radius;
+         -ms-border-radius : $radius;
             border-radius : $radius; 
 }
 
@@ -54,4 +54,15 @@ select {
     text-align : center;
     background : #fff;
     border : 0;
+}
+
+@mixin box() {
+    display: -moz-box; 
+    display: -webkit-box;
+    display: box;
+}
+@mixin box-flex($num) {
+    -moz-box-flex: $num;
+    -webkit-box-flex: $num;
+    box-flex: $num;
 }

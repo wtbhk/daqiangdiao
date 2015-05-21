@@ -169,7 +169,7 @@ a {
 
 #content {
   overflow: hidden;
-  margin-top: 37px; }
+  margin-top: 0; }
 
 footer {
   width: 100%; }
@@ -211,7 +211,7 @@ header {
 /**************************************************************/
 .sem #content {
   overflow: hidden;
-  margin-top: 37px; }
+  margin-top: 0; }
 .sem .main {
   width: 100%;
   float: left; }
@@ -266,8 +266,8 @@ header .wrap {
   width: 90%;
   margin: 0 auto;
   color: #fff;
-  height: 37px;
-  line-height: 37px; }
+  height: 0;
+  line-height: 0; }
   header .wrap a {
     display: block; }
 
@@ -279,7 +279,7 @@ header .set {
     background: #fff;
     -webkit-border-radius: 1px;
     -moz-border-radius: 1px;
-    ms-border-radius: 1px;
+    -ms-border-radius: 1px;
     border-radius: 1px; }
   header .set p + p {
     margin-top: 3px; }
@@ -303,31 +303,52 @@ header .set {
 /* 布局
  -------------------------------------------------------------*/
 footer {
-  background: #616161;
-  height: 49px; }
-  footer .wrap {
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-    color: #333; }
-  footer .get {
-    display: inline-block;
-    width: 22px;
-    height: 19px;
-    background: url("../images/get.png") no-repeat;
-    position: relative;
-    top: 17px; }
+  background: #fff;
+  height: 49px;
+  /* 	.wrap {
+  		display: block;
+  		width: 90%;
+  		margin: 0 auto;
+  		color: #333;
+  	}
+  	
+  	.get {
+  		display: inline-block;
+  		width: 22px;
+  		height: 19px;
+  		background: url($images-path + "get.png") no-repeat;
+  		position: relative;
+  		top: 17px;
+  	} */ }
+  footer ul {
+    width: 100%;
+    border-top: 1px solid #c0c0c0; }
+    footer ul li {
+      width: 28.21852%;
+      font: 14px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+      color: #353535;
+      line-height: 49px;
+      float: left;
+      text-align: center; }
+    footer ul li + li {
+      border-left: 1px solid #c0c0c0; }
+    footer ul .profile {
+      width: 14.35185%; }
   footer .delivery {
-    margin-top: 9px;
-    color: #fff;
-    display: inline-block;
-    padding: 8px 13px;
-    background: #7a7a7a;
-    font: 16px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    ms-border-radius: 2px;
-    border-radius: 2px; }
+    position: absolute;
+    top: -80px;
+    right: 30px;
+    background: url("../images/get.png") no-repeat 16px 20px;
+    background-color: #9ccc65;
+    width: 58px;
+    height: 58px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 15px #999999;
+    -moz-box-shadow: 0 0 15px #999999;
+    box-shadow: 0 0 15px #999999; }
 
 #slide {
   width: 100%; }
@@ -357,7 +378,7 @@ div.priceBox {
 span.del, span.price {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  ms-border-radius: 3px;
+  -ms-border-radius: 3px;
   border-radius: 3px;
   text-align: center;
   display: inline-block;
@@ -436,7 +457,7 @@ span.today {
   box-shadow: 0 0 3px gray;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
-  ms-border-radius: 8px;
+  -ms-border-radius: 8px;
   border-radius: 8px; }
 
 #modalClose {
