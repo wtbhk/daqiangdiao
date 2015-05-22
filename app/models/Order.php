@@ -14,6 +14,13 @@ class Order extends Eloquent {
         const COMPLETED = 4;
         const CLOSED = 0;
 
+        public function __get($name)
+        {
+                if($name == 'price')
+                        return $this->price();
+                return parent::__get($name);
+        }
+
         function user()
         {
                 return $this->belongsTo('User');
@@ -49,7 +56,11 @@ class Order extends Eloquent {
 
         function price()
         {
-                return $this->orderitems->sum('total');
+                $price = 0;
+                foreach ($this->orderitems as $item) {
+                        $price += $item->total;
+                }
+                return $price;
         }
 
         function isDeliveryNow()
