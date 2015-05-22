@@ -201,7 +201,9 @@ Class AdminController extends BaseController {
 
         function deleteChef($id)
         {
-                Chef::destroy($id);
+                $chef = Chef::find($id);
+                $chef->products()->detach();
+                $chef->delete();
                 return Response::json(array('error'=>false));
         }
 }
