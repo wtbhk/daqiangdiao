@@ -49,7 +49,7 @@ class Order extends Eloquent {
 
         function price()
         {
-                return $this->orderitems->sum('price');
+                return $this->orderitems->sum('total');
         }
 
         function isDeliveryNow()
