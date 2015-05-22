@@ -115,15 +115,15 @@ Class CartController extends WechatController {
                 {
                         return Response::json(array('error'=>true, 'msg'=>'非法参数'));
                 }
-                if($input['qty']<=0 || !Product::find($input['id']))
+                $product = Product::find($input['id']);
+                if($input['qty']<=0 || !$product)
                 {
                         $rowid = Cart::search(array('id'=>intval($input['id'])));
                         if($rowid)
                                 Cart::remove($rowid[0]);
                 }
-                elseif(Product::find($input['id']))
+                elseif($product)
                 {
-                        $product = Product::find($input['id']);
                         $rowid = Cart::search(array('id'=>$product->id));
                         $rowid = $rowid ? $rowid[0] : NULL;
                         if(Cart::get($rowid))
