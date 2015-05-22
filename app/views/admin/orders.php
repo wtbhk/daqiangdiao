@@ -88,9 +88,9 @@
                             </ul>
                             <ul class="unstyled fr">
                                 <?php foreach($order->orderitems as $item):?>
-                                <li><span class="fl"><?php echo $item->title;?></span><span><?php echo $item->amount;?></span><span class="fr">￥<?php echo $item->price;?></span></li>
+                                <li><span class="fl"><?php echo $item->title;?></span><span><?php echo $item->amount;?></span><span class="fr">￥<?php echo $item->total;?></span></li>
                                 <?php endforeach;?>
-                                <li><span class="fl">总价</span><span class="fr">￥<?php echo $order->price();?></span></li>
+                                <li><span class="fl">总价</span><span class="fr">￥<?php echo $order->total;?></span></li>
                                 <li><span class="fl">在线支付</span><span class="fr"><?php echo $order->payment ? 'YES' : 'NO';?></span></li>
                             </ul> 
                             <?php if($order->status!=Order::CLOSED and $order->status!=Order::COMPLETED):?>
