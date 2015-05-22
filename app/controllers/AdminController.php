@@ -47,7 +47,8 @@ Class AdminController extends BaseController {
                         'ignore_inventory'=>'in:true,false',
                         'title'=>'required|max:16',
                         'description'=>'max:28',
-                        'rank'=>'integer'
+                        'rank'=>'integer',
+                        'available'=>'boolean'
                 ));
                 if($validator->fails())
                         return Response::json(array('error'=>true, 'fails'=>$validator->failed()));
