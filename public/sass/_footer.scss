@@ -12,7 +12,7 @@ footer {
 
 		li {
 			width: 308/1080 * 100% - 0.3%;
-			font:  14px/1 $font-family;
+			font:  16px/1 $font-family;
 			color: #353535;
 			line-height: 49px;
 			float: left;
@@ -20,6 +20,9 @@ footer {
 		}
 		li + li {
 			border-left: 1px solid #c0c0c0;
+		}
+		li:active {
+			background: #d9d9d9;
 		}
 		.profile {
 			width: 155/1080 * 100%;

@@ -492,13 +492,15 @@ footer {
     border-top: 1px solid #c0c0c0; }
     footer ul li {
       width: 28.21852%;
-      font: 14px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+      font: 16px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
       color: #353535;
       line-height: 49px;
       float: left;
       text-align: center; }
     footer ul li + li {
       border-left: 1px solid #c0c0c0; }
+    footer ul li:active {
+      background: #d9d9d9; }
     footer ul .profile {
       width: 14.35185%; }
   footer .delivery {
