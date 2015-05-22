@@ -35,7 +35,7 @@ class Product extends Eloquent {
 
         function scopeNew($query)
         {
-                return $query->orderBy('created_at');
+                return $query->orderBy('created_at', 'desc');
         }
 
         function scopeAvailable($query)
@@ -123,6 +123,16 @@ class Product extends Eloquent {
                 if($this->images()->first())
                         return $this->images()->first();
                 return false;
+        }
+
+        function inCart()
+        {
+                $rowid = Cart::search(array('id'=>$this->id));
+                $rowid = $rowid ? $rowid[0] : NULL;
+                $cart = Cart::get($rowid);
+                if($cart)
+                        return $cart->qty>0 ? $cart->qty : 0;
+                return 0;
         }
 
 }

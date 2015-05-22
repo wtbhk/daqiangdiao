@@ -10,8 +10,18 @@ Class ListController extends WechatController {
 
         function showList()
         {
-                $products = Product::with('images', 'inventory')->New()->available()->get();
+                $products = Product::with('images', 'inventory')->new()->available()->get();
                 return View::make('list', array('products'=>$products));
+        }
+
+        function showChefList()
+        {
+                $chefs = Chef::rank()->get();
+                $chefs = $chefs->each(function($chef){
+                        $chef->products = Product::with('images', 'inventory')->new()->available()->get();
+                        return $chef;
+                });
+                return View::make('cheflist', array('chefs'=>$chefs));
         }
 
 }

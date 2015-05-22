@@ -15,7 +15,7 @@ class Chef extends Eloquent {
 
         function scopeNew($query)
         {
-                return $query->orderBy('created_at');
+                return $query->orderBy('created_at', 'desc');
         }
 
         function mainImage()
