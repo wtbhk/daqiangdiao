@@ -73,28 +73,25 @@ Class AdminController extends BaseController {
                 return Response::json(array('error'=>false));
         }
 
-        function addImage($id)
+        function addImage($mixed)
         {
                 $validator = Validator::make(Input::only('image'),array(
                         'image'=>'required|image'
                 ));
-                if(! $product = Product::find($id))
-                        return Response::json(array('error'=>true));
                 $file = Input::file('image');
                 $filename = time().'.'.$file->getClientOriginalExtension();
                 $file->move('uploads/', $filename);
-                Image::create(array(
-                        'file'=>'/uploads/'.$filename,
-                        'imageable_id'=>$product->id,
-                        'imageable_type'=>'Product'
+                $image = new Image(array(
+                        'file'=>'/uploads/'.$filename
                 ));
+                $mixed->images()->save($image);
                 return Response::json(array('error'=>false, 'image'=>'/uploads/'.$filename));
         }
 
-        function deleteImage($pid, $iid)
+        function deleteImage($mixed, $iid)
         {
                 $image = Image::find($iid);
-                if(!$image or $image->product->id != $pid)
+                if(!$image or $image->imageable->id != $mixed->id)
                         return Response::json(array('error'=>true));
                 $image->delete();
                 return Response::json(array('error'=>false, 'image'=>$iid));
@@ -170,4 +167,41 @@ Class AdminController extends BaseController {
                 return View::make('admin.orders', array('orders'=>$orders, 'action'=>'all'));
         }
 
+        function chef()
+        {
+                $chefs = Chef::newest()->get();
+                return View::make('admin.chefs', array('chefs'=>$chefs));
+        }
+
+        function editChef()
+        {
+                $input = Input::only('id', 'name', 'phone', 'profile', 'rank');
+                $validator = Validator::make($input, array(
+                        'price'=>'required|numeric',
+                        'name'=>'required|max:12',
+                        'phone'=>'required|integer',
+                        'profile'=>'max:40',
+                        'rank'=>'integer'
+                ));
+                if($validator->fails())
+                        return Response::json(array('error'=>true, 'fails'=>$validator->failed()));
+                if(Input::has('id'))
+                {
+                        $chef = Chef::find($input['id']);
+                        if(!$chef)
+                                return Response::json(array('error'=>true));
+                        $chef->update($input);
+                }
+                else
+                {
+                        $chef = Chef::create($input);
+                }
+                return Response::json(array('error'=>false, 'chef'=>$chef->toArray()));
+        }
+
+        function deleteChef($id)
+        {
+                Chef::destroy($id);
+                return Response::json(array('error'=>false));
+        }
 }

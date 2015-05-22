@@ -74,6 +74,10 @@ Route::post('/admin/login', 'AdminController@checkLogin');
 
 Route::group(array('before'=>'admin'), function(){
 
+        Route::model('product', 'Product');
+
+        Route::model('chef', 'Chef');
+
         Route::get('/admin', function()
         {
                 return Redirect::to('/admin/order');
@@ -87,9 +91,9 @@ Route::group(array('before'=>'admin'), function(){
 
         Route::delete('/admin/product/{id}', 'AdminController@deleteProduct');
 
-        Route::post('/admin/product/{id}/image', 'AdminController@addImage');
+        Route::post('/admin/product/{product}/image', 'AdminController@addImage');
 
-        Route::delete('/admin/product/{pid}/image/{iid}', 'AdminController@deleteImage');
+        Route::delete('/admin/product/{product}/image/{iid}', 'AdminController@deleteImage');
 
         Route::get('/admin/user', 'AdminController@user');
 
@@ -107,5 +111,15 @@ Route::group(array('before'=>'admin'), function(){
         {
                 return Redirect::to('/admin/order/today');
         });
+
+        Route::get('/admin/chef', 'AdminController@chef');
+
+        Route::delete('/admin/chef/{id}', 'AdminController@deleteChef');
+
+        Route::post('/admin/chef', 'AdminController@editChef');
+
+        Route::post('/admin/chef/{chef}/image', 'AdminController@addImage');
+
+        Route::delete('/admin/chef/{chef}/image/{iid}', 'AdminController@deleteImage');
 
 });
