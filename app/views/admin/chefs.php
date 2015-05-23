@@ -27,6 +27,7 @@
                     </div>
                 </div>
             </div>
+            <div id="new" class="btn btn-success fileinput-button"><a id="modal-383601" href="#modal-container-383601" role="button"  data-toggle="modal">添加</a></div>
         </div>
     </div>
     <div class="row-fluid"><div class="wrap"><div class="alert">正在处理...</div></div></div>
@@ -38,7 +39,8 @@
                     <tr>
                         <th class='span2'>序号</th>
                         <th class='span2'>姓名</th>
-                        <th class='span3'>手机号</th>
+                        <th class='span2'>手机号</th>
+                        <th class="span3">个性签名</th>
                         <th class='span1'>权重</th>
                         <th class='span2'>操作</th>
                     </tr>
@@ -46,10 +48,11 @@
                 <tbody>
                     <?php foreach ($chefs as $chef): ?>
                     <tr>
-                        <td><input type="text" disabled="disabled" value="<?php echo $chef->id; ?>"</td>
-                        <td><input type="text" disabled="disabled" value="<?php echo $chef->name; ?>" placeholder="姓名" required></td>
-                        <td><input type="number" disabled="disabled" value="<?php echo $chef->phone; ?>" placeholder="手机号" required></td>
-                        <td><input type="text" disabled="disabled" value="<?php echo $chef->rank; ?>"></td>
+                        <td><input type="text" class="id" disabled="disabled" value="<?php echo $chef->id; ?>"</td>
+                        <td><input type="text" class="name" disabled="disabled" value="<?php echo $chef->name; ?>" placeholder="姓名" required></td>
+                        <td><input type="number" class="phone" disabled="disabled" value="<?php echo $chef->phone; ?>" placeholder="手机号" required></td>
+                        <td><input type="text" class="profile" disabled="disabled" value="<?php echo $chef->profile; ?>"></td>
+                        <td><input type="text" class="rank" disabled="disabled" value="<?php echo $chef->rank; ?>"></td>
                         <td>
                             <button class="btn btn-primary change" type="button">修改</button>
                             <button class="btn btn-danger delete" type="button">删除</button>
@@ -68,20 +71,26 @@
             <h3 id="myModalLabel">添加厨师</h3>
         </div>
         <form action="" method="POST">
-        <div class="modal-body">           
-                <input type="text" placeholder="厨师名">
-                <input type="text" placeholder="手机号">
-                <input type="text" placeholder="排序">
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-            <button class="btn btn-primary" type="submit">提交</button>
-        </div>
+            <div class="modal-body">           
+                    <input type="text" name="name" placeholder="厨师名">
+                    <input type="text" name="phone" placeholder="手机号">
+                    <input type="text" name="profile" placeholder="个性签名">
+                    <input type="text" name="rank" placeholder="排序">
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+                <button class="btn btn-primary" type="submit">提交</button>
+            </div>
         </form>
     </div>
     </div>
+    <!-- this is a hidden form for Ajax -->
     <form class="hidden" action="" method="POST">
-        <input class="real-balance" name="balance" type="text" value="">
+        <input type="text" name="id">
+        <input type="text" name="name">
+        <input type="text" name="phone">
+        <input type="text" name="profile">
+        <input type="text" name="rank">
     </form>
     
     <script src="/manage/js/jquery.min.js"></script>
