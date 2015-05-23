@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div id="new" class="btn btn-success fileinput-button"><a id="modal-383601" href="#modal-container-383601" role="button"  data-toggle="modal">添加</a></div>
+            <a class="btn btn-success fileinput-button" id="modal-383601" href="#modal-container-383601" role="button"  data-toggle="modal">添加</a>
         </div>
     </div>
     <div class="row-fluid"><div class="wrap"><div class="alert">正在处理...</div></div></div>
@@ -76,6 +76,7 @@
                     <input type="text" name="phone" placeholder="手机号">
                     <input type="text" name="profile" placeholder="个性签名">
                     <input type="text" name="rank" placeholder="排序">
+                    <input type="file" name="avatar" accept="image/*">
             </div>
             <div class="modal-footer">
                 <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
