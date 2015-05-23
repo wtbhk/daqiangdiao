@@ -1,0 +1,371 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* mobile highlinght */
+body {
+  -webkit-tap-highlight-color: transparent;
+  -ms-touch-action: none;
+  /* WP8 */ }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+/*  css reset  */
+/* 添加className形式 */
+/* 常用属性库，类名形式添加使用 
+ * such as:　<div class="fl"> </div>
+ */
+/* about float */
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.fn {
+  float: none; }
+
+.clear {
+  clear: both; }
+
+.overft {
+  overflow: hidden; }
+
+/* about display */
+.hidden {
+  display: none; }
+
+/* about position */
+.head-fixed {
+  position: fixed;
+  left: 0;
+  top: 0; }
+
+.foot-fixed {
+  position: fixed;
+  left: 0;
+  bottom: 0; }
+
+/* 居中 */
+.center-x {
+  text-align: center;
+  margin: 0 auto; }
+
+/* page layout 通过给body添加className使用
+ * such as: <body class="mse"></body>
+ * WARNING: html按照README书写，或参考测试页面
+ * _config.scss宽高参数需自主修改 
+ * Default: $sub-width: 0; $extra-width: 0; $wrap-width: 990px;
+ *
+ *
+ *
+ * 因为布局遵循内容至上原则,所以需要设置$header-height
+ * Default: $header-height: 0;
+ */
+/* 布局
+ -------------------------------------------------------------*/
+/* m: main, s: sub, e: extra */
+.wrap {
+  width: 100%;
+  overflow: hidden; }
+
+#content {
+  overflow: hidden;
+  margin-top: 0; }
+
+footer {
+  width: 100%; }
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 0; }
+
+.mse .main {
+  width: 100%;
+  float: left; }
+  .mse .main .wrap {
+    margin: 0 0 0 0; }
+.mse .sub {
+  width: 0;
+  float: left;
+  margin-left: 0; }
+.mse .extra {
+  width: 0;
+  margin-left: 0;
+  float: left; }
+
+/**************************************************************/
+.sme .main {
+  width: 100%;
+  float: left; }
+  .sme .main .main-wrap {
+    margin: 0 0 0 0; }
+.sme .sub {
+  width: 0;
+  float: left;
+  margin-left: -100%; }
+.sme .extra {
+  width: 0;
+  margin-left: 0;
+  float: left; }
+
+/**************************************************************/
+.sem #content {
+  overflow: hidden;
+  margin-top: 0; }
+.sem .main {
+  width: 100%;
+  float: left; }
+  .sem .main .main-wrap {
+    margin: 0 0 0 0; }
+.sem .sub {
+  width: 0;
+  float: left;
+  margin-left: -100%;
+  position: relative;
+  left: 0; }
+.sem .extra {
+  width: 0;
+  margin-left: -100%;
+  float: left;
+  position: relative;
+  left: 0; }
+
+/*  布局  */
+/* mixin形式 */
+/* 圆角
+ --------------------------------------------------*/
+/* =appearance
+ *-------------------------------------------------*/
+/* user-select
+ --------------------------------------------------*/
+/* =animation
+ *-------------------------------------------------*/
+/* =rotate
+ *-------------------------------------------------*/
+select {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-align: center;
+  background: #fff;
+  border: 0; }
+
+/*  组件  */
+/* 布局
+ -------------------------------------------------------------*/
+footer {
+  background: #fff;
+  height: 49px;
+  /* 	.wrap {
+  		display: block;
+  		width: 90%;
+  		margin: 0 auto;
+  		color: #333;
+  	}
+  	
+  	.get {
+  		display: inline-block;
+  		width: 22px;
+  		height: 19px;
+  		background: url($images-path + "get.png") no-repeat;
+  		position: relative;
+  		top: 17px;
+  	} */ }
+  footer ul {
+    width: 100%;
+    border-top: 1px solid #c0c0c0; }
+    footer ul li {
+      width: 28.21852%;
+      font: 16px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+      color: #353535;
+      line-height: 49px;
+      float: left;
+      text-align: center; }
+    footer ul li + li {
+      border-left: 1px solid #c0c0c0; }
+    footer ul li:active {
+      background: #d9d9d9; }
+    footer ul .profile {
+      width: 14.35185%; }
+  footer .delivery {
+    position: absolute;
+    top: -80px;
+    right: 30px;
+    background: url("../images/get.png") no-repeat 16px 20px;
+    background-color: #9ccc65;
+    width: 58px;
+    height: 58px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 15px #999999;
+    -moz-box-shadow: 0 0 15px #999999;
+    box-shadow: 0 0 15px #999999; }
+
+body {
+  background: #f0f0f2; }
+
+#cheflist {
+  width: 84.72222%;
+  margin: 50px 0 50px 9.44444%; }
+  #cheflist li {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #bbb;
+    padding: 6px 0 16px;
+    position: relative;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 3px #aaaaaa;
+    -moz-box-shadow: 0 0 3px #aaaaaa;
+    box-shadow: 0 0 3px #aaaaaa; }
+    #cheflist li + li {
+      margin-top: 50px; }
+  #cheflist .avatar {
+    width: 84px;
+    height: 84px;
+    position: absolute;
+    top: -32px;
+    left: -27px; }
+    #cheflist .avatar img {
+      width: 100%;
+      border: 1px solid #eee;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      border-radius: 50%;
+      -webkit-box-shadow: 0 0 3px #aaaaaa;
+      -moz-box-shadow: 0 0 3px #aaaaaa;
+      box-shadow: 0 0 3px #aaaaaa; }
+  #cheflist .rank {
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 6px;
+    right: 11px; }
+    #cheflist .rank img {
+      width: 100%; }
+  #cheflist .name {
+    font: bold 22px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    color: #5e5e5e;
+    margin-left: 66px; }
+  #cheflist .profile {
+    font: 14px/1 "Microsoft YaHei", "微软雅黑", STHeiti, sans-serif;
+    color: #101010;
+    margin: 10px 0 16px 54px; }
+    #cheflist .profile:before {
+      content: url("../images/open-quote.png");
+      margin-right: 20px;
+      vertical-align: 5px; }
+    #cheflist .profile:after {
+      content: url("../images/close-quote.png");
+      margin-left: 20px;
+      vertical-align: -5px; }
+  #cheflist .imglist {
+    width: 85.2459%;
+    margin: 0 auto; }
+    #cheflist .imglist img {
+      width: 27.04615%;
+      -webkit-box-shadow: 0 0 15px #aaaaaa;
+      -moz-box-shadow: 0 0 15px #aaaaaa;
+      box-shadow: 0 0 15px #aaaaaa; }
+      #cheflist .imglist img + img {
+        margin-left: 6.73077%; }

@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+@import "reset";                   /*  css reset  */
+@import "ui/base";                 /*  布局  */
+@import "modules/base";            /*  组件  */
+@import "footer";
+
+body {
+    background: #f0f0f2;
+}
+
+#cheflist {
+    width: 305/360 * 100%;
+    margin: 50px 0 50px 34/360 * 100%;
+
+    li {
+        width: 100%;
+        background: #fff;
+        border: 1px solid #bbb;
+        padding: 6px 0 16px;
+        position: relative;
+        @include radius(8px);
+        @include box-shadow(0 0 3px #aaa);
+
+        & + li {
+            margin-top: 50px;
+        }
+    }
+
+    .avatar {
+        width: 84px;
+        height: 84px;
+        position: absolute;
+        top: -32px;
+        left: -27px;
+        
+
+        img {
+            width: 100%;
+            border: 1px solid #eee;
+            @include radius(50%);
+            @include box-shadow(0 0 3px #aaa);
+        }
+    }
+
+    .rank {
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        top: 6px;
+        right: 11px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .name {
+        font: bold 22px/1 $font-family;
+        color: #5e5e5e;
+        margin-left: 66px;
+    }
+
+    .profile {
+        font: 14px/1 $font-family;
+        color: #101010;
+        margin: 10px 0 16px 54px;
+
+        &:before {
+            content: url($images-path + 'open-quote.png');
+            margin-right: 20px;
+            vertical-align: 5px;
+        }
+
+        &:after {
+            content: url($images-path + 'close-quote.png');
+            margin-left: 20px;
+            vertical-align: -5px;
+        }
+    }
+
+    .imglist {
+        width: 260/305 * 100% ;
+        margin: 0 auto;
+
+        img {
+            width: 75/260 * 100% - 1.8%;
+            @include box-shadow(0 0 15px #aaa);
+
+            & + img {
+                margin-left: (1 - 3*75/260)/2 * 100% ;
+            }
+        }
+    }
+}
