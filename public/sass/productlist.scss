@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+@import "reset";                   /*  css reset  */
+@import "ui/base";                 /*  布局  */
+@import "modules/base";            /*  组件  */
+@import "footer";
+@import "font-awesome/scss/font-awesome";
+
+body {
+    background: #f0f0f2;
+}
+.s {
+    $width: 12px;
+    $color: #121212;
+    opacity: 0.7;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: top;
+    border: $width solid transparent;
+    border-right: $width solid $color;
+    border-bottom: $width solid $color;
+    font-size: 12px;
+    color: #ccc;
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    i {
+        position: relative;
+        top: -2px;
+    }
+
+    .yes {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background: url($images-path + 'yes.png');
+        background-size: 100% 100%;
+    }
+}
+li {
+    position: relative;
+}
+
+#content {
+    margin-top: 9px;
+    margin-bottom: 120px;
+}
+
+h2 {
+    font: 12px/1 $font-family;
+    color: #adadad;
+    margin: 16px 0 7px 11/360*100%;
+}
+
+.clear {
+    clear: both;
+}
+img {
+    width: 100%;
+    @include box-shadow(0 0 3px #aaa);
+}
+
+#content .first {
+    margin-left: 0;
+}
+
+.imglist-3 {
+    ul {
+        width: 314/360*100%;
+        margin: 0 auto;
+
+        li {
+            width: 95/314*100%;
+            margin-bottom: 9px;
+            float: left;
+
+            & + li {
+                margin-left: (1 - 3*95/314)/2 * 100% - 0.3%;
+            }
+
+        }
+    }
+}
+
+.imglist-4 {
+    ul {
+        width: 314/360*100%;
+        margin: 0 auto;
+
+        li {
+            width: 70/314*100%;
+            margin: 0 auto 9px;
+            float: left;
+
+            & + li {
+                margin-left: (1 - 4*70/314)/3 * 100% - 0.3%;
+            }
+
+        }
+    }
+}
+
+.imglist-5 {
+    .box {
+        width: 314/360*100%;
+        margin: 0 auto 9px;
+        
+        .fl {
+            width: 130/314*100%;
+        }
+        .fr {
+            width: 168/314*100%;
+            padding-bottom: 130/314*100%;
+            position: relative;
+
+            li {
+                width: 75/168*100%;
+                position: absolute;
+                &:nth-child(1) {
+                    top: 0;
+                    left: 0;
+                }
+                &:nth-child(2) {
+                    top: 0;
+                    right: 0;
+                }
+                &:nth-child(3) {
+                    bottom: 0;
+                    left: 0;
+                }
+                &:nth-child(4) {
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+            
+
+
+
+
+        }
+
+    }
+}

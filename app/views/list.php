@@ -7,55 +7,59 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="keywords" content="rcss">
-    <meta name="description" content="商店demo">
+    <meta name="description" content="大腔调">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>所有菜品 - 大腔调</title>
-<link rel="stylesheet" href="/css/contentStyle.css">
+    <title>购物车 - 大腔调</title>
+    <link rel="stylesheet" href="css/productlist.css">
 </head>
 <body class="sme">
     <div id="content">
-        <div class="content-wrap">
-            <div class="main">
-                <div class="wrap">
-
-                    <?php foreach($products as $product): ?>
-                    <a href="/product/<?php echo $product->id;?>">
-                    <div class="foodBox">
-                        <div class="food-img">
-                            <img src="<?php echo $product->mainImage()->resize(640, 400); ?>" alt="">
-                            <h2><?php echo $product->title; ?></h2>
-                        </div>
-                        <!-- price -->
-                        <div class="maincontent overft">
-                            <div class="left fl">
-                                <h3><?php echo $product->description; ?></h3>
-                                <p>请提前<?php echo $product->chineseReservation(); ?>天预订</p>
-                            </div>
-                            <div class="tag fr">
-                                <div class="priceBox">
-                                    <span class="price">￥<?php echo $product->price; ?></span>
-                                </div>
-                                <span class="remain">
-                                    <span class="today">今</span>
-                                    <span>剩<strong><?php echo $product->inventory_today(); ?></strong>份</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                    <?php endforeach; ?>
-                </div>
-            </div>
+        <div class="imglist-3">
+            <h2>菜品分类</h2>
+            <ul>
+                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a><div class="s"><i class="fa fa-circle-o"></i></div></li>
+                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a><div class="s"><i class="yes"></i></div></li>
+                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="imglist-4">
+            <h2>菜品分类</h2>
+            <ul>
+                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                <li class="first"><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+            </ul>
+             <div class="clear"></div>
+        </div>
+        <div class="imglist-5">
+            <h2>菜品分类</i>
+            </h2>
+            <div class="box">
+                <div class="fl"><img src="images/head.jpg" alt=""></div>
+                <ul class="fr">
+                    <li><a href=""><img src="images/slideImg1.jpg" alt=""></a><div class="s"><i class="fa fa-circle-o"></i></div></li>
+                    <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                </ul>
+                 <div class="clear"></div>
+             </div>
         </div>
     </div>
-    <?php require_once __DIR__.'/footer.php'; ?>
-    <header>
-        <div class="wrap">
-            <a class="toHome fl" href="/">
-            </a>
-            <h1>所有菜品</h1>
-            <a class="toUser fr" href="/profile"></a>
-        </div>
-    </header>
+    <footer class="foot-fixed">
+        <a class="delivery" href="/cart"></a>
+        <ul>
+            <li class="profile"><a href="/profile">我的</a></li>
+            <li><a href="/">首页</a></li>
+            <li><a href="/chef">封厨榜</a></li>
+            <li class="active"><a href="/list">饕餮盛宴</a></li>
+        </ul>
+    </footer>
 </body>
 </html>
