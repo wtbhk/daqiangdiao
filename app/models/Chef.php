@@ -30,6 +30,16 @@ class Chef extends Eloquent {
                 return $this->morphMany('Image', 'imageable');
         }
 
+        function avatar()
+        {
+                $image = $this->images()->first();
+                if(!$image){
+                        $image = new Image;
+                        $image->file = '/images/default_avatar.jpg';
+                }
+                return $image;
+        }
+
         function products()
         {
                 return $this->belongsToMany('Product');
