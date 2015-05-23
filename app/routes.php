@@ -16,6 +16,8 @@ Route::group(array('before'=>'wechat.base'), function(){
 
         Route::get('/list', 'ListController@showList');
 
+        Route::get('/cheflist', "ListController@showChefList");
+
         Route::get('/address/{id}/delete', 'UserController@delAddress');
 
         Route::get('/order/{id}/share', 'OrderController@showShareOrder');
