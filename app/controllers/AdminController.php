@@ -44,7 +44,7 @@ Class AdminController extends BaseController {
                         'price'=>'required|numeric',
                         'reservation_day'=>'integer',
                         'inventory_per_day'=>'required|integer',
-                        'ignore_inventory'=>'in:true,false',
+                        'ignore_inventory'=>'boolean',
                         'title'=>'required|max:16',
                         'description'=>'max:28',
                         'rank'=>'integer',
