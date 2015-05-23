@@ -10,4 +10,9 @@ class Category extends Eloquent {
         {
                 return $this->hasMany('Product');
         }
+
+        function scopeRank($query)
+        {
+                return $query->orderBy('rank', 'desc');
+        }
 }
