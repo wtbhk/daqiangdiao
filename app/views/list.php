@@ -9,57 +9,66 @@
     <meta name="keywords" content="rcss">
     <meta name="description" content="大腔调">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>购物车 - 大腔调</title>
+    <title>饕餮点单 - 大腔调</title>
     <link rel="stylesheet" href="css/productlist.css">
 </head>
 <body class="sme">
     <div id="content">
+        <?php foreach($categories as $category): ?>
+        <?php
+            $count = count($category->products);
+            $type = 1;
+            if(in_array($count, array(1,2,3,6,9)))
+                $type = 3;
+            if(in_array($count, array(4,8)) || $count>=10)
+                $type = 4;
+            if($count == 5)
+                $type = 5;
+            $mod = $count % $type;
+            $i = 0;
+        ?>
+        <?php if($type==3): ?>
         <div class="imglist-3">
-            <h2>菜品分类</h2>
+            <h2><?php echo $category->text; ?></h2>
             <ul>
-                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a><div class="s"><i class="fa fa-circle-o"></i></div></li>
-                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a><div class="s"><i class="yes"></i></div></li>
-                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                <?php foreach($category->products as $product): ?>
+                <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?>><a href=""><img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt=""></a><div class="s"><i class="<?php if($product->inCart()) echo 'yes' else echo 'fa fa-circle-o'; ?>"></i></div></li>
+                <?php endforeach; ?>
             </ul>
             <div class="clear"></div>
         </div>
+        <?php endif; ?>
+        <?php if($type==4): ?>
         <div class="imglist-4">
-            <h2>菜品分类</h2>
+            <h2><?php echo $category->text; ?></h2>
             <ul>
-                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
-                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
-                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
-                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
-                <li class="first"><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
-                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
-                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
-                <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                <?php foreach($category->products as $product): ?>
+                <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?>><a href=""><img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt=""></a><div class="s"><i class="<?php if($product->inCart()) echo 'yes' else echo 'fa fa-circle-o'; ?>"></i></div></li>
+                <?php endforeach; ?>
             </ul>
              <div class="clear"></div>
         </div>
+        <?php endif; ?>
+        <?php if($type==5): ?>
         <div class="imglist-5">
-            <h2>菜品分类</i>
-            </h2>
+            <h2><?php echo $category->text; ?></h2>
             <div class="box">
-                <div class="fl"><img src="images/head.jpg" alt=""></div>
+                <?php
+                    $products = $category->products;
+                    $first = array_shift($products);
+                ?>
+                <div class="fl"><img src="<?php echo $first->mainImage()->resize(400,400); ?>" alt=""></div>
                 <ul class="fr">
-                    <li><a href=""><img src="images/slideImg1.jpg" alt=""></a><div class="s"><i class="fa fa-circle-o"></i></div></li>
-                    <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
-                    <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
-                    <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                    <?php foreach($products as $product): ?>
+                    <li><a href=""><img src="<?php echo $first->mainImage()->resize(300,200); ?>" alt=""></a><div class="s"><i class="<?php if($product->inCart()) echo 'yes' else echo 'fa fa-circle-o'; ?>"></i></div></li>
+                    <?php endforeach; ?>
                 </ul>
                  <div class="clear"></div>
              </div>
         </div>
+        <?php endif; ?>
+        <?php endforeach; ?>
     </div>
-    <footer class="foot-fixed">
-        <a class="delivery" href="/cart"></a>
-        <ul>
-            <li class="profile"><a href="/profile">我的</a></li>
-            <li><a href="/">首页</a></li>
-            <li><a href="/chef">封厨榜</a></li>
-            <li class="active"><a href="/list">饕餮盛宴</a></li>
-        </ul>
-    </footer>
+    <?php require_once __DIR__.'/footer.php'; ?>
 </body>
 </html>

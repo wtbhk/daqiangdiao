@@ -9,7 +9,7 @@
     <meta name="keywords" content="rcss">
     <meta name="description" content="大腔调">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>首页 - 大腔调</title>
+    <title>腔调首推 - 大腔调</title>
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="sme">

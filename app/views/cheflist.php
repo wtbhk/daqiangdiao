@@ -9,7 +9,7 @@
     <meta name="keywords" content="rcss">
     <meta name="description" content="大腔调">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>封厨榜 - 大腔调</title>
+    <title>封厨榜单 - 大腔调</title>
     <link rel="stylesheet" href="/css/cheflist.css">
 
 </head>
