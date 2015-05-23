@@ -124,4 +124,10 @@ Route::group(array('before'=>'admin'), function(){
 
         Route::delete('/admin/chef/{chef}/image/{iid}', 'AdminController@deleteImage');
 
+        Route::get('/admin/category', 'AdminController@category');
+
+        Route::delete('/admin/category/{id}', 'AdminController@deleteCategory');
+
+        Route::post('/admin/category', 'AdminController@editCategory');
+
 });

@@ -33,13 +33,13 @@ Class AdminController extends BaseController {
 
         function product()
         {
-                $products = Product::orderBy('updated_at', 'desc')->get();
+                $products = Product::with('images', 'category')->orderBy('updated_at', 'desc')->get();
                 return View::make('admin.products', array('products'=>$products));
         }
 
         function editProduct()
         {
-                $input = Input::only('id', 'available', 'price', 'reservation_day', 'inventory_per_day', 
+                $input = Input::only('id', 'available', 'category_id', 'price', 'reservation_day', 'inventory_per_day', 
                         'ignore_inventory', 'title', 'description', 'content', 'rank');
                 $input['ignore_inventory'] = $input['ignore_inventory']==='true' ? true : false;
                 $input['available'] = $input['available']==='true' ? true : false;
@@ -51,7 +51,8 @@ Class AdminController extends BaseController {
                         'title'=>'required|max:16',
                         'description'=>'max:28',
                         'rank'=>'integer',
-                        'available'=>'boolean'
+                        'available'=>'boolean',
+                        'category_id'=>'exists:categories,id',
                 ));
                 if($validator->fails())
                         return Response::json(array('error'=>true, 'fails'=>$validator->failed()));
@@ -207,6 +208,45 @@ Class AdminController extends BaseController {
                 $chef = Chef::find($id);
                 $chef->products()->detach();
                 $chef->delete();
+                return Response::json(array('error'=>false));
+        }
+
+        function category()
+        {
+                $category = Category::get();
+                return View::make('admin.categories', array('categories'=>$categories));
+        }
+
+        function editCategory()
+        {
+                $input = Input::only('id', 'text', 'rank');
+                $validator = Validator::make($input, array(
+                        'text'=>'required|max:12',
+                        'rank'=>'integer'
+                ));
+                if($validator->fails())
+                        return Response::json(array('error'=>true, 'fails'=>$validator->failed()));
+                if(Input::has('id'))
+                {
+                        $category = Category::find($input['id']);
+                        if(!$category)
+                                return Response::json(array('error'=>true));
+                        $category->update($input);
+                }
+                else
+                {
+                        $category = Category::create($input);
+                }
+                return Response::json(array('error'=>false, 'category'=>$category->toArray()));
+        }
+
+        function deleteCategory()
+        {
+                $category = Category::find($category);
+                if(!$category)
+                        return Response::json(array('error'=>true));
+                $category->products()->update(array('category_id'=>null));
+                $category->delete();
                 return Response::json(array('error'=>false));
         }
 }
