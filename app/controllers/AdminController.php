@@ -170,7 +170,7 @@ Class AdminController extends BaseController {
 
         function chef()
         {
-                $chefs = Chef::new()->get();
+                $chefs = Chef::with('products')->new()->get();
                 return View::make('admin.chefs', array('chefs'=>$chefs));
         }
 
