@@ -118,6 +118,7 @@ $(document).ready(function () {
                 'title': $('input[name="title"').eq(idx).val(),
                 'description': $('input[name="description"').eq(idx).val(),
                 'content': $('input[name="content"').eq(idx).val(),
+                'available': $('input[name="available"').val(),
                 'rank': $('input[name="rank"').eq(idx).val()
             }
             $.ajax({
@@ -212,6 +213,34 @@ $(document).ready(function () {
             } else {
                 ts.val('保存').addClass('saveChange');
                 balance.removeAttr('disabled');
+            }
+        });
+    }());
+    //chef
+    (function(){
+        var chefM = $('#chefManager');
+        if (chefM.length === 0) return;
+        $('.change').on('click', function () {
+            var ts = $(this);
+            var par = ts.parent().parent();
+            
+            var id = par.find('input.id');
+            var name = par.find('input.name');
+            var phone = par.find('input.phone');
+            var profile = par.find('input.profile');
+            var rank = par.find('input.rank');
+            if (ts.hasClass('saveChange')) {
+                ts.text('正在保存');
+                $('form.hidden')
+                    .children('input[name="id"]').val(id.val())
+                    .children('input[name="name"]').val(name.val())
+                    .children('input[name="profile"]').val(profile.val())
+                    .children('input[name="rank"]').val(rank.val())
+                    .children('input[name="phone"]').val(phone.val())
+                    .end().submit();
+            } else {
+                ts.text('保存').addClass('saveChange');
+                par.find('input[class!="id"]').removeAttr('disabled');
             }
         });
     }());
