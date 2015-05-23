@@ -9,7 +9,7 @@
     <meta name="keywords" content="rcss">
     <meta name="description" content="商店demo">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>我的订单</title>
+    <title>我的订单 - 大腔调</title>
 <link rel="stylesheet" href="/css/myOrder.css">
 </head>
 <body class="sme">

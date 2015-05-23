@@ -9,7 +9,7 @@
     <meta name="keywords" content="rcss">
     <meta name="description" content="商店demo">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>晒单分享</title>
+    <title>晒单分享 - 大腔调</title>
 <link rel="stylesheet" href="/css/shai.css">
 </head>
 <body class="sme">
