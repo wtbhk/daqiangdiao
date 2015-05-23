@@ -23,6 +23,7 @@ Class ListController extends WechatController {
                 $chefs = Chef::rank()->get();
                 $chefs = $chefs->each(function($chef){
                         $chef->products = Product::with('images', 'inventory')->new()->available()->get();
+                        $chef->avatar = $chef->images()->first();
                         return $chef;
                 });
                 return View::make('cheflist', array('chefs'=>$chefs));

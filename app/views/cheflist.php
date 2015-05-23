@@ -9,7 +9,7 @@
     <meta name="keywords" content="rcss">
     <meta name="description" content="大腔调">
     <meta name="author" content="zvenshy@gmail.com">
-    <title>购物车 - 大腔调</title>
+    <title>封厨榜 - 大腔调</title>
     <link rel="stylesheet" href="/css/cheflist.css">
 
 </head>
@@ -17,32 +17,24 @@
     <div id="content">
         <div id="cheflist">
             <ul>
+                <?php foreach($chefs as $chef): ?>
                 <li>
-                    <div class="avatar"><img src="images/head.jpg" alt=""></div>
+                    <div class="avatar"><img src="<?php echo $chef->avatar->resize(100,100); ?>" alt=""></div>
                     <div class="rank"><img src="images/rank.jpg" alt=""></div>
                     <div class="header">
-                        <span class="name">厨师艺名</span>
-                        <p class="profile">我的地盘我做主</p>
+                        <span class="name"><?php echo $chef->name; ?></span>
+                        <p class="profile"><?php echo $chef->profile; ?></p>
                     </div>
                     <div class="imglist">
-                        <img src="" alt="">
-                        <img src="" alt="">
-                        <img src="" alt="">
+                        <?php foreach($chef->products as $product): ?>
+                        <img src="<?php echo $product->mainImage()->resize(150,100); ?>" alt="">
+                        <?php endforeach; ?>
                     </div>
                 </li>
-                <li></li>
-                <li></li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>
-    <footer class="foot-fixed">
-        <a class="delivery" href="/cart"></a>
-        <ul>
-            <li class="profile"><a href="/profile">我的</a></li>
-            <li><a href="/">首页</a></li>
-            <li><a href="/chef">封厨榜</a></li>
-            <li class="active"><a href="/list">饕餮盛宴</a></li>
-        </ul>
-    </footer>
+    <?php require_once __DIR__.'/footer.php'; ?>
 </body>
 </html>
