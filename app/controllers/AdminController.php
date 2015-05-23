@@ -39,7 +39,8 @@ Class AdminController extends BaseController {
 
         function editProduct()
         {
-                $input = Input::only('id', 'price', 'reservation_day', 'inventory_per_day', 'ignore_inventory', 'title', 'description', 'content', 'rank');
+                $input = Input::only('id', 'available', 'price', 'reservation_day', 'inventory_per_day', 
+                        'ignore_inventory', 'title', 'description', 'content', 'rank');
                 $validator = Validator::make($input, array(
                         'price'=>'required|numeric',
                         'reservation_day'=>'integer',
@@ -52,6 +53,8 @@ Class AdminController extends BaseController {
                 ));
                 if($validator->fails())
                         return Response::json(array('error'=>true, 'fails'=>$validator->failed()));
+                $input['ignore_inventory'] = $input['ignore_inventory']==='true' ? true : false;
+                $input['available'] = $input['available']==='true' ? true : false;
                 if(Input::has('id'))
                 {
                         $product = Product::find($input['id']);
