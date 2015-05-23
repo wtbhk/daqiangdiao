@@ -33,6 +33,7 @@
             <ul>
                 <?php foreach($category->products as $product): ?>
                 <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?>><a href=""><img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt=""></a><div class="s"><i class="<?php if($product->inCart()){echo 'yes';}else{echo 'fa fa-circle-o';} ?>"></i></div></li>
+                <?php $i++; ?>
                 <?php endforeach; ?>
             </ul>
             <div class="clear"></div>
@@ -44,6 +45,7 @@
             <ul>
                 <?php foreach($category->products as $product): ?>
                 <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?>><a href=""><img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt=""></a><div class="s"><i class="<?php if($product->inCart()){echo 'yes';}else{echo 'fa fa-circle-o';} ?>"></i></div></li>
+                <?php $i++; ?>
                 <?php endforeach; ?>
             </ul>
              <div class="clear"></div>
