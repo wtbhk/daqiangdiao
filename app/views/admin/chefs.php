@@ -84,8 +84,13 @@
         </form>
     </div>
     </div>
+    <!-- this is a hidden form for Ajax -->
     <form class="hidden" action="" method="POST">
-        <input class="real-balance" name="balance" type="text" value="">
+        <input type="text" name="id">
+        <input type="text" name="name">
+        <input type="text" name="phone">
+        <input type="text" name="profile">
+        <input type="text" name="rank">
     </form>
     
     <script src="/manage/js/jquery.min.js"></script>
