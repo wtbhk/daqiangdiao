@@ -28,6 +28,11 @@ class Product extends Eloquent {
                 return $this->belongsToMany('Chef');
         }
 
+        function category()
+        {
+                return $this->belongsTo('Category');
+        }
+
         function scopeRank($query)
         {
                 return $query->orderBy('rank', 'desc');
