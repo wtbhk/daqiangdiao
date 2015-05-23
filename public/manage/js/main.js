@@ -118,7 +118,7 @@ $(document).ready(function () {
                 'title': $('input[name="title"').eq(idx).val(),
                 'description': $('input[name="description"').eq(idx).val(),
                 'content': $('input[name="content"').eq(idx).val(),
-                'available': $('input[name="available"').val(),
+                'available': $('input[name="available"').eq(idx).prop('checked'),
                 'rank': $('input[name="rank"').eq(idx).val()
             }
             $.ajax({
