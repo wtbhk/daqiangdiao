@@ -43,9 +43,9 @@
 						<th class='span1'>价格</th>
 						<th class='span1'>提前</th>
 						<th class='span1'>库存</th>
-						<th class='span1'>忽略</th>
+						<th class='span1'>忽略库存</th>
                         <th class='span1'>上架</th>
-						<th class='span1'>排序</th>
+						<th class='span1'>权重</th>
 					</tr>
 				</thead>
 				<tbody>
