@@ -47,9 +47,9 @@
                     <?php foreach ($chefs as $chef): ?>
                     <tr>
                         <td><input type="text" disabled="disabled" value="<?php echo $chef->id; ?>"</td>
-                        <td><input type="text" disabled="disabled" value="Venshy" placeholder="姓名" required></td>
-                        <td><input type="number" disabled="disabled" value="123456" placeholder="手机号" required></td>
-                        <td><input type="text" disabled="disabled" value="1"></td>
+                        <td><input type="text" disabled="disabled" value="<?php echo $chef->name; ?>" placeholder="姓名" required></td>
+                        <td><input type="number" disabled="disabled" value="<?php echo $chef->phone; ?>" placeholder="手机号" required></td>
+                        <td><input type="text" disabled="disabled" value="<?php echo $chef->rank; ?>"></td>
                         <td>
                             <button class="btn btn-primary change" type="button">修改</button>
                             <button class="btn btn-danger delete" type="button">删除</button>
@@ -58,7 +58,6 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <?php echo $chefs->links(); ?>
         </div>
     </div>
 

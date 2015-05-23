@@ -21,6 +21,7 @@
                                 <li><a href="/admin/order">订单</a></li>
                                 <li><a href="/admin/product">菜品</a></li>
                                 <li><a href="/admin/user">用户</a></li>
+                                <li><a href="/admin/chef">厨师</a></li>
                             </ul>
                         </div>
                     </div>
