@@ -12,7 +12,7 @@ Class ListController extends WechatController {
         {
                 $categories = Category::rank()->get();
                 $categories = $categories->each(function($category){
-                        $category->products = Product::with('images', 'inventory')->new()->available->get();
+                        $category->products = Product::with('images', 'inventory')->new()->available()->get();
                         return $category;
                 });
                 return View::make('list', array('categories'=>$categories));
