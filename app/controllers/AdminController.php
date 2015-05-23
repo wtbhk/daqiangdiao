@@ -178,9 +178,8 @@ Class AdminController extends BaseController {
         {
                 $input = Input::only('id', 'name', 'phone', 'profile', 'rank');
                 $validator = Validator::make($input, array(
-                        'price'=>'required|numeric',
                         'name'=>'required|max:12',
-                        'phone'=>'required|integer',
+                        'phone'=>'required|digits:11',
                         'profile'=>'max:40',
                         'rank'=>'integer'
                 ));
