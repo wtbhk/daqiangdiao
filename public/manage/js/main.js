@@ -223,7 +223,7 @@ $(document).ready(function () {
         $('.change').on('click', function () {
             var ts = $(this);
             var par = ts.parent().parent();
-            
+
             var id = par.find('input.id');
             var name = par.find('input.name');
             var phone = par.find('input.phone');
@@ -233,10 +233,10 @@ $(document).ready(function () {
                 ts.text('正在保存');
                 $('form.hidden')
                     .children('input[name="id"]').val(id.val())
-                    .children('input[name="name"]').val(name.val())
-                    .children('input[name="profile"]').val(profile.val())
-                    .children('input[name="rank"]').val(rank.val())
-                    .children('input[name="phone"]').val(phone.val())
+                    .end().children('input[name="name"]').val(name.val())
+                    .end().children('input[name="profile"]').val(profile.val())
+                    .end().children('input[name="rank"]').val(rank.val())
+                    .end().children('input[name="phone"]').val(phone.val())
                     .end().submit();
             } else {
                 ts.text('保存').addClass('saveChange');
