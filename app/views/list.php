@@ -32,7 +32,7 @@
             <h2><?php echo $category->text; ?></h2>
             <ul>
                 <?php foreach($category->products as $product): ?>
-                <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?>><a href=""><img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt=""></a><div class="s"><i class="<?php if($product->inCart()) echo 'yes' else echo 'fa fa-circle-o'; ?>"></i></div></li>
+                <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?>><a href=""><img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt=""></a><div class="s"><i class="<?php if($product->inCart()){echo 'yes';}else{echo 'fa fa-circle-o';} ?>"></i></div></li>
                 <?php endforeach; ?>
             </ul>
             <div class="clear"></div>
@@ -43,7 +43,7 @@
             <h2><?php echo $category->text; ?></h2>
             <ul>
                 <?php foreach($category->products as $product): ?>
-                <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?>><a href=""><img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt=""></a><div class="s"><i class="<?php if($product->inCart()) echo 'yes' else echo 'fa fa-circle-o'; ?>"></i></div></li>
+                <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?>><a href=""><img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt=""></a><div class="s"><i class="<?php if($product->inCart()){echo 'yes';}else{echo 'fa fa-circle-o';} ?>"></i></div></li>
                 <?php endforeach; ?>
             </ul>
              <div class="clear"></div>
@@ -60,7 +60,7 @@
                 <div class="fl"><img src="<?php echo $first->mainImage()->resize(400,400); ?>" alt=""></div>
                 <ul class="fr">
                     <?php foreach($products as $product): ?>
-                    <li><a href=""><img src="<?php echo $first->mainImage()->resize(300,200); ?>" alt=""></a><div class="s"><i class="<?php if($product->inCart()) echo 'yes' else echo 'fa fa-circle-o'; ?>"></i></div></li>
+                    <li><a href=""><img src="<?php echo $first->mainImage()->resize(300,200); ?>" alt=""></a><div class="s"><i class="<?php if($product->inCart()){echo 'yes';}else{echo 'fa fa-circle-o';} ?>"></i></div></li>
                     <?php endforeach; ?>
                 </ul>
                  <div class="clear"></div>
