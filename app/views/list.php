@@ -32,7 +32,15 @@
             <h2><?php echo $category->text; ?></h2>
             <ul>
                 <?php foreach($category->products as $product): ?>
-                <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?>><a href=""><img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt=""></a><div class="s"><i class="<?php if($product->inCart()){echo 'yes';}else{echo 'fa fa-circle-o';} ?>"></i></div></li>
+                <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?>>
+                    <a href=""><img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt=""></a>
+                    <h3 class="productname"><div><span>鸡腿堡鸡腿堡鸡腿堡鸡腿</span></div></h3>
+                    <!-- 详情点击 -->
+                    <a class="s" href="1"><i class="fa fa-share"></i></a>
+                    <!-- 购物车内 -->
+                    <a class="checked" href="2"><i class="fa fa-check fa-2x"></i></a>
+                    <div class="s"><i class="<?php if($product->inCart()){echo 'yes';}else{echo 'fa fa-circle-o';} ?>"></i></div>
+                </li>
                 <?php $i++; ?>
                 <?php endforeach; ?>
             </ul>
