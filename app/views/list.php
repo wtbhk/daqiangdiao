@@ -31,10 +31,10 @@
         <?php if($type==3): ?>
         <div class="imglist-3">
             <h2><?php echo $category->text; ?></h2>
-            <ul>
+            <ul class="imgbox">
                 <?php foreach($category->products as $product): ?>
-                <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?>>
-                    <a href=""><img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt=""></a>
+                <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?> id="<?php echo $product->id; ?>">
+                    <img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt="">
                     <h3 class="productname"><div><span><?php echo $product->title; ?></span></div></h3>
                     <!-- 详情点击 -->
                     <a class="s" href="/product/<?php echo $product->id;?>"><i class="fa fa-share"></i></a>

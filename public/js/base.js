@@ -18,6 +18,19 @@ $(document).ready(function () {
             function (data) {return console.log(data);}
         );   
     }
+    $('.imgbox').on('click', 'li', function () {
+        console.log("ss");
+        var ts = $(this);
+        console.log(ts.attr('id'));
+        deal(ts.attr('id'), 1);
+        ts.append('<a class="checked" href=""><i class="fa fa-check fa-2x"></i></a>');
+    });
+    $('.imgbox').on('a.checked', 'click', function (ev) {
+        ev.stopPropagation();
+        var ts = $(this);
+        deal(ts.parent().attr('id'), 0);
+        ts.remove();
+    });
     //添加购物车
     (function(){
         var items = $('#product');
@@ -148,27 +161,7 @@ $(document).ready(function () {
         var shai = $('#shai');
         if(shai.length === 0) return;
         if($('#scroll').length !== 0) $(document).scrollTop(parseInt(shai.css('height')));
- /*       wx.config({
-            debug: 0, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-            appId: '', // 必填，公众号的唯一标识
-            timestamp: , // 必填，生成签名的时间戳
-            nonceStr: '', // 必填，生成签名的随机串
-            signature: '',// 必填，签名，见附录1
-            jsApiList: [] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-        });
-        wx.chooseImage({
-            success: function (res) {
-                var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
-                console.log(localIds);
-            }
-        });
-        wx.uploadImage({
-            localId: '', // 需要上传的图片的本地ID，由chooseImage接口获得
-            isShowProgressTips: 1, // 默认为1，显示进度提示
-            success: function (res) {
-                var serverId = res.serverId; // 返回图片的服务器端ID
-            }
-        });*/
+
         $('#img_upload').on('click', function () {
             $('#file').trigger('click');
         });
