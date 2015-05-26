@@ -11,22 +11,22 @@ $(document).ready(function () {
     });
     function deal(qty, id) {
         $.post('/editcart', 
-            {
-                'id': id, 
-                'qty': qty
+            { 
+                'qty': qty,
+                'id': id
             }, 
             function (data) {return console.log(data);}
         );   
     }
     $('.imgbox').on('click', 'li', function () {
         var ts = $(this);
-        deal(ts.attr('id'), 1);
+        deal(1, ts.attr('id'));
         ts.append('<span class="checked" href=""><i class="fa fa-check fa-2x"></i></span>');
     });
     $('.imgbox').on('click', 'span.checked', function (event) {
         event.stopPropagation();
         var ts = $(this);
-        deal(ts.parent().attr('id'), 0);
+        deal(0, ts.parent().attr('id'));
         ts.remove();
     });
     //添加购物车
