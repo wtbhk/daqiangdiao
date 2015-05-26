@@ -39,7 +39,7 @@
                     <!-- 详情点击 -->
                     <a class="s" href="/product/<?php echo $product->id;?>"><i class="fa fa-share"></i></a>
                     <!-- 购物车内 -->
-                    <?php if($product->inCart()) echo '<a class="checked" href=""><i class="fa fa-check fa-2x"></i></a>';?>
+                    <?php if($product->inCart()) echo '<span class="checked" href=""><i class="fa fa-check fa-2x"></i></span>';?>
                 </li>
                 <?php $i++; ?>
                 <?php endforeach; ?>

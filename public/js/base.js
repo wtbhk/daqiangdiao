@@ -27,6 +27,7 @@ $(document).ready(function () {
     });
     $('.imgbox').on('a.checked', 'click', function (ev) {
         ev.stopPropagation();
+        ev.preventDefault();
         var ts = $(this);
         deal(ts.parent().attr('id'), 0);
         ts.remove();

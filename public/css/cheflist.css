@@ -2091,7 +2091,7 @@ footer {
     -moz-box-shadow: 0 0 15px #999999;
     box-shadow: 0 0 15px #999999; }
 
-a.checked {
+.imgbox .checked {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -2100,7 +2100,7 @@ a.checked {
   top: 0;
   left: 0;
   text-align: center; }
-  a.checked i {
+  .imgbox .checked i {
     position: relative;
     top: 50%;
     margin-top: -50%;
