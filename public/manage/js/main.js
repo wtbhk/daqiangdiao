@@ -220,6 +220,7 @@ $(document).ready(function () {
     (function(){
         var chefM = $('#chefManager');
         if (chefM.length === 0) return;
+        var changing = 0;
         $('.change').on('click', function () {
             var ts = $(this);
             var par = ts.parent().parent();
@@ -240,8 +241,21 @@ $(document).ready(function () {
                     .end().submit();
             } else {
                 ts.text('保存').addClass('saveChange');
+                changing = 1;
                 par.find('input[class!="id"]').removeAttr('disabled');
             }
+        });
+        $('.avatar').click(function () {
+            if (!changing) return;
+            var ts = $(this);
+            var avatar = $('form.hidden input[name="avatar"]');
+            avatar.trigger('click');
+            avatar.change(function () {
+                var file = $(this)[0].files[0];
+                window.URL = window.URL || window.webkitURL;
+                ts.attr('src', window.URL.createObjectURL(file));
+            });
+
         });
     }());
 });
