@@ -15,14 +15,12 @@ $(document).ready(function () {
                 'id': id, 
                 'qty': qty
             }, 
-            function (data) {return console.log(data);alert(data)}
+            function (data) {return console.log(data);}
         );   
     }
     $('.imgbox').on('click', 'li', function () {
         var ts = $(this);
-        alert('before');
         deal(ts.attr('id'), 1);
-        alert('after');
         ts.append('<span class="checked" href=""><i class="fa fa-check fa-2x"></i></span>');
     });
     $('.imgbox').on('click', 'span.checked', function (event) {
