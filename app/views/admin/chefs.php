@@ -50,7 +50,7 @@
                     <?php foreach ($chefs as $chef): ?>
                     <tr>
                         <td><input type="text" class="id" disabled="disabled" value="<?php echo $chef->id; ?>"</td>
-                        <td><img src="<?php echo $chef->avatar; ?>" alt="avatar"></td>
+                        <td><img class="avatar" src="<?php echo $chef->avatar; ?>" alt="avatar"></td>
                         <td><input type="text" class="name" disabled="disabled" value="<?php echo $chef->name; ?>" placeholder="姓名" required></td>
                         <td><input type="number" class="phone" disabled="disabled" value="<?php echo $chef->phone; ?>" placeholder="手机号" required></td>
                         <td><input type="text" class="profile" disabled="disabled" value="<?php echo $chef->profile; ?>"></td>
@@ -72,7 +72,7 @@
         <div class="modal-header">
             <h3 id="myModalLabel">添加厨师</h3>
         </div>
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
             <div class="modal-body">           
                     <input type="text" name="name" placeholder="厨师名">
                     <input type="text" name="phone" placeholder="手机号">
@@ -88,7 +88,7 @@
     </div>
     </div>
     <!-- this is a hidden form for Ajax -->
-    <form class="hidden" action="" method="POST">
+    <form class="hidden" action="" method="POST" enctype="multipart/form-data">
         <input type="text" name="id">
         <input type="text" name="name">
         <input type="text" name="phone">
