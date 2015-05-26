@@ -18,6 +18,10 @@ footer {
 			line-height: 49px;
 			float: left;
 			text-align: center;
+
+			a:active {
+				color: #353535;
+			}
 		}
 		li + li {
 			border-left: 1px solid #c0c0c0;

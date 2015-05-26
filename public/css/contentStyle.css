@@ -2122,6 +2122,8 @@ footer {
       line-height: 49px;
       float: left;
       text-align: center; }
+      footer ul li a:active {
+        color: #353535; }
     footer ul li + li {
       border-left: 1px solid #c0c0c0; }
     footer ul li:active {

@@ -19,15 +19,12 @@ $(document).ready(function () {
         );   
     }
     $('.imgbox').on('click', 'li', function () {
-        console.log("ss");
         var ts = $(this);
-        console.log(ts.attr('id'));
         deal(ts.attr('id'), 1);
-        ts.append('<a class="checked" href=""><i class="fa fa-check fa-2x"></i></a>');
+        ts.append('<span class="checked" href=""><i class="fa fa-check fa-2x"></i></span>');
     });
-    $('.imgbox').on('a.checked', 'click', function (ev) {
-        ev.stopPropagation();
-        ev.preventDefault();
+    $('.imgbox').on('click', 'span.checked', function (event) {
+        event.stopPropagation();
         var ts = $(this);
         deal(ts.parent().attr('id'), 0);
         ts.remove();
