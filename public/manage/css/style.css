@@ -307,3 +307,7 @@ input {
 .modal-backdrop {
     position: static;
 }
+
+#chefManager img {
+    width: 40px;
+}

@@ -37,7 +37,8 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th class='span2'>序号</th>
+                        <th class='span1'>序号</th>
+                        <th class="span1">头像</th>
                         <th class='span2'>姓名</th>
                         <th class='span2'>手机号</th>
                         <th class="span3">个性签名</th>
@@ -49,6 +50,7 @@
                     <?php foreach ($chefs as $chef): ?>
                     <tr>
                         <td><input type="text" class="id" disabled="disabled" value="<?php echo $chef->id; ?>"</td>
+                        <td><img src="<?php echo $chef->avatar; ?>" alt="avatar"></td>
                         <td><input type="text" class="name" disabled="disabled" value="<?php echo $chef->name; ?>" placeholder="姓名" required></td>
                         <td><input type="number" class="phone" disabled="disabled" value="<?php echo $chef->phone; ?>" placeholder="手机号" required></td>
                         <td><input type="text" class="profile" disabled="disabled" value="<?php echo $chef->profile; ?>"></td>
