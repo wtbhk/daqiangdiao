@@ -27,19 +27,19 @@
                     </div>
                     <div class="imglist">
                         <?php foreach($chef->products as $product): ?>
-                        <ul class="imgbox">
-                            <li id="<?php echo $product->id; ?>">
-                                <img src="images/slideImg1.jpg" alt="">
-                                <h3 class="productname"><div><span>鸡腿堡鸡腿堡鸡腿堡鸡腿</span></div></h3>
-                                <div class="s" href="1"><i class="fa fa-share"></i></div>
-                                <!-- <a class="checked" href="2"><i class="fa fa-check fa-2x"></i></a> -->
+                         <ul class="imgbox">
+                            <?php foreach($category->products as $product): ?>
+                            <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?> id="<?php echo $product->id; ?>">
+                                <img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt="">
+                                <h3 class="productname"><div><span><?php echo $product->title; ?></span></div></h3>
+                                <!-- 详情点击 -->
+                                <a class="s" href="/product/<?php echo $product->id;?>"><i class="fa fa-share"></i></a>
+                                <!-- 购物车内 -->
+                                <?php if($product->inCart()) echo '<span class="checked"><i class="fa fa-check fa-2x"></i></span>';?>
                             </li>
-                            <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
-                            <li id="productiID"><img src="images/slideImg1.jpg" alt="">
-                                <span class="checked" href=""><i class="fa fa-check fa-2x"></i></span>
-                            </li>
+                            <?php $i++; ?>
+                            <?php endforeach; ?>
                         </ul>
-                        <img src="<?php echo $product->mainImage()->resize(150,100); ?>" alt="">
                         <?php endforeach; ?>
                     </div>
                 </li>
