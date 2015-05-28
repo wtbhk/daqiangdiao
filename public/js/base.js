@@ -29,6 +29,7 @@ $(document).ready(function () {
         deal(0, ts.parent().attr('id'));
         ts.remove();
     });
+
     //添加购物车
     (function(){
         var items = $('#product');
@@ -59,6 +60,22 @@ $(document).ready(function () {
     (function () {
         var cart = $('#cart');
         if (!cart.length) return;
+        //监听物理返回键
+/*        (function () {
+            var state = ['/temp/store/productlist.html'];
+            history.pushState(state, null, location.href);
+            $(window).on('popstate', function(event) {
+                var path =  window.location.pathname;
+                event.originalEvent.state = '';
+                alert(path);
+                //state && location.reload();
+                state && alert('test');
+            });    
+        }());*/
+        XBack.listen(function(){
+            location.href = '/list';
+        });
+
         var items = $('#list .order'),
             rest = items.find('strong.liu'),
             num  = items.find('span.number');
@@ -171,4 +188,41 @@ $(document).ready(function () {
                     .children('img').attr('src', window.URL.createObjectURL(obj) );
         });
     })();
+
+    (function () {
+        var productlist = $('#productlist');
+        if(productlist.length === 0) return;
+
+        //history.back()
+    } ());
 });
+;!function(pkg, undefined){
+    var STATE = 'x-back';
+    var element;
+
+    var onPopState = function(event){
+        event.state === STATE && fire();
+    }
+
+    var record = function(state){
+        history.pushState(state, null, location.href);
+    }
+
+    var fire = function(){
+        var event = document.createEvent('Events');
+        event.initEvent(STATE, false, false);
+        element.dispatchEvent(event);
+    }
+
+    var listen = function(listener){
+        element.addEventListener(STATE, listener, false);
+    }
+
+    !function(){
+        element = document.createElement('span');
+        window.addEventListener('popstate', onPopState);
+        this.listen = listen;
+        record(STATE);
+    }.call(window[pkg] = window[pkg] || {});
+
+}('XBack');

@@ -27,6 +27,18 @@
                     </div>
                     <div class="imglist">
                         <?php foreach($chef->products as $product): ?>
+                        <ul class="imgbox">
+                            <li id="<?php echo $product->id; ?>">
+                                <img src="images/slideImg1.jpg" alt="">
+                                <h3 class="productname"><div><span>鸡腿堡鸡腿堡鸡腿堡鸡腿</span></div></h3>
+                                <div class="s" href="1"><i class="fa fa-share"></i></div>
+                                <!-- <a class="checked" href="2"><i class="fa fa-check fa-2x"></i></a> -->
+                            </li>
+                            <li><a href=""><img src="images/slideImg1.jpg" alt=""></a></li>
+                            <li id="productiID"><img src="images/slideImg1.jpg" alt="">
+                                <span class="checked" href=""><i class="fa fa-check fa-2x"></i></span>
+                            </li>
+                        </ul>
                         <img src="<?php echo $product->mainImage()->resize(150,100); ?>" alt="">
                         <?php endforeach; ?>
                     </div>
