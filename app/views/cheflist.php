@@ -27,8 +27,10 @@
                     </div>
                     <div class="imglist">
                          <ul class="imgbox">
+                            <?php $i=0; ?>
                             <?php foreach($chef->products as $product): ?>
-                            <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?> id="<?php echo $product->id; ?>">
+                            <?php if($i==3) break; ?>
+                            <li id="<?php echo $product->id; ?>">
                                 <img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt="">
                                 <h3 class="productname"><div><span><?php echo $product->title; ?></span></div></h3>
                                 <!-- 详情点击 -->
