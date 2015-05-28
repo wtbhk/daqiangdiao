@@ -61,21 +61,6 @@
                                     </dd>
                                 </dl>
                             </li></a>
-                            <a href="/product/<?php echo $products[5]->id; ?>"><li>
-                                <dl>
-                                    <dt><img src="<?php echo $products[5]->mainImage()->resize(220, 150); ?>" alt=""></dt>
-                                    <dd class="overft">
-                                        <div class="dish">
-                                            <h3><?php echo $products[5]->title; ?></h3>
-                                            <div class="advance">
-                                                <?php if($products[5]->needReservation()): ?>
-                                                <span>请提前<?php echo $products[5]->chineseReservation(); ?>天预订</span>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-                                    </dd>
-                                </dl>
-                            </li></a>
                         </ul>
                     </div>
                 </div>
