@@ -26,9 +26,8 @@
                         <p class="profile"><?php echo $chef->profile; ?></p>
                     </div>
                     <div class="imglist">
-                        <?php foreach($chef->products as $product): ?>
                          <ul class="imgbox">
-                            <?php foreach($category->products as $product): ?>
+                            <?php foreach($chef->products as $product): ?>
                             <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?> id="<?php echo $product->id; ?>">
                                 <img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt="">
                                 <h3 class="productname"><div><span><?php echo $product->title; ?></span></div></h3>
@@ -40,7 +39,6 @@
                             <?php $i++; ?>
                             <?php endforeach; ?>
                         </ul>
-                        <?php endforeach; ?>
                     </div>
                 </li>
                 <?php endforeach; ?>
