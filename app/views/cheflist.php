@@ -31,7 +31,7 @@
                             <?php foreach($category->products as $product): ?>
                             <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?> id="<?php echo $product->id; ?>">
                                 <img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt="">
-                                <h3 class="productname"><div><span><?php echo $product->title; ?></span></div></h3>
+                                
                                 <!-- 详情点击 -->
                                 <a class="s" href="/product/<?php echo $product->id;?>"><i class="fa fa-share"></i></a>
                                 <!-- 购物车内 -->
