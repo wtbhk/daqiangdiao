@@ -26,10 +26,11 @@
                         <p class="profile"><?php echo $chef->profile; ?></p>
                     </div>
                     <div class="imglist">
-                        <?php foreach($chef->products as $product): ?>
                          <ul class="imgbox">
-                            <?php foreach($category->products as $product): ?>
-                            <li <?php if($i%$type==0&&$i!=0) echo 'class="first"'; ?> id="<?php echo $product->id; ?>">
+                            <?php $i=0; ?>
+                            <?php foreach($chef->products as $product): ?>
+                            <?php if($i==3) break; ?>
+                            <li id="<?php echo $product->id; ?>">
                                 <img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt="">
                                 
                                 <!-- 详情点击 -->
@@ -40,7 +41,6 @@
                             <?php $i++; ?>
                             <?php endforeach; ?>
                         </ul>
-                        <?php endforeach; ?>
                     </div>
                 </li>
                 <?php endforeach; ?>
