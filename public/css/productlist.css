@@ -2068,12 +2068,14 @@ footer {
       line-height: 49px;
       float: left;
       text-align: center; }
-      footer ul li a:active {
+      footer ul li:hover {
+        background: #d9d9d9; }
+      footer ul li:active {
+        background: #d9d9d9; }
+      footer ul li a:visited {
         color: #353535; }
     footer ul li + li {
       border-left: 1px solid #c0c0c0; }
-    footer ul li:active {
-      background: #d9d9d9; }
     footer ul .profile {
       width: 14.35185%;
       color: #353535; }
@@ -3943,10 +3945,6 @@ footer {
 body {
   background: #f0f0f2; }
 
-li {
-  position: relative;
-  background-color: #aaa; }
-
 #content {
   margin-top: 9px;
   margin-bottom: 120px; }
@@ -3973,6 +3971,8 @@ img {
   width: 87.22222%;
   margin: 0 auto; }
   .imglist-3 ul li {
+    position: relative;
+    background-color: #aaa;
     width: 30.25478%;
     padding-bottom: 20.17086%;
     margin-bottom: 9px;

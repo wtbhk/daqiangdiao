@@ -19,16 +19,20 @@ footer {
 			float: left;
 			text-align: center;
 
-			a:active {
+			&:hover {
+				background: #d9d9d9;
+			}
+			&:active {
+				background: #d9d9d9;
+			}
+			a:visited {
 				color: #353535;
 			}
 		}
 		li + li {
 			border-left: 1px solid #c0c0c0;
 		}
-		li:active {
-			background: #d9d9d9;
-		}
+		
 		.profile {
 			width: 155/1080 * 100%;
 			color: #353535;

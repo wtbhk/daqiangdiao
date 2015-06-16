@@ -2289,12 +2289,14 @@ footer {
       line-height: 49px;
       float: left;
       text-align: center; }
-      footer ul li a:active {
+      footer ul li:hover {
+        background: #d9d9d9; }
+      footer ul li:active {
+        background: #d9d9d9; }
+      footer ul li a:visited {
         color: #353535; }
     footer ul li + li {
       border-left: 1px solid #c0c0c0; }
-    footer ul li:active {
-      background: #d9d9d9; }
     footer ul .profile {
       width: 14.35185%;
       color: #353535; }
