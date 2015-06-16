@@ -52,7 +52,7 @@
                     <?php foreach($products as $product): ?>
 						<tr>
                             <td><input type="text" disabled="disabled" name="title" value="<?php echo $product->title; ?>"></td>
-							<td><input type="text" disabled="disabled" name="description" value="<?php echo $product->description; ?>"></td>
+							<td><textarea wrap="virtual" disabled="disabled" name="description"><?php echo $product->description; ?></textarea></td>
 							<td><textarea wrap="virtual" disabled="disabled" name="content"><?php echo $product->content; ?></textarea></td>
 							<td><input type="text" disabled="disabled" name="price" value="<?php echo $product->price; ?>"></td>
 							<td><input type="text" disabled="disabled" name="reservation_day" value="<?php echo $product->reservation_day; ?>"></td>

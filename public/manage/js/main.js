@@ -116,12 +116,11 @@ $(document).ready(function () {
                 'inventory_per_day': $('input[name="inventory_per_day"').eq(idx).val(),
                 'ignore_inventory': $('input[type="checkbox"').eq(idx).prop('checked'),
                 'title': $('input[name="title"').eq(idx).val(),
-                'description': $('input[name="description"').eq(idx).val(),
+                'description': $('textarea[name="description"').eq(idx).val(),
                 'content': $('textarea[name="content"').eq(idx).val(),
                 'available': $('input[name="available"').eq(idx).prop('checked'),
                 'rank': $('input[name="rank"').eq(idx).val()
             }
-            console.log(data['content'], "///", idx, "///", $('textarea[name="content"').eq(idx).text())
             $.ajax({
                 url: '/admin/product',
                 type: 'POST',
