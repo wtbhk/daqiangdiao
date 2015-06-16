@@ -13,6 +13,7 @@ body {
 
 li {
     position: relative;
+    background-color: #aaa;
 }
 
 #content {
@@ -30,6 +31,7 @@ h2 {
     clear: both;
 }
 img {
+    position: absolute;
     width: 100%;
     @include box-shadow(0 0 3px #aaa);
 }
@@ -46,6 +48,7 @@ img {
 
         li {
             width: 95/314*100%;
+            padding-bottom: 95/314*66.67%;
             margin-bottom: 9px;
             float: left;
 

@@ -3944,7 +3944,8 @@ body {
   background: #f0f0f2; }
 
 li {
-  position: relative; }
+  position: relative;
+  background-color: #aaa; }
 
 #content {
   margin-top: 9px;
@@ -3959,6 +3960,7 @@ h2 {
   clear: both; }
 
 img {
+  position: absolute;
   width: 100%;
   -webkit-box-shadow: 0 0 3px #aaaaaa;
   -moz-box-shadow: 0 0 3px #aaaaaa;
@@ -3972,6 +3974,7 @@ img {
   margin: 0 auto; }
   .imglist-3 ul li {
     width: 30.25478%;
+    padding-bottom: 20.17086%;
     margin-bottom: 9px;
     float: left; }
     .imglist-3 ul li + li {
