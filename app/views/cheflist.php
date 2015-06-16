@@ -34,7 +34,7 @@
                                 <img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt="">
                                 
                                 <!-- 详情点击 -->
-                                <a class="s" href="/product/<?php echo $product->id;?>"><i class="fa fa-share"></i></a>
+                                <!-- <a class="s" href="/product/<?php echo $product->id;?>"><i class="fa fa-share"></i></a> -->
                                 <!-- 购物车内 -->
                                 <?php if($product->inCart()) echo '<span class="checked"><i class="fa fa-check fa-2x"></i></span>';?>
                             </li>
