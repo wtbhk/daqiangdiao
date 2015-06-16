@@ -72,7 +72,7 @@ $(document).ready(function () {
     
     //change
     (function () {
-        var tbody = $('#score tbody').eq(0);
+        var tbody = $('#product tbody').eq(0);
         if (tbody.length === 0) return;
         tbody.on('click', 'input.change', function (e) {
             e.preventDefault();
