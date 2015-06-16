@@ -77,8 +77,8 @@ $(document).ready(function () {
         tbody.on('click', 'input.change', function (e) {
             e.preventDefault();
             var par = $(this).parent().parent();
-            par.find('input').removeAttr('disabled');
-            par.prev().find('input').removeAttr('disabled');
+            par.find('input').add('textarea').removeAttr('disabled');
+            par.prev().find('input').add('textarea').removeAttr('disabled');
             $(this).addClass('hidden').next().removeClass('hidden');
             par.find('input.del').addClass('hidden').next().removeClass('hidden');
         });
@@ -105,8 +105,8 @@ $(document).ready(function () {
             e.preventDefault();
             var par = $(this).parent().parent();
             var idx = $('input.save').index(this);
-            par.find('input').attr('disabled', 'disabled');
-            par.prev().find('input').attr('disabled', 'disabled');
+            par.find('input').add('textarea').attr('disabled', 'disabled');
+            par.prev().find('input').add('textarea').attr('disabled', 'disabled');
             $(this).addClass('hidden').prev().removeClass('hidden').removeAttr('disabled');
             par.find('input.chanle').addClass('hidden').prev().removeClass('hidden').removeAttr('disabled');
             var data ={
