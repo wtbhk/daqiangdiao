@@ -117,7 +117,7 @@ $(document).ready(function () {
                 'ignore_inventory': $('input[type="checkbox"').eq(idx).prop('checked'),
                 'title': $('input[name="title"').eq(idx).val(),
                 'description': $('input[name="description"').eq(idx).val(),
-                'content': $('textarea[name="content"').eq(idx).text(),
+                'content': $('textarea[name="content"').eq(idx).val(),
                 'available': $('input[name="available"').eq(idx).prop('checked'),
                 'rank': $('input[name="rank"').eq(idx).val()
             }
