@@ -121,6 +121,7 @@ $(document).ready(function () {
                 'available': $('input[name="available"').eq(idx).prop('checked'),
                 'rank': $('input[name="rank"').eq(idx).val()
             }
+            console.log(data['content'], "///", idx, "///", $('textarea[name="content"').eq(idx).text())
             $.ajax({
                 url: '/admin/product',
                 type: 'POST',
