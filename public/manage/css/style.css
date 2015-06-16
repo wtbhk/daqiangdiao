@@ -311,3 +311,6 @@ input {
 #chefManager img {
     width: 40px;
 }
+#product textarea {
+    height: 25px;
+}
