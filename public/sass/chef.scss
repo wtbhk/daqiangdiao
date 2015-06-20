@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+@import "reset";                   /*  css reset  */
+@import "ui/base";                 /*  布局  */
+@import "modules/base";            /*  组件  */
+@import "footer";
+@import "font-awesome/scss/font-awesome";
+@import "base/checked";
+
+body {
+    background: #f0f0f2;
+}
+
+#content {
+    margin-bottom: 120px;
+}
+
+h2 {
+    font: 12px/1 $font-family;
+    color: #adadad;
+    margin: 16px 0 7px 11/360*100%;
+}
+
+.clear {
+    clear: both;
+}
+li img {
+    position: absolute;
+    width: 100%;
+    @include box-shadow(0 0 3px #aaa);
+}
+
+#content .first {
+    margin-left: 0;
+}
+
+#header {
+    .bg {
+        width: 100%;
+        padding-bottom: (142/360) * 100%;
+        background: url($images-path + "slideImg1.jpg");
+        background-size: cover;
+        overflow: hidden;
+    }
+    .profile {
+        position: relative;
+        top: -40px;
+    }
+    .avatar {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+
+
+        img {
+            width: 100%;
+            border: 1px solid #eee;
+            @include radius(50%);
+            @include box-shadow(0 0 3px #aaa);
+        }
+    }
+}
+#chefname {
+    font: 22px/1 $font-family;
+    color: #5e5e5e;
+    text-align: center;
+    margin-top: 25px;
+}
+.imglist-3 {
+    ul {
+        width: 314/360*100%;
+        margin: 0 auto;
+        
+        li {
+            position: relative;
+            background-color: #aaa;
+            width: 95/314*100%;
+            padding-bottom: 95/314*66.67%;
+            margin-bottom: 9px;
+            float: left;
+
+            & + li {
+                margin-left: (1 - 3*95/314)/2 * 100% - 0.3%;
+            }
+
+        }
+    }
+}
