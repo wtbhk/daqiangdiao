@@ -73,6 +73,6 @@
         <h1>用户中心</h1>
     </div>
 </header> -->
-<?php require_once __DIR__.'/footer.php'; ?>
+<?php require_once __DIR__.'/../footer.php'; ?>
 </body>
 </html>
