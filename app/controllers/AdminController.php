@@ -200,7 +200,7 @@ Class AdminController extends BaseController {
                 {
                         $chef = Chef::create($input);
                 }
-                return Response::json(array('error'=>false, 'chef'=>$chef->toArray()));
+                return Redirect::to('/admin/chef');
         }
 
         function deleteChef($id)
