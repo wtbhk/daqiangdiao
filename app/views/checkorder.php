@@ -60,7 +60,12 @@
                                 </span>
                                 <span class="fr"></span>
                             </li>
-
+                            
+                            <!-- 用户协议 -->
+                            <a href="orderaddr"><li class="mar10" id="payment">
+                                <span class="fl">用户协议</span>
+                                <span class="fr more mt7"></span>
+                            </li></a>
                         </ul>
                     </div>
 
