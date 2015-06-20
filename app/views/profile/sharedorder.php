@@ -68,14 +68,16 @@
             <a href="/">美食直达</a>
         </div>
     </footer>
-    <header>
-        <div class="wrap">
-            <a href="/" class="toHome fl"></a>
-            <h1>晒单</h1>
-            <a class="toUser fr" href="/profile"></a>
-        </div>
-    </header>
+<!--     <header>
+    <div class="wrap">
+        <a href="/" class="toHome fl"></a>
+        <h1>晒单</h1>
+        <a class="toUser fr" href="/profile"></a>
     </div>
+</header> -->
+
+   
+    <?php require_once __DIR__.'/footer.php'; ?>
     <script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="/js/base.js"></script>
 </body>

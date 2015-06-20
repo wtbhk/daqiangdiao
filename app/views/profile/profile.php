@@ -66,12 +66,13 @@
     </div>
 
 
-    <header>
-        <div class="wrap">
-            <a class="toHome fl" href="/">
-            </a>
-            <h1>用户中心</h1>
-        </div>
-    </header>
+<!--     <header>
+    <div class="wrap">
+        <a class="toHome fl" href="/">
+        </a>
+        <h1>用户中心</h1>
+    </div>
+</header> -->
+<?php require_once __DIR__.'/footer.php'; ?>
 </body>
 </html>

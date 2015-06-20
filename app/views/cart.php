@@ -92,14 +92,14 @@
             <input id="sub" type="submit" value="确认购物车">
         </div>
     </footer>
-    <header>
-        <div class="wrap">
-            <a class="toHome fl" href="/">
-            </a>
-            <h1>购物车</h1>
-            <a class="toUser fr" href="/profile"></a>
-        </div>
-    </header>
+<!--     <header>
+    <div class="wrap">
+        <a class="toHome fl" href="/">
+        </a>
+        <h1>购物车</h1>
+        <a class="toUser fr" href="/profile"></a>
+    </div>
+</header> -->
     <div id="modal" <?php if(!$errors->first('message')) echo 'class="hidden"'; ?>>
         <div id="errorBox">
             <?php if($errors->first('message')) echo $errors->first('message'); ?>

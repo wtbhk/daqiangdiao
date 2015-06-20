@@ -58,13 +58,14 @@
             </div>
         </div>
     </div>
-    <header>
-        <div class="wrap">
-            <a class="headBack fl" href="/profile">
-            </a>
-            <h1>我的订单</h1>
-            <a class="toUser fr" href="/profile"></a>
-        </div>
-    </header>
+<!--     <header>
+    <div class="wrap">
+        <a class="headBack fl" href="/profile">
+        </a>
+        <h1>我的订单</h1>
+        <a class="toUser fr" href="/profile"></a>
+    </div>
+</header> -->
+<?php require_once __DIR__.'/footer.php'; ?>
 </body>
 </html>

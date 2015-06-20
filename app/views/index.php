@@ -68,16 +68,16 @@
         </div>
     </div>
     <?php require_once __DIR__.'/footer.php'; ?>
-    <header>
-        <div class="wrap">
-            <a class="set fl" href="/list">
-                <p></p>
-                <p></p>
-                <p></p>
-            </a>
-            <h1>大腔调</h1>
-            <a class="toUser fr" href="/profile"></a>
-        </div>
-    </header>
+<!--     <header>
+    <div class="wrap">
+        <a class="set fl" href="/list">
+            <p></p>
+            <p></p>
+            <p></p>
+        </a>
+        <h1>大腔调</h1>
+        <a class="toUser fr" href="/profile"></a>
+    </div>
+</header> -->
 </body>
 </html>
