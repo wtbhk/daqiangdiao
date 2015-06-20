@@ -20,7 +20,7 @@
                 <?php foreach($chefs as $chef): ?>
                 <li>
                     <div class="avatar"><img src="<?php echo $chef->avatar()->resize(100,100); ?>" alt=""></div>
-                    <div class="rank"><img src="/images/rank.jpg" alt=""></div>
+                    <div class="rank"><img src="images/rank.png" alt=""></div>
                     <div class="header">
                         <span class="name"><?php echo $chef->name; ?></span>
                         <p class="profile"><?php echo $chef->profile; ?></p>
