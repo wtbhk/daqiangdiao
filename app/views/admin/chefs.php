@@ -50,7 +50,7 @@
                     <?php foreach ($chefs as $chef): ?>
                     <tr>
                         <td><input type="text" class="id" disabled="disabled" value="<?php echo $chef->id; ?>"</td>
-                        <td><img class="avatar" src="<?php echo $chef->avatar(); ?>" alt="avatar"></td>
+                        <td><img class="avatar" src="<?php echo $chef->avatar()->resize(100,100); ?>" alt="avatar"></td>
                         <td><input type="text" class="name" disabled="disabled" value="<?php echo $chef->name; ?>" placeholder="姓名" required></td>
                         <td><input type="number" class="phone" disabled="disabled" value="<?php echo $chef->phone; ?>" placeholder="手机号" required></td>
                         <td><input type="text" class="profile" disabled="disabled" value="<?php echo $chef->profile; ?>"></td>
