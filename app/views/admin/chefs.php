@@ -90,6 +90,7 @@
     <!-- this is a hidden form for Ajax -->
     <form class="hidden" action="" method="POST" enctype="multipart/form-data">
         <input type="text" name="id">
+        <input type="file" name="avatar" accept="image/*">
         <input type="text" name="name">
         <input type="text" name="phone">
         <input type="text" name="profile">
