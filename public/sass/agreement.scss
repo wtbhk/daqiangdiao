@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+@import "reset";                   /*  css reset  */
+@import "ui/base";                 /*  布局  */
+@import "modules/base";            /*  组件  */
+
+body {
+    background: #f0f0f2;
+}
+h1 {
+    font: 30px/1 $font-family;
+    color: #101010;
+    text-align: center;
+    margin: 25px 0 30px;
+}
+
+article {
+    font: 14px/24px $font-family;
+    width: 90%;
+    margin: 0 auto;
+    white-space: pre-wrap;
+}
