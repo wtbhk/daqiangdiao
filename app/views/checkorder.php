@@ -78,14 +78,14 @@
             <input id="subCheckOrder" type="submit" value="确认订单">
         </div>
     </footer>
-    <header>
-        <div class="wrap">
-            <a class="headBack fl" href="/cart">
-            </a>
-            <h1>订单</h1>
-            <a class="toUser fr" href="/profile"></a>
-        </div>
-    </header>
+<!--     <header>
+    <div class="wrap">
+        <a class="headBack fl" href="/cart">
+        </a>
+        <h1>订单</h1>
+        <a class="toUser fr" href="/profile"></a>
+    </div>
+</header> -->
     <div id="modal" <?php if(!$errors->first('message')) echo 'class="hidden"';?>>
         <div id="errorBox">
             <?php if($errors->first('message')) echo $errors->first('message');?>

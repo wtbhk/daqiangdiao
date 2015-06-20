@@ -28,13 +28,14 @@
             </div>
         </div>
     </div>
-    <header>
-        <div class="wrap">
-            <a class="headBack fl" href="/profile">
-            </a>
-            <h1>修改号码</h1>
-        </div>
-    </header>
+<!--     <header>
+    <div class="wrap">
+        <a class="headBack fl" href="/profile">
+        </a>
+        <h1>修改号码</h1>
+    </div>
+</header> -->
+<?php require_once __DIR__.'/footer.php'; ?>
     <div id="modal" class="hidden">
         <div id="errorBox">
             这里是错误提示这里是错误提示这里是错误提示

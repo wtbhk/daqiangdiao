@@ -38,14 +38,14 @@
             </div>
         </div>
     </div>
-    <header>
-        <div class="wrap">
-            <a class="headBack fl" href="/checkorder">
-            </a>
-            <h1>收货地址</h1>
-            <a class="toUser fr" href="/profile"></a>
-        </div>
-    </header>
+<!--     <header>
+    <div class="wrap">
+        <a class="headBack fl" href="/checkorder">
+        </a>
+        <h1>收货地址</h1>
+        <a class="toUser fr" href="/profile"></a>
+    </div>
+</header> -->
     <div id="modal" class="hidden">
         <div id="errorBox">
             这里是错误提示这里是错误提示这里是错误提示
