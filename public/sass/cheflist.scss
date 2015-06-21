@@ -15,17 +15,23 @@ body {
     width: 305/360 * 100%;
     margin: 50px 0 50px 34/360 * 100%;
 
-    & > ul > li {
-        width: 100%;
-        background: #fff;
-        border: 1px solid #bbb;
-        padding: 6px 0 16px;
-        position: relative;
-        @include radius(8px);
-        @include box-shadow(0 0 3px #aaa);
+    & > ul > a {
+        & > li {
+            width: 100%;
+            background: #fff;
+            border: 1px solid #bbb;
+            padding: 6px 0 16px;
+            position: relative;
+            @include radius(8px);
+            @include box-shadow(0 0 3px #aaa);
+        }
 
-        & + li {
-            margin-top: 50px;
+
+        & + a {
+            & > li {
+                margin-top: 50px;
+            }
+            
         }
     }
 
@@ -103,4 +109,8 @@ body {
             width: 100%;
             @include box-shadow(0 0 15px #aaa);
         }
+    }
+
+    .chefhref {
+        display: block;
     }
