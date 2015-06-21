@@ -28,6 +28,8 @@ Route::group(array('before'=>'wechat.base'), function(){
 
         Route::post('/editcart', 'CartController@editCart');
 
+        Route::get('/chef/{id}', 'ChefController@showChef');
+
         Route::group(array('before'=>'subscribe'), function(){
 
                 Route::get('/profile', 'UserController@showProfile');

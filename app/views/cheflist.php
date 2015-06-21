@@ -30,6 +30,7 @@
                             <?php $i=0; ?>
                             <?php foreach($chef->products as $product): ?>
                             <?php if($i==3) break; ?>
+                            <a class="chefhref" href="/chef/<?php echo $product->id; ?>">
                             <li id="<?php echo $product->id; ?>">
                                 <img src="<?php echo $product->mainImage()->resize(300,200); ?>" alt="">
                                 
@@ -38,6 +39,7 @@
                                 <!-- 购物车内 -->
                                 <?php if($product->inCart()) echo '<span class="checked"><i class="fa fa-check fa-2x"></i></span>';?>
                             </li>
+                            </a>
                             <?php $i++; ?>
                             <?php endforeach; ?>
                         </ul>
