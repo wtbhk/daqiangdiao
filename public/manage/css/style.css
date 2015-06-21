@@ -314,3 +314,12 @@ input {
 #product textarea {
     height: 25px;
 }
+
+
+#order .wait {
+    margin-top: 60px;
+    min-width: 600px;
+}
+#order .wait li {
+    border: none;
+}
