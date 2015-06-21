@@ -5,12 +5,12 @@
  */
 
 
-
 /* 文件载入
  ----------------------------------------------------------*/
 @import "reset";                   /*  css reset  */
 @import "ui/base";                 /*  布局  */
 @import "modules/base";            /*  组件  */
 @import "header";
+@import "footer";
 @import "user/base";
 @import "user/userCenter.scss";

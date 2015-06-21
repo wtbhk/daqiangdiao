@@ -5,6 +5,7 @@
  */
 
 
+
 /* 文件载入
  ----------------------------------------------------------*/
 @import "reset";                   /*  css reset  */
@@ -12,6 +13,7 @@
 @import "modules/base";            /*  组件  */
 @import "user/datetime";
 @import "header";
+@import "footer";
 @import "user/checkFooter";
 @import "user/base";
 @import "user/checkOrder";

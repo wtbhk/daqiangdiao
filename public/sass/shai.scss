@@ -1,10 +1,11 @@
 @charset "utf-8";
 
 
+
 @import "reset";
 @import "ui/base";                 /*  布局  */
 @import "modules/base";            /*  组件  */
-
+@import "footer";
 @import "header";
 @import "shai/base";
 @import "shai/footer";
