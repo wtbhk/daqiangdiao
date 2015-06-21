@@ -10,7 +10,7 @@
     <meta name="description" content="大腔调">
     <meta name="author" content="zvenshy@gmail.com">
     <title>封厨榜单 - 大腔调</title>
-    <link rel="stylesheet" href="css/chef.css">
+    <link rel="stylesheet" href="/css/chef.css">
 </head>
 <body class="sme">
     <div id="content">
@@ -44,7 +44,7 @@
         </div>
     </div>
     <?php require_once __DIR__.'/footer.php'; ?>
-    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/js/base.js"></script>
 </body>
 </html>
