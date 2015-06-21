@@ -484,3 +484,7 @@ li .more {
 
 .mt7 {
   margin-top: 7px !important; }
+
+/* @import "footer";
+@import "font-awesome/scss/font-awesome";
+@import "base/checked"; */

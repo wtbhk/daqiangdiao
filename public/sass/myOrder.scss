@@ -5,6 +5,7 @@
  */
 
 
+
 /* 文件载入
  ----------------------------------------------------------*/
 @import "reset";                   /*  css reset  */
@@ -15,3 +16,6 @@
 @import "user/base";
 @import "user/myOrder";
 @import "user/address";
+@import "footer";
+@import "font-awesome/scss/font-awesome";
+@import "base/checked";

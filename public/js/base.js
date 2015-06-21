@@ -4,6 +4,7 @@ $(document).ready(function () {
     $('#modalClose').add('#mask').on('click', function () {
         modal.hide();
     });
+    //footer 点击变色兼容
     //返回到上一页
     $('.headBack').on('click', function (e) {
         e.preventDefault();
@@ -29,6 +30,14 @@ $(document).ready(function () {
         deal(0, ts.parent().attr('id'));
         ts.remove();
     });
+    $('.imgbox').on('click', '.s', function (event) {
+        event.stopPropagation();
+    });
+        XBack.listen(function(){
+/*
+            history.back();
+            location.reload();*/
+        });
 
     //添加购物车
     (function(){
@@ -72,9 +81,6 @@ $(document).ready(function () {
                 state && alert('test');
             });    
         }());*/
-        XBack.listen(function(){
-            location.href = '/list';
-        });
 
         var items = $('#list .order'),
             rest = items.find('strong.liu'),
@@ -201,6 +207,7 @@ $(document).ready(function () {
     var element;
 
     var onPopState = function(event){
+        console.log(event.state === STATE, history.state)
         event.state === STATE && fire();
     }
 

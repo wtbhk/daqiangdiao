@@ -169,7 +169,7 @@ a {
 
 #content {
   overflow: hidden;
-  margin-top: 37px; }
+  margin-top: 0; }
 
 footer {
   width: 100%; }
@@ -211,7 +211,7 @@ header {
 /**************************************************************/
 .sem #content {
   overflow: hidden;
-  margin-top: 37px; }
+  margin-top: 0; }
 .sem .main {
   width: 100%;
   float: left; }
@@ -534,8 +534,8 @@ header .wrap {
   width: 90%;
   margin: 0 auto;
   color: #fff;
-  height: 37px;
-  line-height: 37px; }
+  height: 0;
+  line-height: 0; }
   header .wrap a {
     display: block; }
 
@@ -547,7 +547,7 @@ header .set {
     background: #fff;
     -webkit-border-radius: 1px;
     -moz-border-radius: 1px;
-    ms-border-radius: 1px;
+    -ms-border-radius: 1px;
     border-radius: 1px; }
   header .set p + p {
     margin-top: 3px; }
@@ -668,7 +668,7 @@ body {
     margin-top: 10px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    ms-border-radius: 5px;
+    -ms-border-radius: 5px;
     border-radius: 5px; }
   .wrap form input.mar5 {
     margin-top: 5px; }
@@ -690,7 +690,7 @@ body {
     background: #ffb14a;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
-    ms-border-radius: 4px;
+    -ms-border-radius: 4px;
     border-radius: 4px; }
 
 #modal, #mask {
@@ -718,7 +718,7 @@ body {
   box-shadow: 0 0 3px gray;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
-  ms-border-radius: 8px;
+  -ms-border-radius: 8px;
   border-radius: 8px; }
 
 #modalClose {
@@ -759,7 +759,7 @@ div.priceBox {
 span.delNum, span.price {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  ms-border-radius: 3px;
+  -ms-border-radius: 3px;
   border-radius: 3px;
   text-align: center;
   display: inline-block;
@@ -864,3 +864,7 @@ li .add, li .more {
     width: 100%; }
 #list .imgs + .fl {
   margin-top: 8px !important; }
+
+/* @import "footer";
+@import "font-awesome/scss/font-awesome";
+@import "base/checked"; */

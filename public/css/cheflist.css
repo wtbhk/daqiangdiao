@@ -3948,7 +3948,7 @@ body {
 #cheflist {
   width: 84.72222%;
   margin: 50px 0 50px 9.44444%; }
-  #cheflist > ul > li {
+  #cheflist > ul > a > li {
     width: 100%;
     background: #fff;
     border: 1px solid #bbb;
@@ -3961,8 +3961,8 @@ body {
     -webkit-box-shadow: 0 0 3px #aaaaaa;
     -moz-box-shadow: 0 0 3px #aaaaaa;
     box-shadow: 0 0 3px #aaaaaa; }
-    #cheflist > ul > li + li {
-      margin-top: 50px; }
+  #cheflist > ul > a + a > li {
+    margin-top: 50px; }
   #cheflist .avatar {
     width: 84px;
     height: 84px;
@@ -4019,3 +4019,6 @@ body {
     -webkit-box-shadow: 0 0 15px #aaaaaa;
     -moz-box-shadow: 0 0 15px #aaaaaa;
     box-shadow: 0 0 15px #aaaaaa; }
+
+.chefhref {
+  display: block; }

@@ -4,8 +4,6 @@
  *@author           Venshy at EcjtuNet
  */
 
-
-
 /* 文件载入
  ----------------------------------------------------------*/
 @import "reset";                   /*  css reset  */
@@ -13,4 +11,7 @@
 @import "modules/base";            /*  组件  */
 @import "header";
 @import "user/base";
-@import "user/userCenter.scss";
+@import "user/userCenter";
+@import "footer";
+@import "font-awesome/scss/font-awesome";
+@import "base/checked";
