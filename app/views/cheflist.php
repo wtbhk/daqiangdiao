@@ -18,7 +18,7 @@
         <div id="cheflist">
             <ul>
                 <?php foreach($chefs as $chef): ?>
-                <a class="chefhref" href="/chef/<?php echo $product->id; ?>">
+                <a class="chefhref" href="/chef/<?php echo $chef->id; ?>">
                     <li>
                         <div class="avatar"><img src="<?php echo $chef->avatar()->resize(100,100); ?>" alt=""></div>
                         <div class="rank"><img src="images/rank.png" alt=""></div>
